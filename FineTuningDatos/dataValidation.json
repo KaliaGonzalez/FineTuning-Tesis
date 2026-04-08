@@ -1,0 +1,282 @@
+[
+  {
+    "instruction": "¿Qué es una \"Aeronave de Estado\"?",
+    "input": "",
+    "output": "Aeronave destinada a servicios militares, de aduana o de policía."
+  },
+  {
+    "instruction": "¿Cómo se define una \"Aeronave de combate\"?",
+    "input": "",
+    "output": "Aeronave diseñada para la entrega de armas y misiones de combate aire-aire o aire-tierra."
+  },
+  {
+    "instruction": "¿Cuándo se considera una aeronave como \"Recuperable\"?",
+    "input": "",
+    "output": "Cuando se le restablece su aeronavegabilidad en un plazo menor a un año."
+  },
+  {
+    "instruction": "¿Qué es la \"Aeronavegabilidad\"?",
+    "input": "",
+    "output": "Aptitud técnica y legal de una aeronave para operar en condiciones seguras y cumplir su misión de diseño."
+  },
+  {
+    "instruction": "¿Qué situación describe el término \"Airprox\"?",
+    "input": "",
+    "output": "Situación donde la distancia y velocidad entre aeronaves compromete la seguridad operacional."
+  },
+  {
+    "instruction": "¿Qué informa una \"Alerta de mantenimiento\"?",
+    "input": "",
+    "output": "Discrepancias que afectan la eficiencia operacional pero no implican la suspensión inmediata del vuelo."
+  },
+  {
+    "instruction": "¿Qué es una \"Alianza\" militar?",
+    "input": "",
+    "output": "Relación por acuerdo formal entre naciones para objetivos de largo plazo e intereses comunes."
+  },
+  {
+    "instruction": "¿Qué es un \"Almacén virtual\" en el sistema SILOG?",
+    "input": "",
+    "output": "Un almacén sin estructura física para enlazar entradas de adquisición centralizada cuyo saldo debe ser cero al cierre de mes."
+  },
+  {
+    "instruction": "¿Qué es una \"Alteración\" en un equipo aeronáutico?",
+    "input": "",
+    "output": "Sustituir una parte o sistema por otro de diferente tipo que no sea parte del diseño original."
+  },
+  {
+    "instruction": "¿Cómo se mide la \"Altitud\"?",
+    "input": "",
+    "output": "Es la distancia vertical entre un punto y el nivel medio del mar (MSL)."
+  },
+  {
+    "instruction": "¿Qué es la \"Altitud de decisión\" (DA)?",
+    "input": "",
+    "output": "Altitud en una aproximación de precisión donde debe iniciarse una aproximación frustrada si no hay referencia visual."
+  },
+  {
+    "instruction": "¿Cuál es la diferencia entre \"Altitud\" y \"Altura\"?",
+    "input": "",
+    "output": "La altitud se mide desde el nivel del mar, mientras que la altura se mide desde una referencia específica en el terreno."
+  },
+  {
+    "instruction": "¿Cómo se define una \"Amenaza\" en el Manual Fundamental Conjunto?",
+    "input": "",
+    "output": "Cualquier combinación de actores o fuerzas con la capacidad e intención de afectar a las fuerzas amigas o intereses nacionales."
+  },
+  {
+    "instruction": "¿Qué es el \"Análisis de confiabilidad\"?",
+    "input": "",
+    "output": "Metodología aplicada a datos de operación para generar recomendaciones que incrementen la seguridad y mantenibilidad de los equipos."
+  },
+  {
+    "instruction": "¿Qué es un \"Apartadero de espera\"?",
+    "input": "",
+    "output": "Área definida donde una aeronave puede detenerse para dar paso a otras y facilitar el movimiento en tierra."
+  },
+  {
+    "instruction": "¿Qué es el \"Apoyo Mutuo\"?",
+    "input": "",
+    "output": "Soporte que brinda una unidad a otra debido a su ubicación y tareas asignadas."
+  },
+  {
+    "instruction": "¿Qué es la \"Apreciación de inteligencia\"?",
+    "input": "",
+    "output": "Examen ordenado de factores como enemigo, tiempo, terreno y población que afectan la misión táctica."
+  },
+  {
+    "instruction": "¿Qué es la \"Aproximación en circuito\"?",
+    "input": "",
+    "output": "Prolongación de un procedimiento por instrumentos que permite maniobrar visualmente alrededor del aeródromo antes de aterrizar."
+  },
+  {
+    "instruction": "¿Qué significa la sigla CDFA?",
+    "input": "",
+    "output": "Técnica de vuelo para aproximación final en descenso continuo."
+  },
+  {
+    "instruction": "¿Qué es la \"Aptitud Psicofísica\"?",
+    "input": "",
+    "output": "Conjunto de habilidades físicas y psicológicas que debe reunir una persona para cumplir funciones en la institución."
+  },
+  {
+    "instruction": "¿Qué es un \"Área clave\" en una investigación?",
+    "input": "",
+    "output": "Aquella que conserva la esencia del proceso y sin la cual este no se cumple."
+  },
+  {
+    "instruction": "¿Qué contiene un \"Archivo de gestión\"?",
+    "input": "",
+    "output": "Documentación sometida a continua utilización y consulta por las dependencias productoras."
+  },
+  {
+    "instruction": "¿Qué es el \"Área de defensa\" (AD) en una base?",
+    "input": "",
+    "output": "Porción de territorio donde se realizan operaciones de defensa terrestre para proteger la Unidad Militar Aérea."
+  },
+  {
+    "instruction": "¿Cuáles son las dos grandes áreas de un aeródromo?",
+    "input": "",
+    "output": "Lado aire (movimiento de aeronaves) y lado tierra (edificios y usuarios públicos)."
+  },
+  {
+    "instruction": "¿Qué función tiene el Asesor Jurídico Operacional (ASEJO)?",
+    "input": "",
+    "output": "Recomendar y emitir apreciaciones jurídicas al comandante durante el desarrollo de operaciones militares."
+  },
+  {
+    "instruction": "¿Qué es un \"Aspecto relevante\" en una inspección?",
+    "input": "",
+    "output": "Condición demostrable que amerita ser resaltada por su utilidad, impacto o estrategia para el cumplimiento de objetivos."
+  },
+  {
+    "instruction": "¿Cómo se define el \"Ataque\"?",
+    "input": "",
+    "output": "Uso de la fuerza contra el adversario en actos tanto ofensivos como defensivos."
+  },
+  {
+    "instruction": "¿Qué es el \"Autocontrol\" para un servidor público?",
+    "input": "",
+    "output": "Capacidad para controlar su trabajo, detectar desviaciones y efectuar correctivos en sus funciones."
+  },
+  {
+    "instruction": "¿Qué es la \"Autonomía de vuelo\" para un tripulante?",
+    "input": "",
+    "output": "Autorización legal otorgada para desempeñar un cargo a bordo de una aeronave."
+  },
+  {
+    "instruction": "¿Cuál es la aeronave considerada la columna vertebral de la misión de transporte en la FAC?",
+    "input": "",
+    "output": "El Hércules C-130."
+  },
+  {
+    "instruction": "¿Qué operación de los años 60 permitió aplicar apoyo aéreo cercano y desembarco helicoportado?",
+    "input": "",
+    "output": "Operación Soberanía."
+  },
+  {
+    "instruction": "¿Dónde se encuentra ubicada la EMAVI desde el año 1933?",
+    "input": "",
+    "output": "Cali, Valle del Cauca."
+  },
+  {
+    "instruction": "¿En qué municipio se encuentran ubicadas las unidades CAMAN y ESUFA?",
+    "input": "",
+    "output": "Madrid, Cundinamarca."
+  },
+  {
+    "instruction": "¿Qué base fue elevada a Comando Aéreo de Apoyo Táctico No.1 en 1966?",
+    "input": "",
+    "output": "La Base Aérea Teniente Coronel Luis F. Pinto Parra en Melgar."
+  },
+  {
+    "instruction": "¿En qué ciudad y año se originó el CAATA-2?",
+    "input": "",
+    "output": "Rionegro, Antioquia en 1991."
+  },
+  {
+    "instruction": "¿Dónde se creó el Grupo Aéreo del Oriente (GAORI) en 1996?",
+    "input": "",
+    "output": "En Marandúa, Vichada."
+  },
+  {
+    "instruction": "¿Dónde está ubicado el Grupo Aéreo del Casanare (GACAS)?",
+    "input": "",
+    "output": "En Yopal, Casanare."
+  },
+  {
+    "instruction": "¿Qué unidad aérea se creó en Leticia en 2010?",
+    "input": "",
+    "output": "El Grupo Aéreo del Amazonas (GAAMA)."
+  },
+  {
+    "instruction": "¿En qué año se creó la Fuerza de Tarea ARES?",
+    "input": "",
+    "output": "2012."
+  },
+  {
+    "instruction": "¿A qué se transformó el CAATA-1 en el año 2002?",
+    "input": "",
+    "output": "Al Comando Aéreo de Combate No.4 (CACOM-4)."
+  },
+  {
+    "instruction": "¿Qué institución educativa reemplazó al Instituto Militar Aeronáutico?",
+    "input": "",
+    "output": "La Escuela de Postgrados de la Fuerza Aérea Colombiana (EPFAC)."
+  },
+  {
+    "instruction": "¿Con cuántas bases aéreas contaba la FAC para diciembre de 2016?",
+    "input": "",
+    "output": "16 bases aéreas."
+  },
+  {
+    "instruction": "¿Cuándo comenzó la vinculación de la mujer en labores asistenciales en la FAC?",
+    "input": "",
+    "output": "En la década de 1920."
+  },
+  {
+    "instruction": "¿En qué año se integró el primer curso de mujeres del Cuerpo Administrativo de oficiales?",
+    "input": "",
+    "output": "1979."
+  },
+  {
+    "instruction": "¿Cuándo se incorporaron las primeras suboficiales técnicas a la institución?",
+    "input": "",
+    "output": "1992."
+  },
+  {
+    "instruction": "¿Qué cambio ocurrió en 2013 respecto a las mujeres en la Fuerza Aérea?",
+    "input": "",
+    "output": "Ingresaron suboficiales con aspiración de convertirse en pilotos militares."
+  },
+  {
+    "instruction": "¿Qué operación de 1998 utilizó visores nocturnos por primera vez en combate?",
+    "input": "",
+    "output": "Operación Vuelo del Ángel."
+  },
+  {
+    "instruction": "Mencione tres operaciones conjuntas destacadas contra grupos narcoterroristas.",
+    "input": "",
+    "output": "Operación Fénix, Operación Sodoma y Operación Odiseo."
+  },
+  {
+    "instruction": "¿Qué aeronaves fueron decisivas en ataques estratégicos con armamento inteligente?",
+    "input": "",
+    "output": "Kfir C-12, Super Tucano A-29 y helicópteros Arpía AH-60L."
+  },
+  {
+    "instruction": "¿Qué factor fue clave para el éxito de misiones en condiciones geográficas difíciles?",
+    "input": "",
+    "output": "La inteligencia aérea."
+  },
+  {
+    "instruction": "¿Qué modelo organizacional se implementó en 2018 para proyectar la Fuerza?",
+    "input": "",
+    "output": "Un Estado Mayor Aéreo y tres Comandos: Operaciones, Apoyo y Personal."
+  },
+  {
+    "instruction": "¿De qué es responsable el Comando de Operaciones Aéreas (COA)?",
+    "input": "",
+    "output": "De la defensa de la soberanía y el control del espacio aéreo."
+  },
+  {
+    "instruction": "¿Cuál es la función del Comando de Personal (COP)?",
+    "input": "",
+    "output": "Gestionar el talento humano, la educación y el entrenamiento del personal."
+  },
+  {
+    "instruction": "¿En qué ejercicio internacional de 2012 participó la FAC como referente regional?",
+    "input": "",
+    "output": "En el ejercicio Red Flag."
+  },
+  {
+    "instruction": "¿Cuál es el nombre del primer satélite de la FAC puesto en órbita en 2018?",
+    "input": "",
+    "output": "FACSAT-1."
+  },
+  {
+    "instruction": "¿Para qué sirven las fotografías tomadas por el satélite FACSAT-1?",
+    "input": "",
+    "output": "Para la prevención de desastres y evaluación de daños por inundaciones o terremotos."
+  }
+]
