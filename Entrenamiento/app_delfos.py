@@ -41,6 +41,7 @@ def load_model():
 
     # 4. Le inyectamos tu conocimiento (Los pesos LoRA entrenados)
     model = PeftModel.from_pretrained(base_model, adapter_path)
+    model.eval()  # <--- MUY IMPORTANTE: Poner el modelo en modo lectura/inferencia, no en entrenamiento
 
     st.success("¡Modelo Mistral Finetuned cargado con éxito!", icon="✅")
     return model, tokenizer
@@ -85,6 +86,8 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
                 do_sample=True,  # Para dar variabilidad a la respuesta
                 temperature=0.3,  # 0.1 a 0.3 es bueno para respuestas certeras y serias
                 top_p=0.9,
+                pad_token_id=tokenizer.eos_token_id,  # Evita que el modelo se enrede en un bucle infinito
+                eos_token_id=tokenizer.eos_token_id,
             )
 
             # Decodificar el texto generado, ignorando el prompt inicial

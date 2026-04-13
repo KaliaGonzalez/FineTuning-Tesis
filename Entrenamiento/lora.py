@@ -7,7 +7,7 @@ from transformers import (
     BitsAndBytesConfig,
     TrainingArguments,
 )
-from trl import SFTTrainer
+from trl import SFTTrainer, SFTConfig
 import os
 
 # Configuracion
@@ -66,14 +66,14 @@ peft_config = LoraConfig(
 # model = get_peft_model(model, peft_config)
 
 # --- Argumentos de Entrenamiento ---
-training_arguments = TrainingArguments(
+training_arguments = SFTConfig(
     output_dir="./results",
     num_train_epochs=1,  # Ajustar según necesidad (1-3 suele ser suficiente)
     per_device_train_batch_size=1,
-    evaluation_strategy="steps",
+    eval_strategy="steps",
     eval_steps=25,
     gradient_accumulation_steps=1,
-    optim="paged_adamw_32bit",
+    optim="adamw_torch",  # Optimizado nativo de PyTorch (no falla en Windows)
     save_steps=25,
     logging_steps=25,
     learning_rate=2e-4,
@@ -85,23 +85,37 @@ training_arguments = TrainingArguments(
     warmup_ratio=0.03,
     group_by_length=True,
     lr_scheduler_type="constant",
+    max_length=2048,
+    packing=False,
 )
 
 
 # --- Configurar Trainer ---
 def formatting_prompts_func(example):
-    output_texts = []
-    for i in range(len(example["instruction"])):
-        instruction = example["instruction"][i]
-        input_text = example["input"][i]
-        output = example["output"][i]
+    # TRL puede pasar un solo ejemplo (diccionario de strings) o un lote (diccionario de listas)
+    if isinstance(example.get("instruction"), list):
+        output_texts = []
+        for i in range(len(example["instruction"])):
+            instruction = example["instruction"][i]
+            input_text = example["input"][i]
+            output = example["output"][i]
+
+            if input_text:
+                text = f"### Instruction:\n{instruction}\n\n### Input:\n{input_text}\n\n### Response:\n{output}"
+            else:
+                text = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
+            output_texts.append(text)
+        return output_texts
+    else:
+        instruction = example["instruction"]
+        input_text = example["input"]
+        output = example["output"]
 
         if input_text:
             text = f"### Instruction:\n{instruction}\n\n### Input:\n{input_text}\n\n### Response:\n{output}"
         else:
             text = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
-        output_texts.append(text)
-    return output_texts
+        return text
 
 
 trainer = SFTTrainer(
@@ -110,10 +124,8 @@ trainer = SFTTrainer(
     eval_dataset=dataset["validation"],
     peft_config=peft_config,
     formatting_func=formatting_prompts_func,
-    max_seq_length=2048,
-    tokenizer=tokenizer,
+    processing_class=tokenizer,
     args=training_arguments,
-    packing=False,
 )
 
 # --- Entrenar ---
