@@ -1,9 +1,10 @@
 import streamlit as st
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
+import time
 
-st.set_page_config(page_title="Delfos Chatbot", page_icon="🤖")
+st.set_page_config(page_title="Delfos Chatbot", page_icon="🤖", layout="wide")
 st.title("🤖 Delfos - Asistente Institucional")
 st.markdown("¡Hola! Soy Delfos, tu asistente inteligente. Escribe tu pregunta abajo.")
 
@@ -11,48 +12,47 @@ st.markdown("¡Hola! Soy Delfos, tu asistente inteligente. Escribe tu pregunta a
 # --- CARGAR EL MODELO (En caché para no recargar cada vez) ---
 @st.cache_resource
 def load_model():
+    """Carga el modelo TinyLlama optimizado para CPU"""
     st.info(
-        "Cargando el modelo Mistral entrenado... Esto tardará unos minutos.", icon="⏳"
+        "Cargando el modelo TinyLlama (optimizado para CPU)... Esto tardará 1-2 minutos la primera vez.",
+        icon="⏳",
     )
 
-    base_model_name = "unsloth/mistral-7b-v0.3-bnb-4bit"
-    adapter_path = (
-        "mistral-7b-fac-finetuned"  # Esta es la carpeta generada por tu entrenamiento
-    )
+    model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 
-    # 1. Cargamos el tokenizador desde tu adaptador
-    tokenizer = AutoTokenizer.from_pretrained(adapter_path)
+    try:
+        # Cargamos el tokenizador
+        tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-    # 2. Configuración para cargarlo en 4-bits
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.float16,
-        bnb_4bit_use_double_quant=False,
-    )
+        # Configurar el pad token
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
 
-    # 3. Cargamos el modelo base usando GPU automáticamente
-    base_model = AutoModelForCausalLM.from_pretrained(
-        base_model_name,
-        quantization_config=bnb_config,
-        device_map="auto",
-        trust_remote_code=True,
-    )
+        # Cargamos el modelo en CPU (más lento pero sin GPU)
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            device_map="cpu",
+            torch_dtype=torch.float32,
+            trust_remote_code=True,
+        )
 
-    # 4. Le inyectamos tu conocimiento (Los pesos LoRA entrenados)
-    model = PeftModel.from_pretrained(base_model, adapter_path)
-    model.eval()  # <--- MUY IMPORTANTE: Poner el modelo en modo lectura/inferencia, no en entrenamiento
+        # Muy importante: modo de inferencia (no entrena, solo predice)
+        model.eval()
 
-    st.success("¡Modelo Mistral Finetuned cargado con éxito!", icon="✅")
-    return model, tokenizer
+        st.success("¡Modelo TinyLlama cargado con éxito en CPU!", icon="✅")
+        return model, tokenizer
+
+    except Exception as e:
+        st.error(f"❌ Error al cargar el modelo: {str(e)}")
+        return None, None
 
 
 # Intentar cargar el modelo (puede fallar si no hay GPU o no encuentra los archivos)
-try:
-    model, tokenizer = load_model()
-except Exception as e:
+model, tokenizer = load_model()
+
+if model is None or tokenizer is None:
     st.error(
-        f"Error al cargar el modelo: {e}. Asegúrate de haberlo entrenado primero y tener los recursos necesarios."
+        "❌ No se pudo cargar el modelo. Verifica tu conexión a internet e intenta nuevamente."
     )
     st.stop()
 
@@ -72,30 +72,61 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # Formatear el prompt como lo entrenaste
-    formatted_prompt = f"### Instruction:\n{prompt}\n\n### Response:\n"
-
-    inputs = tokenizer(formatted_prompt, return_tensors="pt").to(model.device)
-
-    # Generar respuesta
+    # Mostrar un placeholder de respuesta mientras se genera
     with st.chat_message("assistant"):
-        with st.spinner("Delfos está pensando..."):
-            outputs = model.generate(
-                **inputs,
-                max_new_tokens=200,  # Límite de la respuesta
-                do_sample=True,  # Para dar variabilidad a la respuesta
-                temperature=0.3,  # 0.1 a 0.3 es bueno para respuestas certeras y serias
-                top_p=0.9,
-                pad_token_id=tokenizer.eos_token_id,  # Evita que el modelo se enrede en un bucle infinito
-                eos_token_id=tokenizer.eos_token_id,
-            )
+        response_placeholder = st.empty()
+        response_placeholder.markdown("⏳ Generando respuesta...")
 
-            # Decodificar el texto generado, ignorando el prompt inicial
+        try:
+            # Formatear el prompt como lo entrenaste
+            formatted_prompt = f"### Instruction:\n{prompt}\n\n### Response:\n"
+
+            # Tokenizar con límite de longitud
+            inputs = tokenizer(
+                formatted_prompt, return_tensors="pt", max_length=512, truncation=True
+            ).to(model.device)
+
+            # Generar respuesta con tiempo límite
+            start_time = time.time()
+
+            with torch.no_grad():  # Sin gradientes para ahorrar memoria
+                outputs = model.generate(
+                    **inputs,
+                    max_new_tokens=150,  # Reducido para ser más rápido en CPU
+                    min_length=10,
+                    do_sample=True,
+                    temperature=0.7,
+                    top_p=0.95,
+                    pad_token_id=tokenizer.eos_token_id,
+                    eos_token_id=tokenizer.eos_token_id,
+                    num_beams=1,  # Beam search desactivado (más rápido)
+                )
+
+            generation_time = time.time() - start_time
+
+            # Decodificar respuesta
             response_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-            # Extraer solo la parte correspondiente a la respuesta
-            final_response = response_text.split("### Response:\n")[-1].strip()
 
-            st.markdown(final_response)
+            # Extraer solo la parte de la respuesta
+            if "### Response:" in response_text:
+                final_response = response_text.split("### Response:")[-1].strip()
+            else:
+                final_response = response_text.strip()
+
+            # Mostrar la respuesta generada
+            response_placeholder.markdown(final_response)
+
+            # Mostrar tiempo de procesamiento (debug)
+            st.caption(f"⏱️ Tiempo de respuesta: {generation_time:.2f} segundos")
+
+        except Exception as e:
+            error_msg = f"❌ Error al generar la respuesta: {str(e)}"
+            st.error(error_msg)
+            response_placeholder.markdown(
+                "Lo siento, ocurrió un error. Por favor intenta de nuevo."
+            )
+            st.session_state.messages.pop()  # Eliminar el mensaje del usuario si falló
+            st.stop()
 
     # Guardar la respuesta del modelo en el historial
     st.session_state.messages.append({"role": "assistant", "content": final_response})
