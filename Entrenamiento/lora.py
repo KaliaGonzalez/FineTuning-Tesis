@@ -68,7 +68,7 @@ peft_config = LoraConfig(
 # --- Argumentos de Entrenamiento ---
 training_arguments = SFTConfig(
     output_dir="./results",
-    num_train_epochs=1,  # Ajustar según necesidad (1-3 suele ser suficiente)
+    num_train_epochs=3,  # Ajustar según necesidad (1-3 suele ser suficiente)
     per_device_train_batch_size=1,
     eval_strategy="steps",
     eval_steps=25,
