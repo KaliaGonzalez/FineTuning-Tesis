@@ -12,47 +12,63 @@ st.markdown("¡Hola! Soy Delfos, tu asistente inteligente. Escribe tu pregunta a
 # --- CARGAR EL MODELO (En caché para no recargar cada vez) ---
 @st.cache_resource
 def load_model():
-    """Carga el modelo TinyLlama optimizado para CPU"""
+    """Carga el modelo Mistral 7B entrenado con LoRA"""
     st.info(
-        "Cargando el modelo TinyLlama (optimizado para CPU)... Esto tardará 1-2 minutos la primera vez.",
+        "Cargando tu modelo Mistral entrenado... Esto tardará 2-3 minutos la primera vez.",
         icon="⏳",
     )
 
-    model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+    base_model_name = "unsloth/mistral-7b-v0.3-bnb-4bit"
+    adapter_path = "mistral-7b-fac-finetuned"  # La carpeta que descargaste de Colab
 
     try:
-        # Cargamos el tokenizador
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        # Cargamos el tokenizador desde los archivos entrenados
+        tokenizer = AutoTokenizer.from_pretrained(adapter_path)
 
-        # Configurar el pad token
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
-        # Cargamos el modelo en CPU (más lento pero sin GPU)
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            device_map="cpu",
-            torch_dtype=torch.float32,
+        # Cargamos el modelo base (en 4 bits para ahorrar memoria)
+        from transformers import BitsAndBytesConfig
+
+        bnb_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_use_double_quant=False,
+        )
+
+        base_model = AutoModelForCausalLM.from_pretrained(
+            base_model_name,
+            quantization_config=bnb_config,
+            device_map="auto",  # Automático: GPU si existe, CPU si no
             trust_remote_code=True,
         )
 
-        # Muy importante: modo de inferencia (no entrena, solo predice)
-        model.eval()
+        # Fusionamos el modelo base con tus pesos LoRA entrenados
+        model = PeftModel.from_pretrained(base_model, adapter_path)
+        model.eval()  # Modo inferencia
 
-        st.success("¡Modelo TinyLlama cargado con éxito en CPU!", icon="✅")
+        st.success("¡Tu modelo Mistral entrenado cargado exitosamente! 🎉", icon="✅")
         return model, tokenizer
 
     except Exception as e:
         st.error(f"❌ Error al cargar el modelo: {str(e)}")
+        st.info(
+            "📌 Asegúrate de que la carpeta 'mistral-7b-fac-finetuned' esté en la misma carpeta que este script."
+        )
         return None, None
 
 
 # Intentar cargar el modelo (puede fallar si no hay GPU o no encuentra los archivos)
 model, tokenizer = load_model()
 
+# Intentar cargar el modelo (puede fallar si no hay GPU o no encuentra los archivos)
+model, tokenizer = load_model()
+
 if model is None or tokenizer is None:
     st.error(
-        "❌ No se pudo cargar el modelo. Verifica tu conexión a internet e intenta nuevamente."
+        "❌ No se pudo cargar el modelo. Verifica que la carpeta esté en el lugar correcto."
     )
     st.stop()
 
@@ -92,11 +108,11 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=150,  # Reducido para ser más rápido en CPU
+                    max_new_tokens=256,  # Tu modelo entrenado puede generar más
                     min_length=10,
                     do_sample=True,
-                    temperature=0.7,
-                    top_p=0.95,
+                    temperature=0.3,  # Más bajo = más conservador y preciso
+                    top_p=0.9,
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
                     num_beams=1,  # Beam search desactivado (más rápido)
