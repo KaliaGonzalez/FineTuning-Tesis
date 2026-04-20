@@ -69,22 +69,22 @@ peft_config = LoraConfig(
 training_arguments = SFTConfig(
     output_dir="./results",
     num_train_epochs=3,  # Ajustar según necesidad (1-3 suele ser suficiente)
-    per_device_train_batch_size=1,
+    per_device_train_batch_size=2,  # Aumentado para mejor generalización
     eval_strategy="steps",
-    eval_steps=25,
-    gradient_accumulation_steps=1,
+    eval_steps=10,  # Evaluamos más frecuente para detectar problemas
+    gradient_accumulation_steps=2,  # Más acumulación = gradientes más estables
     optim="adamw_torch",  # Optimizado nativo de PyTorch (no falla en Windows)
-    save_steps=25,
-    logging_steps=25,
-    learning_rate=2e-4,
-    weight_decay=0.001,
+    save_steps=10,
+    logging_steps=5,  # Más logs para ver el progreso real
+    learning_rate=1e-4,  # Learning rate más bajo = mejor aprendizaje preciso
+    weight_decay=0.01,  # Más penalización para evitar overfitting
     fp16=False,
     bf16=False,  # Poner True si usas Ampere GPU (A100, RTX 3090, etc.)
-    max_grad_norm=0.3,
+    max_grad_norm=0.5,
     max_steps=-1,
-    warmup_ratio=0.03,
+    warmup_ratio=0.1,  # Calentamiento más largo
     group_by_length=True,
-    lr_scheduler_type="constant",
+    lr_scheduler_type="linear",  # Decaimiento linear es mejor que constant
     max_length=2048,
     packing=False,
 )
