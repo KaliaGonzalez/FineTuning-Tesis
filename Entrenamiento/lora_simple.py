@@ -71,9 +71,9 @@ print("✅ Modelo preparado")
 # === 6. CONFIGURACIÓN LORA ===
 print("\n6️⃣ Configurando LoRA...")
 peft_config = LoraConfig(
-    lora_alpha=16,
-    lora_dropout=0.1,
-    r=64,
+    lora_alpha=32,  # Mayor alpha = más peso a los adaptadores
+    lora_dropout=0.05,  # Dropout más bajo = mejor aprendizaje
+    r=128,  # Rango mayor = más capacidad de aprendizaje
     bias="none",
     task_type="CAUSAL_LM",
     target_modules=[
@@ -134,23 +134,24 @@ print("✅ Datos preparados")
 print("\n8️⃣ Configurando argumentos de training...")
 training_arguments = TrainingArguments(
     output_dir="./results",
-    num_train_epochs=1,
-    per_device_train_batch_size=4,
-    gradient_accumulation_steps=1,
+    num_train_epochs=3,  # 3 épocas para mejor aprendizaje
+    per_device_train_batch_size=2,  # Batch más pequeño = mejor generalización
+    gradient_accumulation_steps=2,  # Acumular gradientes para efecto de batch mayor
     optim="paged_adamw_32bit",
-    save_steps=25,
-    logging_steps=25,
-    learning_rate=2e-4,
-    weight_decay=0.001,
+    save_steps=50,
+    logging_steps=10,
+    learning_rate=5e-5,  # Learning rate más bajo = entrenamiento más estable
+    weight_decay=0.01,  # Regularización para evitar overfitting
     fp16=False,
     bf16=False,
     max_grad_norm=0.3,
-    max_steps=-1,
-    warmup_ratio=0.03,
-    group_by_length=True,
-    lr_scheduler_type="constant",
+    warmup_ratio=0.1,  # 10% warmup para mejor convergencia
+    lr_scheduler_type="linear",  # Linear decay del learning rate
     evaluation_strategy="steps",
-    eval_steps=25,
+    eval_steps=50,
+    save_total_limit=3,  # Guardar solo los 3 mejores modelos
+    load_best_model_at_end=True,  # Cargar el mejor modelo al final
+    metric_for_best_model="loss",
 )
 print("✅ Argumentos configurados")
 
