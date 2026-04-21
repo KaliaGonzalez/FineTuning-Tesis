@@ -68,23 +68,23 @@ peft_config = LoraConfig(
 # --- Argumentos de Entrenamiento ---
 training_arguments = SFTConfig(
     output_dir="./results",
-    num_train_epochs=3,  # Ajustar según necesidad (1-3 suele ser suficiente)
-    per_device_train_batch_size=2,  # Aumentado para mejor generalización
+    num_train_epochs=5,  # MÁS épocas = aprende mejor cada término
+    per_device_train_batch_size=1,  # Mantener en 1 para conservar memoria
     eval_strategy="steps",
-    eval_steps=10,  # Evaluamos más frecuente para detectar problemas
-    gradient_accumulation_steps=2,  # Más acumulación = gradientes más estables
-    optim="adamw_torch",  # Optimizado nativo de PyTorch (no falla en Windows)
-    save_steps=10,
-    logging_steps=5,  # Más logs para ver el progreso real
-    learning_rate=1e-4,  # Learning rate más bajo = mejor aprendizaje preciso
-    weight_decay=0.01,  # Más penalización para evitar overfitting
+    eval_steps=5,  # Evalúa muy frecuentemente para detectar problemas
+    gradient_accumulation_steps=4,  # Más acumulación = gradientes más estables
+    optim="adamw_torch",
+    save_steps=5,  # Guarda muy frecuentemente para no perder progreso
+    logging_steps=2,  # Logs muy detallados
+    learning_rate=5e-5,  # Learning rate MÁS BAJO = aprendizaje más preciso
+    weight_decay=0.05,  # Más regularización para evitar alucinaciones
     fp16=False,
-    bf16=False,  # Poner True si usas Ampere GPU (A100, RTX 3090, etc.)
-    max_grad_norm=0.5,
+    bf16=False,
+    max_grad_norm=0.1,  # Gradientes muy controlados (evita grandes saltos)
     max_steps=-1,
-    warmup_ratio=0.1,  # Calentamiento más largo
+    warmup_ratio=0.2,  # Calentamiento más largo (20% de entrenamiento)
     group_by_length=True,
-    lr_scheduler_type="linear",  # Decaimiento linear es mejor que constant
+    lr_scheduler_type="cosine",  # Cosine decay es mejor que linear para ajuste fino
     max_length=2048,
     packing=False,
 )

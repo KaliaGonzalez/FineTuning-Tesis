@@ -11,12 +11,12 @@
   },
   {
     "instruction": "Defina el concepto de 'Abogar' según la doctrina de la FAC.",
-    "input": "Abogar",
+    "input": "",
     "output": "Es una técnica empleada para elevar la conciencia situacional de otras personas dentro de la cabina de una aeronave [2]."
   },
   {
     "instruction": "¿Qué es la 'Actualización de la Doctrina'?",
-    "input": "Actualización de la Doctrina",
+    "input": "",
     "output": "Es el proceso intelectual o análisis de experiencias y del entorno con el fin de generar nuevo conocimiento que será plasmado en medios físicos [3]."
   },
   {
@@ -36,12 +36,12 @@
   },
   {
     "instruction": "Defina 'Aerodinámica' según el manual de términos.",
-    "input": "Aerodinámica",
+    "input": "",
     "output": "Materia que trata del estudio del movimiento del aire y otros fluidos gaseosos y de las fuerzas que actúan sobre los objetos en movimiento [7]."
   },
   {
     "instruction": "¿Qué es un 'Activo Aéreo de Alto Valor' (HVAA)?",
-    "input": "HVAA",
+    "input": "",
     "output": "Incluye plataformas aerotransportadas principales para comando y control, inteligencia, reabastecimiento aéreo y guerra electrónica que requieren protección activa [8]."
   },
   {
@@ -51,47 +51,47 @@
   },
   {
     "instruction": "Defina 'Aeronave Hostil'.",
-    "input": "Aeronave Hostil",
+    "input": "",
     "output": "Es una aeronave sospechosa que, tras ser interceptada, no atiende procedimientos o viola el espacio aéreo nacional [10]."
   },
   {
     "instruction": "¿Qué es el 'Air Traffic Management' (ATM)?",
-    "input": "ATM",
+    "input": "",
     "output": "Tiene como finalidad obtener un movimiento seguro, ordenado y rápido del tránsito aéreo mediante el empleo eficaz del espacio aéreo [11]."
   },
   {
     "instruction": "¿A qué se refiere el término 'Alcance' como característica del poder aéreo?",
-    "input": "Alcance",
+    "input": "",
     "output": "Significa que los centros de poder y gravedad están a disposición de un ataque aéreo sin barreras naturales que lo impidan [12]."
   },
   {
     "instruction": "Defina 'Alerta Especial' para una tripulación.",
-    "input": "Alerta Especial",
+    "input": "",
     "output": "Situación que exige disponibilidad de una tripulación en descanso y su aeronave lista para reaccionar en un tiempo determinado [12]."
   },
   {
     "instruction": "¿Qué es la 'Altura Fault'?",
-    "input": "Altura Fault",
+    "input": "",
     "output": "Altura indicada por aeronaves de combate en entrega de armas de la cual no se debe descender para garantizar separación con el terreno [12]."
   },
   {
     "instruction": "¿Qué establece la 'Cláusula Martens' en el DIH?",
-    "input": "Cláusula Martens",
+    "input": "",
     "output": "Establece que en casos no previstos, civiles y combatientes quedan bajo la protección de los principios del derecho de gentes y dictados de la conciencia pública [13]."
   },
   {
     "instruction": "¿Qué es el 'Amatol'?",
-    "input": "Amatol",
+    "input": "",
     "output": "Es una mezcla de TNT y nitrato de amonio usada en bombas de propósito general, granadas y torpedos [14]."
   },
   {
     "instruction": "Defina 'Aproximación a un punto en el espacio' (PinS).",
-    "input": "PinS",
+    "input": "",
     "output": "Procedimiento basado en GNSS diseñado únicamente para helicópteros para maniobras visuales tras alinearse con un punto de referencia [15]."
   },
   {
     "instruction": "¿Qué es un 'Área Clave' en una investigación de accidentes?",
-    "input": "Área Clave",
+    "input": "",
     "output": "Es aquella que conserva la esencia del proceso o procedimiento y sin la cual este no se cumple [16]."
   },
   {
@@ -106,22 +106,22 @@
   },
   {
     "instruction": "Defina 'Asesoramiento Anticolisión'.",
-    "input": "Asesoramiento Anticolisión",
+    "input": "",
     "output": "Asesoramiento prestado por servicios de tránsito aéreo indicando maniobras específicas para evitar colisiones [20]."
   },
   {
     "instruction": "¿Qué es un 'Aspecto Relevante' en una inspección?",
-    "input": "Aspecto Relevante",
+    "input": "",
     "output": "Condición demostrable que implica utilidad o éxito y que es susceptible de ser replicada en otras unidades [20]."
   },
   {
     "instruction": "Defina 'Autocontrol' para un servidor público de la FAC.",
-    "input": "Autocontrol",
+    "input": "",
     "output": "Capacidad de controlar su propio trabajo, detectar desviaciones y efectuar correctivos según la Constitución [21]."
   },
   {
     "instruction": "¿Qué es el 'Automóvil de Punta' en un esquema de protección?",
-    "input": "Automóvil de Punta",
+    "input": "",
     "output": "Vehículo de seguridad que va directamente frente al vehículo del personaje protegido [22]."
   },
   {
@@ -131,42 +131,42 @@
   },
   {
     "instruction": "Defina 'Autorregulación'.",
-    "input": "Autorregulación",
+    "input": "",
     "output": "Capacidad institucional para aplicar métodos que permitan el desarrollo del Sistema de Control Interno bajo integridad y transparencia [23]."
   },
   {
     "instruction": "¿Qué es un 'Avión Interceptor'?",
-    "input": "Avión Interceptor",
+    "input": "",
     "output": "Elemento de gran movilidad y alcance que permite interceptar amenazas a gran distancia, realizando defensa en profundidad [24]."
   },
   {
     "instruction": "¿Qué estudia la 'Axiología' según el SEFAC?",
-    "input": "Axiología",
+    "input": "",
     "output": "Es el estudio de la naturaleza de los valores y de los juicios valorativos [25]."
   },
   {
     "instruction": "¿Qué es una 'Bahía' en un almacén logístico?",
-    "input": "Bahía",
+    "input": "",
     "output": "Área rectangular formada al dividir el suelo del almacén para establecer ubicaciones de depósito [25]."
   },
   {
     "instruction": "¿Qué es un 'Alambre Armador'?",
-    "input": "Alambre Armador",
+    "input": "",
     "output": "Dispositivo en el armamento aéreo que facilita el funcionamiento o preparación de municiones [26]."
   },
   {
     "instruction": "Defina 'Baja de Bienes'.",
-    "input": "Baja de Bienes",
+    "input": "",
     "output": "Retiro definitivo de un bien del servicio y registros patrimoniales por falta de potencial de servicio [27]."
   },
   {
     "instruction": "¿Qué es el 'BPIN'?",
-    "input": "BPIN",
+    "input": "",
     "output": "Banco Nacional de Programas y Proyectos de Inversión, plataforma para registrar proyectos financiados por el presupuesto nacional [28]."
   },
   {
     "instruction": "¿Qué es una 'Barraca'?",
-    "input": "Barraca",
+    "input": "",
     "output": "Inmueble de alojamiento militar conformado por habitaciones con zonas húmedas y áreas de apoyo [28]."
   },
   {
@@ -176,27 +176,27 @@
   },
   {
     "instruction": "¿Qué son 'Bienes Devolutivos'?",
-    "input": "Bienes Devolutivos",
+    "input": "",
     "output": "Bienes que no se consumen con el primer uso y deben devolverse tras cumplir la función asignada [30]."
   },
   {
     "instruction": "Defina 'Bienes Muebles Obsoletos'.",
-    "input": "Bienes Muebles Obsoletos",
+    "input": "",
     "output": "Productos que han cumplido su vigencia o para los que es imposible encontrar repuestos para su operatividad [30]."
   },
   {
     "instruction": "¿Qué es una 'Bodega Cuarto Oscuro'?",
-    "input": "Bodega Cuarto Oscuro",
+    "input": "",
     "output": "Área carente de luz para almacenar bienes que por composición química no pueden tener contacto con la luz [31]."
   },
   {
     "instruction": "¿Qué es un 'Boletín de Servicio' (Service Bulletin)?",
-    "input": "Service Bulletin",
+    "input": "",
     "output": "Documento del fabricante que propone inspecciones o cambios en el mantenimiento de productos aeronáuticos [32]."
   },
   {
     "instruction": "Defina 'Bomba' en el contexto de armamento aéreo.",
-    "input": "Bomba",
+    "input": "",
     "output": "Munición diseñada para ser soltada o eyectada desde un avión para causar daño por explosión o fragmentación [32]."
   },
   {
@@ -206,224 +206,227 @@
   },
   {
     "instruction": "¿Qué es la 'Capacidad Productiva'?",
-    "input": "Capacidad Productiva",
+    "input": "",
     "output": "Medición de la producción máxima que se puede obtener con la capacidad instalada de mantenimiento [34]."
   },
   {
     "instruction": "¿Qué es un 'Cargo Crítico'?",
-    "input": "Cargo Crítico",
+    "input": "",
     "output": "Cargo con impacto global en la estrategia cuya autonomía permite toma de decisiones específicas y manejo de recursos [35]."
   },
   {
     "instruction": "Defina 'Carpeta Meteorológica de Vuelo'.",
-    "input": "Carpeta Meteorológica",
+    "input": "",
     "output": "Legajo electrónico que reúne información meteorológica para el planeamiento de vuelos internacionales [36]."
   },
   {
     "instruction": "¿Qué es una 'Catapulta' en armamento?",
-    "input": "Catapulta",
+    "input": "",
     "output": "Dispositivo telescópico diseñado para la expulsión por emergencia de un asiento eyectable [37]."
   },
   {
     "instruction": "Defina 'Certificado de Conformidad' en logística.",
-    "input": "Certificado de Conformidad",
+    "input": "",
     "output": "Declaración de que una parte fue producida por un fabricante con proceso aprobado por el regulador [38]."
   },
   {
     "instruction": "¿Qué es el 'Ciberespacio' según el manual de términos?",
-    "output": "Dominio de información con redes interdependientes, infraestructura de TI y datos que incluyen internet y telecomunicaciones [39]."
+    "output": "Dominio de información con redes interdependientes, infraestructura de TI y datos que incluyen internet y telecomunicaciones [39].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Coevaluación' en el sistema educativo FAC.",
-    "input": "Coevaluación",
+    "input": "",
     "output": "Evaluación entre pares para retroalimentar prácticas pedagógicas y metodologías de enseñanza [40]."
   },
   {
     "instruction": "¿Qué indica un 'Código de Prioridad' en abastecimientos?",
-    "input": "Código de Prioridad",
+    "input": "",
     "output": "Número de dos dígitos que determina la urgencia de un pedido según instrucciones del Comando [40]."
   },
   {
     "instruction": "¿Qué es un 'Cohete Avión'?",
-    "input": "Cohete Avión",
+    "input": "",
     "output": "Proyectil impulsado por la reacción de un chorro de gas de una carga propulsora interna [41]."
   },
   {
     "instruction": "Defina 'Comando Unificado'.",
-    "input": "Comando Unificado",
+    "input": "",
     "output": "Unidad conjunta permanente con misión amplia conformada por componentes de dos o más fuerzas [42]."
   },
   {
     "instruction": "¿Qué es el 'Comando Especial Aéreo'?",
-    "input": "Comando Especial Aéreo",
+    "input": "",
     "output": "Título otorgado a oficiales y suboficiales que aprobaron cursos estipulados en el decreto 989 de 1992 [43]."
   },
   {
     "instruction": "Defina 'Combatiente' bajo el DIH.",
-    "input": "Combatiente",
+    "input": "",
     "output": "Persona con derecho a participar directamente en hostilidades en conflictos internacionales, principalmente miembros de las FF.AA. [44]."
   },
   {
     "instruction": "¿Qué es un 'Comodato' en administración de materiales?",
-    "input": "Comodato",
+    "input": "",
     "output": "Bienes recibidos en préstamo sin traslado de propiedad mediante contrato para uso por tiempo determinado [45]."
   },
   {
     "instruction": "Defina 'Componente Controlled por Vida Límite' (Hard Time).",
-    "input": "Hard Time",
+    "input": "",
     "output": "Ítem con tiempo de vida estricto tras el cual su cambio es obligatorio por pérdida de seguridad inherente [46]."
   },
   {
     "instruction": "¿Qué es el 'Comportamiento de Falla'?",
-    "input": "Comportamiento de Falla",
+    "input": "",
     "output": "Indica si una falla sigue una distribución de probabilidad o si es aleatoria [46]."
   },
   {
     "instruction": "Defina 'CPDLC'.",
-    "input": "CPDLC",
+    "input": "",
     "output": "Comunicación entre el controlador y el piloto mediante enlace de datos [47]."
   },
   {
     "instruction": "¿Qué es una 'Conclusión de Inspección'?",
-    "input": "Conclusión de Inspección",
+    "input": "",
     "output": "Concepto resultante del análisis entre objetivos, alcance, criterios y hallazgos encontrados [48]."
   },
   {
     "instruction": "Defina 'Conflicto de Intereses'.",
-    "input": "Conflicto de Intereses",
+    "input": "",
     "output": "Relación que menoscaba la capacidad de una persona para desempeñar obligaciones de forma objetiva [49]."
   },
   {
     "instruction": "¿Qué es la 'Contravigilancia'?",
-    "input": "Contravigilancia",
+    "input": "",
     "output": "Procedimiento para detectar si un personaje o bien protegido está siendo vigilado sin autorización [50]."
   },
   {
     "instruction": "Defina 'Control Táctico' (TACON).",
-    "input": "TACON",
+    "input": "",
     "output": "Autoridad delegada para suministrar instrucciones detalladas de movimientos y maniobras en misiones específicas [51]."
   },
   {
     "instruction": "¿Qué es un 'Controlador de Tránsito Aéreo Habilitado'?",
-    "output": "Titular de un certificado válido para las atribuciones que le corresponden en el servicio ATC [52]."
+    "output": "Titular de un certificado válido para las atribuciones que le corresponden en el servicio ATC [52].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Corrección' según el RINCO.",
-    "input": "Corrección",
+    "input": "",
     "output": "Acción inmediata para enmendar un incumplimiento sin atacar la causa raíz [53]."
   },
   {
     "instruction": "¿Qué es el 'Costo de Reposición'?",
-    "input": "Costo de Reposición",
+    "input": "",
     "output": "Costo necesario para reponer la capacidad operativa de un elemento en una fecha determinada [54]."
   },
   {
     "instruction": "Defina 'Crímenes de Guerra'.",
-    "input": "Crímenes de Guerra",
+    "input": "",
     "output": "Violaciones graves del DIH aplicables a conflictos internacionales o internos que implican responsabilidad penal [55]."
   },
   {
     "instruction": "¿Qué es una 'Crisis' según la doctrina conjunta?",
-    "input": "Crisis",
+    "input": "",
     "output": "Situación que amenaza a ciudadanos o intereses vitales y requiere el compromiso de recursos militares [56]."
   },
   {
     "instruction": "Defina 'Criticidad' en confiabilidad.",
-    "input": "Criticidad",
+    "input": "",
     "output": "Medida relativa de la probabilidad de ocurrencia de una falla y sus consecuencias [57]."
   },
   {
     "instruction": "¿Qué es una 'Cuenta de Orden'?",
-    "input": "Cuenta de Orden",
+    "input": "",
     "output": "Registro contable para valores que no afectan estados financieros pero deben controlarse por efectos futuros [58]."
   },
   {
     "instruction": "¿Qué es un 'Cuerpo de Bomba'?",
-    "input": "Cuerpo de Bomba",
+    "input": "",
     "output": "Casco sólido (acero u otro) que contiene carga explosiva e impulsores [58]."
   },
   {
     "instruction": "Defina 'Custodia de Material'.",
-    "input": "Custodia de Material",
+    "input": "",
     "output": "Figura administrativa donde un almacén recibe bienes para almacenamiento y control temporal [59]."
   },
   {
     "instruction": "¿Qué es el 'Déficit de Alojamiento Militar'?",
-    "input": "Déficit de Alojamiento",
+    "input": "",
     "output": "Situación donde hay más demanda de alojamiento que inmuebles disponibles en una guarnición [59]."
   },
   {
     "instruction": "Defina 'Delegación de la Autoridad'.",
-    "input": "Delegación de Autoridad",
+    "input": "",
     "output": "Acción por la cual un comandante asigna parte de su autoridad proporcional a una tarea a un subordinado [60]."
   },
   {
     "instruction": "¿Qué es un 'Depósito Habilitado'?",
-    "input": "Depósito Habilitado",
+    "input": "",
     "output": "Recinto privado habilitado por Aduana para almacenar mercancías bajo control aduanero para su nacionalización [61]."
   },
   {
     "instruction": "Defina 'Derrota' en navegación aérea.",
-    "input": "Derrota",
+    "input": "",
     "output": "Proyección sobre la superficie terrestre de la trayectoria de una aeronave expresada en grados [62]."
   },
   {
     "instruction": "¿Qué es un 'Descargo' en una inspección?",
-    "input": "Descargo",
+    "input": "",
     "output": "Argumentación con evidencias del inspeccionado para desvirtuar un incumplimiento del informe preliminar [63]."
   },
   {
     "instruction": "Defina 'Detonación por Simpatía'.",
-    "input": "Detonación por Simpatía",
+    "input": "",
     "output": "Detonación progresiva de explosivos separados que ocurre de forma casi simultánea al detonar una masa principal [64]."
   },
   {
     "instruction": "¿Qué es el 'Diamante de Seguridad'?",
-    "input": "Diamante de Seguridad",
+    "input": "",
     "output": "Área de protección alrededor de aeronaves estacionadas delimitada por nariz, puntas de plano y cola [65]."
   },
   {
     "instruction": "Defina 'Direccionamiento Estratégico'.",
-    "input": "Direccionamiento Estratégico",
+    "input": "",
     "output": "Proceso de formular la estrategia para los planes de acción anticipándose a acontecimientos futuros [65]."
   },
   {
     "instruction": "¿Qué es la 'Dispersión de Aeronaves'?",
-    "input": "Dispersión",
+    "input": "",
     "output": "Medida de seguridad que ubica aeronaves en sitios distantes dentro de una base o en otras diferentes [66]."
   },
   {
     "instruction": "Defina 'Disponibilidad' de un ítem.",
-    "input": "Disponibilidad",
+    "input": "",
     "output": "Medida de tiempo en que un ítem permanece en estado operable para cumplir su misión [67]."
   },
   {
     "instruction": "¿Qué es un 'Shopping Documental'?",
-    "input": "Shopping Documental",
+    "input": "",
     "output": "Documento soporte que acompaña envíos de transporte internacional de abastecimientos [68]."
   },
   {
     "instruction": "¿Qué es la 'Duración Total Prevista' para un vuelo VFR?",
-    "output": "Tiempo estimado desde el despegue hasta llegar a la vertical del aeródromo de destino [69]."
+    "output": "Tiempo estimado desde el despegue hasta llegar a la vertical del aeródromo de destino [69].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Efecto de Falla'.",
-    "input": "Efecto de Falla",
+    "input": "",
     "output": "Consecuencia que una falla tiene en la operación o estado de un ítem [70]."
   },
   {
     "instruction": "¿Qué es un 'Elemento Sustituto'?",
-    "input": "Elemento Sustituto",
+    "input": "",
     "output": "Elementos que reemplazan a otros poseyendo características capaces de sustituirlos, usualmente mejorándolas [71]."
   },
   {
     "instruction": "Defina 'En Desuso' para material tangible.",
-    "input": "En Desuso",
+    "input": "",
     "output": "Disminución de utilidad por no aplicabilidad a equipos actuales o avances tecnológicos [71]."
   },
   {
     "instruction": "¿Qué son 'Enfoques Diferenciales'?",
-    "input": "Enfoques Diferenciales",
+    "input": "",
     "output": "Marco para analizar relaciones de poder desiguales e impulsar acciones afirmativas por género, etnia o discapacidad [72]."
   },
   {
@@ -433,76 +436,77 @@
   },
   {
     "instruction": "¿Qué es un 'Entregable' en un proyecto?",
-    "input": "Entregable",
+    "input": "",
     "output": "Producto (bien o servicio) específico que se espera obtener tras un proceso [74]."
   },
   {
     "instruction": "Defina 'Error Imprudente'.",
-    "input": "Error Imprudente",
+    "input": "",
     "output": "Error por falta de cuidado u omisión en el cálculo de consecuencias previsibles de la propia acción [75]."
   },
   {
     "instruction": "¿Qué es el 'Escalamiento Industrial' para la FAC?",
-    "input": "Escalamiento Industrial",
+    "input": "",
     "output": "Adquisición de capacidades tecnológicas y vínculos con universidades/empresas para mejorar competitividad [76]."
   },
   {
     "instruction": "Defina 'Espacio Vital' según el manual de protección.",
-    "input": "Espacio Vital",
+    "input": "",
     "output": "Área que cubre un metro de diámetro alrededor de un individuo [77]."
   },
   {
     "instruction": "¿Qué es el 'Espacio Aéreo con Servicio de Asesoramiento'?",
-    "output": "Ruta o espacio de dimensiones definidas donde se proporciona asesoramiento de tránsito aéreo [78]."
+    "output": "Ruta o espacio de dimensiones definidas donde se proporciona asesoramiento de tránsito aéreo [78].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Establecimiento Aeronáutico'.",
-    "input": "Establecimiento Aeronáutico",
+    "input": "",
     "output": "Lugar físico donde se ejecutan actividades de diseño, construcción, mantenimiento o instrucción aeronáutica [79]."
   },
   {
     "instruction": "¿Qué es el 'Estado de Fabricación'?",
-    "input": "Estado de Fabricación",
+    "input": "",
     "output": "Estado que tiene jurisdicción sobre la entidad responsable del montaje final de la aeronave [80]."
   },
   {
     "instruction": "Defina 'Estratagema' en derecho operacional.",
-    "input": "Estratagema",
+    "input": "",
     "output": "Acto para inducir a error al adversario que no infringe normas internacionales ni es pérfido [81]."
   },
   {
     "instruction": "¿Qué es el 'Espíritu Militar'?",
-    "input": "Espíritu Militar",
+    "input": "",
     "output": "Fe ardiente en la profesión de las armas, decisión irrevocable de servirla y renuncia a actividades perjudiciales [82]."
   },
   {
     "instruction": "Defina 'Estrategia' según la doctrina conjunta.",
-    "input": "Estrategia",
+    "input": "",
     "output": "Idea para emplear instrumentos del poder nacional de manera sincronizada para lograr objetivos [82]."
   },
   {
     "instruction": "¿Qué es una 'Etiqueta de Identificación' en logística?",
-    "input": "Etiqueta",
+    "input": "",
     "output": "Marca que permite identificar shelf life, NSN, lote y fecha de almacenamiento de productos Clase III [83]."
   },
   {
     "instruction": "Defina 'Evidencia' para un inspector.",
-    "input": "Evidencia",
+    "input": "",
     "output": "Información obtenida (documentos físicos o digitales) que respalda la veracidad de un hallazgo [84]."
   },
   {
     "instruction": "¿Qué es el 'Exchange'?",
-    "input": "Exchange",
+    "input": "",
     "output": "Acción de cambiar, canjear o permutar componentes aeronáuticos reparables [85]."
   },
   {
     "instruction": "Defina 'Falla' según el manual de confiabilidad.",
-    "input": "Falla",
+    "input": "",
     "output": "Evento donde un ítem queda inoperante para desempeñarse según su diseño especificado [86]."
   },
   {
     "instruction": "¿Qué es una 'Familia' en la base de datos Meridium?",
-    "input": "Familia",
+    "input": "",
     "output": "Tablas que conforman la base de datos con campos de información traída de SAP [87]."
   },
   {
@@ -512,57 +516,57 @@
   },
   {
     "instruction": "¿Qué es una 'Ficha EBI'?",
-    "input": "Ficha EBI",
+    "input": "",
     "output": "Estadísticas Básicas de Inversión que resumen características centrales de un proyecto para el PGN [89]."
   },
   {
     "instruction": "Defina 'Fuera de Combate' (Haya caído en poder del adversario).",
-    "input": "Fuera de Combate",
+    "input": "",
     "output": "Combatiente que se rinde, está inconsciente o incapacitado y no puede ser objeto de ataque [90]."
   },
   {
     "instruction": "¿Qué es el 'GAP' en confiabilidad?",
-    "input": "GAP",
+    "input": "",
     "output": "Brecha entre la medida ideal de un indicador de clase mundial y el resultado obtenido [91]."
   },
   {
     "instruction": "Defina 'Guerra no Convencional'.",
-    "input": "Guerra no Convencional",
+    "input": "",
     "output": "Operaciones conducidas a través de fuerzas locales sustitutivas dirigidas por una fuente externa [92]."
   },
   {
     "instruction": "¿Qué es una 'Habitación' en alojamiento militar?",
-    "input": "Habitación",
+    "input": "",
     "output": "Unidad dentro de una barraca destinada exclusivamente como dormitorio o pernoctada [93]."
   },
   {
     "instruction": "Defina 'Herramientas de Seguridad' en armamento.",
-    "input": "Herramientas de Seguridad",
+    "input": "",
     "output": "Herramientas diseñadas para evitar chispas o igniciones en el manejo de explosivos [94]."
   },
   {
     "instruction": "¿Qué es la 'Higroscopicidad'?",
-    "input": "Higroscopicidad",
+    "input": "",
     "output": "Tendencia de un material a absorber humedad de sus alrededores [95]."
   },
   {
     "instruction": "Defina 'Hora Prevista Fuera de Calzos'.",
-    "input": "Fuera de Calzos",
+    "input": "",
     "output": "Hora estimada en la cual la aeronave iniciará el desplazamiento para la salida [96]."
   },
   {
     "instruction": "¿Qué es un 'Hostigamiento'?",
-    "input": "Hostigamiento",
+    "input": "",
     "output": "Asedio a la base aérea para desgastar tropas y observar su accionar antes de atacar eficazmente [97]."
   },
   {
     "instruction": "Defina 'Impacto Estratégico'.",
-    "input": "Impacto Estratégico",
+    "input": "",
     "output": "Caracterización de un hecho u objetivo con alto grado de relevancia en el nivel estratégico [98]."
   },
   {
     "instruction": "¿Qué es un 'Incendiario'?",
-    "input": "Incendiario",
+    "input": "",
     "output": "Agente químico o composición pirotécnica para iniciar fuego en material combustible [98]."
   },
   {
@@ -572,112 +576,112 @@
   },
   {
     "instruction": "Defina 'Indicadores Reactivos'.",
-    "input": "Indicadores Reactivos",
+    "input": "",
     "output": "Relacionados con el control y medición de sucesos de seguridad operacional de alto impacto [101]."
   },
   {
     "instruction": "¿Qué es la 'Indisciplina de Vuelo'?",
-    "input": "Indisciplina de Vuelo",
+    "input": "",
     "output": "Incumplimiento voluntario o involuntario de normas u órdenes durante la operación de aeronaves [102]."
   },
   {
     "instruction": "Defina 'Infraestructura Aeronáutica'.",
-    "input": "Infraestructura Aeronáutica",
+    "input": "",
     "output": "Conjunto de aeródromos, terminales, iluminación y servicios para facilitar la navegación aérea [103]."
   },
   {
     "instruction": "¿Qué es una 'Inspección No Destructiva' (NDI)?",
-    "input": "NDI",
+    "input": "",
     "output": "Examen de materiales para detectar defectos sin destruir o afectar el servicio de las piezas [104]."
   },
   {
     "instruction": "Defina 'Inspección Posvuelo'.",
-    "input": "Inspección Posvuelo",
+    "input": "",
     "output": "Revisión visual y funcional para determinar el estado de una aeronave tras el vuelo [105]."
   },
   {
     "instruction": "¿Qué es la 'Intención del Comandante'?",
-    "input": "Intención del Comandante",
+    "input": "",
     "output": "Expresión concisa del propósito de la operación y el estado final militar deseado [106]."
   },
   {
     "instruction": "Defina 'Lesión Permanente'.",
-    "input": "Lesión Permanente",
+    "input": "",
     "output": "Afección que disminuye parcialmente la capacidad psicofísica sin posibilidad de recuperación [107]."
   },
   {
     "instruction": "¿Qué es un 'Líder'? (Guía del Comandante).",
-    "input": "Líder",
+    "input": "",
     "output": "Persona a la que un grupo sigue, reconociéndola como jefe u orientadora [108]."
   },
   {
     "instruction": "Defina 'Línea de Ataque Inicial'.",
-    "input": "Línea de Ataque",
+    "input": "",
     "output": "Primer chorro de manguera puesto en servicio por bomberos para proteger vidas en un incendio [109]."
   },
   {
     "instruction": "¿Qué es una 'Línea Roja' en inspección?",
-    "input": "Línea Roja",
+    "input": "",
     "output": "Incumplimiento por irresponsabilidad o indisciplina que amerita acciones disciplinarias o penales [109]."
   },
   {
     "instruction": "Defina 'Logística Verde' (Green Logistics).",
-    "input": "Logística Verde",
+    "input": "",
     "output": "Políticas sostenibles para reducir el impacto medioambiental del área logística [110]."
   },
   {
     "instruction": "¿Qué es una 'Malla Curricular'?",
-    "input": "Malla Curricular",
+    "input": "",
     "output": "Diagrama del Plan de Estudios estructurado con trama vertical y horizontal [111]."
   },
   {
     "instruction": "Defina 'Mando Conjunto' (MFC 1.0).",
-    "input": "Mando Conjunto",
+    "input": "",
     "output": "Autoridad de mando solo sobre fuerzas asignadas que no puede ser delegado o transferido [112]."
   },
   {
     "instruction": "¿Qué es una 'Maniobra' en la Estructura Misional PAEC?",
-    "input": "Maniobra",
+    "input": "",
     "output": "Acción militar detallada que determina los modos de aplicación para cumplir una operación tipo [113]."
   },
   {
     "instruction": "Defina 'Mantenimiento de Línea'.",
-    "input": "Mantenimiento de Línea",
+    "input": "",
     "output": "Provee fluidos y corrección de defectos menores para que la aeronave pueda continuar volando [114]."
   },
   {
     "instruction": "¿Qué es el 'MANTA'?",
-    "input": "MANTA",
+    "input": "",
     "output": "Manual de Tareas, describe maniobras que deben ejecutarse durante el entrenamiento de vuelo [115]."
   },
   {
     "instruction": "Defina 'Material de Guerra'.",
-    "input": "Material de Guerra",
+    "input": "",
     "output": "Equipo estatal usado para operaciones militares o restablecimiento del orden público [116]."
   },
   {
     "instruction": "¿Qué son 'Medidas Perimetrales de Seguridad'?",
-    "input": "Medidas Perimetrales",
+    "input": "",
     "output": "Acciones desde inteligencia hasta medidas activas ejecutadas en el perímetro de la base aérea [117]."
   },
   {
     "instruction": "Defina 'Mensajes Técnicos'.",
-    "input": "Mensajes Técnicos",
+    "input": "",
     "output": "Difunden información técnica o administrativa relacionada directamente con aeronaves FAC [118]."
   },
   {
     "instruction": "¿Qué es el 'MMEL'?",
-    "input": "MMEL",
+    "input": "",
     "output": "Lista Maestra de Equipo Mínimo aprobada por la autoridad del país de diseño del fabricante [119]."
   },
   {
     "instruction": "Defina 'Modificación Mayor'.",
-    "input": "Modificación Mayor",
+    "input": "",
     "output": "Cambio que afecta marcadamente peso, resistencia estructural o rendimiento de la aeronave [120]."
   },
   {
     "instruction": "¿Qué es la 'Movilidad' para las fuerzas militares?",
-    "input": "Movilidad",
+    "input": "",
     "output": "Capacidad que les permite moverse usando medios aéreos dentro y fuera de teatros de operación [121]."
   },
   {
@@ -687,129 +691,132 @@
   },
   {
     "instruction": "¿Qué significa el código '00' en un NIIN (National Item Identification Number)?",
-    "output": "Es el código de país que indica quién asignó el número al artículo (ej. EE.UU.) [124]."
+    "output": "Es el código de país que indica quién asignó el número al artículo (ej. EE.UU.) [124].",
+    "input": ""
   },
   {
     "instruction": "Defina el cargo de 'Navegante'.",
-    "input": "Navegante",
+    "input": "",
     "output": "Oficial capacitado para operar equipos especiales de combate, inteligencia o utilidad en vuelo [125]."
   },
   {
     "instruction": "¿Qué es un 'Nivel de Crucero'?",
-    "input": "Nivel de Crucero",
+    "input": "",
     "output": "Nivel que se mantiene durante una parte considerable del vuelo [126]."
   },
   {
     "instruction": "Defina 'Nivel Aceptable de Riesgo Operacional'.",
-    "input": "Riesgo Operacional",
+    "input": "",
     "output": "Nivel basado en peligros históricos para evaluar el comportamiento de escuadrones de vuelo [127]."
   },
   {
     "instruction": "¿Qué es el 'NOC'?",
-    "input": "NOC",
+    "input": "",
     "output": "Número OTAN de Catalogación de 13 dígitos asignado para agrupar artículos con mismas características técnicas [128]."
   },
   {
     "instruction": "¿Qué casos son clasificados siempre como 'NOPER' (Novedad Operacional)?",
-    "output": "Incapacidad fisiológica en vuelo, activación de TAWS, pérdida de componentes o humo en cabina [129]."
+    "output": "Incapacidad fisiológica en vuelo, activación de TAWS, pérdida de componentes o humo en cabina [129].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Núcleos Temáticos' en el SEFAC.",
-    "input": "Núcleos Temáticos",
+    "input": "",
     "output": "Estrategia para planear contenidos de asignaturas buscando aprendizaje significativo y competencias [130]."
   },
   {
     "instruction": "¿Qué es el 'Número de Lote'?",
-    "input": "Número de Lote",
+    "input": "",
     "output": "Número que se da a cada serie de municiones en su fabricación [131]."
   },
   {
     "instruction": "Defina 'Objetivo Estratégico Militar'.",
-    "input": "Objetivo Militar",
+    "input": "",
     "output": "Meta tangible que permite al Comandante General enunciar objetivos derivados de lo nacional [132]."
   },
   {
     "instruction": "¿Qué es la 'Obsolescencia' de un bien?",
-    "input": "Obsolescencia",
+    "input": "",
     "output": "Disminución de vida útil por cambios económicos o tecnológicos frente a bienes mejores o más baratos [133]."
   },
   {
     "instruction": "Defina 'Operación de Contingencia'.",
-    "input": "Contingencia",
+    "input": "",
     "output": "Operación de pequeña escala o parte de una mayor para proteger intereses nacionales ante ataques [134]."
   },
   {
     "instruction": "¿Qué es un 'Optrónico'?",
-    "input": "Optrónico",
+    "input": "",
     "output": "Dispositivo que integra equipos electrónicos y ópticos para generar señales infrarrojas [135]."
   },
   {
     "instruction": "Defina 'Orden' según la Guía del Comandante.",
-    "input": "Orden",
+    "input": "",
     "output": "Regla o modo que se observa para hacer las cosas. Mandato que debe obedecerse [135]."
   },
   {
     "instruction": "¿Qué diferencia un 'Plan de Operaciones' de una 'Orden de Operaciones'?",
-    "output": "La Orden no contiene hipótesis o supuestos y dispone la ejecución en un futuro inmediato [136]."
+    "output": "La Orden no contiene hipótesis o supuestos y dispone la ejecución en un futuro inmediato [136].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Pasajero en condiciones jurídicas especiales'.",
-    "input": "Pasajero Especial",
+    "input": "",
     "output": "Persona privada de la libertad transportada bajo custodia por vía aérea [137]."
   },
   {
     "instruction": "¿Qué es el 'Peligro Aviario'?",
-    "input": "Peligro Aviario",
+    "input": "",
     "output": "Riesgo por presencia de aves en inmediaciones de aeródromos durante fases críticas de vuelo [138]."
   },
   {
     "instruction": "Defina 'Periodo de Descanso'.",
-    "input": "Periodo de Descanso",
+    "input": "",
     "output": "Lapso libre de actividades para asegurar la recuperación psicofísica del personal operativo [139]."
   },
   {
     "instruction": "¿Qué es un 'Personaje Protegido'?",
-    "input": "Personaje Protegido",
+    "input": "",
     "output": "Recurso humano integrante del componente físico con valor estratégico para la FAC [140]."
   },
   {
     "instruction": "Defina 'Pirámide de Carrera'.",
-    "input": "Pirámide de Carrera",
+    "input": "",
     "output": "Visualización jerárquica de cada especialidad por niveles basada en cargos y requisitos de ascenso [141]."
   },
   {
     "instruction": "¿Qué es el 'Plan Institucional de Archivos' (PINAR)?",
-    "input": "PINAR",
+    "input": "",
     "output": "Plan requerido por el MIPG para estandarizar y fortalecer la gestión de archivos [142]."
   },
   {
     "instruction": "Defina 'Plan de Acción Anual'.",
-    "input": "Plan de Acción",
+    "input": "",
     "output": "Instrumento base para evaluación de resultados corporativos según lineamientos del PND [143]."
   },
   {
     "instruction": "¿Qué es la 'Plataforma' en un aeródromo?",
-    "input": "Plataforma",
+    "input": "",
     "output": "Área definida para embarque, desembarque, combustible o mantenimiento de aeronaves [144]."
   },
   {
     "instruction": "Defina 'Polvorín de Servicio Inmediato'.",
-    "input": "Polvorín",
+    "input": "",
     "output": "Caseta en línea de operación usada para almacenamiento temporal limitado de munición de emergencia [145]."
   },
   {
     "instruction": "¿Qué es el 'Portafolio' de proyectos?",
-    "input": "Portafolio",
+    "input": "",
     "output": "Grupo de programas y proyectos para lograr objetivos estratégicos mediante su priorización [146]."
   },
   {
     "instruction": "Defina 'PREVAC'.",
-    "input": "PREVAC",
+    "input": "",
     "output": "Actividades orientadas a detectar peligros y disminuir riesgos de la operación aérea [146]."
   },
   {
     "instruction": "¿Qué es un 'Procedimiento de Hipódromo'?",
-    "input": "Procedimiento de Hipódromo",
+    "input": "",
     "output": "Previsto para permitir que la aeronave pierda altitud en el tramo de aproximación inicial [147]."
   },
   {
@@ -819,81 +826,82 @@
   },
   {
     "instruction": "Defina 'Programa Certificado' según el SECAD.",
-    "input": "Programa Certificado",
+    "input": "",
     "output": "Aquel culminado con un proceso trazable ante la AAAES entregando el certificado correspondiente [149]."
   },
   {
     "instruction": "¿Qué es un 'Programa Suspendido'?",
-    "input": "Programa Suspendido",
+    "input": "",
     "output": "Condición donde el solicitante y la AAAES acuerdan detener temporalmente la certificación [150]."
   },
   {
     "instruction": "Defina 'Protector' (Manual de Personajes).",
-    "input": "Protector",
+    "input": "",
     "output": "Profesional especializado en protección de personalidades y custodia de valores [151]."
   },
   {
     "instruction": "¿Qué es un 'Prototipo'?",
-    "input": "Prototipo",
+    "input": "",
     "output": "Ejemplar original o primer molde de un producto aeronáutico en fase de ensayos [152]."
   },
   {
     "instruction": "Defina 'Punto de Cambio' (ATS).",
-    "input": "Punto de Cambio",
+    "input": "",
     "output": "Donde una aeronave en ruta transfiere su referencia de navegación de una instalación a la siguiente [153]."
   },
   {
     "instruction": "¿Qué es el 'Rata de Falla'?",
-    "input": "Rata de Falla",
+    "input": "",
     "output": "Número total de fallas dividido el número total de ítems de una población [154]."
   },
   {
     "instruction": "Defina 'Reabastecimiento Aéreo' (AAR).",
-    "input": "AAR",
+    "input": "",
     "output": "Transferencia de combustible en vuelo para que aeronaves permanezcan en el aire más allá de su autonomía [154]."
   },
   {
     "instruction": "¿Qué es 'RECIL'?",
-    "input": "RECIL",
+    "input": "",
     "output": "Incidente grave con daños en componente mayor recuperable o lesiones menores a tres meses [155]."
   },
   {
     "instruction": "Defina 'Reconstrucción' de equipo.",
-    "input": "Reconstrucción",
+    "input": "",
     "output": "Reparación de equipo usado desarmándolo totalmente para cumplir tolerancias de producto nuevo [156]."
   },
   {
     "instruction": "¿Qué es un 'Registrador de Vuelo'?",
-    "input": "Registrador de Vuelo",
+    "input": "",
     "output": "Cualquier tipo de registrador instalado para facilitar investigación de accidentes (especificaciones OACI) [157]."
   },
   {
     "instruction": "Defina 'RELES'.",
-    "input": "RELES",
+    "input": "",
     "output": "Incidente grave con daños en dos o más componentes mayores o lesiones superiores a tres meses [158]."
   },
   {
     "instruction": "¿Qué es una 'Reparación Mayor'?",
-    "input": "Reparación Mayor",
+    "input": "",
     "output": "Afecta substancialmente peso, balance, diseño o resistencia estructural de la aeronave [159]."
   },
   {
     "instruction": "Defina 'Requerimiento de Diseño Crítico' (RDC).",
-    "input": "RDC",
+    "input": "",
     "output": "Parámetros determinados para el diseño final que permiten congelar el desarrollo tras validar conformidad [160]."
   },
   {
     "instruction": "¿Qué es el 'Rescate en Aeronaves'?",
-    "output": "Combate de incendios para proveer integridad al fuselaje y área de escape a ocupantes de una aeronave [161]."
+    "output": "Combate de incendios para proveer integridad al fuselaje y área de escape a ocupantes de una aeronave [161].",
+    "input": ""
   },
   {
     "instruction": "Defina 'RA Correctivo' (Aviso de Resolución).",
-    "input": "RA Correctivo",
+    "input": "",
     "output": "Aviso que aconseja al piloto desviarse de la ruta de vuelo actual por seguridad [162]."
   },
   {
     "instruction": "¿Qué es el 'Retiro por Tiempo' (RC)?",
-    "input": "RC",
+    "input": "",
     "output": "Tiempo máximo permisible de operación para un componente nuevo antes de ser destruido [163]."
   },
   {
@@ -903,91 +911,92 @@
   },
   {
     "instruction": "Defina 'Ruta con Servicio de Asesoramiento'.",
-    "input": "Ruta de Asesoramiento",
+    "input": "",
     "output": "Ruta designada a lo largo de la cual se proporciona servicio de asesoramiento de tránsito aéreo [165]."
   },
   {
     "instruction": "¿Qué es 'Sabotaje' para una Unidad Militar Aérea?",
-    "input": "Sabotaje",
+    "input": "",
     "output": "Riesgo donde la unidad interrumpe operaciones por intervención malintencionada de amenazas [166]."
   },
   {
     "instruction": "Defina 'Seguridad Operacional' según el MAGSO.",
-    "input": "Seguridad Operacional",
+    "input": "",
     "output": "Estado en que el riesgo de lesiones o daños se reduce por identificación de peligros y gestión del riesgo [167]."
   },
   {
     "instruction": "¿Qué es una 'Señal de Identificación de Aeródromo'?",
-    "input": "Señal",
+    "input": "",
     "output": "Símbolo colocado para ayudar a identificar el aeródromo desde el aire [168]."
   },
   {
     "instruction": "Defina 'Servible' para un componente aeronáutico.",
-    "input": "Servible",
+    "input": "",
     "output": "Condición de estar aeronavegable y apto para ser instalado por cumplir requerimientos técnicos [168]."
   },
   {
     "instruction": "¿Qué es el 'Servicio de Control de Aproximación'?",
-    "output": "Servicio de tránsito aéreo para la llegada y salida de vuelos controlados [169]."
+    "output": "Servicio de tránsito aéreo para la llegada y salida de vuelos controlados [169].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Sílabo' en el SEFAC.",
-    "input": "Sílabo",
+    "input": "",
     "output": "Guía de trabajo académico con contenidos y estrategias de enseñanza para una asignatura [170]."
   },
   {
     "instruction": "¿Qué es un 'Simulacro sobre el Plano'?",
-    "input": "Simulacro",
+    "input": "",
     "output": "Ensayo de integración de recursos ante emergencias sin gastos ni perturbación de servicios generales [171]."
   },
   {
     "instruction": "Defina 'Sistema de Autoprotección' de una aeronave.",
-    "input": "Autoprotección",
+    "input": "",
     "output": "Componentes que dan alerta temprana ante misiles hostiles y permiten acciones de evasión [172]."
   },
   {
     "instruction": "¿Qué es el 'SIMFAC'?",
-    "input": "SIMFAC",
+    "input": "",
     "output": "Sistema de Información Meteorológica de la FAC para satisfacer necesidades de la aviación de estado [173]."
   },
   {
     "instruction": "Defina 'Soldado Bombero Aeronáutico'.",
-    "input": "Soldado Bombero",
+    "input": "",
     "output": "Personal militar instruido mediante taller para actuar en emergencias aéreas [174]."
   },
   {
     "instruction": "¿Qué es el 'Spot'?",
-    "input": "Spot",
+    "input": "",
     "output": "Marcas en calles de rodaje que indican donde la aeronave inicia rodaje autopropulsado o remolque [175]."
   },
   {
     "instruction": "Defina 'Superávit de Alojamiento'.",
-    "input": "Superávit de Alojamiento",
+    "input": "",
     "output": "Situación con inmuebles desocupados porque no hay solicitudes de alojamiento militar [176]."
   },
   {
     "instruction": "¿Qué es un 'TAR'?",
-    "input": "TAR",
+    "input": "",
     "output": "Taller Aeronáutico de Reparación domiciliado en la República de Colombia [177]."
   },
   {
     "instruction": "Defina 'Techo de Nubes' según políticas de vuelo.",
-    "input": "Techo de Nubes",
+    "input": "",
     "output": "Altura de la base de la capa inferior de nubes que cubre más de la mitad del cielo por debajo de 20.000 ft [178]."
   },
   {
     "instruction": "¿Qué es la 'Tipificación' en el RIFAC?",
-    "input": "Tipificación",
+    "input": "",
     "output": "Descripción precisa de acciones u omisiones consideradas delito con una pena asignada [179]."
   },
   {
     "instruction": "Defina 'Tránsito de Aeródromo'.",
-    "input": "Tránsito de Aeródromo",
+    "input": "",
     "output": "Aeronaves en el área de maniobras y en las inmediaciones del aeródromo [180]."
   },
   {
     "instruction": "¿Qué es la 'Transversalidad' pedagógica?",
-    "input": "Transversalidad",
+    "input": "",
     "output": "Garantía de cohesión que evidencia políticas institucionales en el diseño curricular y aula [181]."
   },
   {
@@ -997,137 +1006,138 @@
   },
   {
     "instruction": "Defina 'Tripulación Aumentada'.",
-    "input": "Tripulación Aumentada",
+    "input": "",
     "output": "Conformada por tripulantes adicionales calificados para permitir continuidad de operación y descanso en vuelo [184]."
   },
   {
     "instruction": "¿Qué es el 'Turbo Motor'?",
-    "input": "Turbo Motor",
+    "input": "",
     "output": "Elemento encargado de impulsar un cohete [185]."
   },
   {
     "instruction": "Defina 'Unidad de Mando' (MFC 1.0).",
-    "input": "Unidad de Mando",
+    "input": "",
     "output": "Empleo de todas las fuerzas bajo un solo comandante responsable para un propósito común [186]."
   },
   {
     "instruction": "¿Qué es un 'Usuario Aduanero Permanente'?",
-    "input": "Usuario Aduanero",
+    "input": "",
     "output": "Funcionario reconocido por la DIAN para trámites aduaneros de la Fuerza [187]."
   },
   {
     "instruction": "Defina 'Vainilla' en armamento.",
-    "input": "Vainilla",
+    "input": "",
     "output": "Elemento que sirve de cámara para aprovechar gases que impulsarán la ojiva de un cartucho [188]."
   },
   {
     "instruction": "¿Qué es el 'Shelf Life'?",
-    "input": "Shelf Life",
+    "input": "",
     "output": "Intervalo de tiempo en que un componente puede usarse sin sufrir daño durante almacenamiento [189]."
   },
   {
     "instruction": "Defina 'Violación' según la seguridad operacional.",
-    "input": "Violación",
+    "input": "",
     "output": "Conducta consciente de transgredir una norma sin considerar consecuencias de la desviación [190]."
   },
   {
     "instruction": "¿Qué es el 'Viraje de Base'?",
-    "input": "Viraje de Base",
+    "input": "",
     "output": "Viraje ejecutado durante aproximación inicial entre la derrota de alejamiento y la intermedia/final [191]."
   },
   {
     "instruction": "Defina 'Zona Peligrosa'.",
-    "input": "Zona Peligrosa",
+    "input": "",
     "output": "Espacio de dimensiones definidas donde pueden desplegarse actividades peligrosas para el vuelo [192]."
   },
   {
     "instruction": "¿Qué es el 'BC' en combustibles?",
-    "input": "BC",
+    "input": "",
     "output": "Boletín de Combustibles que determina cumplimiento para productos afectados tras incidentes [193]."
   },
   {
     "instruction": "¿Qué significan las siglas 'C3I2'?",
-    "input": "C3I2",
+    "input": "",
     "output": "Centro, Comando, Control, Comunicaciones, Inteligencia e Informática [193]."
   },
   {
     "instruction": "Defina 'CAVOK'.",
-    "input": "CAVOK",
+    "input": "",
     "output": "Techo y visibilidad adecuados para vuelo bajo reglas visuales (Ceiling and Visibility OK) [194]."
   },
   {
     "instruction": "¿Qué es el 'CVR'?",
-    "input": "CVR",
+    "input": "",
     "output": "Registro de la Voz en el Puesto de Pilotaje (Cockpit Voice Recorder) [195]."
   },
   {
     "instruction": "Defina 'EGT'.",
-    "input": "EGT",
+    "input": "",
     "output": "Temperatura de los gases de escape del motor [196]."
   },
   {
     "instruction": "¿Qué es el 'ELT'?",
-    "input": "ELT",
+    "input": "",
     "output": "Transmisor Localizador de Emergencia (Emergency Locator Transmitter) [196]."
   },
   {
     "instruction": "¿Qué significan las siglas 'FOQA'?",
-    "input": "FOQA",
+    "input": "",
     "output": "Programa de seguridad de la calidad de las operaciones de vuelo [197]."
   },
   {
     "instruction": "Defina 'GCI'.",
-    "input": "GCI",
+    "input": "",
     "output": "Intercepción controlada desde la superficie (Ground Controlled Interception) [197]."
   },
   {
     "instruction": "¿Qué es el 'FARE'?",
-    "input": "FARE",
+    "input": "",
     "output": "Equipo de reabastecimiento en áreas remotas (Forward Area Refueling Equipment) [198]."
   },
   {
     "instruction": "Defina 'IFF'.",
-    "input": "IFF",
+    "input": "",
     "output": "Identificación de amigo o enemigo (Identification Friend or Foe) [198]."
   },
   {
     "instruction": "¿Qué es un 'IEA'?",
-    "input": "IEA",
+    "input": "",
     "output": "Ingeniero Especialista Aeronáutico [199]."
   },
   {
     "instruction": "Defina 'LWR'.",
-    "input": "LWR",
+    "input": "",
     "output": "Receptores de alerta de láser (Laser Warning Receivers) [200]."
   },
   {
     "instruction": "¿Qué es el 'MAGE'?",
-    "input": "MAGE",
+    "input": "",
     "output": "Medidas de Ataque Electrónico [200]."
   },
   {
     "instruction": "Defina 'OCA'.",
-    "input": "OCA",
+    "input": "",
     "output": "Oficial Controlador de Armas [201]."
   },
   {
     "instruction": "¿Qué significan las siglas 'SIIO'?",
-    "input": "SIIO",
+    "input": "",
     "output": "Sistema Integrado de Información Operacional [202]."
   },
   {
     "instruction": "Defina 'TA' en vigilancia aérea.",
-    "input": "TA",
+    "input": "",
     "output": "Traza Amiga [203]."
   },
   {
     "instruction": "¿Qué es el 'TCAS'?",
-    "input": "TCAS",
+    "input": "",
     "output": "Sistema de Alerta de Tráfico y Prevención de Colisiones [203]."
   },
   {
     "instruction": "¿Qué es un 'Profesional Oficial de Reserva'?",
-    "output": "Ciudadano con título universitario vinculado voluntariamente ad honorem para apoyo a las FF.MM. [204]."
+    "output": "Ciudadano con título universitario vinculado voluntariamente ad honorem para apoyo a las FF.MM. [204].",
+    "input": ""
   },
   {
     "instruction": "¿Qué edad debe tener un aspirante a Oficial de Reserva al inscribirse?",
@@ -1151,7 +1161,7 @@
   },
   {
     "instruction": "Defina 'Cuerpo Asesor' en el escalafón de reserva.",
-    "input": "Cuerpo Asesor",
+    "input": "",
     "output": "Integrado por oficiales superiores que por actividad profesional no participan activamente en COAMI [208]."
   },
   {
@@ -1176,333 +1186,342 @@
   },
   {
     "instruction": "¿Qué es la 'Aerofotografía'?",
-    "input": "Aerofotografía",
+    "input": "",
     "output": "Material fotográfico tomado por plataformas de inteligencia para detallar blancos de interés [7]."
   },
   {
     "instruction": "Defina 'Aeronave Armadas' de la FAC.",
-    "input": "Aeronaves Armadas",
+    "input": "",
     "output": "Cuentan con armamento instalado para impedir, neutralizar o destruir objetivos militares desde el aire [213]."
   },
   {
     "instruction": "¿Qué es el 'Airborne Early Warning' (AEW)?",
-    "input": "AEW",
+    "input": "",
     "output": "Sistema de alerta temprana que permite a un comandante visualizar y evaluar un teatro de operaciones [11]."
   },
   {
     "instruction": "Defina 'Amortiguación' de un objetivo.",
-    "input": "Amortiguación",
+    "input": "",
     "output": "Identifica qué porción del objetivo puede destruirse sin afectar el esfuerzo militar o su adaptación [214]."
   },
   {
     "instruction": "¿Qué es la 'Apreciación de Inteligencia'?",
-    "input": "Apreciación",
+    "input": "",
     "output": "Examen lógico de factores como enemigo, tiempo y terreno que afectan la misión [215]."
   },
   {
     "instruction": "Defina 'Asalto Aéreo'.",
-    "input": "Asalto Aéreo",
+    "input": "",
     "output": "Maniobra donde fuerzas desembarcan en área hostil usando potencia de fuego e integración de medios aéreos [216]."
   },
   {
     "instruction": "¿Qué es un 'Ataque a la Unidad'?",
-    "input": "Ataque a la Unidad",
+    "input": "",
     "output": "Acción que vulnera la seguridad física, identificada por sirena continua o disparos de advertencia [217]."
   },
   {
     "instruction": "Defina 'Autonomía Táctica'.",
-    "input": "Autonomía Táctica",
+    "input": "",
     "output": "Capacidad de sistemas de armas para operar 24 horas bajo cualquier condición meteorológica [218]."
   },
   {
     "instruction": "¿Qué es el 'BASH'?",
-    "input": "BASH",
+    "input": "",
     "output": "Daños causados a aeronaves por el impacto de aves o animales (Bird and animal Aircraft strike Hazard) [219]."
   },
   {
     "instruction": "Defina 'Blanco Lícito'.",
-    "input": "Blanco Lícito",
+    "input": "",
     "output": "Miembros de grupos armados organizados y personas que participan directamente en hostilidades [220]."
   },
   {
     "instruction": "¿Qué es la 'Captura de Aeronaves' en tierra?",
-    "output": "Tomar posesión física e impedir su movilización mediante cordón de seguridad hasta que lleguen autoridades [221]."
+    "output": "Tomar posesión física e impedir su movilización mediante cordón de seguridad hasta que lleguen autoridades [221].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Cargo Operacional' de vuelo.",
-    "input": "Cargo Operacional",
+    "input": "",
     "output": "Se crea según configuración de aeronave y equipos especiales para misiones específicas [222]."
   },
   {
     "instruction": "¿Qué es la 'Carta Aeronáutica Mundial 1:1.000.000'?",
-    "output": "Carta básica para navegación visual y planeamiento que facilita información con presentación uniforme [223]."
+    "output": "Carta básica para navegación visual y planeamiento que facilita información con presentación uniforme [223].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Carta de Salida Normalizada Vuelo por Instrumentos'.",
-    "output": "Proporciona información para seguir la ruta designada desde el despegue hasta la fase en ruta [224]."
+    "output": "Proporciona información para seguir la ruta designada desde el despegue hasta la fase en ruta [224].",
+    "input": ""
   },
   {
     "instruction": "¿Qué es el 'Ciclo OODA'?",
-    "input": "OODA",
+    "input": "",
     "output": "Observar, Orientar, Decidir y Actuar [225]."
   },
   {
     "instruction": "Defina 'Clara Advertencia' antes de usar la fuerza.",
-    "output": "Advertir la intención de usar la fuerza en tiempo suficiente, salvo que ponga en peligro al militar [225]."
+    "output": "Advertir la intención de usar la fuerza en tiempo suficiente, salvo que ponga en peligro al militar [225].",
+    "input": ""
   },
   {
     "instruction": "¿Qué es un 'Comando Funcional'?",
-    "input": "Comando Funcional",
+    "input": "",
     "output": "Organización temporal para atender una función específica en la totalidad de las Fuerzas [226]."
   },
   {
     "instruction": "Defina 'Contrainteligencia Ofensiva' (CIO).",
-    "input": "CIO",
+    "input": "",
     "output": "Acciones diseñadas para limitar o destruir la capacidad informativa enemiga [227]."
   },
   {
     "instruction": "¿Qué es el 'Control Centralizado y Ejecución Descentralizada'?",
-    "output": "Principio para alcanzar sinergia y flexibilidad, minimizando selección de objetivos conflictivos [228]."
+    "output": "Principio para alcanzar sinergia y flexibilidad, minimizando selección de objetivos conflictivos [228].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Corredor Aéreo'.",
-    "input": "Corredor Aéreo",
+    "input": "",
     "output": "Ruta reservada para aeronaves propias para evitar ataques de fuerzas amigas en áreas de artillería [229]."
   },
   {
     "instruction": "¿Qué es 'Detección' en vigilancia aérea?",
-    "output": "Observación registrada que determina ubicación, rumbo y altura en tiempo real de una aeronave [230]."
+    "output": "Observación registrada que determina ubicación, rumbo y altura en tiempo real de una aeronave [230].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Doctrina Operacional'.",
-    "input": "Doctrina Operacional",
+    "input": "",
     "output": "Principios para emplear el poder aéreo en una campaña para alcanzar objetivos operacionales [231]."
   },
   {
     "instruction": "¿Qué es el 'Engelamiento'?",
-    "input": "Engelamiento",
+    "input": "",
     "output": "Fenómeno meteorológico significativo mencionado como riesgo para la navegación aérea [232]."
   },
   {
     "instruction": "Defina 'Escolta Aérea'.",
-    "input": "Escolta Aérea",
+    "input": "",
     "output": "Acompañamiento de aeronaves armadas a no armadas para garantizar su seguridad ante amenazas [233]."
   },
   {
     "instruction": "¿Qué es el 'Espectro Electromagnético'?",
-    "output": "Distribución energética de ondas electromagnéticas que permite identificar sustancias o comunicaciones [234]."
+    "output": "Distribución energética de ondas electromagnéticas que permite identificar sustancias o comunicaciones [234].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Estratagema'.",
-    "input": "Estratagema",
+    "input": "",
     "output": "Operación para crear confusión al enemigo obligándolo a actuar según nuestros objetivos [235]."
   },
   {
     "instruction": "¿Qué es el 'Hidroplaneo'?",
-    "input": "Hidroplaneo",
+    "input": "",
     "output": "Condición insegura del contacto de llantas con película de agua en la pista [236]."
   },
   {
     "instruction": "Defina 'Identificación' de una aeronave.",
-    "input": "Identificación",
+    "input": "",
     "output": "Acción de obtener matrícula y plan de vuelo mediante correlación con la autoridad ATS [237]."
   },
   {
     "instruction": "¿Qué es 'IMINT'?",
-    "input": "IMINT",
+    "input": "",
     "output": "Inteligencia de Imágenes: proceso de identificar y describir actividades de un blanco [238]."
   },
   {
     "instruction": "Defina 'Inmovilización' de aeronave hostil.",
-    "input": "Inmovilización",
+    "input": "",
     "output": "Parte de la neutralización que impide que una aeronave despegue o se mueva en tierra [239]."
   },
   {
     "instruction": "¿Qué es el 'Joint Stars'?",
-    "input": "Joint Stars",
+    "input": "",
     "output": "Plataforma aérea con capacidad de encontrar blancos pequeños a cientos de km bajo cualquier clima [240]."
   },
   {
     "instruction": "Defina 'Legitimidad' institucional.",
-    "input": "Legitimidad",
+    "input": "",
     "output": "Respaldo ciudadano obtenido al realizar actos en estrecha relación con la ley y el respeto al DIH [241]."
   },
   {
     "instruction": "¿Qué es la 'Maniobrabilidad' de una aeronave?",
-    "input": "Maniobrabilidad",
+    "input": "",
     "output": "Facilidad de dirigir la aeronave en tres dimensiones para salvar obstáculos naturales [242]."
   },
   {
     "instruction": "Defina 'Mando Operacional Funcional'.",
-    "input": "Mando Funcional",
+    "input": "",
     "output": "Autoridad delegada para asignar misiones en un área funcional, primando el mando operacional general [243]."
   },
   {
     "instruction": "¿Qué es el 'Nexo de Beligerancia'?",
-    "input": "Nexo de Beligerancia",
+    "input": "",
     "output": "Requisito de que un acto sea planeado para causar daño en soporte de una de las partes del conflicto [244]."
   },
   {
     "instruction": "Defina 'Objetivo Militar' según el DICA.",
-    "input": "Objetivo Militar",
+    "input": "",
     "output": "Bien que por naturaleza o uso contribuye a la acción militar y cuya destrucción ofrece ventaja concreta [245]."
   },
   {
     "instruction": "¿Qué es una 'Operación de Información'?",
-    "output": "Uso de medios aeroespaciales para influenciar o atacar sistemas de toma de decisiones enemigos [246]."
+    "output": "Uso de medios aeroespaciales para influenciar o atacar sistemas de toma de decisiones enemigos [246].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Persistencia' en el poder aéreo.",
-    "input": "Persistencia",
+    "input": "",
     "output": "Aplicación del poder aéreo con continuidad para lograr el grado de neutralización deseado [247]."
   },
   {
     "instruction": "¿Qué es la 'Preparación de Inteligencia en el Campo de Combate'?",
-    "output": "Metodología analítica para reducir incertidumbre sobre enemigo, ambiente y terreno [248]."
+    "output": "Metodología analítica para reducir incertidumbre sobre enemigo, ambiente y terreno [248].",
+    "input": ""
   },
   {
     "instruction": "Defina 'Principio de Precaución en el Ataque'.",
-    "input": "Precaución",
+    "input": "",
     "output": "Realizar operaciones militares con el cuidado constante de preservar a la población y bienes civiles [249]."
   },
   {
     "instruction": "¿Qué es el 'RWR'?",
-    "input": "RWR",
+    "input": "",
     "output": "Receptores de alerta de radar (Radar Warning Receivers) [250]."
   },
   {
     "instruction": "Defina 'Tiempo de Servicio' para un tripulante.",
-    "input": "Tiempo de Servicio",
+    "input": "",
     "output": "Periodo desde que se presenta al trabajo o misión hasta su finalización [251]."
   },
   {
     "instruction": "¿Qué es un 'Tirador Escogido de Plataforma' (TEPLA)?",
-    "input": "TEPLA",
+    "input": "",
     "output": "Hombre certificado en armas de precisión capacitado para batir blancos críticos desde aeronaves [252]."
   },
   {
     "instruction": "Defina 'Toque de Control'.",
-    "input": "Toque de Control",
+    "input": "",
     "output": "Habilidad de realizar movimientos suaves y precisos sintiendo las acciones actuales de la aeronave [253]."
   },
   {
     "instruction": "¿Qué es una 'Traza Radar'?",
-    "input": "Traza Radar",
+    "input": "",
     "output": "Localización de objetos mediante sistema electromagnético que amplía la visión humana en confusión [254]."
   },
   {
     "instruction": "Defina 'Última Opción' en el uso de la fuerza.",
-    "input": "Última Opción",
+    "input": "",
     "output": "Agotar medios como captura o desmovilización antes de aplicar fuerza letal [255]."
   },
   {
     "instruction": "¿Qué es un 'Vuelo Continental'?",
-    "input": "Vuelo Continental",
+    "input": "",
     "output": "Itinerario de una aeronave realizado entre dos países del mismo continente [256]."
   },
   {
     "instruction": "Defina 'Vulnerabilidad' de un objetivo.",
-    "input": "Vulnerabilidad",
+    "input": "",
     "output": "Capacidad del objetivo para resistir un ataque según su composición y sistema de defensa [257]."
   },
   {
     "instruction": "¿Qué es la 'Zona de Reacción' (ZOR)?",
-    "input": "ZOR",
+    "input": "",
     "output": "Área hasta 30 millas fuera del límite fronterizo donde se debe reaccionar con interceptores [258]."
   },
   {
     "instruction": "Defina 'Aeronavegabilidad Continuada'.",
-    "input": "Aeronavegabilidad Continuada",
+    "input": "",
     "output": "Funciones de mantenimiento utilizadas para mantener la aeronavegabilidad de forma continua [259]."
   },
   {
     "instruction": "¿Qué es el 'Aseguramiento de la Calidad'?",
-    "input": "Calidad",
+    "input": "",
     "output": "Evidencia necesaria para tener confianza en que la función de control se realiza adecuadamente [260]."
   },
   {
     "instruction": "Defina 'Claro y Brillante' para combustibles.",
-    "input": "Claro y Brillante",
+    "input": "",
     "output": "Prueba que confirma que un combustible está libre de agua y contaminantes sólidos visibles [261]."
   },
   {
     "instruction": "¿Qué es el 'Craqueado' del petróleo?",
-    "input": "Craqueado",
+    "input": "",
     "output": "Proceso donde un producto pesado se calienta para romper y reagrupar moléculas [262]."
   },
   {
     "instruction": "Defina 'Densidad Relativa' de un combustible.",
-    "input": "Densidad Relativa",
+    "input": "",
     "output": "Relación entre la densidad del combustible y la del agua a la misma temperatura [262]."
   },
   {
     "instruction": "¿Qué es la 'Estática' en logística de combustibles?",
-    "input": "Estática",
+    "input": "",
     "output": "Conexión a tierra para neutralizar cualquier carga eléctrica entre objetos durante el suministro [263]."
   },
   {
     "instruction": "Defina 'Punto de Chispa'.",
-    "input": "Punto de Chispa",
+    "input": "",
     "output": "Temperatura mínima de un líquido donde se evapora lo suficiente para quemarse si se enciende [264]."
   },
   {
     "instruction": "¿Qué es el 'Punto de Cristalización'?",
-    "input": "Punto de Cristalización",
+    "input": "",
     "output": "Temperatura a la cual se empiezan a formar cristales de hielo en el combustible [265]."
   },
   {
     "instruction": "Defina 'Viscosidad'.",
-    "input": "Viscosidad",
+    "input": "",
     "output": "Resistencia que presenta un combustible u otro líquido a fluir [266]."
   },
   {
     "instruction": "¿Qué es un 'AIT'?",
-    "input": "AIT",
+    "input": "",
     "output": "Inspector Técnico Autorizado [267]."
   },
   {
     "instruction": "Defina 'ATF'.",
-    "input": "ATF",
+    "input": "",
     "output": "Combustible de turbinas de aviación (Aviation Turbine Fuel) [267]."
   },
   {
     "instruction": "¿Qué es el 'CNA'?",
-    "input": "CNA",
+    "input": "",
     "output": "Centro Nacional de Aeronavegación de la UAEAC [194]."
   },
   {
     "instruction": "Defina 'DF' en equipo aeronáutico.",
-    "input": "DF",
+    "input": "",
     "output": "Radiogoniómetro (Direction Finding) [195]."
   },
   {
     "instruction": "¿Qué es el 'DME'?",
-    "input": "DME",
+    "input": "",
     "output": "Equipo radiotelemétrico para medición de distancias (Distance Measuring Equipment) [196]."
   },
   {
     "instruction": "Defina 'EFIS'.",
-    "input": "EFIS",
+    "input": "",
     "output": "Sistema electrónico integrado de instrumentos de vuelo (Electronic Flight Instrument System) [196]."
   },
   {
     "instruction": "¿Qué es el 'FDR'?",
-    "input": "FDR",
+    "input": "",
     "output": "Registrador de Datos de Vuelo (Flight Data Recorder) [197]."
   },
   {
     "instruction": "Defina 'PAC' en defensa aérea.",
-    "input": "PAC",
+    "input": "",
     "output": "Puesto Adelantado de Control o Patrulla Aérea de Combate [268]."
   },
   {
     "instruction": "¿Qué es el 'PBMO'?",
-    "input": "PBMO",
+    "input": "",
     "output": "Peso Bruto Máximo de Operación [268]."
   },
   {
     "instruction": "Defina 'QNH'.",
-    "input": "QNH",
+    "input": "",
     "output": "Reglaje de la subescala del altímetro para obtener elevación estando en tierra [269]."
   }
 ]
