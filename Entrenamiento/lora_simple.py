@@ -134,7 +134,7 @@ print("✅ Datos preparados")
 print("\n8️⃣ Configurando argumentos de training...")
 training_arguments = TrainingArguments(
     output_dir="./results",
-    num_train_epochs=3,  # 3 épocas para mejor aprendizaje
+    num_train_epochs=5,  # 5 épocas para mejor aprendizaje
     per_device_train_batch_size=2,  # Batch más pequeño = mejor generalización
     gradient_accumulation_steps=2,  # Acumular gradientes para efecto de batch mayor
     optim="paged_adamw_32bit",
@@ -147,7 +147,7 @@ training_arguments = TrainingArguments(
     max_grad_norm=0.3,
     warmup_ratio=0.1,  # 10% warmup para mejor convergencia
     lr_scheduler_type="linear",  # Linear decay del learning rate
-    evaluation_strategy="steps",
+    eval_strategy="steps",  # Nombre actualizado
     eval_steps=50,
     save_total_limit=3,  # Guardar solo los 3 mejores modelos
     load_best_model_at_end=True,  # Cargar el mejor modelo al final
