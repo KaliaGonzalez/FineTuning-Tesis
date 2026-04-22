@@ -118,24 +118,32 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
         response_placeholder.markdown("⏳ Generando respuesta...")
 
         try:
-            # Formatear el prompt como lo entrenaste
-            formatted_prompt = f"### Instruction:\n{prompt}\n\n### Response:\n"
+            # Limpiar el prompt del usuario
+            clean_prompt = prompt.strip()
 
-            # Tokenizar con límite de longitud
+            # Formatear el prompt EXACTAMENTE como se entrenó
+            # (sin Input porque no lo tiene)
+            formatted_prompt = f"### Instruction:\n{clean_prompt}\n\n### Response:\n"
+
+            # Tokenizar
             inputs = tokenizer(
-                formatted_prompt, return_tensors="pt", max_length=512, truncation=True
+                formatted_prompt,
+                return_tensors="pt",
+                max_length=512,
+                truncation=True,
+                add_special_tokens=True,
             ).to(model.device)
 
-            # Generar respuesta con tiempo límite
+            # Generar respuesta
             start_time = time.time()
 
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=100,  # REDUCIDO para respuestas rápidas
+                    max_new_tokens=150,  # Aumentado un poco para respuestas completas
                     do_sample=True,
-                    temperature=0.7,
-                    top_p=0.9,
+                    temperature=0.5,  # Bajado para respuestas más determinísticas
+                    top_p=0.85,  # Más restrictivo
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
                     num_beams=1,
@@ -143,14 +151,25 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
 
             generation_time = time.time() - start_time
 
-            # Decodificar respuesta
-            response_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+            # Decodificar la SALIDA COMPLETA
+            full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-            # Extraer solo la parte de la respuesta
-            if "### Response:" in response_text:
-                final_response = response_text.split("### Response:")[-1].strip()
+            # LIMPIAR RESPUESTA: Extraer solo lo después de "### Response:"
+            if "### Response:" in full_response:
+                # Obtener todo después de "### Response:"
+                response_only = full_response.split("### Response:")[-1].strip()
             else:
-                final_response = response_text.strip()
+                response_only = full_response.strip()
+
+            # Limpiar cualquier marca de instrucción que quedó
+            response_only = response_only.replace("### Instruction:", "").strip()
+            response_only = response_only.replace("Instruction:", "").strip()
+
+            # Si la respuesta está vacía, algo malo pasó
+            if not response_only or len(response_only) < 5:
+                response_only = "Lo siento, no pude generar una respuesta válida."
+
+            final_response = response_only
 
             # Mostrar la respuesta generada
             response_placeholder.markdown(final_response)
