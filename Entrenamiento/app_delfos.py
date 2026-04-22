@@ -12,7 +12,7 @@ st.markdown("¡Hola! Soy Delfos, tu asistente inteligente. Escribe tu pregunta a
 # --- CARGAR EL MODELO (En caché para no recargar cada vez) ---
 @st.cache_resource
 def load_model():
-    """Carga el modelo Mistral 7B entrenado con LoRA - OPTIMIZADO PARA GPU NVIDIA"""
+    """Carga TinyLlama - MÁS RÁPIDO para respuestas inmediatas"""
 
     # Verificar GPU disponible
     if torch.cuda.is_available():
@@ -28,45 +28,33 @@ def load_model():
         )
         device = "cpu"
 
-    base_model_name = "unsloth/mistral-7b-v0.3-bnb-4bit"
-    adapter_path = "mistral-7b-fac-finetuned"  # La carpeta que descargaste de Colab
+    base_model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # Modelo rápido y ligero
 
     try:
-        # Cargamos el tokenizador desde los archivos entrenados
-        tokenizer = AutoTokenizer.from_pretrained(adapter_path)
+        # Cargamos el tokenizador
+        tokenizer = AutoTokenizer.from_pretrained(base_model_name)
 
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
-        # Cargamos el modelo base (en 4 bits para ahorrar memoria)
-        from transformers import BitsAndBytesConfig
-
-        bnb_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16,
-            bnb_4bit_use_double_quant=False,
-        )
-
-        base_model = AutoModelForCausalLM.from_pretrained(
+        # Cargamos el modelo directamente (sin quantization para velocidad)
+        model = AutoModelForCausalLM.from_pretrained(
             base_model_name,
-            quantization_config=bnb_config,
-            device_map=device,  # Usa GPU si está disponible, sino CPU
+            device_map=device,
+            torch_dtype=torch.float32,
             trust_remote_code=True,
         )
 
-        # Fusionamos el modelo base con tus pesos LoRA entrenados
-        model = PeftModel.from_pretrained(base_model, adapter_path)
         model.eval()  # Modo inferencia
 
         if device == "cuda":
             st.success(
-                f"🎉 ¡Tu modelo en GPU cargado exitosamente! {torch.cuda.get_device_name(0)}",
+                f"🚀 ¡TinyLlama en GPU cargado! Respuestas rápidas garantizadas 🎉",
                 icon="✅",
             )
         else:
             st.warning(
-                "⚠️ Modelo cargado en CPU. Las respuestas serán lentas.", icon="⚠️"
+                "⚠️ Modelo cargado en CPU. Las respuestas serán más lentas.", icon="⚠️"
             )
 
         return model, tokenizer, device
@@ -124,13 +112,13 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=512,  # Aumentado para respuestas más profundas y detalladas
-                    min_length=80,  # Fuerza al modelo a dar respuestas largas
-                    do_sample=False,  # SIN variabilidad = respuestas determinísticas basadas en datos
+                    max_new_tokens=100,  # REDUCIDO para respuestas rápidas
+                    do_sample=True,
+                    temperature=0.7,
+                    top_p=0.9,
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
                     num_beams=1,
-                    repetition_penalty=1.3,  # Penaliza más las repeticiones para evitar alucinaciones
                 )
 
             generation_time = time.time() - start_time

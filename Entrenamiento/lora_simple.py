@@ -1,16 +1,15 @@
 """
-Script de Fine-tuning con LoRA para Mistral 7B
-Versión simplificada sin dependencias de TRL problemáticas
+Script de Fine-tuning con LoRA para TinyLlama
+Versión rápida y compatible con GPU local
 Compatible con Python 3.13
 """
 
 import torch
 from datasets import load_dataset
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig, get_peft_model
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
-    BitsAndBytesConfig,
     TrainingArguments,
     Trainer,
     DataCollatorForLanguageModeling,
@@ -18,9 +17,9 @@ from transformers import (
 import os
 
 # === CONFIGURACIÓN ===
-MODEL_NAME = "unsloth/mistral-7b-v0.3-bnb-4bit"
-NEW_MODEL_NAME = "mistral-7b-fac-finetuned"
-OUTPUT_DIR = "./results_local"
+MODEL_NAME = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # Modelo pequeño y rápido
+NEW_MODEL_NAME = "tinylla-fac-finetuned"
+OUTPUT_DIR = "./results"
 
 # Crear directorio de salida si no existe
 import os
@@ -50,54 +49,36 @@ print(
     f"✅ Dataset cargado - Train: {len(dataset['train'])}, Val: {len(dataset['validation'])}"
 )
 
-# === 3. CONFIGURACIÓN QUANTIZATION (4-bit) ===
-print("\n3️⃣ Configurando quantization...")
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=torch.float16,
-    bnb_4bit_use_double_quant=False,
-)
-print("✅ Quantization configurado")
+# === 3. CARGAR MODELO BASE ===
+print("\n3️⃣ Cargando modelo base (esto puede tardar 2-3 minutos)...")
 
 # === 4. CARGAR MODELO ===
-print("\n4️⃣ Cargando modelo base (esto puede tardar 5-10 minutos)...")
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME,
-    quantization_config=bnb_config,
     device_map="auto",
+    torch_dtype=torch.float32,
     trust_remote_code=True,
 )
 print("✅ Modelo cargado")
 
-# === 5. PREPARAR MODELO PARA TRAINING ===
-print("\n5️⃣ Preparando modelo para K-bit training...")
-model = prepare_model_for_kbit_training(model)
-print("✅ Modelo preparado")
-
-# === 6. CONFIGURACIÓN LORA ===
-print("\n6️⃣ Configurando LoRA...")
+# === 5. CONFIGURACIÓN LORA ===
+print("\n5️⃣ Configurando LoRA...")
 peft_config = LoraConfig(
-    lora_alpha=32,  # Mayor alpha = más peso a los adaptadores
-    lora_dropout=0.05,  # Dropout más bajo = mejor aprendizaje
-    r=128,  # Rango mayor = más capacidad de aprendizaje
+    lora_alpha=16,
+    lora_dropout=0.1,
+    r=64,
     bias="none",
     task_type="CAUSAL_LM",
     target_modules=[
         "q_proj",
-        "k_proj",
         "v_proj",
-        "o_proj",
-        "gate_proj",
-        "up_proj",
-        "down_proj",
-    ],
+    ],  # TinyLlama tiene menos capas
 )
 model = get_peft_model(model, peft_config)
 print("✅ LoRA configurado")
 
-# === 7. FUNCIÓN DE FORMATTEO ===
-print("\n7️⃣ Preparando formato de datos...")
+# === 6. FUNCIÓN DE FORMATTEO ===
+print("\n6️⃣ Preparando formato de datos...")
 
 
 def formatting_prompts_func(example):
@@ -145,7 +126,7 @@ training_arguments = TrainingArguments(
     per_device_train_batch_size=1,  # REDUCIDO para evitar OOM
     gradient_accumulation_steps=4,  # Efecto de batch=4
     optim="paged_adamw_32bit",
-    save_steps=100,  # Guardar cada 100 pasos
+    save_steps=10000,  # Guardar solo al final para ahorrar espacio en disco (red universitaria)
     logging_steps=10,
     learning_rate=5e-5,
     weight_decay=0.01,
