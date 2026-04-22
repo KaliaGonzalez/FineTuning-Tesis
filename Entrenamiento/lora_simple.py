@@ -122,24 +122,24 @@ print("✅ Datos preparados")
 print("\n8️⃣ Configurando argumentos de training...")
 training_arguments = TrainingArguments(
     output_dir=OUTPUT_DIR,
-    num_train_epochs=3,
+    num_train_epochs=1,  # 1 ÉPOCA es suficiente para no overfitear
     per_device_train_batch_size=1,  # REDUCIDO para evitar OOM
     gradient_accumulation_steps=4,  # Efecto de batch=4
     optim="paged_adamw_32bit",
     save_steps=10000,  # Guardar solo al final para ahorrar espacio en disco (red universitaria)
-    logging_steps=10,
-    learning_rate=5e-5,
+    logging_steps=10,  # Mostrar progreso cada 10 pasos
+    learning_rate=5e-5,  # Tasa de aprendizaje para fine-tuning
     weight_decay=0.01,
     fp16=False,
     bf16=False,
     max_grad_norm=0.3,
-    warmup_ratio=0.1,
+    warmup_ratio=0.1,  # 10% warmup
     lr_scheduler_type="linear",
-    eval_strategy="steps",
-    eval_steps=100,
+    eval_strategy="steps",  # Evaluar cada X pasos
+    eval_steps=50,  # Evaluar con datos de VALIDATION cada 50 pasos
     save_total_limit=2,  # Solo guardar 2 checkpoints para ahorrar disco
-    load_best_model_at_end=True,
-    metric_for_best_model="loss",
+    load_best_model_at_end=True,  # Cargar el mejor modelo basado en métrica
+    metric_for_best_model="loss",  # Basado en loss de validación
 )
 print("✅ Argumentos configurados")
 
@@ -156,6 +156,10 @@ print("✅ Trainer creado")
 
 # === 10. ENTRENAR ===
 print("\n🔟 Iniciando entrenamiento...")
+print("=" * 60)
+print("📚 ENTRENAMIENTO CON:")
+print(f"   - Dataset de ENTRENAMIENTO: FineTuningDatos/dataTrain.json")
+print(f"   - Dataset de VALIDACIÓN: FineTuningDatos/dataValidation.json")
 print("=" * 60)
 try:
     trainer.train()
@@ -180,5 +184,9 @@ except Exception as e:
 
 print("\n" + "=" * 60)
 print(f"🎉 ¡ENTRENAMIENTO COMPLETADO!")
-print(f"📁 Modelo guardado en: {NEW_MODEL_NAME}/")
+print(f"📁 Modelo fine-tuneado guardado en: {NEW_MODEL_NAME}/")
+print(f"💾 Este modelo contiene:")
+print(f"   ✓ Adaptador LoRA entrenado con tus datos")
+print(f"   ✓ Tokenizador configurado")
+print(f"   ✓ Listo para usar con app_delfos.py")
 print("=" * 60)

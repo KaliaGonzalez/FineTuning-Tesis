@@ -28,7 +28,8 @@ def load_model():
         )
         device = "cpu"
 
-    base_model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # Modelo rápido y ligero
+    base_model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # Modelo base
+    adapter_name = "tinylla-fac-finetuned"  # Tu modelo fine-tuneado con tus datos
 
     try:
         # Cargamos el tokenizador
@@ -37,13 +38,23 @@ def load_model():
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
-        # Cargamos el modelo directamente (sin quantization para velocidad)
+        # Cargamos el modelo base
         model = AutoModelForCausalLM.from_pretrained(
             base_model_name,
             device_map=device,
             torch_dtype=torch.float32,
             trust_remote_code=True,
         )
+
+        # IMPORTANTE: Cargar el adaptador LoRA con tus datos entrenados
+        try:
+            model = PeftModel.from_pretrained(model, adapter_name)
+            st.info(f"✅ Adaptador LoRA cargado desde '{adapter_name}'")
+        except Exception as e:
+            st.warning(
+                f"⚠️ No se encontró el modelo fine-tuneado '{adapter_name}'. "
+                f"Usando modelo base. Error: {str(e)}"
+            )
 
         model.eval()  # Modo inferencia
 
