@@ -3,6 +3,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 import time
+import os
 
 st.set_page_config(page_title="Delfos Chatbot", page_icon="🤖", layout="wide")
 st.title("🤖 Delfos - Asistente Institucional")
@@ -48,12 +49,20 @@ def load_model():
 
         # IMPORTANTE: Cargar el adaptador LoRA con tus datos entrenados
         try:
-            model = PeftModel.from_pretrained(model, adapter_name)
-            st.info(f"✅ Adaptador LoRA cargado desde '{adapter_name}'")
+            if os.path.exists(adapter_name):
+                model = PeftModel.from_pretrained(model, adapter_name)
+                st.success(f"✅ Adaptador LoRA cargado desde '{adapter_name}'")
+                st.info("📚 El modelo usa TUS DATOS DE ENTRENAMIENTO")
+            else:
+                st.error(
+                    f"❌ Carpeta '{adapter_name}' NO ENCONTRADA.\n\n"
+                    f"⚠️ El modelo respondará en INGLÉS genérico.\n\n"
+                    f"Solución: Ejecuta primero: python lora_simple.py"
+                )
         except Exception as e:
-            st.warning(
-                f"⚠️ No se encontró el modelo fine-tuneado '{adapter_name}'. "
-                f"Usando modelo base. Error: {str(e)}"
+            st.error(
+                f"❌ Error cargando adaptador: {str(e)}\n\n"
+                f"El modelo respondará en INGLÉS genérico."
             )
 
         model.eval()  # Modo inferencia
