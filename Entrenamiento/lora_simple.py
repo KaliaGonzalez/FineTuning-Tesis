@@ -20,6 +20,13 @@ import os
 # === CONFIGURACIÓN ===
 MODEL_NAME = "unsloth/mistral-7b-v0.3-bnb-4bit"
 NEW_MODEL_NAME = "mistral-7b-fac-finetuned"
+OUTPUT_DIR = "./results_local"
+
+# Crear directorio de salida si no existe
+import os
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 data_files = {
     "train": "FineTuningDatos/dataTrain.json",
     "validation": "FineTuningDatos/dataValidation.json",
@@ -133,24 +140,24 @@ print("✅ Datos preparados")
 # === 8. ARGUMENTOS DE TRAINING ===
 print("\n8️⃣ Configurando argumentos de training...")
 training_arguments = TrainingArguments(
-    output_dir="./results",
-    num_train_epochs=5,  # 5 épocas para mejor aprendizaje
-    per_device_train_batch_size=2,  # Batch más pequeño = mejor generalización
-    gradient_accumulation_steps=2,  # Acumular gradientes para efecto de batch mayor
+    output_dir=OUTPUT_DIR,
+    num_train_epochs=3,
+    per_device_train_batch_size=1,  # REDUCIDO para evitar OOM
+    gradient_accumulation_steps=4,  # Efecto de batch=4
     optim="paged_adamw_32bit",
-    save_steps=50,
+    save_steps=100,  # Guardar cada 100 pasos
     logging_steps=10,
-    learning_rate=5e-5,  # Learning rate más bajo = entrenamiento más estable
-    weight_decay=0.01,  # Regularización para evitar overfitting
+    learning_rate=5e-5,
+    weight_decay=0.01,
     fp16=False,
     bf16=False,
     max_grad_norm=0.3,
-    warmup_ratio=0.1,  # 10% warmup para mejor convergencia
-    lr_scheduler_type="linear",  # Linear decay del learning rate
-    eval_strategy="steps",  # Nombre actualizado
-    eval_steps=50,
-    save_total_limit=3,  # Guardar solo los 3 mejores modelos
-    load_best_model_at_end=True,  # Cargar el mejor modelo al final
+    warmup_ratio=0.1,
+    lr_scheduler_type="linear",
+    eval_strategy="steps",
+    eval_steps=100,
+    save_total_limit=2,  # Solo guardar 2 checkpoints para ahorrar disco
+    load_best_model_at_end=True,
     metric_for_best_model="loss",
 )
 print("✅ Argumentos configurados")
@@ -169,13 +176,26 @@ print("✅ Trainer creado")
 # === 10. ENTRENAR ===
 print("\n🔟 Iniciando entrenamiento...")
 print("=" * 60)
-trainer.train()
+try:
+    trainer.train()
+    print("\n✅ ¡ENTRENAMIENTO COMPLETADO EXITOSAMENTE!")
+except Exception as e:
+    print(f"❌ Error durante entrenamiento: {e}")
+    print("Guardando lo que se pudo entrenar...")
 print("=" * 60)
 
 # === 11. GUARDAR MODELO ===
 print("\n✅ Guardando modelo...")
-trainer.model.save_pretrained(NEW_MODEL_NAME)
-tokenizer.save_pretrained(NEW_MODEL_NAME)
+try:
+    import shutil
+
+    if os.path.exists(NEW_MODEL_NAME):
+        shutil.rmtree(NEW_MODEL_NAME)
+    trainer.model.save_pretrained(NEW_MODEL_NAME)
+    tokenizer.save_pretrained(NEW_MODEL_NAME)
+    print(f"✅ Modelo guardado exitosamente en {NEW_MODEL_NAME}")
+except Exception as e:
+    print(f"❌ Error guardando: {e}")
 
 print("\n" + "=" * 60)
 print(f"🎉 ¡ENTRENAMIENTO COMPLETADO!")
