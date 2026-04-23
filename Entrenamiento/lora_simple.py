@@ -71,11 +71,19 @@ for d in val_data:
 
 # Tokenizar
 print("\n[4/5] Tokenizando...")
+# Tokenizar con attention_mask correcto
+print("\n[4/5] Tokenizando...")
 train_tokens = tokenizer(
-    train_texts, padding="max_length", max_length=2048, truncation=True
+    train_texts,
+    padding=True,  # Cambiar a True (no max_length)
+    truncation=True,
+    max_length=2048,
 )
 val_tokens = tokenizer(
-    val_texts, padding="max_length", max_length=2048, truncation=True
+    val_texts,
+    padding=True,  # Cambiar a True
+    truncation=True,
+    max_length=2048,
 )
 
 train_dataset = Dataset.from_dict(train_tokens)
@@ -116,19 +124,19 @@ trainer = Trainer(
     model=model,
     args=TrainingArguments(
         output_dir="./results",
-        num_train_epochs=1,
-        per_device_train_batch_size=1,
-        per_device_eval_batch_size=1,
-        gradient_accumulation_steps=4,
-        learning_rate=5e-4,
-        warmup_steps=10,
+        num_train_epochs=2,  # Aumentado a 2 épocas
+        per_device_train_batch_size=2,  # Aumentado a 2
+        per_device_eval_batch_size=2,
+        gradient_accumulation_steps=2,  # Reducido
+        learning_rate=2e-4,  # Bajado learning rate
+        warmup_steps=20,
         logging_steps=1,
-        save_steps=100,
-        eval_steps=100,
+        save_steps=500,  # Menos frecuente
+        eval_steps=500,
         save_total_limit=1,
         load_best_model_at_end=False,
         optim="adamw_torch",
-        max_grad_norm=0.3,
+        max_grad_norm=1.0,
         weight_decay=0.01,
         fp16=True,
         gradient_checkpointing=True,
