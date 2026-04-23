@@ -1,11 +1,12 @@
 """
-Script de Fine-tuning para Mistral 7B con LoRA
+Script ULTRA SIMPLE de Fine-tuning para Mistral 7B con LoRA
+Funciona con GPU sin problemas
 """
 
 import torch
 import json
 import os
-from datasets import load_dataset, Dataset
+from datasets import Dataset
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -15,16 +16,125 @@ from transformers import (
 )
 from peft import LoraConfig, get_peft_model
 
+# Verificar GPU
 print("\n" + "=" * 70)
-print("🚀 FINE-TUNING MISTRAL 7B CON LoRA")
+if torch.cuda.is_available():
+    print(f"✅ GPU detectada: {torch.cuda.get_device_name(0)}")
+else:
+    print("❌ NO HAY GPU - Usa CPU (LENTO)")
 print("=" * 70)
 
-# === CONFIGURACIÓN ===
-MODEL_NAME = "mistralai/Mistral-7B-v0.1"
-NEW_MODEL_NAME = "mistral-7b-fac-finetuned"
-OUTPUT_DIR = "./results"
+# Cargar datos
+print("\n[1/5] Cargando datos...")
+with open("FineTuningDatos/dataTrain.json", encoding="utf-8") as f:
+    train_data = json.load(f)
+with open("FineTuningDatos/dataValidation.json", encoding="utf-8") as f:
+    val_data = json.load(f)
 
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+print(f"Train: {len(train_data)}")
+print(f"Val: {len(val_data)}")
+
+# Cargar tokenizador
+print("\n[2/5] Cargando tokenizador...")
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
+tokenizer.pad_token = tokenizer.eos_token
+
+# Formatear textos
+print("\n[3/5] Preparando textos...")
+train_texts = []
+for d in train_data:
+    if d.get("input"):
+        t = f"### Instruction:\n{d['instruction']}\n\n### Input:\n{d['input']}\n\n### Response:\n{d['output']}"
+    else:
+        t = f"### Instruction:\n{d['instruction']}\n\n### Response:\n{d['output']}"
+    train_texts.append(t)
+
+val_texts = []
+for d in val_data:
+    if d.get("input"):
+        t = f"### Instruction:\n{d['instruction']}\n\n### Input:\n{d['input']}\n\n### Response:\n{d['output']}"
+    else:
+        t = f"### Instruction:\n{d['instruction']}\n\n### Response:\n{d['output']}"
+    val_texts.append(t)
+
+# Tokenizar
+print("\n[4/5] Tokenizando...")
+train_tokens = tokenizer(
+    train_texts, padding="max_length", max_length=2048, truncation=True
+)
+val_tokens = tokenizer(
+    val_texts, padding="max_length", max_length=2048, truncation=True
+)
+
+train_dataset = Dataset.from_dict(train_tokens)
+val_dataset = Dataset.from_dict(val_tokens)
+
+# Cargar modelo
+print("\n[5/5] Cargando Mistral 7B + LoRA...")
+model = AutoModelForCausalLM.from_pretrained(
+    "mistralai/Mistral-7B-v0.1",
+    device_map="auto",
+    torch_dtype=torch.float16,
+)
+
+config = LoraConfig(
+    r=16,
+    lora_alpha=32,
+    target_modules=[
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj",
+    ],
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM",
+)
+model = get_peft_model(model, config)
+
+# Entrenar
+print("\n" + "=" * 70)
+print("INICIANDO ENTRENAMIENTO...")
+print("=" * 70 + "\n")
+
+trainer = Trainer(
+    model=model,
+    args=TrainingArguments(
+        output_dir="./results",
+        num_train_epochs=1,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
+        gradient_accumulation_steps=4,
+        learning_rate=5e-4,
+        warmup_steps=10,
+        logging_steps=1,
+        save_steps=100,
+        eval_steps=100,
+        save_total_limit=1,
+        load_best_model_at_end=False,
+        optim="adamw_torch",
+        max_grad_norm=0.3,
+        weight_decay=0.01,
+        fp16=True,
+        gradient_checkpointing=True,
+        report_to=[],
+    ),
+    train_dataset=train_dataset,
+    eval_dataset=val_dataset,
+    data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
+)
+
+trainer.train()
+
+# Guardar
+print("\nGuardando...")
+model.save_pretrained("mistral-7b-fac-finetuned")
+tokenizer.save_pretrained("mistral-7b-fac-finetuned")
+
+print("\n✅ ¡LISTO!")
 
 # === 1. CARGAR DATOS CRUDOS ===
 print("\n1️⃣ Cargando datos JSON...")
