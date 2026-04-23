@@ -1,13 +1,11 @@
 """
-Script PROFESIONAL de Fine-tuning con LoRA para Mistral 7B
-Entrenamiento robusto con validación correcta
-Compatible con Python 3.13 y GPU local
+Script de Fine-tuning para Mistral 7B con LoRA
 """
 
 import torch
 import json
-import warnings
-from datasets import load_dataset
+import os
+from datasets import load_dataset, Dataset
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -16,9 +14,10 @@ from transformers import (
     DataCollatorForLanguageModeling,
 )
 from peft import LoraConfig, get_peft_model
-import os
 
-warnings.filterwarnings("ignore")
+print("\n" + "=" * 70)
+print("🚀 FINE-TUNING MISTRAL 7B CON LoRA")
+print("=" * 70)
 
 # === CONFIGURACIÓN ===
 MODEL_NAME = "mistralai/Mistral-7B-v0.1"
@@ -27,83 +26,73 @@ OUTPUT_DIR = "./results"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-print("\n" + "=" * 70)
-print("🚀 FINE-TUNING MISTRAL 7B CON LoRA")
-print("=" * 70)
+# === 1. CARGAR DATOS CRUDOS ===
+print("\n1️⃣ Cargando datos JSON...")
+with open("FineTuningDatos/dataTrain.json", "r", encoding="utf-8") as f:
+    train_data = json.load(f)
+with open("FineTuningDatos/dataValidation.json", "r", encoding="utf-8") as f:
+    val_data = json.load(f)
 
-# === 1. VERIFICAR Y CARGAR DATASETS ===
-print("\n1️⃣ Cargando datasets...")
-data_files = {
-    "train": "FineTuningDatos/dataTrain.json",
-    "validation": "FineTuningDatos/dataValidation.json",
-}
-
-# Validar que existen
-for key, path in data_files.items():
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"❌ No encontrado: {path}")
-
-# Cargar
-dataset = load_dataset("json", data_files=data_files)
-print(f"✅ Train: {len(dataset['train'])} ejemplos")
-print(f"✅ Val: {len(dataset['validation'])} ejemplos")
+print(f"✅ Train: {len(train_data)} ejemplos")
+print(f"✅ Val: {len(val_data)} ejemplos")
 
 # === 2. CARGAR TOKENIZADOR ===
 print("\n2️⃣ Cargando tokenizador...")
-tokenizer = AutoTokenizer.from_pretrained(
-    MODEL_NAME, trust_remote_code=True, add_eos_token=True
-)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
 print("✅ Tokenizador cargado")
 
-# === 3. PREPARAR DATOS ===
-print("\n3️⃣ Preparando datos...")
+# === 3. FORMATEAR TEXTOS ===
+print("\n3️⃣ Formateando datos...")
 
 
-def prepare_data(examples):
-    """Formatea y tokeniza en una sola pasada"""
-    texts = []
+def format_text(example):
+    inst = example.get("instruction", "")
+    inp = example.get("input", "")
+    out = example.get("output", "")
 
-    for i in range(len(examples["instruction"])):
-        instruction = examples["instruction"][i]
-        input_text = examples["input"][i]
-        output = examples["output"][i]
+    if inp and inp.strip():
+        text = f"### Instruction:\n{inst}\n\n### Input:\n{inp}\n\n### Response:\n{out}"
+    else:
+        text = f"### Instruction:\n{inst}\n\n### Response:\n{out}"
 
-        # Formatear
-        if input_text and input_text.strip():
-            prompt = f"### Instruction:\n{instruction}\n\n### Input:\n{input_text}\n\n### Response:\n{output}"
-        else:
-            prompt = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
-
-        texts.append(prompt)
-
-    # Tokenizar TODO de una vez
-    tokenized = tokenizer(
-        texts,
-        padding="max_length",
-        max_length=2048,
-        truncation=True,
-        return_tensors=None,
-    )
-
-    return tokenized
+    return text
 
 
-# Aplicar preparación
-dataset = dataset.map(
-    prepare_data,
-    batched=True,
-    batch_size=32,
-    remove_columns=dataset["train"].column_names,
-    desc="Preparando datos",
+train_texts = [format_text(ex) for ex in train_data]
+val_texts = [format_text(ex) for ex in val_data]
+
+print(f"✅ Textos formateados")
+
+# === 4. TOKENIZAR ===
+print("\n4️⃣ Tokenizando...")
+
+train_encodings = tokenizer(
+    train_texts,
+    padding="max_length",
+    max_length=2048,
+    truncation=True,
+    return_tensors=None,
 )
 
-print(f"✅ Datos preparados")
-print(f"   Train: {len(dataset['train'])} ejemplos")
-print(f"   Val: {len(dataset['validation'])} ejemplos")
+val_encodings = tokenizer(
+    val_texts,
+    padding="max_length",
+    max_length=2048,
+    truncation=True,
+    return_tensors=None,
+)
 
-# === 4. CARGAR MODELO ===
-print("\n4️⃣ Cargando Mistral 7B...")
+# Convertir a Dataset
+train_dataset = Dataset.from_dict(train_encodings)
+val_dataset = Dataset.from_dict(val_encodings)
+
+print(f"✅ Datos tokenizados")
+print(f"   Train: {len(train_dataset)} ejemplos")
+print(f"   Val: {len(val_dataset)} ejemplos")
+
+# === 5. CARGAR MODELO ===
+print("\n5️⃣ Cargando Mistral 7B...")
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME,
     device_map="auto",
@@ -112,8 +101,8 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 print("✅ Modelo cargado")
 
-# === 5. CONFIGURAR LoRA ===
-print("\n5️⃣ Configurando LoRA...")
+# === 6. CONFIGURAR LoRA ===
+print("\n6️⃣ Configurando LoRA...")
 lora_config = LoraConfig(
     r=16,
     lora_alpha=32,
@@ -134,17 +123,17 @@ lora_config = LoraConfig(
 model = get_peft_model(model, lora_config)
 print("✅ LoRA aplicado")
 
-# === 6. ARGUMENTOS DE ENTRENAMIENTO ===
-print("\n6️⃣ Configurando entrenamiento...")
+# === 7. ARGUMENTOS DE ENTRENAMIENTO ===
+print("\n7️⃣ Configurando entrenamiento...")
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
     num_train_epochs=1,
-    per_device_train_batch_size=1,  # Batch muy pequeño para evitar OOM
+    per_device_train_batch_size=1,
     per_device_eval_batch_size=1,
-    gradient_accumulation_steps=4,  # Efecto de batch 4
+    gradient_accumulation_steps=4,
     learning_rate=5e-4,
-    warmup_steps=20,
-    logging_steps=1,  # Log cada paso (para ver progreso)
+    warmup_steps=10,
+    logging_steps=1,
     save_steps=50,
     eval_steps=50,
     save_total_limit=2,
@@ -156,30 +145,28 @@ training_args = TrainingArguments(
     weight_decay=0.01,
     fp16=True,
     gradient_checkpointing=True,
-    report_to=[],  # Sin wandb/tensorboard para ir más rápido
-    seed=42,
+    report_to=[],
 )
 print("✅ Configuración lista")
 
-# === 7. CREAR TRAINER ===
-print("\n7️⃣ Creando Trainer...")
+# === 8. CREAR TRAINER ===
+print("\n8️⃣ Creando Trainer...")
 trainer = Trainer(
     model=model,
     args=training_args,
-    train_dataset=dataset["train"],
-    eval_dataset=dataset["validation"],
+    train_dataset=train_dataset,
+    eval_dataset=val_dataset,
     data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
 )
 print("✅ Trainer listo")
 
-# === 8. ENTRENAR ===
-print("\n8️⃣ INICIANDO ENTRENAMIENTO...")
+# === 9. ENTRENAR ===
+print("\n9️⃣ INICIANDO ENTRENAMIENTO...")
 print("=" * 70)
 
 try:
     result = trainer.train()
     print("\n✅ ¡ENTRENAMIENTO COMPLETADO!")
-    print(f"   Loss final: {result.training_loss:.4f}")
 except KeyboardInterrupt:
     print("\n⚠️  Entrenamiento interrumpido")
 except Exception as e:
@@ -188,8 +175,8 @@ except Exception as e:
 
     traceback.print_exc()
 
-# === 9. GUARDAR ===
-print("\n9️⃣ Guardando modelo...")
+# === 10. GUARDAR ===
+print("\n🔟 Guardando modelo...")
 try:
     model.save_pretrained(NEW_MODEL_NAME)
     tokenizer.save_pretrained(NEW_MODEL_NAME)
