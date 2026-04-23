@@ -1,10 +1,11 @@
 """
-Script de Fine-tuning con LoRA para TinyLlama
-Versión rápida y compatible con GPU local
-Compatible con Python 3.13
+Script PROFESIONAL de Fine-tuning con LoRA para Mistral 7B
+Entrenamiento robusto con validación correcta
+Compatible con Python 3.13 y GPU local
 """
 
 import torch
+import json
 from datasets import load_dataset
 from peft import LoraConfig, get_peft_model
 from transformers import (
@@ -17,8 +18,8 @@ from transformers import (
 import os
 
 # === CONFIGURACIÓN ===
-MODEL_NAME = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # Modelo pequeño y rápido
-NEW_MODEL_NAME = "tinylla-fac-finetuned"
+MODEL_NAME = "mistralai/Mistral-7B-v0.1"  # Mistral 7B oficial
+NEW_MODEL_NAME = "mistral-7b-fac-finetuned"
 OUTPUT_DIR = "./results"
 
 # Crear directorio de salida si no existe
@@ -32,7 +33,7 @@ data_files = {
 }
 
 print("=" * 60)
-print("🚀 INICIANDO FINE-TUNING CON LORA")
+print("🚀 INICIANDO FINE-TUNING CON LORA - MISTRAL 7B")
 print("=" * 60)
 
 # === 1. CARGAR TOKENIZADOR ===
@@ -49,36 +50,43 @@ print(
     f"✅ Dataset cargado - Train: {len(dataset['train'])}, Val: {len(dataset['validation'])}"
 )
 
-# === 3. CARGAR MODELO BASE ===
-print("\n3️⃣ Cargando modelo base (esto puede tardar 2-3 minutos)...")
+# Verificar estructura de datos
+sample = dataset["train"][0]
+print(f"   📝 Ejemplo: instruction='{sample['instruction'][:50]}...'")
 
-# === 4. CARGAR MODELO ===
+# === 3. CARGAR MODELO BASE ===
+print("\n3️⃣ Cargando Mistral 7B (esto puede tardar 3-5 minutos)...")
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME,
     device_map="auto",
-    torch_dtype=torch.float32,
+    torch_dtype=torch.float16,  # Mistral 7B usa float16
     trust_remote_code=True,
 )
-print("✅ Modelo cargado")
+print("✅ Modelo cargado en GPU")
 
-# === 5. CONFIGURACIÓN LORA ===
-print("\n5️⃣ Configurando LoRA...")
+# === 4. CONFIGURACIÓN LORA ===
+print("\n4️⃣ Configurando LoRA para Mistral 7B...")
 peft_config = LoraConfig(
-    lora_alpha=16,
-    lora_dropout=0.1,
-    r=64,
+    r=16,  # Rank reducido para ahorrar memoria
+    lora_alpha=32,
+    lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM",
     target_modules=[
         "q_proj",
+        "k_proj",
         "v_proj",
-    ],  # TinyLlama tiene menos capas
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj",
+    ],  # Todos los módulos de Mistral
 )
 model = get_peft_model(model, peft_config)
 print("✅ LoRA configurado")
 
-# === 6. FUNCIÓN DE FORMATTEO ===
-print("\n6️⃣ Preparando formato de datos...")
+# === 5. FUNCIÓN DE FORMATTEO ===
+print("\n5️⃣ Preparando formato de datos...")
 
 
 def formatting_prompts_func(example):
@@ -120,31 +128,35 @@ print("✅ Datos preparados")
 
 # === 8. ARGUMENTOS DE TRAINING ===
 print("\n8️⃣ Configurando argumentos de training...")
+print(
+    "📊 El modelo se entrenará CON tus datos de Train y validará CON los datos de Validation"
+)
 training_arguments = TrainingArguments(
     output_dir=OUTPUT_DIR,
-    num_train_epochs=1,  # 1 ÉPOCA es suficiente para no overfitear
-    per_device_train_batch_size=1,  # REDUCIDO para evitar OOM
-    gradient_accumulation_steps=4,  # Efecto de batch=4
-    optim="paged_adamw_32bit",
-    save_steps=10000,  # Guardar solo al final para ahorrar espacio en disco (red universitaria)
-    logging_steps=10,  # Mostrar progreso cada 10 pasos
-    learning_rate=5e-5,  # Tasa de aprendizaje para fine-tuning
+    num_train_epochs=1,  # 1 ÉPOCA para aprender bien sin overfitear
+    per_device_train_batch_size=2,  # Batch size para Mistral 7B (GPU limitada)
+    per_device_eval_batch_size=2,
+    gradient_accumulation_steps=8,  # Equivalente a batch 16
+    optim="adamw_torch",
+    save_steps=50,  # Guardar checkpoint cada 50 pasos
+    logging_steps=5,  # Mostrar progreso cada 5 pasos
+    learning_rate=3e-4,  # Learning rate para LoRA
     weight_decay=0.01,
-    fp16=False,
-    bf16=False,
-    max_grad_norm=0.3,
+    fp16=True,  # Usar mixed precision para Mistral
+    max_grad_norm=1.0,
     warmup_ratio=0.1,  # 10% warmup
     lr_scheduler_type="linear",
     eval_strategy="steps",  # Evaluar cada X pasos
-    eval_steps=50,  # Evaluar con datos de VALIDATION cada 50 pasos
+    eval_steps=25,  # Evaluar con datos de VALIDATION cada 25 pasos
     save_total_limit=2,  # Solo guardar 2 checkpoints para ahorrar disco
     load_best_model_at_end=True,  # Cargar el mejor modelo basado en métrica
     metric_for_best_model="loss",  # Basado en loss de validación
+    gradient_checkpointing=True,  # Ahorrar memoria
 )
 print("✅ Argumentos configurados")
 
-# === 9. TRAINER ===
-print("\n9️⃣ Creando trainer...")
+# === 8. TRAINER ===
+print("\n8️⃣ Creando trainer...")
 trainer = Trainer(
     model=model,
     train_dataset=dataset["train"],
@@ -154,8 +166,8 @@ trainer = Trainer(
 )
 print("✅ Trainer creado")
 
-# === 10. ENTRENAR ===
-print("\n🔟 Iniciando entrenamiento...")
+# === 9. ENTRENAR ===
+print("\n9️⃣ Iniciando entrenamiento...")
 print("=" * 60)
 print("📚 ENTRENAMIENTO CON:")
 print(f"   - Dataset de ENTRENAMIENTO: FineTuningDatos/dataTrain.json")
@@ -169,8 +181,8 @@ except Exception as e:
     print("Guardando lo que se pudo entrenar...")
 print("=" * 60)
 
-# === 11. GUARDAR MODELO ===
-print("\n✅ Guardando modelo...")
+# === 10. GUARDAR MODELO ===
+print("\n🔟 Guardando modelo...")
 try:
     import shutil
 

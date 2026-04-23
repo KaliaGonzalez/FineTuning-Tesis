@@ -29,8 +29,8 @@ def load_model():
         )
         device = "cpu"
 
-    base_model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"  # Modelo base
-    adapter_name = "tinylla-fac-finetuned"  # Tu modelo fine-tuneado con tus datos
+    base_model_name = "mistralai/Mistral-7B-v0.1"  # Mistral 7B
+    adapter_name = "mistral-7b-fac-finetuned"  # Tu modelo fine-tuneado con tus datos
 
     try:
         # Cargamos el tokenizador
@@ -43,7 +43,7 @@ def load_model():
         model = AutoModelForCausalLM.from_pretrained(
             base_model_name,
             device_map=device,
-            torch_dtype=torch.float32,
+            torch_dtype=torch.float16,  # Mistral usa float16
             trust_remote_code=True,
         )
 
@@ -69,7 +69,7 @@ def load_model():
 
         if device == "cuda":
             st.success(
-                f"🚀 ¡TinyLlama en GPU cargado! Respuestas rápidas garantizadas 🎉",
+                f"🚀 ¡Mistral 7B en GPU cargado! Respuestas rápidas garantizadas 🎉",
                 icon="✅",
             )
         else:
