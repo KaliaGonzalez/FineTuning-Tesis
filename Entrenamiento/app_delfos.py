@@ -45,6 +45,7 @@ def load_model():
             device_map=device,
             torch_dtype=torch.float16,  # Mistral usa float16
             trust_remote_code=True,
+            low_cpu_mem_usage=True,  # Menos memoria RAM
         )
 
         # IMPORTANTE: Cargar el adaptador LoRA con tus datos entrenados
@@ -140,10 +141,10 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=150,  # Aumentado un poco para respuestas completas
-                    do_sample=True,
-                    temperature=0.5,  # Bajado para respuestas más determinísticas
-                    top_p=0.85,  # Más restrictivo
+                    max_new_tokens=80,  # REDUCIDO de 150 a 80 (respuestas más cortas = más rápido)
+                    do_sample=False,  # DESACTIVADO sampling (mucho más rápido)
+                    temperature=None,  # Sin temperatura si no hay sampling
+                    top_p=None,  # Sin top_p si no hay sampling
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
                     num_beams=1,
