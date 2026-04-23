@@ -6,8 +6,8 @@ Compatible con Python 3.13 y GPU local
 
 import torch
 import json
+import warnings
 from datasets import load_dataset
-from peft import LoraConfig, get_peft_model
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -15,63 +15,108 @@ from transformers import (
     Trainer,
     DataCollatorForLanguageModeling,
 )
+from peft import LoraConfig, get_peft_model
 import os
 
+warnings.filterwarnings("ignore")
+
 # === CONFIGURACIÓN ===
-MODEL_NAME = "mistralai/Mistral-7B-v0.1"  # Mistral 7B oficial
+MODEL_NAME = "mistralai/Mistral-7B-v0.1"
 NEW_MODEL_NAME = "mistral-7b-fac-finetuned"
 OUTPUT_DIR = "./results"
 
-# Crear directorio de salida si no existe
-import os
-
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+print("\n" + "=" * 70)
+print("🚀 FINE-TUNING MISTRAL 7B CON LoRA")
+print("=" * 70)
+
+# === 1. VERIFICAR Y CARGAR DATASETS ===
+print("\n1️⃣ Cargando datasets...")
 data_files = {
     "train": "FineTuningDatos/dataTrain.json",
     "validation": "FineTuningDatos/dataValidation.json",
 }
 
-print("=" * 60)
-print("🚀 INICIANDO FINE-TUNING CON LORA - MISTRAL 7B")
-print("=" * 60)
+# Validar que existen
+for key, path in data_files.items():
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"❌ No encontrado: {path}")
 
-# === 1. CARGAR TOKENIZADOR ===
-print("\n1️⃣ Cargando tokenizador...")
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
+# Cargar
+dataset = load_dataset("json", data_files=data_files)
+print(f"✅ Train: {len(dataset['train'])} ejemplos")
+print(f"✅ Val: {len(dataset['validation'])} ejemplos")
+
+# === 2. CARGAR TOKENIZADOR ===
+print("\n2️⃣ Cargando tokenizador...")
+tokenizer = AutoTokenizer.from_pretrained(
+    MODEL_NAME, trust_remote_code=True, add_eos_token=True
+)
 tokenizer.pad_token = tokenizer.eos_token
-tokenizer.padding_side = "right"
 print("✅ Tokenizador cargado")
 
-# === 2. CARGAR DATASET ===
-print("\n2️⃣ Cargando dataset...")
-dataset = load_dataset("json", data_files=data_files)
-print(
-    f"✅ Dataset cargado - Train: {len(dataset['train'])}, Val: {len(dataset['validation'])}"
+# === 3. PREPARAR DATOS ===
+print("\n3️⃣ Preparando datos...")
+
+
+def prepare_data(examples):
+    """Formatea y tokeniza en una sola pasada"""
+    texts = []
+
+    for i in range(len(examples["instruction"])):
+        instruction = examples["instruction"][i]
+        input_text = examples["input"][i]
+        output = examples["output"][i]
+
+        # Formatear
+        if input_text and input_text.strip():
+            prompt = f"### Instruction:\n{instruction}\n\n### Input:\n{input_text}\n\n### Response:\n{output}"
+        else:
+            prompt = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
+
+        texts.append(prompt)
+
+    # Tokenizar TODO de una vez
+    tokenized = tokenizer(
+        texts,
+        padding="max_length",
+        max_length=2048,
+        truncation=True,
+        return_tensors=None,
+    )
+
+    return tokenized
+
+
+# Aplicar preparación
+dataset = dataset.map(
+    prepare_data,
+    batched=True,
+    batch_size=32,
+    remove_columns=dataset["train"].column_names,
+    desc="Preparando datos",
 )
 
-# Verificar estructura de datos
-sample = dataset["train"][0]
-print(f"   📝 Ejemplo: instruction='{sample['instruction'][:50]}...'")
+print(f"✅ Datos preparados")
+print(f"   Train: {len(dataset['train'])} ejemplos")
+print(f"   Val: {len(dataset['validation'])} ejemplos")
 
-# === 3. CARGAR MODELO BASE ===
-print("\n3️⃣ Cargando Mistral 7B (esto puede tardar 3-5 minutos)...")
+# === 4. CARGAR MODELO ===
+print("\n4️⃣ Cargando Mistral 7B...")
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME,
     device_map="auto",
-    torch_dtype=torch.float16,  # Mistral 7B usa float16
+    torch_dtype=torch.float16,
     trust_remote_code=True,
 )
-print("✅ Modelo cargado en GPU")
+print("✅ Modelo cargado")
 
-# === 4. CONFIGURACIÓN LORA ===
-print("\n4️⃣ Configurando LoRA para Mistral 7B...")
-peft_config = LoraConfig(
-    r=16,  # Rank reducido para ahorrar memoria
+# === 5. CONFIGURAR LoRA ===
+print("\n5️⃣ Configurando LoRA...")
+lora_config = LoraConfig(
+    r=16,
     lora_alpha=32,
-    lora_dropout=0.05,
-    bias="none",
-    task_type="CAUSAL_LM",
     target_modules=[
         "q_proj",
         "k_proj",
@@ -80,125 +125,78 @@ peft_config = LoraConfig(
         "gate_proj",
         "up_proj",
         "down_proj",
-    ],  # Todos los módulos de Mistral
+    ],
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM",
+    inference_mode=False,
 )
-model = get_peft_model(model, peft_config)
-print("✅ LoRA configurado")
+model = get_peft_model(model, lora_config)
+print("✅ LoRA aplicado")
 
-# === 5. FUNCIÓN DE FORMATTEO ===
-print("\n5️⃣ Preparando formato de datos...")
-
-
-def formatting_prompts_func(example):
-    """Convierte los datos al formato instruction/input/output"""
-    output_texts = []
-    for i in range(len(example["instruction"])):
-        instruction = example["instruction"][i]
-        input_text = example["input"][i]
-        output = example["output"][i]
-
-        if input_text:
-            text = f"### Instruction:\n{instruction}\n\n### Input:\n{input_text}\n\n### Response:\n{output}"
-        else:
-            text = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
-        output_texts.append(text)
-    return {"text": output_texts}
-
-
-# Aplicar formatteo
-dataset = dataset.map(formatting_prompts_func, batched=True)
-
-
-# Tokenizar
-def tokenize_function(examples):
-    return tokenizer(
-        examples["text"],
-        max_length=2048,
-        truncation=True,
-        padding="max_length",
-    )
-
-
-dataset = dataset.map(
-    tokenize_function,
-    batched=True,
-    remove_columns=["instruction", "input", "output", "text"],
-)
-print("✅ Datos preparados")
-
-# === 8. ARGUMENTOS DE TRAINING ===
-print("\n8️⃣ Configurando argumentos de training...")
-print(
-    "📊 El modelo se entrenará CON tus datos de Train y validará CON los datos de Validation"
-)
-training_arguments = TrainingArguments(
+# === 6. ARGUMENTOS DE ENTRENAMIENTO ===
+print("\n6️⃣ Configurando entrenamiento...")
+training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
-    num_train_epochs=1,  # 1 ÉPOCA para aprender bien sin overfitear
-    per_device_train_batch_size=2,  # Batch size para Mistral 7B (GPU limitada)
-    per_device_eval_batch_size=2,
-    gradient_accumulation_steps=8,  # Equivalente a batch 16
+    num_train_epochs=1,
+    per_device_train_batch_size=1,  # Batch muy pequeño para evitar OOM
+    per_device_eval_batch_size=1,
+    gradient_accumulation_steps=4,  # Efecto de batch 4
+    learning_rate=5e-4,
+    warmup_steps=20,
+    logging_steps=1,  # Log cada paso (para ver progreso)
+    save_steps=50,
+    eval_steps=50,
+    save_total_limit=2,
+    load_best_model_at_end=True,
+    metric_for_best_model="loss",
+    eval_strategy="steps",
     optim="adamw_torch",
-    save_steps=50,  # Guardar checkpoint cada 50 pasos
-    logging_steps=5,  # Mostrar progreso cada 5 pasos
-    learning_rate=3e-4,  # Learning rate para LoRA
+    max_grad_norm=0.3,
     weight_decay=0.01,
-    fp16=True,  # Usar mixed precision para Mistral
-    max_grad_norm=1.0,
-    warmup_ratio=0.1,  # 10% warmup
-    lr_scheduler_type="linear",
-    eval_strategy="steps",  # Evaluar cada X pasos
-    eval_steps=25,  # Evaluar con datos de VALIDATION cada 25 pasos
-    save_total_limit=2,  # Solo guardar 2 checkpoints para ahorrar disco
-    load_best_model_at_end=True,  # Cargar el mejor modelo basado en métrica
-    metric_for_best_model="loss",  # Basado en loss de validación
-    gradient_checkpointing=True,  # Ahorrar memoria
+    fp16=True,
+    gradient_checkpointing=True,
+    report_to=[],  # Sin wandb/tensorboard para ir más rápido
+    seed=42,
 )
-print("✅ Argumentos configurados")
+print("✅ Configuración lista")
 
-# === 8. TRAINER ===
-print("\n8️⃣ Creando trainer...")
+# === 7. CREAR TRAINER ===
+print("\n7️⃣ Creando Trainer...")
 trainer = Trainer(
     model=model,
+    args=training_args,
     train_dataset=dataset["train"],
     eval_dataset=dataset["validation"],
-    args=training_arguments,
     data_collator=DataCollatorForLanguageModeling(tokenizer, mlm=False),
 )
-print("✅ Trainer creado")
+print("✅ Trainer listo")
 
-# === 9. ENTRENAR ===
-print("\n9️⃣ Iniciando entrenamiento...")
-print("=" * 60)
-print("📚 ENTRENAMIENTO CON:")
-print(f"   - Dataset de ENTRENAMIENTO: FineTuningDatos/dataTrain.json")
-print(f"   - Dataset de VALIDACIÓN: FineTuningDatos/dataValidation.json")
-print("=" * 60)
+# === 8. ENTRENAR ===
+print("\n8️⃣ INICIANDO ENTRENAMIENTO...")
+print("=" * 70)
+
 try:
-    trainer.train()
-    print("\n✅ ¡ENTRENAMIENTO COMPLETADO EXITOSAMENTE!")
+    result = trainer.train()
+    print("\n✅ ¡ENTRENAMIENTO COMPLETADO!")
+    print(f"   Loss final: {result.training_loss:.4f}")
+except KeyboardInterrupt:
+    print("\n⚠️  Entrenamiento interrumpido")
 except Exception as e:
-    print(f"❌ Error durante entrenamiento: {e}")
-    print("Guardando lo que se pudo entrenar...")
-print("=" * 60)
+    print(f"\n❌ Error: {e}")
+    import traceback
 
-# === 10. GUARDAR MODELO ===
-print("\n🔟 Guardando modelo...")
+    traceback.print_exc()
+
+# === 9. GUARDAR ===
+print("\n9️⃣ Guardando modelo...")
 try:
-    import shutil
-
-    if os.path.exists(NEW_MODEL_NAME):
-        shutil.rmtree(NEW_MODEL_NAME)
-    trainer.model.save_pretrained(NEW_MODEL_NAME)
+    model.save_pretrained(NEW_MODEL_NAME)
     tokenizer.save_pretrained(NEW_MODEL_NAME)
-    print(f"✅ Modelo guardado exitosamente en {NEW_MODEL_NAME}")
+    print(f"✅ Modelo guardado en: {NEW_MODEL_NAME}/")
 except Exception as e:
-    print(f"❌ Error guardando: {e}")
+    print(f"❌ Error al guardar: {e}")
 
-print("\n" + "=" * 60)
-print(f"🎉 ¡ENTRENAMIENTO COMPLETADO!")
-print(f"📁 Modelo fine-tuneado guardado en: {NEW_MODEL_NAME}/")
-print(f"💾 Este modelo contiene:")
-print(f"   ✓ Adaptador LoRA entrenado con tus datos")
-print(f"   ✓ Tokenizador configurado")
-print(f"   ✓ Listo para usar con app_delfos.py")
-print("=" * 60)
+print("\n" + "=" * 70)
+print("🎉 ¡LISTO!")
+print("=" * 70)
