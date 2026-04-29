@@ -141,14 +141,13 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=120,  # Balance entre velocidad y completitud
-                    do_sample=True,  # Sampling activado para respuestas mejores
-                    temperature=0.3,  # MÁS bajo = respuestas más determinísticas y rápidas
-                    top_p=0.9,  # Un poco más restrictivo
+                    max_new_tokens=400,  # Aumentado para respuestas MÁS LARGAS y completas
+                    min_new_tokens=100,  # Fuerza respuestas largas (mínimo 100 tokens)
+                    do_sample=False,  # SIN sampling = respuestas determinísticas y completas
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
                     num_beams=1,
-                    repetition_penalty=1.2,  # Evita repeticiones
+                    repetition_penalty=1.15,  # Evita repeticiones pero permite más contenido
                 )
 
             generation_time = time.time() - start_time
