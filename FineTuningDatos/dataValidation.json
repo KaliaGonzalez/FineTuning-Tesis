@@ -1,1527 +1,3002 @@
 [
   {
-    "instruction": "¿Quién fue el piloto que realizó un vuelo en Barranquilla el 18 de junio de 1919 generando entusiasmo por la aviación?",
+    "instruction": "¿Qué enfoque metodológico permite analizar los fenómenos sociales y políticos haciendo énfasis en las instituciones según el informe histórico?",
     "input": "",
-    "output": "Fue el piloto William Knox Martin [1]."
+    "output": "El enfoque metodológico neo-institucionalista.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Con qué homólogo francés gestionó Marco Fidel Suárez la adquisición de las primeras aeronaves militares?",
+    "instruction": "¿Qué enseñan los institucionalistas históricos sobre el desarrollo de argumentos explicativos?",
     "input": "",
-    "output": "Con Alexandre Millerand [1]."
+    "output": "Enseñan a tomar en serio el tiempo, especificando secuencias y rastreando transformaciones y procesos de escala y temporalidad variables.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina el concepto de 'Abogar' según la doctrina de la FAC.",
+    "instruction": "¿Cuáles fueron las fuentes primarias utilizadas para la recolección de información en el informe de evolución de la FAC?",
     "input": "",
-    "output": "Es una técnica empleada para elevar la conciencia situacional de otras personas dentro de la cabina de una aeronave [2]."
+    "output": "Los manuales de Doctrina Básica Aérea y documentos históricos sobre la FAC.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es la 'Actualización de la Doctrina'?",
+    "instruction": "¿En qué consiste la revolución estructural generada por la aviación según Schmitt (1979)?",
     "input": "",
-    "output": "Es el proceso intelectual o análisis de experiencias y del entorno con el fin de generar nuevo conocimiento que será plasmado en medios físicos [3]."
+    "output": "Consiste en que las fuerzas terrestres y navales quedan sometidas a los efectos de una fuerza que se mueve en el espacio tridimensional.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Cuál es la función del Centro de Armas y Tácticas (CEOT) dentro del COAES?",
+    "instruction": "¿Quién fue el Mayor que realizó el primer vuelo solo de un aviador militar colombiano?",
     "input": "",
-    "output": "Forma parte de las áreas operativas para integrar los esfuerzos operacionales y optimizar la toma de decisiones [4]."
+    "output": "El Mayor Félix Castillo Mariño.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué porcentaje del pie de fuerza total de las Fuerzas Militares representa la FAC?",
+    "instruction": "¿Qué misiones aéreas asesoraron misiones de Alemania, Cuba y Estados Unidos en la década posterior al conflicto con Perú?",
     "input": "",
-    "output": "Representa aproximadamente el 5% del total de efectivos [5]."
+    "output": "Asesoraron para formar nuevas generaciones de pilotos y mecánicos, y para trazar rutas aéreas que conectaron el territorio nacional.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿En qué año se incorporaron las primeras mujeres al curso regular de Suboficiales?",
+    "instruction": "¿En qué año la institución cambió su nombre de Fuerza Aérea Nacional a Fuerza Aérea Colombiana definitivamente?",
     "input": "",
-    "output": "En el año 2013 [6]."
+    "output": "En el año 1944.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Aerodinámica' según el manual de términos.",
+    "instruction": "¿Qué misiones se mencionan como parte de los programas de asistencia social de la FAC?",
     "input": "",
-    "output": "Materia que trata del estudio del movimiento del aire y otros fluidos gaseosos y de las fuerzas que actúan sobre los objetos en movimiento [7]."
+    "output": "Atención en desastres naturales, evacuación de personal civil en emergencias con aeronaves medicalizadas y extinción de incendios forestales.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es un 'Activo Aéreo de Alto Valor' (HVAA)?",
+    "instruction": "¿Qué capacidad de la FAC se relaciona con el desarrollo de operaciones no relacionadas con la guerra?",
     "input": "",
-    "output": "Incluye plataformas aerotransportadas principales para comando y control, inteligencia, reabastecimiento aéreo y guerra electrónica que requieren protección activa [8]."
+    "output": "La capacidad de multiplicar la Fuerza.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué diferencia hay entre un 'Aeródromo alterno de despegue' y uno de 'en ruta'?",
+    "instruction": "¿Cuáles fueron los dos Grupos Aéreos existentes a mediados de los años ochenta?",
     "input": "",
-    "output": "El de despegue es para aterrizar si es necesario poco después de la salida; el de ruta es para condiciones anormales o emergencias durante el trayecto [9]."
+    "output": "El Grupo Aéreo del Sur (GASUR) y el Grupo Aéreo del Caribe (GACAR).",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Aeronave Hostil'.",
+    "instruction": "Defina 'Abnegación' según el Código de Ética Militar Aérea.",
     "input": "",
-    "output": "Es una aeronave sospechosa que, tras ser interceptada, no atiende procedimientos o viola el espacio aéreo nacional [10]."
+    "output": "Es el absoluto y espontáneo sacrificio que el hombre hace de su voluntad, de sus gustos y de su vida en servicio de la patria o de la institución.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es el 'Air Traffic Management' (ATM)?",
+    "instruction": "¿Bajo qué condición una aeronave desaparecida se incluye en las bases de datos como accidentada?",
     "input": "",
-    "output": "Tiene como finalidad obtener un movimiento seguro, ordenado y rápido del tránsito aéreo mediante el empleo eficaz del espacio aéreo [11]."
+    "output": "Cuando la aeronave ha estado desaparecida por más de noventa días.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿A qué se refiere el término 'Alcance' como característica del poder aéreo?",
+    "instruction": "¿Qué debe contener la descripción de una 'Acción Correctiva' para ser efectiva?",
+    "output": "Actividades concretas que sean realizables, medibles y verificables, con un plazo de ejecución coherente con su complejidad.",
     "input": "",
-    "output": "Significa que los centros de poder y gravedad están a disposición de un ataque aéreo sin barreras naturales que lo impidan [12]."
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Alerta Especial' para una tripulación.",
+    "instruction": "Defina 'Acción de mejora' según el RINCO 2024.",
     "input": "",
-    "output": "Situación que exige disponibilidad de una tripulación en descanso y su aeronave lista para reaccionar en un tiempo determinado [12]."
+    "output": "Acción que se define para implementar las recomendaciones plasmadas en el informe final de inspección y que no requiere análisis de causas.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es la 'Altura Fault'?",
+    "instruction": "¿Qué es una 'Acción Defensiva' según el Manual de Derecho Operacional?",
     "input": "",
-    "output": "Altura indicada por aeronaves de combate en entrega de armas de la cual no se debe descender para garantizar separación con el terreno [12]."
+    "output": "Conjunto de actividades destinadas a impedir que una acción ofensiva enemiga alcance su objetivo.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué establece la 'Cláusula Martens' en el DIH?",
+    "instruction": "Defina 'Acción Ofensiva'.",
     "input": "",
-    "output": "Establece que en casos no previstos, civiles y combatientes quedan bajo la protección de los principios del derecho de gentes y dictados de la conciencia pública [13]."
+    "output": "Conjunto de actividades destinadas a imponer la iniciativa del adversario y anular su capacidad operacional.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es el 'Amatol'?",
+    "instruction": "¿Qué puente representa la 'Acción Integral' en la FAC?",
     "input": "",
-    "output": "Es una mezcla de TNT y nitrato de amonio usada en bombas de propósito general, granadas y torpedos [14]."
+    "output": "El puente entre el control territorial (aspecto militar) y la consolidación social del Estado (aspecto civil / oferta estatal).",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Aproximación a un punto en el espacio' (PinS).",
+    "instruction": "¿Cuál es la función de la 'Acreditación' en el sistema educativo de la FAC?",
     "input": "",
-    "output": "Procedimiento basado en GNSS diseñado únicamente para helicópteros para maniobras visuales tras alinearse con un punto de referencia [15]."
+    "output": "Es el reconocimiento de la alta calidad que otorga el MEN a los programas y a las instituciones que cumplen con los más altos criterios de calidad.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es un 'Área Clave' en una investigación de accidentes?",
+    "instruction": "Defina 'Actividad' en la gerencia de proyectos.",
     "input": "",
-    "output": "Es aquella que conserva la esencia del proceso o procedimiento y sin la cual este no se cumple [16]."
+    "output": "Acciones realizadas o trabajo ejecutado mediante insumos que son movilizados para producir resultados específicos.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Diferencie entre 'Archivo de Gestión' y 'Archivo Central'.",
+    "instruction": "¿Qué es un 'Activo' en términos de doctrina organizacional?",
     "input": "",
-    "output": "El de gestión es para consulta continua por dependencias productoras; el central recibe documentos transferidos cuya consulta es menos frecuente pero siguen vigentes [17, 18]."
+    "output": "Es un objeto o característica tangible o intangible que tiene algún valor para una organización.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué comprende el 'Lado Aire' de un aeródromo?",
+    "instruction": "¿Qué es el 'Efecto de falla' según el manual de confiabilidad?",
     "input": "",
-    "output": "Pistas, calles de rodaje, hangares y plataformas destinados a la operación de aeronaves [19]."
+    "output": "La consecuencia o consecuencias que una falla pueda tener en la operación, función o estado de un ítem.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Asesoramiento Anticolisión'.",
+    "instruction": "Defina 'Elemento Sustituto' en el abastecimiento.",
     "input": "",
-    "output": "Asesoramiento prestado por servicios de tránsito aéreo indicando maniobras específicas para evitar colisiones [20]."
+    "output": "Elementos que reemplazan a otros por poseer características funcionales y físicas capaces de sustituirlos, usualmente mejorando las condiciones técnicas.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es un 'Aspecto Relevante' en una inspección?",
+    "instruction": "¿Qué busca el principio de 'Actualidad' en la doctrina?",
     "input": "",
-    "output": "Condición demostrable que implica utilidad o éxito y que es susceptible de ser replicada en otras unidades [20]."
+    "output": "Obliga a la institución a mantener vigentes sus principios de empleo acordes a las leyes y normas internacionales, DIDH y DICA.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Autocontrol' para un servidor público de la FAC.",
+    "instruction": "¿Qué se entiende por 'Objetividad' en un procedimiento doctrinario?",
     "input": "",
-    "output": "Capacidad de controlar su propio trabajo, detectar desviaciones y efectuar correctivos según la Constitución [21]."
+    "output": "Que el procedimiento se describa de forma clara y concisa, evitando dudas o interpretaciones en su aplicación.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es el 'Automóvil de Punta' en un esquema de protección?",
+    "instruction": "Defina 'Accesibilidad' como característica de la doctrina.",
     "input": "",
-    "output": "Vehículo de seguridad que va directamente frente al vehículo del personaje protegido [22]."
+    "output": "Corresponde al nivel de reserva, socialización y medios (escritos, digitales) para su difusión, consulta y actualización.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Quién otorga la 'Autonomía de Vuelo' en la FAC?",
+    "instruction": "¿Qué es el Proceso Militar de Toma de Decisiones (PMTD)?",
     "input": "",
-    "output": "La otorga el Comando de la FAC a través de Juntas de Autonomías [23]."
+    "output": "Secuencia analítica y singular que conduce a la resolución de problemas para facilitar el desarrollo de planes y ejecución de operaciones.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Autorregulación'.",
+    "instruction": "¿Cuál era la clasificación del manual de doctrina en sus ediciones de 1963, 1975 y 1995?",
     "input": "",
-    "output": "Capacidad institucional para aplicar métodos que permitan el desarrollo del Sistema de Control Interno bajo integridad y transparencia [23]."
+    "output": "Clasificación de Reservado.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es un 'Avión Interceptor'?",
+    "instruction": "¿Qué macro tareas incluía el manual de 1975?",
     "input": "",
-    "output": "Elemento de gran movilidad y alcance que permite interceptar amenazas a gran distancia, realizando defensa en profundidad [24]."
+    "output": "Contra-aire, apoyo aéreo cercano, interdicción aérea, reconocimiento armado, transporte aéreo y ataque estratégico.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué estudia la 'Axiología' según el SEFAC?",
+    "instruction": "¿Qué cambio de clasificación tuvo la doctrina en 2010?",
     "input": "",
-    "output": "Es el estudio de la naturaleza de los valores y de los juicios valorativos [25]."
+    "output": "Pasó de ser 'Reservado' a ser 'Restringido'.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es una 'Bahía' en un almacén logístico?",
+    "instruction": "¿Cuáles son los cuatro grupos que integran las fuentes de la doctrina?",
     "input": "",
-    "output": "Área rectangular formada al dividir el suelo del almacén para establecer ubicaciones de depósito [25]."
+    "output": "La historia y sus experiencias, la institución militar, la situación nacional, y la iniciativa y la tecnología.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es un 'Alambre Armador'?",
+    "instruction": "Defina 'Mando' según la Guía del Comandante.",
     "input": "",
-    "output": "Dispositivo en el armamento aéreo que facilita el funcionamiento o preparación de municiones [26]."
+    "output": "Autoridad y poder que tiene el superior sobre sus subalternos.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Baja de Bienes'.",
+    "instruction": "¿Qué es el 'Mando Conjunto'?",
     "input": "",
-    "output": "Retiro definitivo de un bien del servicio y registros patrimoniales por falta de potencial de servicio [27]."
+    "output": "Autoridad de mando solo sobre las fuerzas asignadas que están bajo su autoridad y no puede ser delegado o transferido.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es el 'BPIN'?",
+    "instruction": "Defina 'Maniobra' en la estructura misional del PAEC.",
     "input": "",
-    "output": "Banco Nacional de Programas y Proyectos de Inversión, plataforma para registrar proyectos financiados por el presupuesto nacional [28]."
+    "output": "Acción militar detallada cuya especificidad determina los modos de aplicación del PAEC para cumplir una operación tipo.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es una 'Barraca'?",
+    "instruction": "¿Qué es un 'Manual de Procedimientos' en mantenimiento?",
     "input": "",
-    "output": "Inmueble de alojamiento militar conformado por habitaciones con zonas húmedas y áreas de apoyo [28]."
+    "output": "Documento que regula la forma de llevar a cabo los procedimientos de mantenimiento aeronáutico propiciando un lenguaje común.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Diferencie 'Base de Lanzamiento' de 'Base de Recuperación'.",
+    "instruction": "Defina 'Material Reservado'.",
     "input": "",
-    "output": "La de lanzamiento es para despegar aeronaves en operaciones; la de recuperación es para aterrizar tras cumplirlas [29]."
+    "output": "Material cuya divulgación puede poner en riesgo la seguridad del Estado o afectar las relaciones diplomáticas.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué son 'Bienes Devolutivos'?",
+    "instruction": "¿Qué permite el listado 'MEL' (Minimum Equipment List)?",
     "input": "",
-    "output": "Bienes que no se consumen con el primer uso y deben devolverse tras cumplir la función asignada [30]."
+    "output": "Permite la operación de una aeronave con ciertos ítems inoperativos por un periodo limitado sin afectar la seguridad.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Bienes Muebles Obsoletos'.",
+    "instruction": "¿Qué es la 'Mística' según la Ley 1862 de 2017?",
     "input": "",
-    "output": "Productos que han cumplido su vigencia o para los que es imposible encontrar repuestos para su operatividad [30]."
-  },
-  {
-    "instruction": "¿Qué es una 'Bodega Cuarto Oscuro'?",
-    "input": "",
-    "output": "Área carente de luz para almacenar bienes que por composición química no pueden tener contacto con la luz [31]."
-  },
-  {
-    "instruction": "¿Qué es un 'Boletín de Servicio' (Service Bulletin)?",
-    "input": "",
-    "output": "Documento del fabricante que propone inspecciones o cambios en el mantenimiento de productos aeronáuticos [32]."
-  },
-  {
-    "instruction": "Defina 'Bomba' en el contexto de armamento aéreo.",
-    "input": "",
-    "output": "Munición diseñada para ser soltada o eyectada desde un avión para causar daño por explosión o fragmentación [32]."
-  },
-  {
-    "instruction": "¿Qué debe incluir mínimamente un 'Briefing de la misión'?",
-    "input": "",
-    "output": "Procedimientos de emergencia, funciones de tripulantes, precauciones y restricciones [33]."
-  },
-  {
-    "instruction": "¿Qué es la 'Capacidad Productiva'?",
-    "input": "",
-    "output": "Medición de la producción máxima que se puede obtener con la capacidad instalada de mantenimiento [34]."
-  },
-  {
-    "instruction": "¿Qué es un 'Cargo Crítico'?",
-    "input": "",
-    "output": "Cargo con impacto global en la estrategia cuya autonomía permite toma de decisiones específicas y manejo de recursos [35]."
-  },
-  {
-    "instruction": "Defina 'Carpeta Meteorológica de Vuelo'.",
-    "input": "",
-    "output": "Legajo electrónico que reúne información meteorológica para el planeamiento de vuelos internacionales [36]."
-  },
-  {
-    "instruction": "¿Qué es una 'Catapulta' en armamento?",
-    "input": "",
-    "output": "Dispositivo telescópico diseñado para la expulsión por emergencia de un asiento eyectable [37]."
-  },
-  {
-    "instruction": "Defina 'Certificado de Conformidad' en logística.",
-    "input": "",
-    "output": "Declaración de que una parte fue producida por un fabricante con proceso aprobado por el regulador [38]."
-  },
-  {
-    "instruction": "¿Qué es el 'Ciberespacio' según el manual de términos?",
-    "output": "Dominio de información con redes interdependientes, infraestructura de TI y datos que incluyen internet y telecomunicaciones [39].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Coevaluación' en el sistema educativo FAC.",
-    "input": "",
-    "output": "Evaluación entre pares para retroalimentar prácticas pedagógicas y metodologías de enseñanza [40]."
-  },
-  {
-    "instruction": "¿Qué indica un 'Código de Prioridad' en abastecimientos?",
-    "input": "",
-    "output": "Número de dos dígitos que determina la urgencia de un pedido según instrucciones del Comando [40]."
-  },
-  {
-    "instruction": "¿Qué es un 'Cohete Avión'?",
-    "input": "",
-    "output": "Proyectil impulsado por la reacción de un chorro de gas de una carga propulsora interna [41]."
-  },
-  {
-    "instruction": "Defina 'Comando Unificado'.",
-    "input": "",
-    "output": "Unidad conjunta permanente con misión amplia conformada por componentes de dos o más fuerzas [42]."
-  },
-  {
-    "instruction": "¿Qué es el 'Comando Especial Aéreo'?",
-    "input": "",
-    "output": "Título otorgado a oficiales y suboficiales que aprobaron cursos estipulados en el decreto 989 de 1992 [43]."
-  },
-  {
-    "instruction": "Defina 'Combatiente' bajo el DIH.",
-    "input": "",
-    "output": "Persona con derecho a participar directamente en hostilidades en conflictos internacionales, principalmente miembros de las FF.AA. [44]."
-  },
-  {
-    "instruction": "¿Qué es un 'Comodato' en administración de materiales?",
-    "input": "",
-    "output": "Bienes recibidos en préstamo sin traslado de propiedad mediante contrato para uso por tiempo determinado [45]."
-  },
-  {
-    "instruction": "Defina 'Componente Controlled por Vida Límite' (Hard Time).",
-    "input": "",
-    "output": "Ítem con tiempo de vida estricto tras el cual su cambio es obligatorio por pérdida de seguridad inherente [46]."
-  },
-  {
-    "instruction": "¿Qué es el 'Comportamiento de Falla'?",
-    "input": "",
-    "output": "Indica si una falla sigue una distribución de probabilidad o si es aleatoria [46]."
-  },
-  {
-    "instruction": "Defina 'CPDLC'.",
-    "input": "",
-    "output": "Comunicación entre el controlador y el piloto mediante enlace de datos [47]."
-  },
-  {
-    "instruction": "¿Qué es una 'Conclusión de Inspección'?",
-    "input": "",
-    "output": "Concepto resultante del análisis entre objetivos, alcance, criterios y hallazgos encontrados [48]."
-  },
-  {
-    "instruction": "Defina 'Conflicto de Intereses'.",
-    "input": "",
-    "output": "Relación que menoscaba la capacidad de una persona para desempeñar obligaciones de forma objetiva [49]."
-  },
-  {
-    "instruction": "¿Qué es la 'Contravigilancia'?",
-    "input": "",
-    "output": "Procedimiento para detectar si un personaje o bien protegido está siendo vigilado sin autorización [50]."
-  },
-  {
-    "instruction": "Defina 'Control Táctico' (TACON).",
-    "input": "",
-    "output": "Autoridad delegada para suministrar instrucciones detalladas de movimientos y maniobras en misiones específicas [51]."
-  },
-  {
-    "instruction": "¿Qué es un 'Controlador de Tránsito Aéreo Habilitado'?",
-    "output": "Titular de un certificado válido para las atribuciones que le corresponden en el servicio ATC [52].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Corrección' según el RINCO.",
-    "input": "",
-    "output": "Acción inmediata para enmendar un incumplimiento sin atacar la causa raíz [53]."
-  },
-  {
-    "instruction": "¿Qué es el 'Costo de Reposición'?",
-    "input": "",
-    "output": "Costo necesario para reponer la capacidad operativa de un elemento en una fecha determinada [54]."
-  },
-  {
-    "instruction": "Defina 'Crímenes de Guerra'.",
-    "input": "",
-    "output": "Violaciones graves del DIH aplicables a conflictos internacionales o internos que implican responsabilidad penal [55]."
-  },
-  {
-    "instruction": "¿Qué es una 'Crisis' según la doctrina conjunta?",
-    "input": "",
-    "output": "Situación que amenaza a ciudadanos o intereses vitales y requiere el compromiso de recursos militares [56]."
-  },
-  {
-    "instruction": "Defina 'Criticidad' en confiabilidad.",
-    "input": "",
-    "output": "Medida relativa de la probabilidad de ocurrencia de una falla y sus consecuencias [57]."
-  },
-  {
-    "instruction": "¿Qué es una 'Cuenta de Orden'?",
-    "input": "",
-    "output": "Registro contable para valores que no afectan estados financieros pero deben controlarse por efectos futuros [58]."
-  },
-  {
-    "instruction": "¿Qué es un 'Cuerpo de Bomba'?",
-    "input": "",
-    "output": "Casco sólido (acero u otro) que contiene carga explosiva e impulsores [58]."
-  },
-  {
-    "instruction": "Defina 'Custodia de Material'.",
-    "input": "",
-    "output": "Figura administrativa donde un almacén recibe bienes para almacenamiento y control temporal [59]."
-  },
-  {
-    "instruction": "¿Qué es el 'Déficit de Alojamiento Militar'?",
-    "input": "",
-    "output": "Situación donde hay más demanda de alojamiento que inmuebles disponibles en una guarnición [59]."
-  },
-  {
-    "instruction": "Defina 'Delegación de la Autoridad'.",
-    "input": "",
-    "output": "Acción por la cual un comandante asigna parte de su autoridad proporcional a una tarea a un subordinado [60]."
-  },
-  {
-    "instruction": "¿Qué es un 'Depósito Habilitado'?",
-    "input": "",
-    "output": "Recinto privado habilitado por Aduana para almacenar mercancías bajo control aduanero para su nacionalización [61]."
-  },
-  {
-    "instruction": "Defina 'Derrota' en navegación aérea.",
-    "input": "",
-    "output": "Proyección sobre la superficie terrestre de la trayectoria de una aeronave expresada en grados [62]."
-  },
-  {
-    "instruction": "¿Qué es un 'Descargo' en una inspección?",
-    "input": "",
-    "output": "Argumentación con evidencias del inspeccionado para desvirtuar un incumplimiento del informe preliminar [63]."
-  },
-  {
-    "instruction": "Defina 'Detonación por Simpatía'.",
-    "input": "",
-    "output": "Detonación progresiva de explosivos separados que ocurre de forma casi simultánea al detonar una masa principal [64]."
-  },
-  {
-    "instruction": "¿Qué es el 'Diamante de Seguridad'?",
-    "input": "",
-    "output": "Área de protección alrededor de aeronaves estacionadas delimitada por nariz, puntas de plano y cola [65]."
-  },
-  {
-    "instruction": "Defina 'Direccionamiento Estratégico'.",
-    "input": "",
-    "output": "Proceso de formular la estrategia para los planes de acción anticipándose a acontecimientos futuros [65]."
-  },
-  {
-    "instruction": "¿Qué es la 'Dispersión de Aeronaves'?",
-    "input": "",
-    "output": "Medida de seguridad que ubica aeronaves en sitios distantes dentro de una base o en otras diferentes [66]."
-  },
-  {
-    "instruction": "Defina 'Disponibilidad' de un ítem.",
-    "input": "",
-    "output": "Medida de tiempo en que un ítem permanece en estado operable para cumplir su misión [67]."
-  },
-  {
-    "instruction": "¿Qué es un 'Shopping Documental'?",
-    "input": "",
-    "output": "Documento soporte que acompaña envíos de transporte internacional de abastecimientos [68]."
-  },
-  {
-    "instruction": "¿Qué es la 'Duración Total Prevista' para un vuelo VFR?",
-    "output": "Tiempo estimado desde el despegue hasta llegar a la vertical del aeródromo de destino [69].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Efecto de Falla'.",
-    "input": "",
-    "output": "Consecuencia que una falla tiene en la operación o estado de un ítem [70]."
-  },
-  {
-    "instruction": "¿Qué es un 'Elemento Sustituto'?",
-    "input": "",
-    "output": "Elementos que reemplazan a otros poseyendo características capaces de sustituirlos, usualmente mejorándolas [71]."
-  },
-  {
-    "instruction": "Defina 'En Desuso' para material tangible.",
-    "input": "",
-    "output": "Disminución de utilidad por no aplicabilidad a equipos actuales o avances tecnológicos [71]."
-  },
-  {
-    "instruction": "¿Qué son 'Enfoques Diferenciales'?",
-    "input": "",
-    "output": "Marco para analizar relaciones de poder desiguales e impulsar acciones afirmativas por género, etnia o discapacidad [72]."
-  },
-  {
-    "instruction": "Diferencie 'Ensayos en Tierra' de 'Ensayos en Vuelo'.",
-    "input": "",
-    "output": "Los de tierra prueban fabricación o instalación (estructurales, ambientales); los de vuelo verifican códigos de aeronavegabilidad [73, 74]."
-  },
-  {
-    "instruction": "¿Qué es un 'Entregable' en un proyecto?",
-    "input": "",
-    "output": "Producto (bien o servicio) específico que se espera obtener tras un proceso [74]."
-  },
-  {
-    "instruction": "Defina 'Error Imprudente'.",
-    "input": "",
-    "output": "Error por falta de cuidado u omisión en el cálculo de consecuencias previsibles de la propia acción [75]."
-  },
-  {
-    "instruction": "¿Qué es el 'Escalamiento Industrial' para la FAC?",
-    "input": "",
-    "output": "Adquisición de capacidades tecnológicas y vínculos con universidades/empresas para mejorar competitividad [76]."
-  },
-  {
-    "instruction": "Defina 'Espacio Vital' según el manual de protección.",
-    "input": "",
-    "output": "Área que cubre un metro de diámetro alrededor de un individuo [77]."
-  },
-  {
-    "instruction": "¿Qué es el 'Espacio Aéreo con Servicio de Asesoramiento'?",
-    "output": "Ruta o espacio de dimensiones definidas donde se proporciona asesoramiento de tránsito aéreo [78].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Establecimiento Aeronáutico'.",
-    "input": "",
-    "output": "Lugar físico donde se ejecutan actividades de diseño, construcción, mantenimiento o instrucción aeronáutica [79]."
-  },
-  {
-    "instruction": "¿Qué es el 'Estado de Fabricación'?",
-    "input": "",
-    "output": "Estado que tiene jurisdicción sobre la entidad responsable del montaje final de la aeronave [80]."
-  },
-  {
-    "instruction": "Defina 'Estratagema' en derecho operacional.",
-    "input": "",
-    "output": "Acto para inducir a error al adversario que no infringe normas internacionales ni es pérfido [81]."
-  },
-  {
-    "instruction": "¿Qué es el 'Espíritu Militar'?",
-    "input": "",
-    "output": "Fe ardiente en la profesión de las armas, decisión irrevocable de servirla y renuncia a actividades perjudiciales [82]."
-  },
-  {
-    "instruction": "Defina 'Estrategia' según la doctrina conjunta.",
-    "input": "",
-    "output": "Idea para emplear instrumentos del poder nacional de manera sincronizada para lograr objetivos [82]."
-  },
-  {
-    "instruction": "¿Qué es una 'Etiqueta de Identificación' en logística?",
-    "input": "",
-    "output": "Marca que permite identificar shelf life, NSN, lote y fecha de almacenamiento de productos Clase III [83]."
-  },
-  {
-    "instruction": "Defina 'Evidencia' para un inspector.",
-    "input": "",
-    "output": "Información obtenida (documentos físicos o digitales) que respalda la veracidad de un hallazgo [84]."
-  },
-  {
-    "instruction": "¿Qué es el 'Exchange'?",
-    "input": "",
-    "output": "Acción de cambiar, canjear o permutar componentes aeronáuticos reparables [85]."
-  },
-  {
-    "instruction": "Defina 'Falla' según el manual de confiabilidad.",
-    "input": "",
-    "output": "Evento donde un ítem queda inoperante para desempeñarse según su diseño especificado [86]."
-  },
-  {
-    "instruction": "¿Qué es una 'Familia' en la base de datos Meridium?",
-    "input": "",
-    "output": "Tablas que conforman la base de datos con campos de información traída de SAP [87]."
-  },
-  {
-    "instruction": "Diferencie 'ALERFA' de 'INCERFA'.",
-    "input": "",
-    "output": "INCERFA es duda acerca de la seguridad; ALERFA es cuando ya se abriga temor por la seguridad [88]."
-  },
-  {
-    "instruction": "¿Qué es una 'Ficha EBI'?",
-    "input": "",
-    "output": "Estadísticas Básicas de Inversión que resumen características centrales de un proyecto para el PGN [89]."
-  },
-  {
-    "instruction": "Defina 'Fuera de Combate' (Haya caído en poder del adversario).",
-    "input": "",
-    "output": "Combatiente que se rinde, está inconsciente o incapacitado y no puede ser objeto de ataque [90]."
-  },
-  {
-    "instruction": "¿Qué es el 'GAP' en confiabilidad?",
-    "input": "",
-    "output": "Brecha entre la medida ideal de un indicador de clase mundial y el resultado obtenido [91]."
-  },
-  {
-    "instruction": "Defina 'Guerra no Convencional'.",
-    "input": "",
-    "output": "Operaciones conducidas a través de fuerzas locales sustitutivas dirigidas por una fuente externa [92]."
-  },
-  {
-    "instruction": "¿Qué es una 'Habitación' en alojamiento militar?",
-    "input": "",
-    "output": "Unidad dentro de una barraca destinada exclusivamente como dormitorio o pernoctada [93]."
-  },
-  {
-    "instruction": "Defina 'Herramientas de Seguridad' en armamento.",
-    "input": "",
-    "output": "Herramientas diseñadas para evitar chispas o igniciones en el manejo de explosivos [94]."
-  },
-  {
-    "instruction": "¿Qué es la 'Higroscopicidad'?",
-    "input": "",
-    "output": "Tendencia de un material a absorber humedad de sus alrededores [95]."
-  },
-  {
-    "instruction": "Defina 'Hora Prevista Fuera de Calzos'.",
-    "input": "",
-    "output": "Hora estimada en la cual la aeronave iniciará el desplazamiento para la salida [96]."
-  },
-  {
-    "instruction": "¿Qué es un 'Hostigamiento'?",
-    "input": "",
-    "output": "Asedio a la base aérea para desgastar tropas y observar su accionar antes de atacar eficazmente [97]."
-  },
-  {
-    "instruction": "Defina 'Impacto Estratégico'.",
-    "input": "",
-    "output": "Caracterización de un hecho u objetivo con alto grado de relevancia en el nivel estratégico [98]."
-  },
-  {
-    "instruction": "¿Qué es un 'Incendiario'?",
-    "input": "",
-    "output": "Agente químico o composición pirotécnica para iniciar fuego en material combustible [98]."
-  },
-  {
-    "instruction": "Diferencie 'Incidente Grave' de 'Incidente Menor'.",
-    "input": "",
-    "output": "Grave indica alta probabilidad de accidente (RELES/RECIL); Menor afecta la seguridad sin alcanzar lo grave [99, 100]."
-  },
-  {
-    "instruction": "Defina 'Indicadores Reactivos'.",
-    "input": "",
-    "output": "Relacionados con el control y medición de sucesos de seguridad operacional de alto impacto [101]."
-  },
-  {
-    "instruction": "¿Qué es la 'Indisciplina de Vuelo'?",
-    "input": "",
-    "output": "Incumplimiento voluntario o involuntario de normas u órdenes durante la operación de aeronaves [102]."
-  },
-  {
-    "instruction": "Defina 'Infraestructura Aeronáutica'.",
-    "input": "",
-    "output": "Conjunto de aeródromos, terminales, iluminación y servicios para facilitar la navegación aérea [103]."
-  },
-  {
-    "instruction": "¿Qué es una 'Inspección No Destructiva' (NDI)?",
-    "input": "",
-    "output": "Examen de materiales para detectar defectos sin destruir o afectar el servicio de las piezas [104]."
-  },
-  {
-    "instruction": "Defina 'Inspección Posvuelo'.",
-    "input": "",
-    "output": "Revisión visual y funcional para determinar el estado de una aeronave tras el vuelo [105]."
-  },
-  {
-    "instruction": "¿Qué es la 'Intención del Comandante'?",
-    "input": "",
-    "output": "Expresión concisa del propósito de la operación y el estado final militar deseado [106]."
-  },
-  {
-    "instruction": "Defina 'Lesión Permanente'.",
-    "input": "",
-    "output": "Afección que disminuye parcialmente la capacidad psicofísica sin posibilidad de recuperación [107]."
-  },
-  {
-    "instruction": "¿Qué es un 'Líder'? (Guía del Comandante).",
-    "input": "",
-    "output": "Persona a la que un grupo sigue, reconociéndola como jefe u orientadora [108]."
-  },
-  {
-    "instruction": "Defina 'Línea de Ataque Inicial'.",
-    "input": "",
-    "output": "Primer chorro de manguera puesto en servicio por bomberos para proteger vidas en un incendio [109]."
-  },
-  {
-    "instruction": "¿Qué es una 'Línea Roja' en inspección?",
-    "input": "",
-    "output": "Incumplimiento por irresponsabilidad o indisciplina que amerita acciones disciplinarias o penales [109]."
-  },
-  {
-    "instruction": "Defina 'Logística Verde' (Green Logistics).",
-    "input": "",
-    "output": "Políticas sostenibles para reducir el impacto medioambiental del área logística [110]."
-  },
-  {
-    "instruction": "¿Qué es una 'Malla Curricular'?",
-    "input": "",
-    "output": "Diagrama del Plan de Estudios estructurado con trama vertical y horizontal [111]."
-  },
-  {
-    "instruction": "Defina 'Mando Conjunto' (MFC 1.0).",
-    "input": "",
-    "output": "Autoridad de mando solo sobre fuerzas asignadas que no puede ser delegado o transferido [112]."
-  },
-  {
-    "instruction": "¿Qué es una 'Maniobra' en la Estructura Misional PAEC?",
-    "input": "",
-    "output": "Acción militar detallada que determina los modos de aplicación para cumplir una operación tipo [113]."
-  },
-  {
-    "instruction": "Defina 'Mantenimiento de Línea'.",
-    "input": "",
-    "output": "Provee fluidos y corrección de defectos menores para que la aeronave pueda continuar volando [114]."
-  },
-  {
-    "instruction": "¿Qué es el 'MANTA'?",
-    "input": "",
-    "output": "Manual de Tareas, describe maniobras que deben ejecutarse durante el entrenamiento de vuelo [115]."
-  },
-  {
-    "instruction": "Defina 'Material de Guerra'.",
-    "input": "",
-    "output": "Equipo estatal usado para operaciones militares o restablecimiento del orden público [116]."
-  },
-  {
-    "instruction": "¿Qué son 'Medidas Perimetrales de Seguridad'?",
-    "input": "",
-    "output": "Acciones desde inteligencia hasta medidas activas ejecutadas en el perímetro de la base aérea [117]."
-  },
-  {
-    "instruction": "Defina 'Mensajes Técnicos'.",
-    "input": "",
-    "output": "Difunden información técnica o administrativa relacionada directamente con aeronaves FAC [118]."
-  },
-  {
-    "instruction": "¿Qué es el 'MMEL'?",
-    "input": "",
-    "output": "Lista Maestra de Equipo Mínimo aprobada por la autoridad del país de diseño del fabricante [119]."
+    "output": "Grado máximo de perfección y conocimiento del servicio militar, consagración total a la institución.",
+    "fuente": "NuevoMater"
   },
   {
     "instruction": "Defina 'Modificación Mayor'.",
     "input": "",
-    "output": "Cambio que afecta marcadamente peso, resistencia estructural o rendimiento de la aeronave [120]."
+    "output": "Cambio no listado que afecta marcadamente peso, balance, resistencia estructural o rendimiento de la aeronave.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es la 'Movilidad' para las fuerzas militares?",
+    "instruction": "¿Qué es el 'Modo Falla'?",
     "input": "",
-    "output": "Capacidad que les permite moverse usando medios aéreos dentro y fuera de teatros de operación [121]."
+    "output": "Es la causa de una falla.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Diferencie 'Movimiento de Rutina' de 'Movimiento Imprevisto'.",
+    "instruction": "Defina 'Movimiento de Rutina' en protección de personajes.",
     "input": "",
-    "output": "Rutina es frecuente y conocido por pocos; Imprevisto es conocido únicamente por el protegido [122, 123]."
+    "output": "Desplazamiento efectuado con frecuencia elevada, de conocimiento de pocas personas o bajo protocolo social restringido.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué significa el código '00' en un NIIN (National Item Identification Number)?",
-    "output": "Es el código de país que indica quién asignó el número al artículo (ej. EE.UU.) [124].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina el cargo de 'Navegante'.",
-    "input": "",
-    "output": "Oficial capacitado para operar equipos especiales de combate, inteligencia o utilidad en vuelo [125]."
-  },
-  {
-    "instruction": "¿Qué es un 'Nivel de Crucero'?",
-    "input": "",
-    "output": "Nivel que se mantiene durante una parte considerable del vuelo [126]."
-  },
-  {
-    "instruction": "Defina 'Nivel Aceptable de Riesgo Operacional'.",
-    "input": "",
-    "output": "Nivel basado en peligros históricos para evaluar el comportamiento de escuadrones de vuelo [127]."
-  },
-  {
-    "instruction": "¿Qué es el 'NOC'?",
-    "input": "",
-    "output": "Número OTAN de Catalogación de 13 dígitos asignado para agrupar artículos con mismas características técnicas [128]."
-  },
-  {
-    "instruction": "¿Qué casos son clasificados siempre como 'NOPER' (Novedad Operacional)?",
-    "output": "Incapacidad fisiológica en vuelo, activación de TAWS, pérdida de componentes o humo en cabina [129].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Núcleos Temáticos' en el SEFAC.",
-    "input": "",
-    "output": "Estrategia para planear contenidos de asignaturas buscando aprendizaje significativo y competencias [130]."
-  },
-  {
-    "instruction": "¿Qué es el 'Número de Lote'?",
-    "input": "",
-    "output": "Número que se da a cada serie de municiones en su fabricación [131]."
-  },
-  {
-    "instruction": "Defina 'Objetivo Estratégico Militar'.",
-    "input": "",
-    "output": "Meta tangible que permite al Comandante General enunciar objetivos derivados de lo nacional [132]."
-  },
-  {
-    "instruction": "¿Qué es la 'Obsolescencia' de un bien?",
-    "input": "",
-    "output": "Disminución de vida útil por cambios económicos o tecnológicos frente a bienes mejores o más baratos [133]."
-  },
-  {
-    "instruction": "Defina 'Operación de Contingencia'.",
-    "input": "",
-    "output": "Operación de pequeña escala o parte de una mayor para proteger intereses nacionales ante ataques [134]."
-  },
-  {
-    "instruction": "¿Qué es un 'Optrónico'?",
-    "input": "",
-    "output": "Dispositivo que integra equipos electrónicos y ópticos para generar señales infrarrojas [135]."
-  },
-  {
-    "instruction": "Defina 'Orden' según la Guía del Comandante.",
-    "input": "",
-    "output": "Regla o modo que se observa para hacer las cosas. Mandato que debe obedecerse [135]."
-  },
-  {
-    "instruction": "¿Qué diferencia un 'Plan de Operaciones' de una 'Orden de Operaciones'?",
-    "output": "La Orden no contiene hipótesis o supuestos y dispone la ejecución en un futuro inmediato [136].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Pasajero en condiciones jurídicas especiales'.",
-    "input": "",
-    "output": "Persona privada de la libertad transportada bajo custodia por vía aérea [137]."
-  },
-  {
-    "instruction": "¿Qué es el 'Peligro Aviario'?",
-    "input": "",
-    "output": "Riesgo por presencia de aves en inmediaciones de aeródromos durante fases críticas de vuelo [138]."
-  },
-  {
-    "instruction": "Defina 'Periodo de Descanso'.",
-    "input": "",
-    "output": "Lapso libre de actividades para asegurar la recuperación psicofísica del personal operativo [139]."
-  },
-  {
-    "instruction": "¿Qué es un 'Personaje Protegido'?",
-    "input": "",
-    "output": "Recurso humano integrante del componente físico con valor estratégico para la FAC [140]."
-  },
-  {
-    "instruction": "Defina 'Pirámide de Carrera'.",
-    "input": "",
-    "output": "Visualización jerárquica de cada especialidad por niveles basada en cargos y requisitos de ascenso [141]."
-  },
-  {
-    "instruction": "¿Qué es el 'Plan Institucional de Archivos' (PINAR)?",
-    "input": "",
-    "output": "Plan requerido por el MIPG para estandarizar y fortalecer la gestión de archivos [142]."
-  },
-  {
-    "instruction": "Defina 'Plan de Acción Anual'.",
-    "input": "",
-    "output": "Instrumento base para evaluación de resultados corporativos según lineamientos del PND [143]."
-  },
-  {
-    "instruction": "¿Qué es la 'Plataforma' en un aeródromo?",
-    "input": "",
-    "output": "Área definida para embarque, desembarque, combustible o mantenimiento de aeronaves [144]."
-  },
-  {
-    "instruction": "Defina 'Polvorín de Servicio Inmediato'.",
-    "input": "",
-    "output": "Caseta en línea de operación usada para almacenamiento temporal limitado de munición de emergencia [145]."
-  },
-  {
-    "instruction": "¿Qué es el 'Portafolio' de proyectos?",
-    "input": "",
-    "output": "Grupo de programas y proyectos para lograr objetivos estratégicos mediante su priorización [146]."
-  },
-  {
-    "instruction": "Defina 'PREVAC'.",
-    "input": "",
-    "output": "Actividades orientadas a detectar peligros y disminuir riesgos de la operación aérea [146]."
-  },
-  {
-    "instruction": "¿Qué es un 'Procedimiento de Hipódromo'?",
-    "input": "",
-    "output": "Previsto para permitir que la aeronave pierda altitud en el tramo de aproximación inicial [147]."
-  },
-  {
-    "instruction": "Diferencie 'Producto Clase I' de 'Producto Clase II'.",
-    "input": "",
-    "output": "Clase I es la aeronave completa o motor con certificado tipo; Clase II es un componente mayor (alas, fuselaje) [148]."
-  },
-  {
-    "instruction": "Defina 'Programa Certificado' según el SECAD.",
-    "input": "",
-    "output": "Aquel culminado con un proceso trazable ante la AAAES entregando el certificado correspondiente [149]."
-  },
-  {
-    "instruction": "¿Qué es un 'Programa Suspendido'?",
-    "input": "",
-    "output": "Condición donde el solicitante y la AAAES acuerdan detener temporalmente la certificación [150]."
-  },
-  {
-    "instruction": "Defina 'Protector' (Manual de Personajes).",
-    "input": "",
-    "output": "Profesional especializado en protección de personalidades y custodia de valores [151]."
-  },
-  {
-    "instruction": "¿Qué es un 'Prototipo'?",
-    "input": "",
-    "output": "Ejemplar original o primer molde de un producto aeronáutico en fase de ensayos [152]."
-  },
-  {
-    "instruction": "Defina 'Punto de Cambio' (ATS).",
-    "input": "",
-    "output": "Donde una aeronave en ruta transfiere su referencia de navegación de una instalación a la siguiente [153]."
-  },
-  {
-    "instruction": "¿Qué es el 'Rata de Falla'?",
-    "input": "",
-    "output": "Número total de fallas dividido el número total de ítems de una población [154]."
-  },
-  {
-    "instruction": "Defina 'Reabastecimiento Aéreo' (AAR).",
-    "input": "",
-    "output": "Transferencia de combustible en vuelo para que aeronaves permanezcan en el aire más allá de su autonomía [154]."
-  },
-  {
-    "instruction": "¿Qué es 'RECIL'?",
-    "input": "",
-    "output": "Incidente grave con daños en componente mayor recuperable o lesiones menores a tres meses [155]."
-  },
-  {
-    "instruction": "Defina 'Reconstrucción' de equipo.",
-    "input": "",
-    "output": "Reparación de equipo usado desarmándolo totalmente para cumplir tolerancias de producto nuevo [156]."
-  },
-  {
-    "instruction": "¿Qué es un 'Registrador de Vuelo'?",
-    "input": "",
-    "output": "Cualquier tipo de registrador instalado para facilitar investigación de accidentes (especificaciones OACI) [157]."
-  },
-  {
-    "instruction": "Defina 'RELES'.",
-    "input": "",
-    "output": "Incidente grave con daños en dos o más componentes mayores o lesiones superiores a tres meses [158]."
-  },
-  {
-    "instruction": "¿Qué es una 'Reparación Mayor'?",
-    "input": "",
-    "output": "Afecta substancialmente peso, balance, diseño o resistencia estructural de la aeronave [159]."
-  },
-  {
-    "instruction": "Defina 'Requerimiento de Diseño Crítico' (RDC).",
-    "input": "",
-    "output": "Parámetros determinados para el diseño final que permiten congelar el desarrollo tras validar conformidad [160]."
-  },
-  {
-    "instruction": "¿Qué es el 'Rescate en Aeronaves'?",
-    "output": "Combate de incendios para proveer integridad al fuselaje y área de escape a ocupantes de una aeronave [161].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'RA Correctivo' (Aviso de Resolución).",
-    "input": "",
-    "output": "Aviso que aconseja al piloto desviarse de la ruta de vuelo actual por seguridad [162]."
-  },
-  {
-    "instruction": "¿Qué es el 'Retiro por Tiempo' (RC)?",
-    "input": "",
-    "output": "Tiempo máximo permisible de operación para un componente nuevo antes de ser destruido [163]."
-  },
-  {
-    "instruction": "Diferencie 'Peligro' de 'Riesgo' (Manual Gestión Seguridad).",
-    "input": "",
-    "output": "Peligro es el suceso que entraña posibilidad de daño; Riesgo es la evaluación de sus consecuencias [137, 164]."
-  },
-  {
-    "instruction": "Defina 'Ruta con Servicio de Asesoramiento'.",
-    "input": "",
-    "output": "Ruta designada a lo largo de la cual se proporciona servicio de asesoramiento de tránsito aéreo [165]."
-  },
-  {
-    "instruction": "¿Qué es 'Sabotaje' para una Unidad Militar Aérea?",
-    "input": "",
-    "output": "Riesgo donde la unidad interrumpe operaciones por intervención malintencionada de amenazas [166]."
-  },
-  {
-    "instruction": "Defina 'Seguridad Operacional' según el MAGSO.",
-    "input": "",
-    "output": "Estado en que el riesgo de lesiones o daños se reduce por identificación de peligros y gestión del riesgo [167]."
-  },
-  {
-    "instruction": "¿Qué es una 'Señal de Identificación de Aeródromo'?",
-    "input": "",
-    "output": "Símbolo colocado para ayudar a identificar el aeródromo desde el aire [168]."
-  },
-  {
-    "instruction": "Defina 'Servible' para un componente aeronáutico.",
-    "input": "",
-    "output": "Condición de estar aeronavegable y apto para ser instalado por cumplir requerimientos técnicos [168]."
-  },
-  {
-    "instruction": "¿Qué es el 'Servicio de Control de Aproximación'?",
-    "output": "Servicio de tránsito aéreo para la llegada y salida de vuelos controlados [169].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Sílabo' en el SEFAC.",
-    "input": "",
-    "output": "Guía de trabajo académico con contenidos y estrategias de enseñanza para una asignatura [170]."
-  },
-  {
-    "instruction": "¿Qué es un 'Simulacro sobre el Plano'?",
-    "input": "",
-    "output": "Ensayo de integración de recursos ante emergencias sin gastos ni perturbación de servicios generales [171]."
-  },
-  {
-    "instruction": "Defina 'Sistema de Autoprotección' de una aeronave.",
-    "input": "",
-    "output": "Componentes que dan alerta temprana ante misiles hostiles y permiten acciones de evasión [172]."
-  },
-  {
-    "instruction": "¿Qué es el 'SIMFAC'?",
-    "input": "",
-    "output": "Sistema de Información Meteorológica de la FAC para satisfacer necesidades de la aviación de estado [173]."
-  },
-  {
-    "instruction": "Defina 'Soldado Bombero Aeronáutico'.",
-    "input": "",
-    "output": "Personal militar instruido mediante taller para actuar en emergencias aéreas [174]."
-  },
-  {
-    "instruction": "¿Qué es el 'Spot'?",
-    "input": "",
-    "output": "Marcas en calles de rodaje que indican donde la aeronave inicia rodaje autopropulsado o remolque [175]."
-  },
-  {
-    "instruction": "Defina 'Superávit de Alojamiento'.",
-    "input": "",
-    "output": "Situación con inmuebles desocupados porque no hay solicitudes de alojamiento militar [176]."
-  },
-  {
-    "instruction": "¿Qué es un 'TAR'?",
-    "input": "",
-    "output": "Taller Aeronáutico de Reparación domiciliado en la República de Colombia [177]."
-  },
-  {
-    "instruction": "Defina 'Techo de Nubes' según políticas de vuelo.",
-    "input": "",
-    "output": "Altura de la base de la capa inferior de nubes que cubre más de la mitad del cielo por debajo de 20.000 ft [178]."
-  },
-  {
-    "instruction": "¿Qué es la 'Tipificación' en el RIFAC?",
-    "input": "",
-    "output": "Descripción precisa de acciones u omisiones consideradas delito con una pena asignada [179]."
-  },
-  {
-    "instruction": "Defina 'Tránsito de Aeródromo'.",
-    "input": "",
-    "output": "Aeronaves en el área de maniobras y en las inmediaciones del aeródromo [180]."
-  },
-  {
-    "instruction": "¿Qué es la 'Transversalidad' pedagógica?",
-    "input": "",
-    "output": "Garantía de cohesión que evidencia políticas institucionales en el diseño curricular y aula [181]."
-  },
-  {
-    "instruction": "Diferencie 'Trazabilidad de Partes' de 'Trazabilidad de Calibración'.",
-    "input": "",
-    "output": "De partes rastrea el historial hasta el fabricante; De calibración relaciona mediciones con patrones nacionales [182, 183]."
-  },
-  {
-    "instruction": "Defina 'Tripulación Aumentada'.",
-    "input": "",
-    "output": "Conformada por tripulantes adicionales calificados para permitir continuidad de operación y descanso en vuelo [184]."
-  },
-  {
-    "instruction": "¿Qué es el 'Turbo Motor'?",
-    "input": "",
-    "output": "Elemento encargado de impulsar un cohete [185]."
-  },
-  {
-    "instruction": "Defina 'Unidad de Mando' (MFC 1.0).",
-    "input": "",
-    "output": "Empleo de todas las fuerzas bajo un solo comandante responsable para un propósito común [186]."
-  },
-  {
-    "instruction": "¿Qué es un 'Usuario Aduanero Permanente'?",
-    "input": "",
-    "output": "Funcionario reconocido por la DIAN para trámites aduaneros de la Fuerza [187]."
-  },
-  {
-    "instruction": "Defina 'Vainilla' en armamento.",
-    "input": "",
-    "output": "Elemento que sirve de cámara para aprovechar gases que impulsarán la ojiva de un cartucho [188]."
-  },
-  {
-    "instruction": "¿Qué es el 'Shelf Life'?",
-    "input": "",
-    "output": "Intervalo de tiempo en que un componente puede usarse sin sufrir daño durante almacenamiento [189]."
-  },
-  {
-    "instruction": "Defina 'Violación' según la seguridad operacional.",
-    "input": "",
-    "output": "Conducta consciente de transgredir una norma sin considerar consecuencias de la desviación [190]."
-  },
-  {
-    "instruction": "¿Qué es el 'Viraje de Base'?",
-    "input": "",
-    "output": "Viraje ejecutado durante aproximación inicial entre la derrota de alejamiento y la intermedia/final [191]."
-  },
-  {
-    "instruction": "Defina 'Zona Peligrosa'.",
-    "input": "",
-    "output": "Espacio de dimensiones definidas donde pueden desplegarse actividades peligrosas para el vuelo [192]."
-  },
-  {
-    "instruction": "¿Qué es el 'BC' en combustibles?",
-    "input": "",
-    "output": "Boletín de Combustibles que determina cumplimiento para productos afectados tras incidentes [193]."
-  },
-  {
-    "instruction": "¿Qué significan las siglas 'C3I2'?",
-    "input": "",
-    "output": "Centro, Comando, Control, Comunicaciones, Inteligencia e Informática [193]."
-  },
-  {
-    "instruction": "Defina 'CAVOK'.",
-    "input": "",
-    "output": "Techo y visibilidad adecuados para vuelo bajo reglas visuales (Ceiling and Visibility OK) [194]."
-  },
-  {
-    "instruction": "¿Qué es el 'CVR'?",
-    "input": "",
-    "output": "Registro de la Voz en el Puesto de Pilotaje (Cockpit Voice Recorder) [195]."
-  },
-  {
-    "instruction": "Defina 'EGT'.",
-    "input": "",
-    "output": "Temperatura de los gases de escape del motor [196]."
-  },
-  {
-    "instruction": "¿Qué es el 'ELT'?",
-    "input": "",
-    "output": "Transmisor Localizador de Emergencia (Emergency Locator Transmitter) [196]."
-  },
-  {
-    "instruction": "¿Qué significan las siglas 'FOQA'?",
-    "input": "",
-    "output": "Programa de seguridad de la calidad de las operaciones de vuelo [197]."
-  },
-  {
-    "instruction": "Defina 'GCI'.",
-    "input": "",
-    "output": "Intercepción controlada desde la superficie (Ground Controlled Interception) [197]."
-  },
-  {
-    "instruction": "¿Qué es el 'FARE'?",
-    "input": "",
-    "output": "Equipo de reabastecimiento en áreas remotas (Forward Area Refueling Equipment) [198]."
-  },
-  {
-    "instruction": "Defina 'IFF'.",
-    "input": "",
-    "output": "Identificación de amigo o enemigo (Identification Friend or Foe) [198]."
-  },
-  {
-    "instruction": "¿Qué es un 'IEA'?",
-    "input": "",
-    "output": "Ingeniero Especialista Aeronáutico [199]."
-  },
-  {
-    "instruction": "Defina 'LWR'.",
-    "input": "",
-    "output": "Receptores de alerta de láser (Laser Warning Receivers) [200]."
-  },
-  {
-    "instruction": "¿Qué es el 'MAGE'?",
-    "input": "",
-    "output": "Medidas de Ataque Electrónico [200]."
-  },
-  {
-    "instruction": "Defina 'OCA'.",
-    "input": "",
-    "output": "Oficial Controlador de Armas [201]."
-  },
-  {
-    "instruction": "¿Qué significan las siglas 'SIIO'?",
-    "input": "",
-    "output": "Sistema Integrado de Información Operacional [202]."
-  },
-  {
-    "instruction": "Defina 'TA' en vigilancia aérea.",
-    "input": "",
-    "output": "Traza Amiga [203]."
-  },
-  {
-    "instruction": "¿Qué es el 'TCAS'?",
-    "input": "",
-    "output": "Sistema de Alerta de Tráfico y Prevención de Colisiones [203]."
-  },
-  {
-    "instruction": "¿Qué es un 'Profesional Oficial de Reserva'?",
-    "output": "Ciudadano con título universitario vinculado voluntariamente ad honorem para apoyo a las FF.MM. [204].",
-    "input": ""
-  },
-  {
-    "instruction": "¿Qué edad debe tener un aspirante a Oficial de Reserva al inscribirse?",
-    "input": "",
-    "output": "Debe estar entre los veintiséis (26) y cuarenta y cinco (45) años de edad [205]."
-  },
-  {
-    "instruction": "¿Cuántas horas debe durar el curso de orientación a la vida militar para reserva?",
-    "input": "",
-    "output": "No tendrá una intensidad menor a 224 horas [205]."
-  },
-  {
-    "instruction": "¿Cuál es la intensidad mínima del curso de formación de oficiales de reserva?",
-    "input": "",
-    "output": "No podrá ser inferior a doscientas cincuenta y seis (256) horas [206]."
-  },
-  {
-    "instruction": "¿Dónde se realizan los cursos para ascenso a Teniente Coronel de reserva?",
-    "input": "",
-    "output": "Se realizan en la Escuela Superior de Guerra [207]."
-  },
-  {
-    "instruction": "Defina 'Cuerpo Asesor' en el escalafón de reserva.",
-    "input": "",
-    "output": "Integrado por oficiales superiores que por actividad profesional no participan activamente en COAMI [208]."
-  },
-  {
-    "instruction": "¿Cuál es el tiempo mínimo de permanencia para ascender a Capitán de reserva?",
-    "input": "",
-    "output": "Cinco (5) años en el grado de Teniente [209]."
-  },
-  {
-    "instruction": "¿Hasta qué edad pueden los oficiales de reserva usar el uniforme militar?",
-    "input": "",
-    "output": "Hasta los setenta y cinco (75) años de edad [210]."
-  },
-  {
-    "instruction": "¿Cuál es el lema de la reserva?",
+    "instruction": "¿Cuáles son los tres horizontes de tiempo de la Estrategia 2042?",
     "input": "",
-    "output": "El lema es 'Todo por la Patria' [211]."
+    "output": "Años 2022, 2030 y 2042.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué día se celebra el aniversario de los Profesionales Oficiales de Reserva?",
+    "instruction": "Defina 'Volar' como esencia de la Fuerza Aérea.",
     "input": "",
-    "output": "Se establece como Día de la Reserva el 15 de mayo [212]."
+    "output": "Permite visualizar el campo de batalla desde una perspectiva aérea y desarrollarse como estratega para sobrepasar obstáculos naturales.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es la 'Aerofotografía'?",
+    "instruction": "¿Qué asegura la actividad de 'Entrenar'?",
     "input": "",
-    "output": "Material fotográfico tomado por plataformas de inteligencia para detallar blancos de interés [7]."
+    "output": "Asegura la preparación adecuada del poder aéreo y espacial como arma decisiva y sofisticada de la nación.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "Defina 'Aeronave Armadas' de la FAC.",
+    "instruction": "Defina el principio de 'Integridad' según el marco estratégico.",
     "input": "",
-    "output": "Cuentan con armamento instalado para impedir, neutralizar o destruir objetivos militares desde el aire [213]."
+    "output": "Decisiones y actuaciones transparentes que demuestran coherencia, profesionalismo, honestidad y comportamiento irreprochable.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es el 'Airborne Early Warning' (AEW)?",
+    "instruction": "¿Qué busca el principio de 'Seguridad'?",
     "input": "",
-    "output": "Sistema de alerta temprana que permite a un comandante visualizar y evaluar un teatro de operaciones [11]."
+    "output": "La preservación de la vida y la conservación de los recursos asignados mediante la conciencia del riesgo.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "Defina 'Amortiguación' de un objetivo.",
+    "instruction": "Defina 'Honor' como valor institucional.",
     "input": "",
-    "output": "Identifica qué porción del objetivo puede destruirse sin afectar el esfuerzo militar o su adaptación [214]."
+    "output": "Cualidad moral que lleva al sujeto a cumplir con los deberes propios respecto al prójimo y a sí mismo.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es la 'Apreciación de Inteligencia'?",
+    "instruction": "¿Qué es la 'Rectitud' vinculada al honor?",
     "input": "",
-    "output": "Examen lógico de factores como enemigo, tiempo y terreno que afectan la misión [215]."
+    "output": "Firmeza de carácter para asumir responsabilidad, honestidad consigo mismo y disposición de hacer lo correcto siempre.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "Defina 'Asalto Aéreo'.",
+    "instruction": "¿Cuáles son los tres pilares de la 'Confianza'?",
     "input": "",
-    "output": "Maniobra donde fuerzas desembarcan en área hostil usando potencia de fuego e integración de medios aéreos [216]."
+    "output": "Cercanía, Sinceridad y Confiabilidad.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es un 'Ataque a la Unidad'?",
+    "instruction": "Defina 'Cercanía' dentro del pilar de confianza.",
     "input": "",
-    "output": "Acción que vulnera la seguridad física, identificada por sirena continua o disparos de advertencia [217]."
+    "output": "Actitud abierta a la escucha para responder de manera adecuada a las necesidades de las personas.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "Defina 'Autonomía Táctica'.",
+    "instruction": "Defina 'Sinceridad' dentro del pilar de confianza.",
     "input": "",
-    "output": "Capacidad de sistemas de armas para operar 24 horas bajo cualquier condición meteorológica [218]."
+    "output": "Capacidad de ser fiel a la verdad, asentada en la autenticidad y transparencia de las acciones.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es el 'BASH'?",
+    "instruction": "¿Qué es el 'Básico' en el tráfico aéreo?",
     "input": "",
-    "output": "Daños causados a aeronaves por el impacto de aves o animales (Bird and animal Aircraft strike Hazard) [219]."
+    "output": "Tramo del tráfico perpendicular a la pista, previo a la final.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
     "instruction": "Defina 'Blanco Lícito'.",
     "input": "",
-    "output": "Miembros de grupos armados organizados y personas que participan directamente en hostilidades [220]."
+    "output": "Miembros de grupos armados organizados y personas que participan directamente en las hostilidades.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
-    "instruction": "¿Qué es la 'Captura de Aeronaves' en tierra?",
-    "output": "Tomar posesión física e impedir su movilización mediante cordón de seguridad hasta que lleguen autoridades [221].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Cargo Operacional' de vuelo.",
+    "instruction": "¿Qué son los 'Bienes Protegidos'?",
     "input": "",
-    "output": "Se crea según configuración de aeronave y equipos especiales para misiones específicas [222]."
+    "output": "Bienes civiles indispensables para supervivencia, culturales o históricos no definidos como objetivos militares.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
-    "instruction": "¿Qué es la 'Carta Aeronáutica Mundial 1:1.000.000'?",
-    "output": "Carta básica para navegación visual y planeamiento que facilita información con presentación uniforme [223].",
-    "input": ""
+    "instruction": "Defina 'Búsqueda y Rescate en Combate'.",
+    "input": "",
+    "output": "Operaciones para localizar y rescatar tripulaciones accidentadas o derribadas por el enemigo en territorio hostil.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
-    "instruction": "Defina 'Carta de Salida Normalizada Vuelo por Instrumentos'.",
-    "output": "Proporciona información para seguir la ruta designada desde el despegue hasta la fase en ruta [224].",
-    "input": ""
+    "instruction": "¿Qué es la 'Captura de Aeronaves'?",
+    "input": "",
+    "output": "Acción de tomar posesión física de la aeronave en tierra e impedir su movilización mediante un cordón de seguridad.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'Cargo de Vuelo'.",
+    "input": "",
+    "output": "Facultad legal otorgada a un tripulante para ejercer una función específica en una aeronave en misión típica.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué proporciona la 'Carta de Navegación en Ruta'?",
+    "input": "",
+    "output": "Información para facilitar la navegación a lo largo de las rutas ATS conforme a procedimientos de tránsito aéreo.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'Causación Directa' en un acto de daño.",
+    "input": "",
+    "output": "Existencia de un nexo causal directo entre el acto y el daño resultante o de una operación coordinada.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
     "instruction": "¿Qué es el 'Ciclo OODA'?",
     "input": "",
-    "output": "Observar, Orientar, Decidir y Actuar [225]."
+    "output": "Observar, Orientar, Decidir y Actuar.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
-    "instruction": "Defina 'Clara Advertencia' antes de usar la fuerza.",
-    "output": "Advertir la intención de usar la fuerza en tiempo suficiente, salvo que ponga en peligro al militar [225].",
-    "input": ""
-  },
-  {
-    "instruction": "¿Qué es un 'Comando Funcional'?",
+    "instruction": "Defina 'Conciencia Situacional'.",
     "input": "",
-    "output": "Organización temporal para atender una función específica en la totalidad de las Fuerzas [226]."
+    "output": "Percepción exacta del entorno y de los sucesos pasados, presentes y futuros en todo momento por la tripulación.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
-    "instruction": "Defina 'Contrainteligencia Ofensiva' (CIO).",
+    "instruction": "¿Quiénes son los Profesionales Oficiales de Reserva de las FF.MM.?",
     "input": "",
-    "output": "Acciones diseñadas para limitar o destruir la capacidad informativa enemiga [227]."
+    "output": "Profesionales con título universitario vinculados en forma voluntaria, ad honorem y sin relación laboral.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es el 'Control Centralizado y Ejecución Descentralizada'?",
-    "output": "Principio para alcanzar sinergia y flexibilidad, minimizando selección de objetivos conflictivos [228].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Corredor Aéreo'.",
+    "instruction": "¿Qué exige el perfil del POR respecto a los conflictos internacionales?",
     "input": "",
-    "output": "Ruta reservada para aeronaves propias para evitar ataques de fuerzas amigas en áreas de artillería [229]."
+    "output": "Debe tener profundo conocimiento y capacidad de interactuar dentro de los conflictos nacionales e internacionales.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es 'Detección' en vigilancia aérea?",
-    "output": "Observación registrada que determina ubicación, rumbo y altura en tiempo real de una aeronave [230].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Doctrina Operacional'.",
+    "instruction": "¿Qué sentido debe poseer el POR hacia las instituciones militares?",
     "input": "",
-    "output": "Principios para emplear el poder aéreo en una campaña para alcanzar objetivos operacionales [231]."
+    "output": "Un alto sentido de honor y lealtad.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es el 'Engelamiento'?",
+    "instruction": "¿Qué capacidad administrativa se espera del Profesional Oficial de Reserva?",
     "input": "",
-    "output": "Fenómeno meteorológico significativo mencionado como riesgo para la navegación aérea [232]."
+    "output": "Administrar eficiente y eficazmente recursos públicos y privados con habilidad para ejecutar proyectos de gerencia estratégica.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "Defina 'Escolta Aérea'.",
+    "instruction": "¿Qué debe identificar el POR para colaborar con la acción psicológica?",
     "input": "",
-    "output": "Acompañamiento de aeronaves armadas a no armadas para garantizar su seguridad ante amenazas [233]."
+    "output": "Debe estar en capacidad de identificar el blanco audiencia.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es el 'Espectro Electromagnético'?",
-    "output": "Distribución energética de ondas electromagnéticas que permite identificar sustancias o comunicaciones [234].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Estratagema'.",
+    "instruction": "¿Quién establece el número de POR a incorporarse cada año?",
     "input": "",
-    "output": "Operación para crear confusión al enemigo obligándolo a actuar según nuestros objetivos [235]."
+    "output": "El Comandante General de las Fuerzas Militares, antes del 31 de octubre.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es el 'Hidroplaneo'?",
+    "instruction": "Mencione un objetivo principal de la actividad de los POR.",
     "input": "",
-    "output": "Condición insegura del contacto de llantas con película de agua en la pista [236]."
+    "output": "Acrecentar el poder de proyección de la imagen de las Fuerzas Militares mediante proyectos en beneficio de la institución y la población.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "Defina 'Identificación' de una aeronave.",
+    "instruction": "¿Cómo se integran los comités de selección de aspirantes a POR?",
     "input": "",
-    "output": "Acción de obtener matrícula y plan de vuelo mediante correlación con la autoridad ATS [237]."
+    "output": "Por cinco oficiales: Oficiales Superiores y mínimo dos Profesionales Oficiales de Reserva de mayor antigüedad.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es 'IMINT'?",
+    "instruction": "¿Qué sucede con las solicitudes de ingreso que tienen documentación incompleta?",
     "input": "",
-    "output": "Inteligencia de Imágenes: proceso de identificar y describir actividades de un blanco [238]."
+    "output": "No pueden ser consideradas y se devuelven al interesado para completarlas en un plazo no mayor a ocho días.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "Defina 'Inmovilización' de aeronave hostil.",
+    "instruction": "¿Qué autoridad confiere el grado de Subteniente de Reserva en la FAC?",
     "input": "",
-    "output": "Parte de la neutralización que impide que una aeronave despegue o se mueva en tierra [239]."
+    "output": "El Gobierno Nacional o el Ministro de Defensa Nacional por delegación.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué porcentaje de alistamiento de aeronaves alcanzó la FAC en el año 2011?",
+    "input": "",
+    "output": "Alcanzó el 73,5%, superando el promedio mundial del 70%.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál fue el tamaño de flota más grande alcanzado por la FAC y en qué año?",
+    "input": "",
+    "output": "319 aeronaves en el año 2011.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué disminución del pie de fuerza se registró en la FAC entre 2014 y 2015?",
+    "input": "",
+    "output": "Una disminución del 9%.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué incremento porcentual de oficiales tuvo la FAC entre 2008 y 2017 según la Contraloría?",
+    "input": "",
+    "output": "Un incremento del 39%.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué reducción porcentual sufrieron los soldados regulares y bachilleres en el mismo periodo (2008-2017)?",
+    "input": "",
+    "output": "Una reducción del 24%.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué factor explica el aumento de oficiales frente a la reducción de soldados?",
+    "input": "",
+    "output": "La tecnificación y profesionalización de las labores que requieren capacidades específicas.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué finalidad primordial tienen las Fuerzas Militares según el Art. 217 de la Constitución?",
+    "input": "",
+    "output": "La defensa de la soberanía, la independencia, la integridad del territorio nacional y del orden constitucional.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué dependencia lidera hoy el proceso de doctrina en la FAC?",
+    "input": "",
+    "output": "El Centro de Doctrina Aérea y Espacial (CEDAE).",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina 'Legitimidad' como característica doctrinaria.",
+    "input": "",
+    "output": "Nace de la Constitución y establece una estrategia militar fundamentada en leyes nacionales y bloque de constitucionalidad.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina 'Misionalidad' como característica doctrinaria.",
+    "input": "",
+    "output": "Corresponde a la misión constitucional otorgada a la Fuerza de acuerdo con su naturaleza militar y perspectiva aérea.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué es un 'Número ONU'?",
+    "input": "",
+    "output": "Código de cuatro dígitos determinado por la ONU para clasificar y reconocer sustancias consideradas peligrosas.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Obstáculo' en infraestructura aeronáutica.",
+    "input": "",
+    "output": "Objeto fijo o móvil situado en áreas de movimiento o que sobresalga de superficies destinadas a proteger aeronaves en vuelo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Obsolescencia' de un bien?",
+    "input": "",
+    "output": "Disminución de vida útil por cambio económico o avance tecnológico ante surgimiento de bienes de mejor calidad o menor costo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Operación' según el MOAEC 2023.",
+    "input": "",
+    "output": "Acción militar deliberada y llevada a cabo con un objetivo definido.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es una 'Operación Combinada'?",
+    "input": "",
+    "output": "Acciones militares donde participan fuerzas de diferentes países bajo un Comando y Estado Mayor combinado.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Operación Tipo'.",
+    "input": "",
+    "output": "Acción militar específica donde el uso del PAEC se dispone para lograr resultados de una misión típica y una operación de la Fuerza.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué son las 'Operaciones Especiales'?",
+    "input": "",
+    "output": "Acciones conducidas por unidades especialmente organizadas y entrenadas en espacios hostiles para objetivos de repercusiones estratégicas.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Orden' según la Guía del Comandante.",
+    "input": "",
+    "output": "Regla o modo que se observa para hacer las cosas; mandato que se debe obedecer, observar y ejecutar.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es el 'Overhaul'?",
+    "input": "",
+    "output": "Trabajo técnico aeronáutico programado ejecutado por cumplir límite de tiempo para llevar la aeronave a su condición original.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Peligro' en seguridad operacional.",
+    "input": "",
+    "output": "Situación, suceso, condición u objeto que entraña la posibilidad de causar un riesgo de seguridad o contribuir al mismo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué permite el objetivo estratégico de 'Gobernanza del Ciberespacio'?",
+    "input": "",
+    "output": "Operar en el ciberespacio con libertad de acción y sin interferencia.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿A qué se refiere el 'Orgullo por su trabajo'?",
+    "input": "",
+    "output": "Percepción de satisfacción del funcionario por su contribución individual a través de su rol y labores.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina la virtud de la 'Justicia'.",
+    "input": "",
+    "output": "Constante y firme voluntad de dar a cada quien lo que le corresponde.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca la política de 'Liderazgo' en la FAC?",
+    "input": "",
+    "output": "Que los miembros sean líderes inspiradores con el ejemplo y respeto, preservando disciplina y jerarquía.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuál es la misión de la Inspección General (IGEFA)?",
+    "input": "",
+    "output": "Verificar la eficacia, eficiencia y efectividad de la Fuerza y garantizar la seguridad operacional para el mejoramiento continuo.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué dependencias integran el Comando de Operaciones Aéreas y Espaciales (COAES)?",
+    "input": "",
+    "output": "Cuatro centros (CEOPA, CNRP, CEAT, CEAIN) y cinco jefaturas (Combate, Movilidad, Operaciones Especiales, Inteligencia, Espaciales).",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿De qué es responsable la Jefatura de Potencial Humano?",
+    "input": "",
+    "output": "De articular los componentes de la gestión humana y la administración de personal militar y civil.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el área misional de 'Seguridad Pública'.",
+    "input": "",
+    "output": "Acciones para desarticular grupos armados y crimen organizado con alcance nacional y trasnacional.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué comprende el área funcional de 'Fuegos'?",
+    "input": "",
+    "output": "Habilidades que permiten el uso de sistemas de armas para cumplir la misión y mantener la superioridad.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué comprende el área funcional de 'Sostenimiento'?",
+    "input": "",
+    "output": "Habilidades para proveer personal, bienes y servicios para asegurar y prolongar las operaciones.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué establece la Ley 126 del 31 de diciembre de 1919?",
+    "input": "",
+    "output": "Dio origen a la Escuela Militar de Aviación para formar pilotos que se integraran a la naciente quinta arma del Ejército Nacional.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué transformación generó la aparición del avión en la seguridad de los Estados según el General Ramsés Rueda?",
+    "input": "",
+    "output": "Transformó la tradicional separación de las esferas terrestre y marítima al permitir romper el enfrentamiento horizontal mediante el movimiento en un espacio tridimensional.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿En qué ciudad realizó William Knox Martin el vuelo que generó entusiasmo por la aviación en 1919?",
+    "input": "",
+    "output": "En la ciudad de Barranquilla.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué países asesoraron a Colombia con misiones militares aéreas después del conflicto con Perú?",
+    "input": "",
+    "output": "Suiza y Francia inicialmente, y posteriormente Alemania, Cuba y Estados Unidos.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué aeronaves llegaron en 1952 y qué capacidad distintiva introdujeron?",
+    "input": "",
+    "output": "Llegaron los helicópteros Hiller, introduciendo la capacidad de despegue y aterrizaje vertical.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué aeronave se describe como la 'columna vertebral' de la misión de transporte aéreo en la FAC?",
+    "input": "",
+    "output": "El Hércules C-130.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál es la tarea principal asignada a SATENA desde su creación en 1962?",
+    "input": "",
+    "output": "Mantener un servicio de transporte aéreo a lugares de Colombia carentes de servicio comercial regular.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué porcentaje del pie de fuerza total de las FF.MM. representa históricamente la Fuerza Aérea?",
+    "input": "",
+    "output": "Representa aproximadamente el 5% de los efectivos totales.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué nombre recibía CATAM en el momento de su creación?",
+    "input": "",
+    "output": "Escuadrón 101 de Transportes.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿En qué año se incorporaron las primeras suboficiales técnicos a la FAC?",
+    "input": "",
+    "output": "En el año 1992.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina 'Accidente' según el Manual de Gestión de la Seguridad Operacional.",
+    "input": "",
+    "output": "Suceso operacional donde la aeronave sufre daños no recuperables o existen lesiones fatales o discapacidad permanente en tripulación, ocupantes o terceros.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es un 'Activo Espacial'?",
+    "input": "",
+    "output": "Elemento o bien que sirve para desarrollar actividades en el espacio exterior, como satélites, vehículos espaciales o instalaciones.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿A qué se refiere el término 'Activos Retirados' en contabilidad de materiales?",
+    "input": "",
+    "output": "Valor de propiedades, planta y equipo totalmente depreciados, agotados y amortizados que han sido retirados del servicio.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Aeródromo Alterno de Despegue'.",
+    "input": "",
+    "output": "Aeródromo en el que podría aterrizar una aeronave si fuera necesario poco después del despegue y no fuera posible utilizar el aeródromo de salida.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Aeronavegabilidad Continuada'?",
+    "input": "",
+    "output": "Compilación de funciones de mantenimiento e inspecciones para mantener la aeronavegabilidad de forma continua mediante programas de vigilancia y confiabilidad.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Alambre Armador' en el contexto de armamento aéreo.",
+    "input": "",
+    "output": "Dispositivo utilizado para asegurar el funcionamiento de los sistemas de ignición o liberación de armamento.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es un 'Almacén de Inflamables'?",
+    "input": "",
+    "output": "Área de bodega destinada al almacenamiento de bienes que por sus características físicas poseen gran susceptibilidad a incendiarse.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Altitud de Decisión (DA)'.",
+    "input": "",
+    "output": "Altitud especificada en una aproximación de precisión a la cual debe iniciarse una maniobra de aproximación frustrada si no se establece referencia visual.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Altura Mínima de Descenso (MDH)'?",
+    "input": "",
+    "output": "Altura especificada en una aproximación que no sea de precisión, por debajo de la cual no debe efectuarse el descenso sin referencia visual.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué se entiende por 'Amortización' de activos intangibles?",
+    "input": "",
+    "output": "Desvalorización periódica de bienes intangibles o no renovables cuyo valor disminuye con el tiempo o uso.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es el 'SISDAECN' proyectado para el escenario 2042?",
+    "input": "",
+    "output": "Sistema Integrado de Defensa Aérea, Espacial y Ciberespacial Nacional.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Cercanía' como pilar de la confianza.",
+    "input": "",
+    "output": "Actitud abierta a la escucha para responder de manera adecuada a las necesidades de las personas.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca el objetivo estratégico 'Fortalecer la Gestión Jurídica'?",
+    "input": "",
+    "output": "Implementar estrategias para la legitimidad y fortalecimiento jurídico en los tres dominios con énfasis preventivo y anticipatorio.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué área funcional de capacidades se encarga de preservar la fuerza, población civil y activos estratégicos?",
+    "input": "",
+    "output": "La función de Protección.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué es la iniciativa estratégica 'PETIC'?",
+    "input": "",
+    "output": "Plan Estratégico de Tecnologías de la Información y las Comunicaciones.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuál es la función del Centro de Armas y Tácticas (CEAT)?",
+    "input": "",
+    "output": "Integrar esfuerzos para el desarrollo y estandarización del empleo de los sistemas de armas de la Fuerza.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina la virtud de la 'Prudencia' según el marco estratégico.",
+    "input": "",
+    "output": "Sensatez y buen juicio en el actuar; rectitud moral y recta razón en el obrar.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué representa el 'Escenario Institucional 2030' en términos de alcance?",
+    "input": "",
+    "output": "Ser una fuerza con alcance continental y preferente regional.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué hito se espera alcanzar respecto al personal en el horizonte 2030?",
+    "input": "",
+    "output": "Lograr la puesta en órbita del primer astronauta de la FAC.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué comprende la línea de esfuerzo 'Integridad y Transparencia'?",
+    "input": "",
+    "output": "El compromiso de hacer públicas las políticas y gestión, manteniendo control frente al cumplimiento de reglas.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Abogar' como técnica de cabina.",
+    "input": "",
+    "output": "Técnica para elevar la conciencia situacional de otras personas en la cabina.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es la 'Aerofotogrametría'?",
+    "input": "",
+    "output": "Ciencia que trata de la elaboración de planos y cartas por medio de aerofotografías.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'Aeronave Hostil'.",
+    "input": "",
+    "output": "Aeronave sospechosa que tras ser identificada e interceptada no atiende normas, o que viole el espacio aéreo nacional.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué proporciona un sistema 'Airborne Early Warning' (AEW)?",
+    "input": "",
+    "output": "Ventaja militar al permitir visualizar un teatro de operaciones desde el aire para tomar decisiones y comunicarlas a tierra.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina el término 'Amortiguación' en el análisis de objetivos.",
+    "input": "",
+    "output": "Identificar qué porción del objetivo puede destruirse sin afectar seriamente el esfuerzo militar o la dificultad de adaptarlo.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es la 'Apreciación de Situación'?",
+    "input": "",
+    "output": "Examen lógico y ordenado de factores para determinar el curso de acción más apropiado y adoptar una decisión táctica.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'Área Táctica de Responsabilidad'.",
+    "input": "",
+    "output": "Zona entre el perímetro de armas de acompañamiento hasta el alcance práctico efectivo (aprox. 5 km).",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es un 'Avión Ala'?",
+    "input": "",
+    "output": "Aeronave de combate bajo control táctico del líder, tripulada generalmente por el piloto de menor experiencia.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'Back Side'.",
+    "input": "",
+    "output": "Nombre dado al piloto ubicado en la silla trasera de la cabina.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Ciclo OODA'?",
+    "input": "",
+    "output": "Metodología de decisión que consiste en Observar, Orientar, Decidir y Actuar.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿A qué edad máxima puede un ciudadano inscribirse como aspirante a POR?",
+    "input": "",
+    "output": "Hasta los 45 años de edad al momento de la inscripción.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué antigüedad se le asigna a un POR que reingresa del cuerpo asesor al escalafón regular?",
+    "input": "",
+    "output": "Regresará al escalafón sin antigüedad en el grado que ostentaba al momento del ingreso al cuerpo asesor.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cuál es el tiempo mínimo de permanencia en el grado de Mayor de Reserva?",
+    "input": "",
+    "output": "Cinco (5) años.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué sucede si un POR permanece más de 6 años como Subteniente sin ascender?",
+    "input": "",
+    "output": "El Comando General se reserva el derecho a su retiro del escalafón regular por cumplir el límite de permanencia.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué autoridad confiere los grados subsiguientes al de Subteniente de Reserva?",
+    "input": "",
+    "output": "Se confieren por Decreto del Gobierno Nacional.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿En qué consiste el 'Escudo al Mérito Académico' para los POR?",
+    "input": "",
+    "output": "Estímulo para quienes ocupen el primer puesto en los cursos de formación y ascenso.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cuál es la fecha límite para remitir folios de vida al COPOR anualmente?",
+    "input": "",
+    "output": "El 30 de noviembre de cada año.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué es la 'Lista Tres' en la clasificación anual de los POR?",
+    "input": "",
+    "output": "Indica un nivel 'Bueno' de desempeño institucional.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cuál es la edad máxima permitida para portar el uniforme de POR?",
+    "input": "",
+    "output": "Hasta los 75 años de edad.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué leyenda lleva el Estandarte de los Profesionales Oficiales de Reserva?",
+    "input": "",
+    "output": "Lleva los colores del Comando General con el Escudo de los POR destacando sobre color rojo.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué permitieron las aeronaves medicalizadas en los programas de asistencia social?",
+    "input": "",
+    "output": "Realizar misiones de evacuación de personal civil en emergencias en apartadas regiones del país.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál fue el objetivo de la Operación Marcial mencionada en la historia?",
+    "input": "",
+    "output": "Recuperar control territorial en el Oriente antioqueño en el marco de la Seguridad Democrática.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué cambio cualitativo marcó la llegada del Kfir C-12?",
+    "input": "",
+    "output": "Dotó a la fuerza con sistemas de armas de última tecnología y alta precisión para ataques estratégicos.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué dependencia lidera el Centro de Doctrina Aérea y Espacial (CEDAE)?",
+    "input": "",
+    "output": "La Subjefatura de Estado Mayor Estrategia y Planeación (SEMEP).",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué busca el proceso de 'Actualidad' en la doctrina?",
+    "input": "",
+    "output": "Mantener vigentes los principios de empleo acorde a leyes internacionales y el marco del DIDH y DICA.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál es la función del 'Centro de Información de Vuelo'?",
+    "input": "",
+    "output": "Establecida para facilitar servicio de información de vuelo y servicio de alerta.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Certificado de Conformidad' en abastecimientos.",
+    "input": "",
+    "output": "Declaración que manifiesta que una parte ha sido producida por un fabricante con proceso aprobado por la entidad reguladora.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Cláusula Martens'?",
+    "input": "",
+    "output": "Principio del DIH que protege a civiles y combatientes bajo los principios de humanidad ante casos no previstos en tratados escritos.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Comodato' en la administración de bienes.",
+    "input": "",
+    "output": "Bienes controlados recibidos en préstamo sin traslado de propiedad ni contraprestación por un tiempo determinado.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es un 'Componente de cambio por condición' (On Condition)?",
+    "input": "",
+    "output": "Componente que debe cambiarse según su estado físico de desgaste o deterioro detectado en inspecciones técnicas.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿A qué se refiere la perspectiva de 'Procesos Internos' en el Balanced Scorecard?",
+    "input": "",
+    "output": "Plantea objetivos de procesos críticos institucionales para impactar a las partes interesadas y alcanzar la visión 2042.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca la política de 'Justicia y Equidad'?",
+    "input": "",
+    "output": "Que los reconocimientos y sanciones se otorguen de forma objetiva, transparente e imparcial respetando el debido proceso.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué oficinas integran el 'Estado Mayor Personal' del Comandante de la Fuerza?",
+    "input": "",
+    "output": "Ayudantía Personal, Autoridad Aeronáutica, Asuntos Internacionales, Comunicaciones Estratégicas e Investigaciones Disciplinarias.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el área misional de 'Cooperación Internacional'.",
+    "input": "",
+    "output": "Acciones para fortalecer alianzas estratégicas bilaterales y multilaterales para intereses comunes y respuesta a amenazas transnacionales.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué comprende el área funcional de 'Soporte'?",
+    "input": "",
+    "output": "Habilidades para proveer servicios de dirección, bienestar, desarrollo tecnológico y asesoría jurídica.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Centro de Gravedad' militar.",
+    "input": "",
+    "output": "Fuente de fortaleza física o moral cuya neutralización tiene un impacto decisivo para lograr objetivos estratégicos.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es un 'Chequeo de Eliminación'?",
+    "input": "",
+    "output": "Evaluación final de última instancia para resolver la situación de vuelo de un alumno, realizada por un estandarizador.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'Control Operacional Funcional'.",
+    "input": "",
+    "output": "Forma delegada del mando que autoriza asignar misiones en un área funcional específica sin incluir atribuciones disciplinarias.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es la 'Guerra Convencional'?",
+    "input": "",
+    "output": "Operaciones militares contra un adversario por fuerzas tradicionales que no incluyen armas químicas, biológicas o nucleares.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'Inteligencia de Imágenes (IMINT)'.",
+    "input": "",
+    "output": "Proceso de localizar, reconocer e identificar objetos y actividades de un blanco mediante sensores ópticos o satelitales.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué requisitos de antecedentes deben acreditar los aspirantes a POR?",
+    "input": "",
+    "output": "Carecer de antecedentes judiciales (excepto culposos), disciplinarios y fiscales.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cuál es la intensidad mínima del curso de formación para ingresar como Subteniente?",
+    "input": "",
+    "output": "No podrá ser inferior a 256 horas.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué curso deben aprobar los POR para ascender a Coronel de Reserva?",
+    "input": "",
+    "output": "El Curso Avanzado de Información Militar para POR (CAIMPOR) en la Escuela Superior de Guerra.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "Defina el concepto de 'Acción Positiva' en el folio de vida.",
+    "input": "",
+    "output": "Registro de un hecho, desempeño o actitud digna de realce por el esfuerzo para lograr un objetivo propuesto.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué antigüedad tiene un POR que asciende simultáneamente con otros en el mismo grado?",
+    "input": "",
+    "output": "Se establece por el ascenso anterior y así sucesivamente hasta el orden de colocación en el primer grado.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué importancia tuvo el vuelo de William Knox Martin para la Fuerza Pública?",
+    "input": "",
+    "output": "Aunque fue una iniciativa civil, generó el entusiasmo que llevó al presidente Marco Fidel Suárez a gestionar la aviación militar.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuántos pilotos y mecánicos disponía la aviación militar durante el conflicto con el Perú?",
+    "input": "",
+    "output": "Disponía de 42 pilotos y 35 mecánicos.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿En qué año se fundó el Grupo Aéreo del Oriente (GAORI)?",
+    "input": "",
+    "output": "En el año 1996.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué función cumple el Comando de Apoyo a la Fuerza (CAF) según la Resolución 1014 de 2018?",
+    "input": "",
+    "output": "Es el responsable de la logística y la administración de los recursos y capacidades tecnológicas.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál es la fuente de doctrina que analiza los resultados de escenarios donde ha interactuado el poder aéreo?",
+    "input": "",
+    "output": "La historia y sus experiencias.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina 'Corrección' según el Reglamento de Inspección y Control.",
+    "input": "",
+    "output": "Acción emprendida para enmendar de forma inmediata un incumplimiento detectado, sin atacar la causa raíz.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Cultura Justa' en seguridad operacional?",
+    "input": "",
+    "output": "Diferenciación entre comportamiento aceptable e inaceptable, evaluando negligencia frente a error no intencional.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Descargo' en el proceso de inspección.",
+    "input": "",
+    "output": "Argumentación soportada en evidencias que permite desvirtuar un incumplimiento incluido en un informe preliminar.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es el 'Diamante de Seguridad'?",
+    "input": "",
+    "output": "Área de protección alrededor de aeronaves estacionadas, delimitada por líneas entre la nariz, puntas de plano y cola.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Discrepancia' de un bien.",
+    "input": "",
+    "output": "Diferencia o inconsistencia física o documental de un bien con respecto a lo estipulado en la norma para su recibo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué comprende el área misional de 'Seguridad Pública'?",
+    "input": "",
+    "output": "Acciones para desarticular grupos armados y estructuras de crimen organizado con alcance nacional y trasnacional.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Mando y Control' como área funcional de capacidades.",
+    "input": "",
+    "output": "Habilidades que permiten ejercer la autoridad y dirección por parte de los Comandantes para el cumplimiento de la misión.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué se proyecta para la infraestructura en el año 2042?",
+    "input": "",
+    "output": "Instalaciones automatizadas e inteligentes, y soporte permanente a la Estación Científica Antártica Colombiana.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca el objetivo estratégico 'Sostener, preservar y proteger el PAEC'?",
+    "input": "",
+    "output": "Garantizar la supervivencia y funcionamiento de la Fuerza frente a amenazas y mantener capacidades mediante seguridad operacional.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuál es la duración proyectada de la iniciativa 'Gestión del Talento Humano'?",
+    "input": "",
+    "output": "De 2020 a 2025.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Estratagema' según el manual de términos.",
+    "input": "",
+    "output": "Acción para crear confusión al enemigo, obligándolo a actuar de acuerdo con nuestros objetivos.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es la 'Guerra Electrónica'?",
+    "input": "",
+    "output": "Acción militar que usa energía electromagnética para neutralizar o degradar el uso hostil del espectro por el enemigo.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'Interdicción Aérea'.",
+    "input": "",
+    "output": "Operación conducida para destruir o neutralizar el poder militar enemigo antes de que sea aplicado contra fuerzas propias.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
     "instruction": "¿Qué es el 'Joint Stars'?",
     "input": "",
-    "output": "Plataforma aérea con capacidad de encontrar blancos pequeños a cientos de km bajo cualquier clima [240]."
+    "output": "Jet capaz de encontrar blancos pequeños a gran distancia y ver a través de condiciones climáticas adversas.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
-    "instruction": "Defina 'Legitimidad' institucional.",
+    "instruction": "Defina 'Legítima Defensa'.",
     "input": "",
-    "output": "Respaldo ciudadano obtenido al realizar actos en estrecha relación con la ley y el respeto al DIH [241]."
+    "output": "Derecho de hacer uso de la fuerza propia o ajena ante una agresión injusta, actual o inminente.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
   },
   {
-    "instruction": "¿Qué es la 'Maniobrabilidad' de una aeronave?",
+    "instruction": "¿Qué antigüedad se le asigna a un oficial que asciende por Decreto?",
     "input": "",
-    "output": "Facilidad de dirigir la aeronave en tres dimensiones para salvar obstáculos naturales [242]."
+    "output": "A partir de la fecha que señale la resolución o el decreto que confiere el último ascenso.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "Defina 'Mando Operacional Funcional'.",
+    "instruction": "¿Qué requisito de asistencia tienen los cursos para POR?",
     "input": "",
-    "output": "Autoridad delegada para asignar misiones en un área funcional, primando el mando operacional general [243]."
+    "output": "Asistir como mínimo al 80% de las horas programadas.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es el 'Nexo de Beligerancia'?",
+    "instruction": "¿Quién integra el comité de selección para aspirantes a POR en las unidades?",
     "input": "",
-    "output": "Requisito de que un acto sea planeado para causar daño en soporte de una de las partes del conflicto [244]."
+    "output": "Oficiales Superiores y POR de mayor antigüedad orgánicos de la unidad.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "Defina 'Objetivo Militar' según el DICA.",
+    "instruction": "¿Qué curso deben realizar los POR para ascender a Teniente Coronel?",
     "input": "",
-    "output": "Bien que por naturaleza o uso contribuye a la acción militar y cuya destrucción ofrece ventaja concreta [245]."
+    "output": "El Curso de Información Militar para POR (CIMPOR) en la Escuela Superior de Guerra.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es una 'Operación de Información'?",
-    "output": "Uso de medios aeroespaciales para influenciar o atacar sistemas de toma de decisiones enemigos [246].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Persistencia' en el poder aéreo.",
+    "instruction": "¿Cuándo se celebra el Día de los Profesionales Oficiales de Reserva?",
     "input": "",
-    "output": "Aplicación del poder aéreo con continuidad para lograr el grado de neutralización deseado [247]."
+    "output": "El 15 de mayo de cada año.",
+    "fuente": "reglamento porfac"
   },
   {
-    "instruction": "¿Qué es la 'Preparación de Inteligencia en el Campo de Combate'?",
-    "output": "Metodología analítica para reducir incertidumbre sobre enemigo, ambiente y terreno [248].",
-    "input": ""
-  },
-  {
-    "instruction": "Defina 'Principio de Precaución en el Ataque'.",
+    "instruction": "¿Qué establece el institucionalismo histórico sobre el análisis de las instituciones?",
     "input": "",
-    "output": "Realizar operaciones militares con el cuidado constante de preservar a la población y bienes civiles [249]."
+    "output": "Enseña a especificar secuencias, rastrear transformaciones de escala y temporalidad variable, y analizar contextos macro para formular hipótesis sobre efectos combinados.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es el 'RWR'?",
+    "instruction": "¿Cuál fue el objetivo de la Ley 15 de 1916?",
     "input": "",
-    "output": "Receptores de alerta de radar (Radar Warning Receivers) [250]."
+    "output": "Enviar oficiales a Europa para estudiar procedimientos de guerra, armamento, táctica y aviación militar.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Tiempo de Servicio' para un tripulante.",
+    "instruction": "¿En qué fecha y ciudad realizó William Knox Martin el vuelo que impulsó la aviación en Colombia?",
     "input": "",
-    "output": "Periodo desde que se presenta al trabajo o misión hasta su finalización [251]."
+    "output": "El 18 de junio de 1919 en la ciudad de Barranquilla.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es un 'Tirador Escogido de Plataforma' (TEPLA)?",
+    "instruction": "¿Quién era el homólogo francés con quien Marco Fidel Suárez gestionó las primeras aeronaves castrenses?",
     "input": "",
-    "output": "Hombre certificado en armas de precisión capacitado para batir blancos críticos desde aeronaves [252]."
+    "output": "Alexandre Millerand.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Toque de Control'.",
+    "instruction": "¿En qué mes y año inició actividades la Escuela de Militar Aviación en Flandes, Tolima?",
     "input": "",
-    "output": "Habilidad de realizar movimientos suaves y precisos sintiendo las acciones actuales de la aeronave [253]."
+    "output": "En diciembre de 1920.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es una 'Traza Radar'?",
+    "instruction": "¿Qué tipo de aeronave utilizó el Mayor Félix Castillo Mariño para el primer vuelo solo de un militar colombiano?",
     "input": "",
-    "output": "Localización de objetos mediante sistema electromagnético que amplía la visión humana en confusión [254]."
+    "output": "Un avión Caudron G.3.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Última Opción' en el uso de la fuerza.",
+    "instruction": "¿Qué nombre recibió la aviación militar mediante el Decreto 1683 de 1934?",
     "input": "",
-    "output": "Agotar medios como captura o desmovilización antes de aplicar fuerza letal [255]."
+    "output": "División General de Aviación Nacional.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es un 'Vuelo Continental'?",
+    "instruction": "Mencione tres de las bases aéreas creadas durante la coyuntura del conflicto con Perú.",
     "input": "",
-    "output": "Itinerario de una aeronave realizado entre dos países del mismo continente [256]."
+    "output": "Palanquero, Cali y Tres Esquinas.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Vulnerabilidad' de un objetivo.",
+    "instruction": "¿En qué año se separó legalmente la aviación militar de la civil en Colombia?",
     "input": "",
-    "output": "Capacidad del objetivo para resistir un ataque según su composición y sistema de defensa [257]."
+    "output": "En el año 1942, cuando pasó a llamarse Fuerza Aérea Nacional.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "¿Qué es la 'Zona de Reacción' (ZOR)?",
+    "instruction": "¿Qué aeronave jet llegó en 1954 para reemplazar a los antiguos biplanos?",
     "input": "",
-    "output": "Área hasta 30 millas fuera del límite fronterizo donde se debe reaccionar con interceptores [258]."
+    "output": "Los Silver Star T-33.",
+    "fuente": "Historia"
   },
   {
-    "instruction": "Defina 'Aeronavegabilidad Continuada'.",
+    "instruction": "Defina 'Abastecimientos de la FAC' según el manual MAAMA.",
     "input": "",
-    "output": "Funciones de mantenimiento utilizadas para mantener la aeronavegabilidad de forma continua [259]."
+    "output": "Compilación de actividades para brindar materiales, servicios y equipos necesarios proporcionando recursos en cantidad, momento y condiciones requeridas.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es el 'Aseguramiento de la Calidad'?",
+    "instruction": "¿Bajo qué condiciones una fatalidad se incluye en la estadística anual de accidentes?",
     "input": "",
-    "output": "Evidencia necesaria para tener confianza en que la función de control se realiza adecuadamente [260]."
+    "output": "Cuando la fatalidad ocurre dentro de los treinta días calendario posteriores al suceso.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Claro y Brillante' para combustibles.",
+    "instruction": "Defina 'Acción de mejora' según el Reglamento de Inspección y Control.",
     "input": "",
-    "output": "Prueba que confirma que un combustible está libre de agua y contaminantes sólidos visibles [261]."
+    "output": "Acción definida para implementar recomendaciones plasmadas en el informe final de inspección que no requiere análisis de causas.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es el 'Craqueado' del petróleo?",
+    "instruction": "¿Qué es un 'Activo Aéreo de Alto Valor' (HVAA)?",
     "input": "",
-    "output": "Proceso donde un producto pesado se calienta para romper y reagrupar moléculas [262]."
+    "output": "Incluye plataformas aerotransportadas para comando y control, inteligencia, orientación, reabastecimiento y guerra electrónica que requieren protección activa.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Densidad Relativa' de un combustible.",
+    "instruction": "Defina 'Activo Amortizable' en la administración de materiales.",
     "input": "",
-    "output": "Relación entre la densidad del combustible y la del agua a la misma temperatura [262]."
+    "output": "Propiedad sujeta a consumirse por el uso, extinción de plazo legal o contractual, o por cumplir un ciclo productivo determinado.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es la 'Estática' en logística de combustibles?",
+    "instruction": "¿Qué representa el valor de los 'Activos Retirados'?",
     "input": "",
-    "output": "Conexión a tierra para neutralizar cualquier carga eléctrica entre objetos durante el suministro [263]."
+    "output": "El valor de las propiedades, planta y equipo totalmente depreciados, agotados y amortizados que han sido retirados del servicio.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Punto de Chispa'.",
+    "instruction": "¿Qué prohíben específicamente los protocolos adicionales a los Convenios de Ginebra respecto a la población civil?",
     "input": "",
-    "output": "Temperatura mínima de un líquido donde se evapora lo suficiente para quemarse si se enciende [264]."
+    "output": "Los actos o amenazas de violencia cuya finalidad sea aterrorizar a la población civil.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es el 'Punto de Cristalización'?",
+    "instruction": "Defina 'Aeródromo Alterno en Ruta para ETOPS'.",
     "input": "",
-    "output": "Temperatura a la cual se empiezan a formar cristales de hielo en el combustible [265]."
+    "output": "Aeródromo adecuado donde podría aterrizar un avión de dos motores si se apagara uno o experimentara condiciones no normales en ruta.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'Viscosidad'.",
+    "instruction": "¿Qué es una 'Aeronave Recuperable' en investigación de accidentes?",
     "input": "",
-    "output": "Resistencia que presenta un combustible u otro líquido a fluir [266]."
+    "output": "Aquella a la que se le ha restablecido su aeronavegabilidad en un plazo menor de un año.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "¿Qué es un 'AIT'?",
+    "instruction": "Defina 'Alambre Armador' según el manual de armamento aéreo.",
     "input": "",
-    "output": "Inspector Técnico Autorizado [267]."
+    "output": "Dispositivo utilizado para asegurar el funcionamiento de los sistemas de ignición o liberación de armamento.",
+    "fuente": "NuevoMater"
   },
   {
-    "instruction": "Defina 'ATF'.",
+    "instruction": "¿Cuál es el significado literal del lema 'Sic itur ad astra'?",
     "input": "",
-    "output": "Combustible de turbinas de aviación (Aviation Turbine Fuel) [267]."
+    "output": "Significa 'así se va a las estrellas'.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es el 'CNA'?",
+    "instruction": "¿Qué satélite fue lanzado en noviembre de 2018 para marcar la presencia de Colombia en el espacio?",
     "input": "",
-    "output": "Centro Nacional de Aeronavegación de la UAEAC [194]."
+    "output": "El FACSAT-I.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "Defina 'DF' en equipo aeronáutico.",
+    "instruction": "¿Cuáles son los tres pilares de la 'Confianza' en el marco estratégico?",
     "input": "",
-    "output": "Radiogoniómetro (Direction Finding) [195]."
+    "output": "Cercanía, Sinceridad y Confiabilidad.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es el 'DME'?",
+    "instruction": "Defina la virtud militar de la 'Templanza'.",
     "input": "",
-    "output": "Equipo radiotelemétrico para medición de distancias (Distance Measuring Equipment) [196]."
+    "output": "Cualidad que modera la atracción de placeres, asegura el dominio de la voluntad sobre los instintos y mantiene los deseos en límites de honestidad.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "Defina 'EFIS'.",
+    "instruction": "¿De qué se encarga el 'Estado Mayor Especial'?",
     "input": "",
-    "output": "Sistema electrónico integrado de instrumentos de vuelo (Electronic Flight Instrument System) [196]."
+    "output": "De asesorar al Comandante en asuntos administrativos, técnicos o profesionales específicos cuando la situación requiera estudios especiales.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es el 'FDR'?",
+    "instruction": "¿Qué centros integran el Comando de Operaciones Aéreas y Espaciales (COAES)?",
     "input": "",
-    "output": "Registrador de Datos de Vuelo (Flight Data Recorder) [197]."
+    "output": "Centro de Operaciones Aéreas y Espaciales, Nacional de Recuperación de Personal, de Armas y Tácticas, y de Acción Integral.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "Defina 'PAC' en defensa aérea.",
+    "instruction": "¿Cuál es la misión de la Jefatura de Relaciones Laborales del CODEH?",
     "input": "",
-    "output": "Puesto Adelantado de Control o Patrulla Aérea de Combate [268]."
+    "output": "Promover un ambiente laboral favorable para el cumplimiento de la misión y la consecución de objetivos institucionales.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "¿Qué es el 'PBMO'?",
+    "instruction": "Defina el área misional de 'Convivencia y Seguridad Ciudadana'.",
     "input": "",
-    "output": "Peso Bruto Máximo de Operación [268]."
+    "output": "Acciones encaminadas a garantizar derechos, libertades y desarrollo social mediante esfuerzos coordinados con autoridades político-administrativas.",
+    "fuente": "Edaes"
   },
   {
-    "instruction": "Defina 'QNH'.",
+    "instruction": "¿Qué comprende el área funcional de 'Mando y Control'?",
     "input": "",
-    "output": "Reglaje de la subescala del altímetro para obtener elevación estando en tierra [269]."
+    "output": "Habilidades que permiten ejercer autoridad y dirección por parte de los comandantes para el cumplimiento de la misión.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca el 'Escenario Institucional 2042' respecto a la doctrina?",
+    "input": "",
+    "output": "Consolidación de una doctrina multidominio, interoperable, adaptable y generadora de cambios en el entorno.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Actualización de la Doctrina' según el manual de términos.",
+    "input": "",
+    "output": "Proceso intelectual de análisis de experiencias para generar nuevo conocimiento que será plasmado en medios físicos.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Air Traffic Management' (ATM)?",
+    "input": "",
+    "output": "Finalidad de obtener movimiento seguro, ordenado y rápido del tránsito aéreo tomando como base el empleo eficaz del espacio aéreo.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Aeronave Sospechosa'.",
+    "input": "",
+    "output": "Toda aeronave que no cumpla con las normas, procedimientos y reglamentaciones establecidas por la autoridad para el tráfico aéreo.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Apoyo Aéreo Cercano'?",
+    "input": "",
+    "output": "Acción aérea contra blancos hostiles cerca de unidades propias que requiere integración minuciosa con el fuego y maniobra de superficie.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Área Académica de Emergencias'.",
+    "input": "",
+    "output": "Comprende los temas relacionados con los procedimientos de emergencia.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es la 'Autonomía Táctica' de un sistema de armas?",
+    "input": "",
+    "output": "Capacidad de los sistemas para contribuir a la misión mediante operaciones autónomas las 24 horas bajo cualquier condición meteorológica.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Avión Líder'.",
+    "input": "",
+    "output": "Aeronave que se desempeña como líder de un elemento o escuadrilla de combate, tripulada por el piloto de mayor experiencia.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué implica el término 'Balance' en la toma de decisiones?",
+    "input": "",
+    "output": "Evaluación de los resultados esperados frente a los riesgos proyectados para producir una decisión efectiva.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Briefing Meteorológico'.",
+    "input": "",
+    "output": "Exposición de condiciones meteorológicas pasadas, actuales y pronosticadas con alcances según el personal y lugar donde se realice.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Ciclo del Blanco'?",
+    "input": "",
+    "output": "Proceso mediante el cual el análisis de objetivos traduce la amenaza general en elementos específicos utilizables para aplicar la fuerza.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué exige el perfil del POR respecto al honor y lealtad?",
+    "input": "",
+    "output": "Debe abstenerse de desarrollar actividades profesionales que incidan negativamente en la imagen de las Fuerzas Militares.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cómo se vinculan los Profesionales Oficiales de Reserva a la Institución?",
+    "input": "",
+    "output": "En forma voluntaria, ad honorem, sin prestación ni relación laboral, a través de cursos especiales.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Quién autoriza el número de POR que debe regir para cada año?",
+    "input": "",
+    "output": "El Comandante General de las Fuerzas Militares, antes del 31 de octubre.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cómo se integran los comités de preselección para POR?",
+    "input": "",
+    "output": "Por cinco oficiales: Oficiales Superiores y mínimo dos Profesionales Oficiales de Reserva de mayor antigüedad orgánicos de la unidad.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué plazo tiene un aspirante para completar documentación devuelta por estar incompleta?",
+    "input": "",
+    "output": "Un plazo no mayor de ocho (8) días calendario.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué autoridad confiere el grado inicial de Subteniente de Reserva?",
+    "input": "",
+    "output": "El Gobierno Nacional o el Ministro de Defensa Nacional cuando en él se delegue.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué requisito de experiencia profesional se exige para ingresar como POR?",
+    "input": "",
+    "output": "Demostrar como mínimo cuatro (4) años de experiencia profesional.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cuál es la intensidad mínima del curso de orientación a la vida militar?",
+    "input": "",
+    "output": "No menor a 224 horas.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "Mencione tres áreas de trabajo asignadas a los POR.",
+    "input": "",
+    "output": "Inteligencia, Justicia y Logística.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué puntaje académico mínimo deben obtener los POR en sus cursos?",
+    "input": "",
+    "output": "Un puntaje global no inferior al setenta y cinco por ciento (75%).",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué permitió la Operación Vuelo del Ángel en 1998?",
+    "input": "",
+    "output": "El empleo de visores nocturnos en aeronaves de ala fija y rotatoria para restaurar la tranquilidad en una operación de alto riesgo.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué aeronave se describe como dotada de sistemas de armas inteligentes y táctica propia para misiones precisas?",
+    "input": "",
+    "output": "El Súper Tucano A-29.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál es la función del Comando de Operaciones Aéreas (COA) en el modelo 2018?",
+    "input": "",
+    "output": "Desarrollar las operaciones aéreas para la defensa de la soberanía y el control del espacio aéreo.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué busca el fortalecimiento de procesos de I+D+i en la FAC?",
+    "input": "",
+    "output": "Alcanzar la independencia estratégica mediante alianzas y convenios de cooperación.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué hito marcó la operación 'Red Flag' 2012 para la FAC?",
+    "input": "",
+    "output": "Materializó el objetivo de integrar una coalición con las mejores fuerzas aéreas del mundo en un despliegue sin precedentes.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina 'Almacén de Recibo y Clasificación' según MAAMA.",
+    "input": "",
+    "output": "Área empleada para recibir, inspeccionar, verificar condiciones técnicas y preparar material antes de su almacenamiento definitivo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Altitud de Presión'?",
+    "input": "",
+    "output": "Expresión de la presión atmosférica mediante la altitud que corresponde a esa presión en la atmósfera tipo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Altura Mínima de Descenso' (MDH).",
+    "input": "",
+    "output": "Altura especificada en aproximación no de precisión por debajo de la cual no debe efectuarse el descenso sin referencia visual.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es el 'Amatol'?",
+    "input": "",
+    "output": "Mezcla de TNT y nitrato de amonio usada en bombas de propósito general, granadas y torpedos.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Aproximación en Circuito'.",
+    "input": "",
+    "output": "Prolongación de un procedimiento por instrumentos que permite maniobrar alrededor del aeródromo con referencias visuales antes de aterrizar.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué busca el objetivo estratégico 'Sostener, preservar y proteger el PAEC'?",
+    "input": "",
+    "output": "Garantizar supervivencia y funcionamiento de la Fuerza frente a amenazas y mantener capacidades mediante seguridad operacional.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el pilar de 'Confiabilidad' dentro del valor de la confianza.",
+    "input": "",
+    "output": "Estado mental de los otros hacia un sujeto donde tienen la certeza de que se cumplirá lo que se declara y promete.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué es la iniciativa estratégica 'FACSAT-2'?",
+    "input": "",
+    "output": "Adquisición de un segundo satélite de observación con estaciones terrenas de control y monitoreo.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué se proyecta para la infraestructura en el año 2030?",
+    "input": "",
+    "output": "Instalaciones y redes óptimas, sostenibles y protegidas, ubicadas geoestratégicamente.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuál es la función del 'Centro de Armas y Tácticas' (CEAT)?",
+    "input": "",
+    "output": "Integrar esfuerzos para el desarrollo y estandarización del empleo de los sistemas de armas de la Fuerza.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Clara Advertencia' antes del uso de la fuerza.",
+    "input": "",
+    "output": "Advertir la intención en tiempo suficiente, salvo que ponga en peligro al militar o sea evidentemente inadecuada.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Comando Funcional'?",
+    "input": "",
+    "output": "Organización militar temporal creada para atender una función específica en la totalidad de las fuerzas.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Conciencia Situacional'.",
+    "input": "",
+    "output": "Percepción exacta del entorno y de los sucesos pasados, presentes y futuros en todo momento por la tripulación.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué son las 'Contramedidas Electrónicas'?",
+    "output": "Técnicas utilizadas para prevenir, interferir o reducir el uso efectivo del espectro electromagnético del enemigo.",
+    "input": "",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Control Operacional' (OPCON).",
+    "input": "",
+    "output": "Atribución que proporciona autoridad plena para ordenar cambios en organización para el combate, misiones y objetivos tácticos.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué sucede con la antigüedad de un oficial si regresa del Cuerpo Asesor al Regular?",
+    "input": "",
+    "output": "Regresará sin antigüedad en el grado que ostentaba al momento del ingreso al cuerpo asesor.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cuál es el tiempo mínimo de permanencia en el grado de Capitán de Reserva?",
+    "input": "",
+    "output": "Cinco (5) años.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué requisito de antecedentes se exige específicamente para los certificados de Procuraduría y Contraloría?",
+    "input": "",
+    "output": "Deben tener una fecha de expedición no mayor de sesenta (60) días.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué intensidad tiene el curso CIMPOR?",
+    "input": "",
+    "output": "No podrá ser inferior a ciento ochenta (180) horas.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿En qué consiste el 'Escudo de la Reserva por tiempo de servicio'?",
+    "input": "",
+    "output": "Estímulo para quienes cumplan 10, 15, 20 y 25 años de permanencia en el escalafón.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué autoridad dispone los cambios de unidad de los POR?",
+    "input": "",
+    "output": "El Comando General de las Fuerzas Militares mediante Orden Administrativa de Personal (OAP).",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cuál es el plazo para cumplir un traslado una vez comunicada la OAP?",
+    "input": "",
+    "output": "Dentro de los 30 días calendario siguientes a la fecha de expedición.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué sucede con la relación laboral de un POR al ser llamado a servicio activo especial?",
+    "input": "",
+    "output": "Se suspende transitoriamente y el empleador debe reincorporarlo en los 30 días siguientes a su retiro.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Quién entrega el tricolor nacional a la familia en el protocolo fúnebre?",
+    "input": "",
+    "output": "El Profesional Oficial de Reserva más antiguo presente.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cuándo se celebra el Día de los Profesionales Oficiales de Reserva?",
+    "input": "",
+    "output": "El 15 de mayo de cada año.",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué macro tareas incluía el manual de doctrina en su versión de 1975?",
+    "input": "",
+    "output": "Contra-aire, apoyo aéreo cercano, interdicción aérea, reconocimiento armado, transporte aéreo y ataque estratégico.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué centro fue creado para fortalecer la recuperación de personal con tecnología de punta?",
+    "input": "",
+    "output": "El Centro Nacional de Recuperación de Personal (CNRP).",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué importancia tuvo la puesta en órbita del satélite FACSAT-1?",
+    "input": "",
+    "output": "Permitió la toma autónoma de fotografías desde el espacio para prevención de desastres y evaluación de daños.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué fuente de doctrina demanda la formulación constante por su estructura mental y misiones?",
+    "input": "",
+    "output": "La institución militar.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuándo pasó a ser público el Manual de Doctrina Básica Aérea y Espacial?",
+    "input": "",
+    "output": "A partir del 10 de enero de 2013.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina 'Ciberespacio' según el manual Fundamental Conjunto.",
+    "input": "",
+    "output": "Dominio consistente en redes interdependientes de infraestructura de TI y datos que incluyen Internet y sistemas informáticos.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Cláusula Martens'?",
+    "input": "",
+    "output": "Principio que protege a personas civiles bajo principios de humanidad en casos no previstos en disposiciones escritas.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Comodato' en la administración de bienes.",
+    "input": "",
+    "output": "Bienes controlados recibidos en préstamo sin traslado de propiedad ni contraprestación por un tiempo determinado.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es un 'Componente Controlado por Vida Límite' (Hard Time)?",
+    "input": "",
+    "output": "Componente con tiempo de vida límite especificado por el fabricante cuyo cambio es mandatario por seguridad.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Cultura Justa' en seguridad operacional.",
+    "input": "",
+    "output": "Diferenciación entre comportamiento aceptable e inaceptable, evaluando negligencia frente a error no intencional.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué busca el principio de 'Solidaridad'?",
+    "input": "",
+    "output": "Corresponsabilidad donde cada persona propende por su cuidado personal y promueve el bienestar del otro e Institución.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el comportamiento de 'Rectitud' vinculado al honor.",
+    "input": "",
+    "output": "Firmeza de carácter para asumir responsabilidad de acciones, honestidad consigo mismo y disposición de hacer lo correcto.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿A qué se refiere el 'Orgullo por la Institución'?",
+    "input": "",
+    "output": "Satisfacción de pertenecer a la FAC por lo que representa hacia afuera y su impacto en la sociedad.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina la virtud militar de la 'Fortaleza'.",
+    "input": "",
+    "output": "Capacidad mental de soportar factores adversos, persistir y perseverar en la práctica de principios y valores.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca la política de 'Justicia y Equidad'?",
+    "input": "",
+    "output": "Garantizar que reconocimientos y sanciones se otorguen objetivamente respetando el debido proceso.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Joint Stars' como plataforma de inteligencia.",
+    "input": "",
+    "output": "Jet con capacidad de encontrar blancos muy pequeños a distancias lejanas a través de cualquier condición climática.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es la 'Junta de Autonomías'?",
+    "input": "",
+    "output": "Organismo encargado de evaluar, asignar y controlar las plantas operativas de cargos y tripulantes de vuelo.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Legítima Defensa'.",
+    "input": "",
+    "output": "Derecho de hacer uso de la fuerza en defensa propia o ajena ante agresión injusta, actual o inminente.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es una 'Línea de Fuego' en un polígono?",
+    "input": "",
+    "output": "Área de posible impacto que coincide con el rumbo de la aeronave en el disparo, proyectada hacia áreas deshabitadas.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Mando Conjunto'.",
+    "input": "",
+    "output": "Mando asignado a un comandante de organización militar conjunta, normalmente sobre unidades asignadas o agregadas.",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué temas específicos debía estudiar la comisión de oficiales enviada a Europa según la Ley 15 de 1916?",
+    "input": "",
+    "output": "Nuevos procedimientos de guerra, sistemas de armamento y táctica, aviación militar, administración del Ejército, defensa de puertos con submarinos y minas, y cuestiones técnico-militares.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Quién fue el piloto civil que impulsó el entusiasmo por la aviación en Barranquilla en 1919?",
+    "input": "",
+    "output": "William Knox Martin.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué institución dio origen la Ley 126 del 31 de diciembre de 1919?",
+    "input": "",
+    "output": "La Escuela Militar de Aviación.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cómo describe Schmitt (1979) la revolución estructural generada por el avión en la guerra?",
+    "input": "",
+    "output": "Las fuerzas terrestres y navales quedan sometidas a los efectos de una fuerza que se mueve en un espacio tridimensional, rompiendo el enfrentamiento horizontal.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿En qué fecha exacta realizó el Mayor Félix Castillo Mariño el primer vuelo solo de un aviador militar colombiano?",
+    "input": "",
+    "output": "El 18 de junio de 1921.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál fue la primera aeronave utilizada para un vuelo militar en solitario en Colombia?",
+    "input": "",
+    "output": "Un avión Caudron G.3.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Por qué se produjo el primer cierre de la Escuela Militar de Aviación en 1922?",
+    "output": "Debido a dificultades económicas y logísticas.",
+    "input": "",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué misiones aéreas prestaron asesoría a Colombia en la década posterior al conflicto con Perú?",
+    "input": "",
+    "output": "Misiones aéreas de Alemania, Cuba y Estados Unidos.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿En qué año se separó legalmente la aviación militar de la civil bajo el nombre de Fuerza Aérea Nacional?",
+    "input": "",
+    "output": "En el año 1942.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué capacidad distintiva introdujeron los helicópteros Hiller en 1952?",
+    "input": "",
+    "output": "La capacidad de despegue y aterrizaje vertical.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿A qué tipo de aeronaves reemplazaron los Silver Star T-33 de propulsión jet en 1954?",
+    "input": "",
+    "output": "A los biplanos del pasado.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿En qué año llegaron los primeros aviones supersónicos Mirage M5 a la institución?",
+    "input": "",
+    "output": "En el año 1972.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué operación militar de los años sesenta permitió aplicar misiones de desembarco helicoportado y reconocimiento?",
+    "input": "",
+    "output": "La Operación Soberanía (Plan de Operaciones Cabeza).",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál fue el nombre original del actual Comando Aéreo de Transporte Militar (CATAM)?",
+    "input": "",
+    "output": "Escuadrón 101 de Transportes.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué entidad fue creada en 1962 para prestar servicio aéreo en lugares carentes de servicio comercial regular?",
+    "input": "",
+    "output": "El Servicio Aéreo a Territorios Nacionales (SATENA).",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Mencione tres actividades diversas de la FAC fuera del ámbito estrictamente militar.",
+    "input": "",
+    "output": "Servicio de vigilancia vulcanológica, extinción de incendios forestales y protección del medio ambiente.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué países hermanos han recibido auxilio humanitario de la FAC ante desastres naturales?",
+    "input": "",
+    "output": "Costa Rica, Cuba, Chile, Ecuador, Guatemala, Haití, Japón, México, Perú y Puerto Rico.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuándo se incorporaron las primeras Suboficiales técnicas en la historia de la FAC?",
+    "input": "",
+    "output": "En el año 1992.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Dónde se ubicaba el Grupo Aéreo del Sur (GASUR) en los años ochenta?",
+    "input": "",
+    "output": "En Tres Esquinas, jurisdicción de Solano, departamento del Caquetá.",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué unidad centralizó todos los helicópteros de la FAC en 1966?",
+    "input": "",
+    "output": "El Comando Aéreo de Apoyo Táctico No. 1 (CAATA-1).",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina 'Abnegación' según el Código de Ética Militar Aérea.",
+    "input": "",
+    "output": "Es el absoluto y espontáneo sacrificio que el hombre hace de su voluntad, gustos y vida en servicio de la patria o institución.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué condición de fatalidad se requiere para incluir un suceso en la estadística anual de accidentes?",
+    "input": "",
+    "output": "Que la fatalidad ocurra dentro de los treinta días calendario posteriores al suceso.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿En qué plazo debe incluirse una aeronave desaparecida en las bases de datos como accidentada?",
+    "input": "",
+    "output": "Después de haber estado desaparecida por más de noventa días.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué debe contener obligatoriamente una 'Acción Correctiva' según el RINCO 2024?",
+    "input": "",
+    "output": "Descripción de actividades concretas que sean realizables, medibles y verificables, con un plazo coherente con su complejidad.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Acción de mejora' en el contexto de inspecciones.",
+    "input": "",
+    "output": "Es la acción definida para implementar las recomendaciones del informe final de inspección, sin requerir análisis de causas.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es una 'Acción Defensiva' según el manual de Derecho Operacional?",
+    "input": "",
+    "output": "Conjunto de actividades destinadas a impedir que una acción ofensiva enemiga alcance su objetivo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Acción Ofensiva'.",
+    "input": "",
+    "output": "Conjunto de actividades destinadas a imponer la iniciativa del adversario y anular su capacidad operacional.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué representa el puente de la 'Acción Integral' en la Fuerza?",
+    "input": "",
+    "output": "Representa el puente entre el control territorial (aspecto militar) y la consolidación social del Estado (aspecto civil).",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Acción Unificada' (AU) según el manual MFC 1.0?",
+    "input": "",
+    "output": "Sincronización, coordinación e integración de actividades gubernamentales y no gubernamentales con operaciones militares para lograr unidad de esfuerzo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Acreditación' en el sistema educativo institucional.",
+    "input": "",
+    "output": "Reconocimiento de alta calidad que otorga el Ministerio de Educación Nacional a programas e instituciones que cumplen altos criterios de calidad.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es una 'Actividad' según la Guía de Gerencia de Proyectos?",
+    "input": "",
+    "output": "Acciones realizadas o trabajo ejecutado mediante insumos movilizados para producir resultados específicos.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿A qué se puede aplicar el término 'Activo' además de máquinas e instalaciones?",
+    "input": "",
+    "output": "A servicios, información, personas, reputación, imagen, habilidades y conocimiento.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué aeronaves integran los 'Activos aéreos de alto valor' (HVAA)?",
+    "input": "",
+    "output": "Plataformas para comando y control, inteligencia, orientación, reabastecimiento aéreo y guerra electrónica.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Activo Espacial'.",
+    "input": "",
+    "output": "Elemento o bien que sirve para desarrollar actividades en el espacio exterior, como satélites o instalaciones espaciales.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué representan las cuentas de los 'Activos' para el ente público?",
+    "input": "",
+    "output": "Los bienes, derechos y pertenencias, tangibles e intangibles, que contribuyen al desarrollo de la función administrativa.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Activo Fijo'.",
+    "input": "",
+    "output": "Bienes adquiridos para utilizarlos directamente en el cometido estatal que inmovilizan capitales y desaparecen por depreciación con el tiempo.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es un 'Activo Amortizable'?",
+    "input": "",
+    "output": "Propiedad sujeta a consumirse por el uso, extinción de plazo legal o por cumplir un ciclo productivo determinado.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué cuentas integran los 'Activos depreciables'?",
+    "input": "",
+    "output": "Edificaciones, plantas, redes, maquinaria, equipo médico, de oficina, comunicación, transporte, comedor y hotelería.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Activos retirados' en contabilidad logistica.",
+    "input": "",
+    "output": "Representa el valor de las propiedades, planta y equipo totalmente depreciados, agotados y amortizados retirados del servicio.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué prohíben los protocolos adicionales a los Convenios de Ginebra sobre terrorismo?",
+    "input": "",
+    "output": "Los actos o amenazas de violencia cuya finalidad sea aterrorizar a la población civil.",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Cuál es el significado literal más ambicioso del lema 'Sic itur ad astra'?",
+    "input": "",
+    "output": "Significa 'así se va a las estrellas'.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿En qué se soporta el propósito de la Estrategia 2042 de la FAC?",
+    "input": "",
+    "output": "En el espíritu de evolución, innovación y transformación permanente.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuáles son las cuatro partes que dividen el planteamiento del documento EDAES?",
+    "input": "",
+    "output": "Marco estratégico, estructura organizacional, plan de desarrollo (prospectiva) y plan estratégico 2022.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué dependencia administra actualmente el satélite FACSAT-I?",
+    "input": "",
+    "output": "El Centro de Investigación de Tecnologías Aeroespaciales.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué le permite la esencia de 'Volar' al soldado del aire según la misión?",
+    "input": "",
+    "output": "Visualizar el campo de batalla desde una perspectiva aérea y desarrollarse como estratega para sobrepasar obstáculos naturales.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué asegura la actividad de 'Entrenar' para la defensa de la nación?",
+    "input": "",
+    "output": "La preparación adecuada del poder aéreo y espacial como arma decisiva y sofisticada de la nación.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuál es el objetivo principal de 'Combatir' según la doctrina institucional?",
+    "input": "",
+    "output": "Derrotar la amenaza y dominar en las dimensiones de aire, espacio y ciberespacio.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina la visión de la Fuerza Aérea Colombiana según EDAES.",
+    "input": "",
+    "output": "Ser innovadora, polivalente, interoperable, líder regional, con alcance global y capacidades disuasivas sostenibles.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué es un 'Principio' dentro del marco estratégico institucional?",
+    "input": "",
+    "output": "Es una norma e idea incuestionable que rige el pensamiento y la conducta; una verdad fundamental que motiva la actuación humana.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el principio de 'Integridad' según la política institucional.",
+    "input": "",
+    "output": "Decisiones y actuaciones transparentes que demuestran coherencia, profesionalismo, honestidad y comportamiento irreprochable.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿A qué orienta el principio de 'Seguridad' las actuaciones de los miembros?",
+    "input": "",
+    "output": "A la preservación de la vida y a la conservación de los recursos asignados mediante la conciencia del riesgo.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué implica el componente de 'Solidaridad' en el principio de seguridad?",
+    "input": "",
+    "output": "La corresponsabilidad donde cada persona propende por su cuidado personal y promueve el bienestar del otro y de la Institución.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el valor institucional del 'Honor'.",
+    "input": "",
+    "output": "Cualidad moral que lleva al sujeto a cumplir con los deberes propios respecto al prójimo y a sí mismo.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué indica el comportamiento de 'Rectitud' vinculado al honor?",
+    "input": "",
+    "output": "Firmeza de carácter para asumir responsabilidad de las acciones, honestidad consigo mismo y disposición de hacer lo correcto.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuáles son los tres pilares sobre los que debe sustentarse la 'Confianza'?",
+    "input": "",
+    "output": "Cercanía, Sinceridad y Confiabilidad.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el valor institucional del 'Valor'.",
+    "input": "",
+    "output": "Cualidad del ánimo que lleva al hombre a defender y crecer en su dignidad de persona.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué comportamientos están vinculados directamente al valor del 'Valor'?",
+    "input": "",
+    "output": "Fuerza y Disciplina.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Fuerza' como comportamiento moral dentro del marco estratégico.",
+    "input": "",
+    "output": "Firmeza y persistencia para alcanzar propósitos, vinculada con la valentía para enfrentar situaciones adversas.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué es la 'Disciplina' en el ejercicio de la carrera militar aérea?",
+    "input": "",
+    "output": "Conjunto de normas de conducta que involucra obediencia, subordinación y seguimiento sistemático de reglas.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el valor del 'Compromiso' según EDAES.",
+    "input": "",
+    "output": "Es prometer u obligarse moral o jurídicamente al cumplimiento de una obligación, generando responsabilidad.",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué es la 'AERODINÁMICA' según el manual de términos?",
+    "input": "",
+    "output": "Materia que trata del estudio del movimiento del aire y fluidos gaseosos y las fuerzas sobre objetos en movimiento.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'AEROFOTOGRAMETRIA'.",
+    "input": "",
+    "output": "Ciencia que trata de la elaboración de planos y cartas por medio de aerofotografías.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué se considera una 'AERONAVE CIVIL AL SERVICIO DE LA FUERZA PÚBLICA'?",
+    "input": "",
+    "output": "Aeronave particular contratada para transporte de personal o equipo militar que no pertenece a la aviación de Estado.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Cuál es la finalidad del 'AIR TRAFFIC MANAGEMENT' (ATM)?",
+    "input": "",
+    "output": "Obtener un movimiento seguro, ordenado y rápido del tránsito aéreo basándose en el empleo eficaz del espacio aéreo.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿A qué se refiere el término 'AMORTIGUACIÓN' en análisis de objetivos militares?",
+    "input": "",
+    "output": "Identificar qué porción del objetivo puede ser destruida por el enemigo sin que afecte la conducción del esfuerzo militar.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es 'APLICAR LA FUERZA' según la doctrina?",
+    "input": "",
+    "output": "Planeamiento y ejecución de operaciones tendientes a la destrucción o neutralización de capacidades enemigas sobre blancos definidos.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué comprende la función de 'APOYAR LA FUERZA'?",
+    "input": "",
+    "output": "Proporcionar necesidades de protección, preservación, logística y servicios requeridos para las funciones de la Fuerza.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'APOYO AÉREO CERCANO'.",
+    "input": "",
+    "output": "Acción aérea contra blancos hostiles cerca de unidades propias, integrada minuciosamente con el fuego y maniobra de superficie.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué unidades académicas comprende el 'ÁREA ACADÉMICA DE OPERACIÓN DE VUELO'?",
+    "input": "",
+    "output": "Límites de operación, procedimientos normales, aerodinámica, meteorología, navegación, seguridad aérea y fisiología.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'ÁREA TÁCTICA DE RESPONSABILIDAD'.",
+    "input": "",
+    "output": "Zona entre el perímetro de armas de acompañamiento hasta la máxima distancia de su alcance práctico (aprox. 5 km).",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es una maniobra de 'ASALTO AÉREO'?",
+    "input": "",
+    "output": "Operación donde la fuerza usa potencia de fuego y movilidad aérea para desembarcar en área hostil y tomar un objetivo.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿De qué se encarga el 'ASESOR JURIDICO OPERACIONAL'?",
+    "input": "",
+    "output": "Persona encargada de proteger jurídicamente las operaciones y resultados interviniendo en planeación, ejecución y evaluación.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'ATAQUE ESTRATÉGICO' como operación del poder aéreo.",
+    "input": "",
+    "output": "Operación contra centros de gravedad del enemigo para afectar significativamente su voluntad de lucha o libertad de acción.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es la 'AUTONOMÍA TÁCTICA' de los sistemas de armas?",
+    "input": "",
+    "output": "Capacidad de contribuir a la misión mediante operaciones autónomas las 24 horas bajo cualquier condición meteorológica.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'AVIÓN INTERCEPTOR'.",
+    "input": "",
+    "output": "Elemento de mayor movilidad y alcance de defensa aérea que permite interceptar amenazas a gran distancia del objetivo.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿En qué consiste el término 'BALANCE' en la toma de decisiones tácticas?",
+    "input": "",
+    "output": "Evaluación de los resultados esperados frente a los riesgos proyectados para producir una decisión efectiva.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué es un 'BLANCO LÍCITO' según el manual de términos?",
+    "input": "",
+    "output": "Miembros de grupos armados organizados y personas que participan directamente en las hostilidades.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué son los 'BIENES PROTEGIDOS' según el DIH?",
+    "input": "",
+    "output": "Bienes civiles (indispensables, culturales o históricos) que no han sido definidos previamente como objetivos militares.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "Defina 'BUSQUEDA Y RESCATE EN COMBATE'.",
+    "input": "",
+    "output": "Operaciones para localizar y rescatar tripulaciones accidentadas o derribadas por el enemigo en territorio hostil.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Qué significa técnicamente 'CAPTURA EN FLAGRANCIA'?",
+    "input": "",
+    "output": "El acto de sorprender a una persona en el instante de cometer un delito o inmediatamente después.",
+    "fuente": "manuel de terminos fuerza aerea colombiana"
+  },
+  {
+    "instruction": "¿Quiénes son los Profesionales Oficiales de Reserva (POR) de las FF.MM.?",
+    "input": "",
+    "output": "Profesionales con título universitario vinculados voluntariamente y ad honorem, sin prestación ni relación laboral.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué tipo de vinculación tienen los POR a la Institución militar?",
+    "input": "",
+    "output": "Enteramente voluntaria, ad honorem y obedece a una situación especial de asimilación institucional.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué sentido de lealtad y honor debe poseer obligatoriamente un POR?",
+    "input": "",
+    "output": "Alto sentido de honor y lealtad, absteniéndose de actividades que incidan negativamente en la imagen militar.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "Mencione dos objetivos principales del cuerpo de Profesionales Oficiales de Reserva.",
+    "input": "",
+    "output": "Apoyar actividades logísticas y administrativas, y proyectar una imagen positiva de las Fuerzas Militares.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cómo se integran los comités de preselección para aspirantes a POR?",
+    "input": "",
+    "output": "Por cinco oficiales: Oficiales Superiores y mínimo dos Profesionales Oficiales de Reserva de mayor antigüedad.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué autoridad confiere inicialmente el grado de Subteniente de Reserva?",
+    "input": "",
+    "output": "El Gobierno Nacional o el Ministro de Defensa Nacional por delegación.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cuál es el rango de edad para inscribirse como aspirante al curso de formación POR?",
+    "input": "",
+    "output": "Estar entre los veintiséis (26) y cuarenta y cinco (45) años de edad.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué requisito de experiencia profesional se exige para ingresar como POR?",
+    "input": "",
+    "output": "Demostrar como mínimo cuatro (4) años de experiencia profesional certificada.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cuál es la intensidad mínima del programa del curso de formación para ingreso?",
+    "input": "",
+    "output": "No podrá ser inferior a doscientas cincuenta y seis (256) horas.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué puntaje académico mínimo deben obtener los POR en sus cursos programados?",
+    "input": "",
+    "output": "Un puntaje global no inferior al setenta y cinco por ciento (75%).",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿En qué lugar se realiza obligatoriamente el curso para ascenso a Teniente Coronel de Reserva?",
+    "input": "",
+    "output": "En la Escuela Superior de Guerra.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿A qué cuerpo se asimilan los POR dentro de la estructura de las FF.MM.?",
+    "input": "",
+    "output": "Se asimilan como Oficiales del Cuerpo Administrativo.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué antigüedad se le asigna a un oficial que regresa del cuerpo asesor al escalafón regular?",
+    "input": "",
+    "output": "Regresa sin antigüedad en el grado que ostentaba al momento del ingreso al cuerpo asesor.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿En qué meses se producen ordinariamente los ascensos de los Profesionales Oficiales de Reserva?",
+    "input": "",
+    "output": "En los meses de junio y diciembre.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cuál es el tiempo máximo de permanencia en el escalafón para un Subteniente de Reserva?",
+    "input": "",
+    "output": "No podrá ser superior a seis (6) años en dicho grado.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué intensidad mínima tiene el curso de ambientación por cambio de Fuerza?",
+    "input": "",
+    "output": "No podrá ser inferior a treinta y dos (32) horas.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿En qué consiste el protocolo fúnebre de soldados para Oficiales Superiores de Reserva?",
+    "input": "",
+    "output": "Durante la velación y ceremonia, cuatro (4) soldados con armamento acompañarán al féretro.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Cuándo se celebra oficialmente el Día de los Profesionales Oficiales de Reserva?",
+    "input": "",
+    "output": "El 15 de mayo de cada año.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué lema ostenta el Escudo de los Profesionales Oficiales de Reserva?",
+    "input": "",
+    "output": "'Todo por la Patria'.",
+    "fuente": "reglamento porfac"
+  },
+  {
+    "instruction": "¿Qué se registra de manera obligatoria en el Formulario No. 1 (Folio de Vida)?",
+    "input": "",
+    "output": "Áreas de trabajo, felicitaciones, condecoraciones, cursos, sanciones y rendimiento en el área de trabajo.",
+    "fuente": "reglamento porfac"
+  },
+   {
+    "instruction": "¿Qué permite analizar el enfoque metodológico neo-institucionalista según el informe histórico?",
+    "input": "",
+    "output": "Permite analizar los **fenómenos sociales y políticos** haciendo un énfasis especial en las instituciones y su evolución en el tiempo [1].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál es la función del Manual de Gestión de la Doctrina y las Lecciones Aprendidas (MAGDO)?",
+    "input": "",
+    "output": "Establecer las **normas, procedimientos, estrategias y responsabilidades** para generar, actualizar, difundir, aplicar y evaluar la doctrina en todos los niveles de la Fuerza [2].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué transformación cualitativa generó la llegada de los aviones supersónicos Mirage M5 en 1972?",
+    "input": "",
+    "output": "Revolucionó el poder aéreo nacional al propiciar una **mayor profesionalización del talento humano** y dar un salto cualitativo en la defensa de la nación [3].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué labor realiza la FAC en relación con el servicio de vigilancia vulcanológica?",
+    "input": "",
+    "output": "Utiliza sus capacidades aéreas para contribuir al bienestar de las comunidades mediante el **monitoreo y detección temprana** de actividad volcánica [4].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿En qué año ingresaron las primeras suboficiales en el curso regular de la FAC?",
+    "input": "",
+    "output": "En el año **2013** [5].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál es la tarea principal del Comando de Operaciones Aéreas (COA) en el modelo de 2018?",
+    "input": "",
+    "output": "Desarrollar las **operaciones aéreas** para la defensa de la soberanía y el control del espacio aéreo [6].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué importancia tuvo la operación 'Red Flag' 2012 para la proyección internacional de la FAC?",
+    "input": "",
+    "output": "Materializó el objetivo de integrar una **coalición con las mejores fuerzas aéreas del mundo**, evidenciando que la FAC es un referente regional y mundial [7].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué beneficios aporta el satélite FACSAT-1 en la evaluación de daños ambientales?",
+    "input": "",
+    "output": "Permite la toma autónoma de fotografías desde el espacio que son cruciales para evaluar daños por **inundaciones y terremotos** [8].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cómo se define el 'Equipo Azul' según el General Ramsés Rueda?",
+    "input": "",
+    "output": "Es el equipo conformado por miles de **oficiales, suboficiales, soldados y personal civil** que ha posicionado a la institución en sus 100 años de historia [9].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál es la definición básica de 'pie de fuerza militar' en el informe?",
+    "input": "",
+    "output": "Se relaciona con el número de integrantes de una fuerza militar, **excluyendo al personal no uniformado** (empleados públicos del MDN) [10].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué incremento porcentual del pie de fuerza registraron las FF.MM. entre 1998 y 2008?",
+    "input": "",
+    "output": "Un aumento de casi el **84%**, pasando de 154.878 a 285.382 efectivos [11].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál fue el total de efectivos militares en la FAC durante el año 2011?",
+    "input": "",
+    "output": "Un total de **13.817 efectivos** [12].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿A qué atribuye la Contraloría el aumento de oficiales y la reducción de soldados?",
+    "input": "",
+    "output": "A la **tecnificación y profesionalización** de las labores que requieren capacidades específicas en detrimento de la cantidad de soldados [13].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué porcentaje de alistamiento de aeronaves alcanzó la FAC en octubre de 2011?",
+    "input": "",
+    "output": "Alcanzó el **73,5%**, superando el promedio mundial del 70% [12].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina la característica de 'Legitimidad' en la doctrina de la FAC.",
+    "input": "",
+    "output": "Se fundamenta en la **Constitución Política** y establece una estrategia militar basada en leyes nacionales y el bloque de constitucionalidad [14].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué dependencia supervisa y controla los documentos de doctrina a través de la Suite Visión Empresarial (SVE)?",
+    "input": "",
+    "output": "El **Centro de Doctrina Aérea y Espacial (CEDAE)** [15, 16].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Cuál es la responsabilidad principal de los soldados regulares incorporados a la FAC?",
+    "input": "",
+    "output": "Su actividad está enfocada a la **defensa y seguridad de las bases aéreas** y no al proceso de operaciones de aplicación del poder aéreo [17].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué macro tareas se incluyeron en la segunda edición del manual de doctrina en 1975?",
+    "input": "",
+    "output": "Contra-aire, apoyo aéreo cercano, interdicción aérea, reconocimiento armado, transporte aéreo y **ataque estratégico** [18].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué cambio de clasificación tuvo el MADBA en el año 2010?",
+    "input": "",
+    "output": "Cambió de clasificación de 'Reservado' a **'Restringido'** [19].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "¿Qué factor contribuyente a la seguridad nacional se adicionó en la doctrina de 2013?",
+    "input": "",
+    "output": "La aparición del **poder espacial** como factor contribuyente [20].",
+    "fuente": "Historia"
+  },
+  {
+    "instruction": "Defina 'Accidente' según el Manual de Gestión de la Seguridad Operacional.",
+    "input": "",
+    "output": "Suceso operacional donde la aeronave sufre **daños no recuperables** o existen lesiones fatales o discapacidad permanente en personas [21].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es una 'Acción Correctiva' según el RINCO 2024?",
+    "input": "",
+    "output": "Acción emprendida para **eliminar la causa raíz** de un incumplimiento y evitar que vuelva a presentarse en el futuro [22].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Acomodación' en la administración de materiales.",
+    "input": "",
+    "output": "Facilidad que ofrece un grupo de elementos con características similares para ser aplicados a **métodos similares de abastecimientos** [23].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué acredita el 'Certificado de aeronavegabilidad'?",
+    "input": "",
+    "output": "Acredita que la aeronave es **apta para ser operada de forma segura** dentro de las limitaciones de su diseño y fabricación [24, 25].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Airprox' (Air Proximity).",
+    "input": "",
+    "output": "Situación donde la distancia y velocidad entre aeronaves compromete la **seguridad operacional** [26].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es un 'Almacén Bóveda'?",
+    "input": "",
+    "output": "Espacio construido para material que requiere el **máximo de protección** contra elementos naturales, hurto o destrucción [27].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Altitud de Decisión' (DA).",
+    "input": "",
+    "output": "Altitud en aproximación de precisión a la cual debe iniciarse una **aproximación frustrada** si no se establece referencia visual [28].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es el 'Amatol'?",
+    "input": "",
+    "output": "Mezcla de **TNT y nitrato de amonio** usada en bombas de propósito general y granadas [29].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Apartadero de espera'.",
+    "input": "",
+    "output": "Área definida donde una aeronave puede detenerse para **esperar o dar paso a otras** y facilitar la circulación en tierra [30].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es la 'Aproximación final en descenso continuo' (CDFA)?",
+    "input": "",
+    "output": "Técnica de vuelo para el tramo final de aproximación por instrumentos **sin nivelaciones de altura** [31].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Cuál es la diferencia entre 'Archivo Central' y 'Archivo de Gestión'?",
+    "input": "",
+    "output": "El de gestión es para **consulta continua y trámites actuales**; el central custodia documentos vigentes pero de consulta menos frecuente [32, 33].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Área de aterrizaje'.",
+    "input": "",
+    "output": "Parte del área de movimiento destinada al **aterrizaje o despegue** de aeronaves [34].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué comprende el 'Lado Aire' de un aeródromo?",
+    "input": "",
+    "output": "Área de movimiento de aeronaves, pistas, calles de rodaje, hangares y plataformas [35].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es un 'Asesor Jurídico Operacional' (ASEJO)?",
+    "input": "",
+    "output": "Miembro del Estado Mayor que emite **apreciaciones jurídicas operacionales** al comandante durante misiones militares [36].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Autocontrol' para un servidor público.",
+    "input": "",
+    "output": "Capacidad de cada servidor para **controlar su trabajo, detectar desviaciones** y aplicar correctivos oportunamente [37].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué autoridad otorga la 'Autonomía de vuelo' en la FAC?",
+    "input": "",
+    "output": "El **Comando de la FAC** a través de Juntas de Autonomías y los Comités de las Unidades Aéreas [38].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina la diferencia entre 'Avalúo' y 'Concepto técnico valorizado'.",
+    "input": "",
+    "output": "El avalúo lo hace personal **legalmente autorizado fuera de la FAC**; el concepto técnico valorizado lo hacen peritos de la institución [39, 40].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es una 'Barraca'?",
+    "input": "",
+    "output": "Bien inmueble para alojamiento militar conformado por habitaciones con su respectiva **zona húmeda y áreas de apoyo** [41].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "Defina 'Bien Devolutivo'.",
+    "input": "",
+    "output": "Aquel que **no se consume con el primer uso**, con vida probable superior a un año y que debe ser devuelto [42].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es un 'Boletín de Servicio' (SB)?",
+    "input": "",
+    "output": "Documento del fabricante que propone **inspecciones o cambios en el mantenimiento** de productos aeronáuticos [43].",
+    "fuente": "NuevoMater"
+  },
+  {
+    "instruction": "¿Qué es el 'SISDAECN' proyectado para 2042?",
+    "input": "",
+    "output": "Sistema Integrado de Defensa Aérea, Espacial y Ciberespacial Nacional [44].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿A qué se refiere la 'Gobernanza del Ciberespacio'?",
+    "input": "",
+    "output": "Operar en el ciberespacio con **libertad de acción y sin interferencia** [45].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el comportamiento de 'Lealtad' vinculado al compromiso.",
+    "input": "",
+    "output": "Forma de expresar **respeto hacia la Institución**, implicando fidelidad y cumplimiento de promesas ante cambios de contexto [46].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca la política de 'Gestión del Conocimiento y la Formación'?",
+    "input": "",
+    "output": "Que el desarrollo personal y la transferencia de saberes fortalezcan el **sostenimiento de las capacidades** institucionales [47].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué oficinas integran el 'Estado Mayor Personal' del Comandante?",
+    "input": "",
+    "output": "Ayudantía Personal, Autoridad Aeronáutica, Asuntos Internacionales, Comunicaciones Estratégicas e Investigaciones Disciplinarias [48].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué centros conforman el Comando de Operaciones Aéreas y Espaciales (COAES)?",
+    "input": "",
+    "output": "Operaciones Aéreas y Espaciales, Nacional de Recuperación de Personal, Armas y Tácticas, y Acción Integral [49].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuál es la misión del Comando de Apoyo a la Fuerza (CODAF)?",
+    "input": "",
+    "output": "Proporcionar **soporte y servicios**, unificando procesos logísticos para una gestión moderna y eficiente [50].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿De qué es responsable la Jefatura de Potencial Humano?",
+    "input": "",
+    "output": "Articular los componentes de **gestión humana y administración de personal** militar y civil [51].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué unidades tácticas dependen del Comando de Desarrollo Humano?",
+    "input": "",
+    "output": "Casino Central de Oficiales, Casino Central de Suboficiales y la Cárcel y Penitenciaría CPMSCACOM2 [52].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina el área misional de 'Defensa Nacional'.",
+    "input": "",
+    "output": "Acciones para proteger la **soberanía e integridad territorial** frente a cualquier tipo de amenaza convencional o no convencional [53].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué comprende el área de 'Cooperación Internacional'?",
+    "input": "",
+    "output": "Acciones para fortalecer **alianzas estratégicas bilaterales y multilaterales** e intercambio de mejores prácticas [54].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué son los 'Fuegos' como área funcional de capacidades?",
+    "input": "",
+    "output": "Conjunto de habilidades que permiten el **uso de sistemas de armas** para cumplir la misión y mantener superioridad [55].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca el Escenario Institucional 2022 en términos de doctrina?",
+    "input": "",
+    "output": "Actualización doctrinaria y **alineación con estándares OTAN** [56].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuál es el objetivo estratégico de 'Gestión y desempeño institucional'?",
+    "input": "",
+    "output": "Mejorar la **dirección, planeación y control** integrando el direccionamiento estratégico con los sistemas de desarrollo [57].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué iniciativa estratégica lidera la AAAES con duración hasta 2030?",
+    "input": "",
+    "output": "El **Plan de Gestión de Autoridad Aeronáutica de Estado** [58].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué es la iniciativa estratégica 'Plan Campaña'?",
+    "input": "",
+    "output": "Iniciativa bajo responsabilidad de **SEMEP** iniciada en 2020 con duración de 3 años [58].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué se proyecta alcanzar en infraestructura para el año 2042?",
+    "input": "",
+    "output": "Instalaciones **automatizadas e inteligentes**, y soporte a la Estación Científica Antártica Colombiana [59].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Cuál es la función del 'Centro Direccionamiento Operacional Apoyo a la Fuerza' (CEOAF)?",
+    "input": "",
+    "output": "Articular la estrategia del nivel estratégico en los **niveles operacional y táctico** del CODAF [60].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina la perspectiva de 'Procesos Internos' en el Balanced Scorecard.",
+    "input": "",
+    "output": "Plantea objetivos de **procesos críticos** para impactar a las partes interesadas y alcanzar la visión [61].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "¿Qué busca el objetivo estratégico 'Fortalecer la Gestión Jurídica'?",
+    "input": "",
+    "output": "Implementar estrategias para la **legitimidad y seguridad jurídica** con capacidad preventiva y anticipatoria [62].",
+    "fuente": "Edaes"
+  },
+  {
+    "instruction": "Defina 'Aerofotogrametría' según el manual de términos.",
+    "input": "",
+    "output": "Ciencia que trata de la **elaboración de planos y cartas** por medio de aerofotografías [63].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es una 'Aeronave Lista para Vuelo'?",
+    "input": "",
+    "output": "Aquella con certificado de aeronavegabilidad satisfactorio e **inspección pre-vuelo** realizada [63, 64].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Alerta Especial' para una tripulación.",
+    "input": "",
+    "output": "Situación que exige disponibilidad de tripulación en descanso y aeronave lista para reaccionar en un **tiempo determinado** [65].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué significa el término 'Amortiguación' en análisis de objetivos?",
+    "input": "",
+    "output": "Identificar qué porción del objetivo puede ser destruida por el enemigo **sin afectar el esfuerzo militar** [66].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Apoyo Aéreo Cercano'.",
+    "input": "",
+    "output": "Acción aérea contra blancos hostiles **cerca de unidades propias**, integrada con el fuego y maniobra de superficie [67].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es una 'Apreciación de Inteligencia'?",
+    "input": "",
+    "output": "Examen lógico de factores (enemigo, tiempo, terreno, población) que afectan el **cumplimiento de la misión táctica** [67].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Área Táctica de Responsabilidad'.",
+    "input": "",
+    "output": "Zona entre el perímetro de armas de acompañamiento hasta la **máxima distancia de su alcance práctico** (aprox. 5 km) [68].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Asalto Aéreo'?",
+    "input": "",
+    "output": "Maniobra militar donde la fuerza de asalto usa **potencia de fuego y movilidad aérea** para tomar un objetivo [69].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Ataque Estratégico'.",
+    "input": "",
+    "output": "Operación contra centros de gravedad del enemigo para afectar significativamente su **voluntad de lucha** [70].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es un 'Avión Interceptor'?",
+    "input": "",
+    "output": "Elemento de mayor movilidad y alcance que permite interceptar amenazas a **gran distancia del objetivo** [71].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Balance' en la toma de decisiones.",
+    "input": "",
+    "output": "Evaluación de los **resultados esperados frente a los riesgos proyectados** para una decisión efectiva [72].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Básico' en un patrón de tráfico?",
+    "input": "",
+    "output": "Tramo del tráfico **perpendicular a la pista**, previo a la final [73].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Bienes Protegidos' según el DIH.",
+    "input": "",
+    "output": "Bienes civiles indispensables para supervivencia, culturales o históricos **no definidos como objetivos militares** [74].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es la 'Búsqueda y Rescate en Combate'?",
+    "input": "",
+    "output": "Operaciones para **localizar y rescatar tripulaciones** accidentadas o derribadas en territorio hostil [75].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Cargo Operacional'.",
+    "input": "",
+    "output": "Cargo creado según la **configuración y equipos especiales** de la aeronave para misiones especiales [76].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué información proporciona la 'Carta de Altitud Mínima Radar'?",
+    "input": "",
+    "output": "Permite vigilar las altitudes asignadas cuando se está bajo **control radar** [77].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Causación Directa' en términos de daño.",
+    "input": "",
+    "output": "Existencia de un **nexo causal directo** entre el acto y el daño resultante [78].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Ciclo OODA'?",
+    "input": "",
+    "output": "Observar, Orientar, Decidir y Actuar [79].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "Defina 'Control Operacional' (OPCON).",
+    "input": "",
+    "output": "Atribución que faculta ordenar **misiones y cambios en organización para el combate** [80, 81].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿Qué es el 'Control Táctico' (TACON)?",
+    "input": "",
+    "output": "Autoridad delegada limitada a **instrucciones detalladas de movimientos** locales para empleo táctico [82].",
+    "fuente": "manuel_de_terminos_fuerza_aerea_colombiana"
+  },
+  {
+    "instruction": "¿A qué se asimilan los POR dentro de la jerarquía de las FF.MM.?",
+    "input": "",
+    "output": "Se asimilan como **Oficiales del Cuerpo Administrativo** [83].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué categoría de reserva constituyen los POR?",
+    "input": "",
+    "output": "Constituyen la **Reserva de Primera Clase** [84].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cómo se divide el escalafón militar de los POR?",
+    "input": "",
+    "output": "Se divide en **Escalafón Regular y Cuerpo Asesor** [85].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué sucede con la antigüedad de un POR si regresa del Cuerpo Asesor al Regular?",
+    "input": "",
+    "output": "Regresará **sin antigüedad en el grado** que ostentaba al momento del ingreso al cuerpo asesor [86].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cómo se establece la antigüedad de los POR en cada grado?",
+    "input": "",
+    "output": "A partir de la fecha de la **resolución o decreto** que confiere el último ascenso [87].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿En qué meses se producen ordinariamente los ascensos de los POR?",
+    "input": "",
+    "output": "En los meses de **junio y diciembre** [87].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cuál es el tiempo mínimo de permanencia en el grado de Subteniente de Reserva?",
+    "input": "",
+    "output": "**4 años** [88].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cuál es el tiempo mínimo de permanencia en el grado de Mayor de Reserva?",
+    "input": "",
+    "output": "**5 años** [88].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cuál es el tiempo mínimo de permanencia en el grado de Coronel de Reserva?",
+    "input": "",
+    "output": "**6 años** [88].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Cuál es el tiempo máximo que un Subteniente puede permanecer en el escalafón regular?",
+    "input": "",
+    "output": "No podrá ser superior a **seis (6) años** en dicho grado [89].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Hasta qué grado puede un POR solicitar cambio de Fuerza?",
+    "input": "",
+    "output": "Hasta el grado de **Capitán o Teniente de Navío** [90].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué intensidad tiene el curso de ambientación para cambio de fuerza?",
+    "input": "",
+    "output": "No podrá ser inferior a **32 horas** [91].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué autoridad autoriza los cambios de unidad de los POR?",
+    "input": "",
+    "output": "El **Comando General de las Fuerzas Militares** mediante Orden Administrativa de Personal [92].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué plazo tiene un POR para cumplir un traslado comunicado?",
+    "input": "",
+    "output": "Dentro de los **30 días calendario** siguientes a la fecha de expedición [92].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué grado ostentan los POR al ser llamados al servicio activo?",
+    "input": "",
+    "output": "El grado que ostenten en el momento como **Oficiales del Cuerpo Administrativo** [93].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué sucede con la relación laboral de un POR si es llamado a servicio activo especial?",
+    "input": "",
+    "output": "Se **suspende transitoriamente**; el empleador debe reincorporarlo en los 30 días siguientes a su retiro [94].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿En qué consiste el protocolo fúnebre para un Oficial Superior de Reserva?",
+    "input": "",
+    "output": "Féretro cubierto con el tricolor, gorra encima, cojín con medallas y acompañamiento de **cuatro soldados con armamento** [95].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Qué diferencia hay en el acompañamiento de soldados en el sepelio de un oficial subalterno?",
+    "input": "",
+    "output": "Los cuatro soldados que acompañan el féretro lo hacen **sin armamento** [96].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Quién entrega el tricolor nacional a la familia al finalizar la ceremonia fúnebre?",
+    "input": "",
+    "output": "El **Profesional Oficial de Reserva más antiguo** presente [95].",
+    "fuente": "reglamento_porfac"
+  },
+  {
+    "instruction": "¿Quién puede ser designado como Comandante del COPOR?",
+    "input": "",
+    "output": "Un Oficial General, Coronel en servicio activo o un **POR designado por el Comando General** [97].",
+    "fuente": "reglamento_porfac"
   }
 ]

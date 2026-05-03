@@ -76,17 +76,18 @@ training_arguments = SFTConfig(
     optim="adamw_torch",
     save_steps=5,  # Guarda muy frecuentemente para no perder progreso
     logging_steps=2,  # Logs muy detallados
-    learning_rate=5e-5,  # Learning rate MÁS BAJO = aprendizaje más preciso
-    weight_decay=0.05,  # Más regularización para evitar alucinaciones
+    learning_rate=3e-5,  # AÚN MÁS BAJO para máxima precisión
+    weight_decay=0.1,  # AÚN MÁS ALTO para penalizar alucinaciones
     fp16=False,
     bf16=False,
-    max_grad_norm=0.1,  # Gradientes muy controlados (evita grandes saltos)
+    max_grad_norm=0.05,  # AÚN MÁS ESTRICTO - evita cambios bruscos
     max_steps=-1,
-    warmup_ratio=0.2,  # Calentamiento más largo (20% de entrenamiento)
+    warmup_ratio=0.3,  # 30% de entrenamiento es warmup (más lento al principio)
     group_by_length=True,
-    lr_scheduler_type="cosine",  # Cosine decay es mejor que linear para ajuste fino
+    lr_scheduler_type="cosine",
     max_length=2048,
     packing=False,
+    seed=42,  # Determinístico para reproducibilidad
 )
 
 
@@ -99,22 +100,34 @@ def formatting_prompts_func(example):
             instruction = example["instruction"][i]
             input_text = example["input"][i]
             output = example["output"][i]
+            fuente = example.get("fuente", [""])[i] if "fuente" in example else ""
 
             if input_text:
                 text = f"### Instruction:\n{instruction}\n\n### Input:\n{input_text}\n\n### Response:\n{output}"
             else:
                 text = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
+
+            # Agregar la fuente si existe
+            if fuente:
+                text += f"\n\n### Fuente:\n{fuente}"
+
             output_texts.append(text)
         return output_texts
     else:
         instruction = example["instruction"]
         input_text = example["input"]
         output = example["output"]
+        fuente = example.get("fuente", "")
 
         if input_text:
             text = f"### Instruction:\n{instruction}\n\n### Input:\n{input_text}\n\n### Response:\n{output}"
         else:
             text = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
+
+        # Agregar la fuente si existe
+        if fuente:
+            text += f"\n\n### Fuente:\n{fuente}"
+
         return text
 
 

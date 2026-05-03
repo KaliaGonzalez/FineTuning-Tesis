@@ -141,13 +141,15 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=400,  # Aumentado para respuestas MÁS LARGAS y completas
-                    min_new_tokens=100,  # Fuerza respuestas largas (mínimo 100 tokens)
-                    do_sample=False,  # SIN sampling = respuestas determinísticas y completas
+                    max_new_tokens=350,  # Limitado para evitar demasiado contenido
+                    min_new_tokens=50,  # Mínimo para respuestas coherentes
+                    do_sample=False,  # SIN sampling = determinístico, no alucina
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
                     num_beams=1,
-                    repetition_penalty=1.15,  # Evita repeticiones pero permite más contenido
+                    repetition_penalty=1.5,  # MÁS ALTO (1.5 vs 1.15) - penaliza fuertemente repeticiones
+                    length_penalty=0.8,  # Penaliza longitudes extremas
+                    early_stopping=True,  # Detiene temprano si alcanza EOS
                 )
 
             generation_time = time.time() - start_time
@@ -162,6 +164,13 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             else:
                 response_only = full_response.strip()
 
+            # Separar la respuesta y la fuente
+            fuente = None
+            if "### Fuente:" in response_only:
+                parts = response_only.split("### Fuente:")
+                response_only = parts[0].strip()
+                fuente = parts[1].strip() if len(parts) > 1 else None
+
             # Limpiar cualquier marca de instrucción que quedó
             response_only = response_only.replace("### Instruction:", "").strip()
             response_only = response_only.replace("Instruction:", "").strip()
@@ -174,6 +183,10 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
 
             # Mostrar la respuesta generada
             response_placeholder.markdown(final_response)
+
+            # Mostrar la fuente si existe
+            if fuente:
+                st.info(f"📚 **Fuente:** {fuente}", icon="📖")
 
             # Mostrar tiempo de procesamiento (debug)
             st.caption(f"⏱️ Tiempo de respuesta: {generation_time:.2f} segundos")
