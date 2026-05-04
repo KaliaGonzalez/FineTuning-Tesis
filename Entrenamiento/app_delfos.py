@@ -69,9 +69,17 @@ def load_model():
         # Cargar y fusionar el adapter
         try:
             model = PeftModel.from_pretrained(model, adapter_name)
-            model = model.merge_and_unload()  # Fusionar para mejor velocidad
+            st.info(f"✅ Adapter LoRA cargado")
+            
+            # Fusionar
+            model = model.merge_and_unload()
             st.success(f"✅ LoRA Adapter cargado y fusionado")
             st.info("📚 Modelo entrenado con datos FAC")
+            
+            # Verificar que el adapter se cargó (comparar parámetros)
+            total_params = sum(p.numel() for p in model.parameters())
+            st.caption(f"📊 Parámetros totales del modelo: {total_params:,}")
+            
         except Exception as e:
             st.error(f"❌ Error al cargar adapter: {str(e)}")
             return None, None, None
@@ -132,8 +140,10 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Limpiar el prompt del usuario
             clean_prompt = prompt.strip()
 
-            # Formatear el prompt EXACTAMENTE como se entrenó
-            # (sin Input porque no lo tiene)
+            # Formatear el prompt EXACTAMENTE como se entrenó en lora.py
+            # El modelo fue entrenado con este patrón:
+            # "### Instruction:\n{instruction}\n\n### Response:\n{output}\n\n### Fuente:\n{fuente}"
+            # Para inferencia, terminamos sin la fuente para que el modelo la genere
             formatted_prompt = f"### Instruction:\n{clean_prompt}\n\n### Response:\n"
 
             # Tokenizar
@@ -165,6 +175,17 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
             # Decodificar la SALIDA COMPLETA
             full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+            
+            # DIAGNÓSTICO: Si la respuesta parece basura, mostrar warning
+            if len(full_response) < 50 or "###" not in full_response:
+                st.warning(
+                    "⚠️ **ADVERTENCIA**: La respuesta parece incompleta o incorrecta.\n\n"
+                    "Esto indica que el LoRA adapter puede no estar bien entrenado.\n\n"
+                    "**Verifica en la otra computadora:**\n"
+                    "1. El entrenamiento completó correctamente\n"
+                    "2. Los archivos en `mistral-7b-fac-finetuned/` se guardaron\n"
+                    "3. Que sean > 1MB cada uno"
+                )
 
             # LIMPIAR RESPUESTA: Extraer solo lo después de "### Response:"
             if "### Response:" in full_response:
