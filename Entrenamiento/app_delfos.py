@@ -230,9 +230,14 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             response_only = response_only.replace("Instruction:", "").strip()
             response_only = response_only.replace("### Response:", "").strip()
 
-            # Validación: respuesta debe tener contenido mínimo
+            # Validación: debe tener contenido
             if not response_only or len(response_only) < 15:
                 response_only = "No pude generar una respuesta válida. Intenta reformular la pregunta."
+                fuente = None
+            
+            # Si NO encontramos fuente después de todo, es un error de entrenamiento
+            if not fuente:
+                st.error("⚠️ **PROBLEMA**: El modelo no está generando fuentes.\n\nEsto significa que el entrenamiento no converged correctamente.\n\n**Acción requerida:**\n- Reentrenar en la otra computadora: `python lora.py`\n- Usar los cambios actualizados en lora.py")
 
             final_response = response_only
 

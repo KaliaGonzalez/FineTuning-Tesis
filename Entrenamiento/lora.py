@@ -107,9 +107,13 @@ def formatting_prompts_func(example):
             else:
                 text = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
 
-            # Agregar la fuente si existe
+            # CRÍTICO: SIEMPRE agregar la fuente (es obligatoria)
+            # El modelo DEBE aprender que cada respuesta tiene una fuente
             if fuente:
                 text += f"\n\n### Fuente:\n{fuente}"
+            else:
+                # Si no hay fuente, usar "Desconocida" para mantener el patrón
+                text += "\n\n### Fuente:\nDesconocida"
 
             output_texts.append(text)
         return output_texts
@@ -124,9 +128,11 @@ def formatting_prompts_func(example):
         else:
             text = f"### Instruction:\n{instruction}\n\n### Response:\n{output}"
 
-        # Agregar la fuente si existe
+        # CRÍTICO: SIEMPRE agregar la fuente
         if fuente:
             text += f"\n\n### Fuente:\n{fuente}"
+        else:
+            text += "\n\n### Fuente:\nDesconocida"
 
         return text
 
