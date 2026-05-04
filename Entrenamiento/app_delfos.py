@@ -57,16 +57,20 @@ def load_model():
                 model = PeftModel.from_pretrained(model, adapter_name)
                 st.success(f"✅ Adaptador LoRA cargado desde '{adapter_name}'")
                 st.info("📚 El modelo usa TUS DATOS DE ENTRENAMIENTO")
+                st.warning("⚠️ Si las respuestas aún son incorrectas, reentrenar el modelo con `python lora.py`")
             else:
                 st.error(
                     f"❌ Carpeta '{adapter_name}' NO ENCONTRADA.\n\n"
-                    f"⚠️ El modelo respondará en INGLÉS genérico.\n\n"
-                    f"Solución: Ejecuta primero: python lora_simple.py"
+                    f"⚠️ El modelo respondará con información genérica (POSIBLES ERRORES).\n\n"
+                    f"**SOLUCIÓN:** \n"
+                    f"1. Ejecuta: `python lora.py` en Colab o localmente\n"
+                    f"2. Descarga la carpeta `mistral-7b-fac-finetuned`\n"
+                    f"3. Colócala en la misma carpeta que `app_delfos.py`"
                 )
         except Exception as e:
             st.error(
                 f"❌ Error cargando adaptador: {str(e)}\n\n"
-                f"El modelo respondará en INGLÉS genérico."
+                f"El modelo respondará de forma genérica (PUEDE SER IMPRECISO)."
             )
 
         model.eval()  # Modo inferencia
@@ -144,15 +148,14 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=380,  # Aumentado de 250 → 380 para respuestas MÁS COMPLETAS
-                    min_new_tokens=80,   # Aumentado de 30 → 80 para respuestas sustanciales
-                    do_sample=False,  # SIN sampling = determinístico, no alucina
+                    max_new_tokens=250,  # Reducido para ser más rápido
+                    min_new_tokens=50,   # Mínimo para respuestas válidas
+                    do_sample=False,  # CRÍTICO: SIN sampling = SIEMPRE deterministico
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
-                    num_beams=1,
-                    repetition_penalty=1.5,  # MÁS ALTO (1.5 vs 1.15) - penaliza fuertemente repeticiones
-                    length_penalty=0.8,  # Penaliza longitudes extremas
-                    early_stopping=True,  # Detiene temprano si alcanza EOS
+                    num_beams=1,  # Greedy decoding (SIN búsqueda beam = mucho más rápido)
+                    repetition_penalty=1.8,  # Penaliza repeticiones pero sin ralentizar
+                    early_stopping=True,  # Detener apenas alcance EOS
                 )
 
             generation_time = time.time() - start_time
@@ -199,9 +202,28 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             response_only = response_only.replace("Instruction:", "").strip()
             response_only = response_only.replace("### Response:", "").strip()
 
+            # VALIDACIÓN CRÍTICA: Si la respuesta contiene palabras de acción/mando militares
+            # que NO son respuestas sino órdenes, probablemente sea una alucinación
+            palabras_peligrosas = [
+                "destruir", "atacar", "eliminar", "bombardear", 
+                "disparar", "capturar", "invadir", "combatir",
+                "enfrentar", "batallar", "asaltar", "conquistar"
+            ]
+            
+            # Si la respuesta COMIENZA con estas palabras, es probablemente mala
+            primera_palabra = response_only.lower().split()[0] if response_only.split() else ""
+            if primera_palabra in palabras_peligrosas:
+                # La respuesta es una alucinación (acción en lugar de definición)
+                response_only = "Lo siento, no tengo información confiable sobre esa consulta. Por favor, reformula tu pregunta."
+
+            # VALIDACIÓN ADICIONAL: Detectar si es una copia exacta de instrucción del usuario
+            # (lo que indica que el modelo está confundido)
+            if clean_prompt.lower() in response_only.lower():
+                response_only = "Parece que no comprendí bien. ¿Podrías reformular tu pregunta con más detalles?"
+
             # Si la respuesta está vacía, algo malo pasó
-            if not response_only or len(response_only) < 5:
-                response_only = "Lo siento, no pude generar una respuesta válida."
+            if not response_only or len(response_only) < 10:
+                response_only = "Lo siento, no pude generar una respuesta válida para esa consulta."
 
             final_response = response_only
 
