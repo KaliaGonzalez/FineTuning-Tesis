@@ -5,9 +5,12 @@ from peft import PeftModel
 import time
 import os
 
-st.set_page_config(page_title="Delfos Chatbot", page_icon="🤖", layout="wide")
-st.title("🤖 Delfos - Asistente Institucional")
-st.markdown("¡Hola! Soy Delfos, tu asistente inteligente. Escribe tu pregunta abajo.")
+st.set_page_config(page_title="Delfos Chatbot", page_icon="🛩️", layout="wide")
+st.title("🛩️ DELFOS - Sistema de Inteligencia Aérea")
+st.markdown("**Bienvenido, oficial.** Soy DELFOS, el Sistema de Inteligencia y Doctrina de la Fuerza Aérea Colombiana. A tu servicio en cualquier momento. ✈️")
+
+# Agregar un separador visual militar
+st.divider()
 
 
 # --- CARGAR EL MODELO (En caché para no recargar cada vez) ---
@@ -107,7 +110,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # --- INPUT DEL USUARIO ---
-if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
+if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí..."):
     # Agregar mensaje del usuario al historial
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
@@ -141,8 +144,8 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=250,  # Reducido de 350 → 250 para ser más rápido
-                    min_new_tokens=30,  # Reducido de 50 → 30
+                    max_new_tokens=380,  # Aumentado de 250 → 380 para respuestas MÁS COMPLETAS
+                    min_new_tokens=80,   # Aumentado de 30 → 80 para respuestas sustanciales
                     do_sample=False,  # SIN sampling = determinístico, no alucina
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
@@ -167,16 +170,29 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             # Separar la respuesta y la fuente PRIMERO (antes de otras limpiezas)
             fuente = None
             if "### Fuente:" in response_only:
+                # Dividir por la marca de fuente
                 parts = response_only.split("### Fuente:")
                 response_only = parts[0].strip()
-                fuente_raw = parts[-1].strip() if len(parts) > 1 else None
-
-                # Limpiar la fuente: solo tomar la primera línea (antes de puntuación o saltos)
-                if fuente_raw:
-                    # Tomar solo hasta la primera línea nueva o punto seguido
-                    fuente = fuente_raw.split("\n")[0].strip()
-                    # Si tiene caracteres especiales, limpiar
-                    fuente = fuente.replace("*", "").replace("_", "").replace("#", "")
+                
+                if len(parts) > 1:
+                    fuente_raw = parts[1].strip()
+                    # Tomar solo hasta el primer salto de línea o caracteres especiales
+                    fuente = fuente_raw.split("\n")[0].split("\r")[0].strip()
+                    # Limpiar caracteres especiales pero mantener espacios
+                    fuente = fuente.replace("*", "").replace("_", "").replace("#", "").replace("**", "").strip()
+                    # Si quedó vacío o es un marcador, ignorar
+                    if not fuente or len(fuente) < 2:
+                        fuente = None
+            
+            # Si no encontramos fuente con ese formato, intentar otros formatos
+            if not fuente and "Fuente:" in response_only:
+                parts = response_only.split("Fuente:")
+                response_only = parts[0].strip()
+                if len(parts) > 1:
+                    fuente = parts[1].strip().split("\n")[0].strip()
+                    fuente = fuente.replace("*", "").replace("_", "").replace("#", "").strip()
+                    if not fuente or len(fuente) < 2:
+                        fuente = None
 
             # Limpiar cualquier marca de instrucción que quedó
             response_only = response_only.replace("### Instruction:", "").strip()
@@ -189,15 +205,15 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
 
             final_response = response_only
 
-            # Mostrar la respuesta generada
+            # Mostrar la respuesta generada con formato militar
             response_placeholder.markdown(final_response)
 
-            # Mostrar la fuente si existe
+            # Mostrar la fuente si existe con icono militar
             if fuente and fuente.lower() not in ["", "none", "null", "n/a"]:
-                st.info(f"📚 **Fuente:** {fuente}", icon="📖")
+                st.info(f"🎖️ **Clasificación de Fuente:** {fuente}", icon="�")
 
             # Mostrar tiempo de procesamiento (debug)
-            st.caption(f"⏱️ Tiempo de respuesta: {generation_time:.2f} segundos")
+            st.caption(f"⏱️ Tiempo de procesamiento: {generation_time:.2f} segundos")
 
         except Exception as e:
             error_msg = f"❌ Error al generar la respuesta: {str(e)}"
