@@ -140,10 +140,10 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Limpiar el prompt del usuario
             clean_prompt = prompt.strip()
 
-            # Formatear el prompt EXACTAMENTE como se entrenó en lora.py
-            # El modelo fue entrenado con este patrón:
-            # "### Instruction:\n{instruction}\n\n### Response:\n{output}\n\n### Fuente:\n{fuente}"
-            # Para inferencia, terminamos sin la fuente para que el modelo la genere
+            # Formatear EXACTAMENTE como se entrenó
+            # Durante training: "### Instruction:\n{instruction}\n\n### Response:\n{output}\n\n### Fuente:\n{fuente}"
+            # Para inferencia, comenzamos el patrón pero NO incluimos output/fuente 
+            # El modelo las generará
             formatted_prompt = f"### Instruction:\n{clean_prompt}\n\n### Response:\n"
 
             # Tokenizar
@@ -161,13 +161,13 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=220,  # Moderado para velocidad y calidad
-                    min_new_tokens=45,   
-                    do_sample=False,  # CRÍTICO: determinístico, nunca aleatorio
+                    max_new_tokens=300,  # Aumentado para respuesta + fuente
+                    min_new_tokens=60,   
+                    do_sample=False,  # Determinístico
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
-                    num_beams=1,  # Greedy = rápido
-                    repetition_penalty=1.8,  # Penaliza repeticiones
+                    num_beams=1,
+                    repetition_penalty=1.8,
                     early_stopping=True,
                 )
 
@@ -175,6 +175,10 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
             # Decodificar la SALIDA COMPLETA
             full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+            
+            # DEBUG: Mostrar la respuesta completa (para diagnosticar problemas)
+            with st.expander("🔍 Ver respuesta sin procesar (DEBUG)"):
+                st.code(full_response, language="text")
             
             # DIAGNÓSTICO: Si la respuesta parece basura, mostrar warning
             if len(full_response) < 50 or "###" not in full_response:
