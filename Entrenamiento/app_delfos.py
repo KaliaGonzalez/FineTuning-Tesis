@@ -13,7 +13,7 @@ st.markdown("¡Hola! Soy Delfos, tu asistente inteligente. Escribe tu pregunta a
 # --- CARGAR EL MODELO (En caché para no recargar cada vez) ---
 @st.cache_resource
 def load_model():
-    """Carga TinyLlama - MÁS RÁPIDO para respuestas inmediatas"""
+    """Carga Mistral 7B cuantizado en 4-bit - MUCHO MÁS RÁPIDO"""
 
     # Verificar GPU disponible
     if torch.cuda.is_available():
@@ -29,7 +29,7 @@ def load_model():
         )
         device = "cpu"
 
-    base_model_name = "mistralai/Mistral-7B-v0.1"  # Mistral 7B
+    base_model_name = "unsloth/mistral-7b-v0.3-bnb-4bit"  # ¡4-BIT = MUCHO MÁS RÁPIDO!
     adapter_name = "mistral-7b-fac-finetuned"  # Tu modelo fine-tuneado con tus datos
 
     try:
@@ -39,11 +39,11 @@ def load_model():
         if tokenizer.pad_token is None:
             tokenizer.pad_token = tokenizer.eos_token
 
-        # Cargamos el modelo base
+        # Cargamos el modelo base en 4-bit (pre-cuantizado)
         model = AutoModelForCausalLM.from_pretrained(
             base_model_name,
             device_map=device,
-            torch_dtype=torch.float16,  # Mistral usa float16
+            torch_dtype=torch.bfloat16,  # Compatible con 4-bit
             trust_remote_code=True,
             low_cpu_mem_usage=True,  # Menos memoria RAM
         )
@@ -70,7 +70,7 @@ def load_model():
 
         if device == "cuda":
             st.success(
-                f"🚀 ¡Mistral 7B en GPU cargado! Respuestas rápidas garantizadas 🎉",
+                f"🚀 ¡Mistral 7B 4-bit en GPU cargado! Respuestas RÁPIDAS garantizadas ⚡",
                 icon="✅",
             )
         else:
@@ -141,8 +141,8 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=350,  # Limitado para evitar demasiado contenido
-                    min_new_tokens=50,  # Mínimo para respuestas coherentes
+                    max_new_tokens=250,  # Reducido de 350 → 250 para ser más rápido
+                    min_new_tokens=30,  # Reducido de 50 → 30
                     do_sample=False,  # SIN sampling = determinístico, no alucina
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
@@ -164,16 +164,24 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             else:
                 response_only = full_response.strip()
 
-            # Separar la respuesta y la fuente
+            # Separar la respuesta y la fuente PRIMERO (antes de otras limpiezas)
             fuente = None
             if "### Fuente:" in response_only:
                 parts = response_only.split("### Fuente:")
                 response_only = parts[0].strip()
-                fuente = parts[1].strip() if len(parts) > 1 else None
+                fuente_raw = parts[-1].strip() if len(parts) > 1 else None
+
+                # Limpiar la fuente: solo tomar la primera línea (antes de puntuación o saltos)
+                if fuente_raw:
+                    # Tomar solo hasta la primera línea nueva o punto seguido
+                    fuente = fuente_raw.split("\n")[0].strip()
+                    # Si tiene caracteres especiales, limpiar
+                    fuente = fuente.replace("*", "").replace("_", "").replace("#", "")
 
             # Limpiar cualquier marca de instrucción que quedó
             response_only = response_only.replace("### Instruction:", "").strip()
             response_only = response_only.replace("Instruction:", "").strip()
+            response_only = response_only.replace("### Response:", "").strip()
 
             # Si la respuesta está vacía, algo malo pasó
             if not response_only or len(response_only) < 5:
@@ -185,7 +193,7 @@ if prompt := st.chat_input("Escribe tu pregunta para Delfos aquí..."):
             response_placeholder.markdown(final_response)
 
             # Mostrar la fuente si existe
-            if fuente:
+            if fuente and fuente.lower() not in ["", "none", "null", "n/a"]:
                 st.info(f"📚 **Fuente:** {fuente}", icon="📖")
 
             # Mostrar tiempo de procesamiento (debug)
