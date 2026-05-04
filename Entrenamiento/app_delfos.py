@@ -51,27 +51,30 @@ def load_model():
             low_cpu_mem_usage=True,  # Menos memoria RAM
         )
 
-        # IMPORTANTE: Cargar el adaptador LoRA con tus datos entrenados
-        try:
-            if os.path.exists(adapter_name):
-                model = PeftModel.from_pretrained(model, adapter_name)
-                st.success(f"✅ Adaptador LoRA cargado desde '{adapter_name}'")
-                st.info("📚 El modelo usa TUS DATOS DE ENTRENAMIENTO")
-                st.warning("⚠️ Si las respuestas aún son incorrectas, reentrenar el modelo con `python lora.py`")
-            else:
-                st.error(
-                    f"❌ Carpeta '{adapter_name}' NO ENCONTRADA.\n\n"
-                    f"⚠️ El modelo respondará con información genérica (POSIBLES ERRORES).\n\n"
-                    f"**SOLUCIÓN:** \n"
-                    f"1. Ejecuta: `python lora.py` en Colab o localmente\n"
-                    f"2. Descarga la carpeta `mistral-7b-fac-finetuned`\n"
-                    f"3. Colócala en la misma carpeta que `app_delfos.py`"
-                )
-        except Exception as e:
+        # CRÍTICO: El adaptador LoRA DEBE existir
+        if not os.path.exists(adapter_name):
             st.error(
-                f"❌ Error cargando adaptador: {str(e)}\n\n"
-                f"El modelo respondará de forma genérica (PUEDE SER IMPRECISO)."
+                f"❌ **ADAPTER LoRA NO ENCONTRADO**\n\n"
+                f"Carpeta esperada: `{adapter_name}/`\n\n"
+                f"**SOLUCIÓN:**\n"
+                f"1. En tu otra computadora potente:\n"
+                f"   → Ejecuta: `python lora.py`\n"
+                f"   → Espera a que genere: `mistral-7b-fac-finetuned/`\n\n"
+                f"2. Transfiere la carpeta completa a esta computadora\n\n"
+                f"3. Colócala aquí: `{os.getcwd()}/`\n\n"
+                f"4. Recarga esta página (F5)"
             )
+            return None, None, None
+        
+        # Cargar y fusionar el adapter
+        try:
+            model = PeftModel.from_pretrained(model, adapter_name)
+            model = model.merge_and_unload()  # Fusionar para mejor velocidad
+            st.success(f"✅ LoRA Adapter cargado y fusionado")
+            st.info("📚 Modelo entrenado con datos FAC")
+        except Exception as e:
+            st.error(f"❌ Error al cargar adapter: {str(e)}")
+            return None, None, None
 
         model.eval()  # Modo inferencia
 
@@ -148,14 +151,14 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             with torch.no_grad():  # Sin gradientes para ahorrar memoria
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=250,  # Reducido para ser más rápido
-                    min_new_tokens=50,   # Mínimo para respuestas válidas
-                    do_sample=False,  # CRÍTICO: SIN sampling = SIEMPRE deterministico
+                    max_new_tokens=220,  # Moderado para velocidad y calidad
+                    min_new_tokens=45,   
+                    do_sample=False,  # CRÍTICO: determinístico, nunca aleatorio
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
-                    num_beams=1,  # Greedy decoding (SIN búsqueda beam = mucho más rápido)
-                    repetition_penalty=1.8,  # Penaliza repeticiones pero sin ralentizar
-                    early_stopping=True,  # Detener apenas alcance EOS
+                    num_beams=1,  # Greedy = rápido
+                    repetition_penalty=1.8,  # Penaliza repeticiones
+                    early_stopping=True,
                 )
 
             generation_time = time.time() - start_time
@@ -202,28 +205,9 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             response_only = response_only.replace("Instruction:", "").strip()
             response_only = response_only.replace("### Response:", "").strip()
 
-            # VALIDACIÓN CRÍTICA: Si la respuesta contiene palabras de acción/mando militares
-            # que NO son respuestas sino órdenes, probablemente sea una alucinación
-            palabras_peligrosas = [
-                "destruir", "atacar", "eliminar", "bombardear", 
-                "disparar", "capturar", "invadir", "combatir",
-                "enfrentar", "batallar", "asaltar", "conquistar"
-            ]
-            
-            # Si la respuesta COMIENZA con estas palabras, es probablemente mala
-            primera_palabra = response_only.lower().split()[0] if response_only.split() else ""
-            if primera_palabra in palabras_peligrosas:
-                # La respuesta es una alucinación (acción en lugar de definición)
-                response_only = "Lo siento, no tengo información confiable sobre esa consulta. Por favor, reformula tu pregunta."
-
-            # VALIDACIÓN ADICIONAL: Detectar si es una copia exacta de instrucción del usuario
-            # (lo que indica que el modelo está confundido)
-            if clean_prompt.lower() in response_only.lower():
-                response_only = "Parece que no comprendí bien. ¿Podrías reformular tu pregunta con más detalles?"
-
-            # Si la respuesta está vacía, algo malo pasó
-            if not response_only or len(response_only) < 10:
-                response_only = "Lo siento, no pude generar una respuesta válida para esa consulta."
+            # Validación: respuesta debe tener contenido mínimo
+            if not response_only or len(response_only) < 15:
+                response_only = "No pude generar una respuesta válida. Intenta reformular la pregunta."
 
             final_response = response_only
 
