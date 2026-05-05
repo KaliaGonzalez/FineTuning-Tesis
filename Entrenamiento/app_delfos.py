@@ -204,13 +204,14 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                 outputs = model.generate(
                     input_ids=inputs["input_ids"],
                     attention_mask=inputs.get("attention_mask"),
-                    max_new_tokens=150,
-                    min_new_tokens=30,
+                    max_new_tokens=120,  # Corto para evitar generar múltiples ejemplos
+                    min_new_tokens=20,
                     do_sample=False,
                     temperature=None,
                     top_p=None,
                     num_beams=1,
                     early_stopping=True,
+                    eos_token_id=tokenizer.eos_token_id,
                 )
 
             generation_time = time.time() - start_time
@@ -235,10 +236,17 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
             # LIMPIAR RESPUESTA: Extraer solo lo después de "### Response:"
             if "### Response:" in full_response:
-                # Obtener todo después de "### Response:"
                 response_only = full_response.split("### Response:")[-1].strip()
             else:
                 response_only = full_response.strip()
+
+            # CRÍTICO: Si hay otro "###" después, detener ahí (evita múltiples ejemplos)
+            # Buscar el PRÓXIMO ### (que sería otra sección)
+            if "###" in response_only[10:]:  # Saltar los primeros 10 caracteres
+                # Encontrar la posición del próximo ###
+                next_section = response_only[10:].find("###")
+                if next_section != -1:
+                    response_only = response_only[: 10 + next_section].strip()
 
             # Separar la respuesta y la fuente PRIMERO (antes de otras limpiezas)
             fuente = None
@@ -249,17 +257,13 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
                 if len(parts) > 1:
                     fuente_raw = parts[1].strip()
-                    # Tomar solo hasta el primer salto de línea o caracteres especiales
-                    fuente = fuente_raw.split("\n")[0].split("\r")[0].strip()
-                    # Limpiar caracteres especiales pero mantener espacios
+                    fuente = fuente_raw.split("\n")[0].strip()
                     fuente = (
                         fuente.replace("*", "")
                         .replace("_", "")
                         .replace("#", "")
-                        .replace("**", "")
                         .strip()
                     )
-                    # Si quedó vacío o es un marcador, ignorar
                     if not fuente or len(fuente) < 2:
                         fuente = None
 
@@ -283,8 +287,8 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             response_only = response_only.replace("Instruction:", "").strip()
             response_only = response_only.replace("### Response:", "").strip()
 
-            # Validación: debe tener contenido
-            if not response_only or len(response_only) < 15:
+            # Validación: debe tener al menos algo de contenido (no vacío)
+            if not response_only or len(response_only.strip()) < 2:
                 response_only = "No pude generar una respuesta válida. Intenta reformular la pregunta."
 
             # ESTRATEGIA: Buscar la fuente en el dataset
