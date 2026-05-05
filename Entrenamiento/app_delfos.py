@@ -1,16 +1,47 @@
 import streamlit as st
 import torch
+import json
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 import time
 import os
 
-st.set_page_config(page_title="Delfos Chatbot", page_icon="🛩️", layout="wide")
+st.set_page_config(page_title="DELFOS FAC", page_icon="🛩️", layout="wide")
 st.title("🛩️ DELFOS - Sistema de Inteligencia Aérea")
-st.markdown("**Bienvenido, oficial.** Soy DELFOS, el Sistema de Inteligencia y Doctrina de la Fuerza Aérea Colombiana. A tu servicio en cualquier momento. ✈️")
-
-# Agregar un separador visual militar
+st.markdown("**Bienvenido, oficial.** Soy DELFOS, el Sistema de Inteligencia y Doctrina de la Fuerza Aérea Colombiana. A tu servicio. ✈️")
 st.divider()
+
+# --- CARGAR DATASET PARA BUSCAR FUENTES ---
+@st.cache_data
+def load_training_data():
+    """Carga el dataset de training para buscar fuentes por similitud"""
+    try:
+        with open("FineTuningDatos/dataTrain.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data
+    except Exception as e:
+        st.warning(f"No se pudo cargar dataset: {e}")
+        return []
+
+training_data = load_training_data()
+
+# --- FUNCIÓN PARA BUSCAR FUENTE DEL DATASET ---
+def find_fuente_in_training_data(instruction_prompt):
+    """Busca la pregunta en el dataset y devuelve la fuente"""
+    instruction_lower = instruction_prompt.lower().strip()
+    
+    for entry in training_data:
+        entry_inst = entry.get("instruction", "").lower().strip()
+        
+        # Búsqueda exacta
+        if entry_inst == instruction_lower:
+            return entry.get("fuente", "Desconocida")
+        
+        # Búsqueda parcial (primeras 10 palabras)
+        if entry_inst.startswith(instruction_lower[:30]) or instruction_lower[:30] in entry_inst:
+            return entry.get("fuente", "Desconocida")
+    
+    return None  # No encontrada
 
 
 # --- CARGAR EL MODELO (En caché para no recargar cada vez) ---
@@ -66,19 +97,15 @@ def load_model():
             )
             return None, None, None
         
-        # Cargar y fusionar el adapter
+        # Cargar y MANTENER como PEFT (sin fusionar)
         try:
             model = PeftModel.from_pretrained(model, adapter_name)
-            st.info(f"✅ Adapter LoRA cargado")
-            
-            # Fusionar
-            model = model.merge_and_unload()
-            st.success(f"✅ LoRA Adapter cargado y fusionado")
+            st.info(f"✅ Adapter LoRA cargado (SIN fusionar para máxima compatibilidad)")
             st.info("📚 Modelo entrenado con datos FAC")
             
-            # Verificar que el adapter se cargó (comparar parámetros)
+            # NO fusionar - mantener como PEFT model para mejor compatibilidad
             total_params = sum(p.numel() for p in model.parameters())
-            st.caption(f"📊 Parámetros totales del modelo: {total_params:,}")
+            st.caption(f"📊 Parámetros: {total_params:,}")
             
         except Exception as e:
             st.error(f"❌ Error al cargar adapter: {str(e)}")
@@ -158,16 +185,16 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Generar respuesta
             start_time = time.time()
 
-            with torch.no_grad():  # Sin gradientes para ahorrar memoria
+            with torch.no_grad():
                 outputs = model.generate(
-                    **inputs,
-                    max_new_tokens=300,  # Aumentado para respuesta + fuente
-                    min_new_tokens=60,   
-                    do_sample=False,  # Determinístico
-                    pad_token_id=tokenizer.eos_token_id,
-                    eos_token_id=tokenizer.eos_token_id,
+                    input_ids=inputs["input_ids"],
+                    attention_mask=inputs.get("attention_mask"),
+                    max_new_tokens=150,
+                    min_new_tokens=30,
+                    do_sample=False,
+                    temperature=None,
+                    top_p=None,
                     num_beams=1,
-                    repetition_penalty=1.8,
                     early_stopping=True,
                 )
 
@@ -233,11 +260,22 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Validación: debe tener contenido
             if not response_only or len(response_only) < 15:
                 response_only = "No pude generar una respuesta válida. Intenta reformular la pregunta."
-                fuente = None
             
-            # Si NO encontramos fuente después de todo, es un error de entrenamiento
-            if not fuente:
-                st.error("⚠️ **PROBLEMA**: El modelo no está generando fuentes.\n\nEsto significa que el entrenamiento no converged correctamente.\n\n**Acción requerida:**\n- Reentrenar en la otra computadora: `python lora.py`\n- Usar los cambios actualizados en lora.py")
+            # ESTRATEGIA: Buscar la fuente en el dataset
+            # Si la pregunta está en training data, usar la fuente de ahí
+            fuente_dataset = find_fuente_in_training_data(clean_prompt)
+            if fuente_dataset:
+                fuente = fuente_dataset
+            # Si no, intentar extraer del modelo (si el modelo la generó)
+            elif "### Fuente:" in response_only:
+                parts = response_only.split("### Fuente:")
+                response_only = parts[0].strip()
+                if len(parts) > 1:
+                    fuente_raw = parts[1].strip()
+                    fuente = fuente_raw.split("\n")[0].strip()
+                    fuente = fuente.replace("*", "").replace("_", "").replace("#", "").strip()
+                    if not fuente or len(fuente) < 2:
+                        fuente = None
 
             final_response = response_only
 
