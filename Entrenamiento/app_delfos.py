@@ -252,12 +252,6 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                     response_only = response_only[: 10 + next_section].strip()
 
             # Separar la respuesta y la fuente PRIMERO (antes de otras limpiezas)
-            fuente = None
-            if "### Fuente:" in response_only:
-                # Dividir por la marca de fuente
-                parts = response_only.split("### Fuente:")
-                response_only = parts[0].strip()
-
             # Separar respuesta y fuente ANTES de cualquier limpieza
             fuente = None
             response_only = full_response
@@ -274,12 +268,13 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                 if next_section != -1:
                     response_only = response_only[: 10 + next_section].strip()
 
-            # Extraer FUENTE del modelo (si la generó)
+            # Extraer FUENTE del modelo (si la generó) - ANTES de limpiar ### marks
             if "### Fuente:" in response_only:
                 parts = response_only.split("### Fuente:")
                 response_only = parts[0].strip()
                 if len(parts) > 1:
                     fuente_raw = parts[1].strip()
+                    # Tomar solo la primera línea después de "### Fuente:"
                     fuente = fuente_raw.split("\n")[0].strip()
                     # Limpiar caracteres especiales
                     fuente = (
@@ -289,6 +284,12 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                         .replace("`", "")
                         .strip()
                     )
+                    # Validar que tenga contenido
+                    if fuente and len(fuente) >= 2:
+                        # Fuente válida, se mantiene
+                        pass
+                    else:
+                        fuente = None
 
             # Limpiar cualquier marca de instrucción que quedó
             response_only = response_only.replace("### Instruction:", "").strip()
@@ -311,6 +312,10 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
             # Mostrar la respuesta generada con formato militar
             response_placeholder.markdown(final_response)
+
+            # DEBUG: Mostrar qué valor tiene fuente
+            with st.expander("🔧 Debug - Valor de fuente"):
+                st.write(f"fuente = {repr(fuente)}")
 
             # Mostrar la fuente SIEMPRE que exista
             if fuente and fuente.lower() not in [
