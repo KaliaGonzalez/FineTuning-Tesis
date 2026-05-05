@@ -38,6 +38,9 @@ training_data = load_training_data()
 # --- FUNCIÓN PARA BUSCAR FUENTE DEL DATASET ---
 def find_fuente_in_training_data(instruction_prompt):
     """Busca la pregunta en el dataset y devuelve la fuente"""
+    if not training_data:
+        return None
+
     instruction_lower = instruction_prompt.lower().strip()
 
     for entry in training_data:
@@ -45,14 +48,25 @@ def find_fuente_in_training_data(instruction_prompt):
 
         # Búsqueda exacta
         if entry_inst == instruction_lower:
-            return entry.get("fuente", "Desconocida")
+            fuente = entry.get("fuente", "").strip()
+            if fuente and fuente.lower() not in ["", "desconocida", "none"]:
+                return fuente
 
-        # Búsqueda parcial (primeras 10 palabras)
-        if (
-            entry_inst.startswith(instruction_lower[:30])
-            or instruction_lower[:30] in entry_inst
-        ):
-            return entry.get("fuente", "Desconocida")
+        # Búsqueda parcial: primeras palabras clave
+        instruction_words = instruction_lower.split()[:5]
+        entry_words = entry_inst.split()[:5]
+
+        if instruction_words == entry_words:
+            fuente = entry.get("fuente", "").strip()
+            if fuente and fuente.lower() not in ["", "desconocida", "none"]:
+                return fuente
+
+        # Búsqueda por similitud: si más del 70% de las palabras coinciden
+        common_words = len(set(instruction_words) & set(entry_words))
+        if common_words >= len(instruction_words) * 0.7:
+            fuente = entry.get("fuente", "").strip()
+            if fuente and fuente.lower() not in ["", "desconocida", "none"]:
+                return fuente
 
     return None  # No encontrada
 
@@ -219,6 +233,10 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Decodificar la SALIDA COMPLETA
             full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
+            # DEBUG: Mostrar la respuesta completa para diagnosticar
+            with st.expander("🔧 Debug - Respuesta bruta del modelo"):
+                st.code(full_response, language="text")
+
             # LIMPIAR RESPUESTA: Extraer solo lo después de "### Response:"
             if "### Response:" in full_response:
                 response_only = full_response.split("### Response:")[-1].strip()
@@ -275,6 +293,9 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Validación: debe tener al menos algo de contenido (no vacío)
             if not response_only or len(response_only.strip()) < 2:
                 response_only = "No pude generar una respuesta válida. Intenta reformular la pregunta."
+
+            # INICIALIZAR fuente como None
+            fuente = None
 
             # ESTRATEGIA: Buscar la fuente en el dataset
             # Si la pregunta está en training data, usar la fuente de ahí
