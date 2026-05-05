@@ -258,65 +258,54 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                 parts = response_only.split("### Fuente:")
                 response_only = parts[0].strip()
 
+            # Separar respuesta y fuente ANTES de cualquier limpieza
+            fuente = None
+            response_only = full_response
+
+            # Extraer solo lo después de "### Response:"
+            if "### Response:" in response_only:
+                response_only = response_only.split("### Response:")[-1].strip()
+            else:
+                response_only = response_only.strip()
+
+            # Detener en el próximo ### para no incluir múltiples ejemplos
+            if "###" in response_only[10:]:
+                next_section = response_only[10:].find("###")
+                if next_section != -1:
+                    response_only = response_only[: 10 + next_section].strip()
+
+            # Extraer FUENTE del modelo (si la generó)
+            if "### Fuente:" in response_only:
+                parts = response_only.split("### Fuente:")
+                response_only = parts[0].strip()
                 if len(parts) > 1:
                     fuente_raw = parts[1].strip()
                     fuente = fuente_raw.split("\n")[0].strip()
+                    # Limpiar caracteres especiales
                     fuente = (
                         fuente.replace("*", "")
                         .replace("_", "")
                         .replace("#", "")
+                        .replace("`", "")
                         .strip()
                     )
-                    if not fuente or len(fuente) < 2:
-                        fuente = None
-
-            # Si no encontramos fuente con ese formato, intentar otros formatos
-            if not fuente and "Fuente:" in response_only:
-                parts = response_only.split("Fuente:")
-                response_only = parts[0].strip()
-                if len(parts) > 1:
-                    fuente = parts[1].strip().split("\n")[0].strip()
-                    fuente = (
-                        fuente.replace("*", "")
-                        .replace("_", "")
-                        .replace("#", "")
-                        .strip()
-                    )
-                    if not fuente or len(fuente) < 2:
-                        fuente = None
 
             # Limpiar cualquier marca de instrucción que quedó
             response_only = response_only.replace("### Instruction:", "").strip()
             response_only = response_only.replace("Instruction:", "").strip()
+            response_only = response_only.replace("### Response:", "").strip()
             response_only = response_only.replace("### Response:", "").strip()
 
             # Validación: debe tener al menos algo de contenido (no vacío)
             if not response_only or len(response_only.strip()) < 2:
                 response_only = "No pude generar una respuesta válida. Intenta reformular la pregunta."
 
-            # INICIALIZAR fuente como None
-            fuente = None
-
-            # ESTRATEGIA: Buscar la fuente en el dataset
+            # ESTRATEGIA: Si el modelo no generó fuente, buscar en el dataset
             # Si la pregunta está en training data, usar la fuente de ahí
-            fuente_dataset = find_fuente_in_training_data(clean_prompt)
-            if fuente_dataset:
-                fuente = fuente_dataset
-            # Si no, intentar extraer del modelo (si el modelo la generó)
-            elif "### Fuente:" in response_only:
-                parts = response_only.split("### Fuente:")
-                response_only = parts[0].strip()
-                if len(parts) > 1:
-                    fuente_raw = parts[1].strip()
-                    fuente = fuente_raw.split("\n")[0].strip()
-                    fuente = (
-                        fuente.replace("*", "")
-                        .replace("_", "")
-                        .replace("#", "")
-                        .strip()
-                    )
-                    if not fuente or len(fuente) < 2:
-                        fuente = None
+            if not fuente:
+                fuente_dataset = find_fuente_in_training_data(clean_prompt)
+                if fuente_dataset:
+                    fuente = fuente_dataset
 
             final_response = response_only
 
