@@ -90,8 +90,8 @@ def load_model():
         )
         device = "cpu"
 
-    base_model_name = "unsloth/mistral-7b-v0.3-bnb-4bit"  # ¡4-BIT = MUCHO MÁS RÁPIDO!
-    adapter_name = "mistral-7b-fac-finetuned"  # Tu modelo fine-tuneado con tus datos
+    base_model_name = "Qwen/Qwen2.5-14B-Instruct"  # Modelo base Qwen
+    adapter_name = "qwen-2.5-14b-fac-finetuned"  # Tu modelo fine-tuneado con tus datos
 
     try:
         # Cargamos el tokenizador
@@ -117,7 +117,7 @@ def load_model():
                 f"**SOLUCIÓN:**\n"
                 f"1. En tu otra computadora potente:\n"
                 f"   → Ejecuta: `python lora.py`\n"
-                f"   → Espera a que genere: `mistral-7b-fac-finetuned/`\n\n"
+                f"   → Espera a que genere: `qwen-2.5-14b-fac-finetuned/`\n\n"
                 f"2. Transfiere la carpeta completa a esta computadora\n\n"
                 f"3. Colócala aquí: `{os.getcwd()}/`\n\n"
                 f"4. Recarga esta página (F5)"
@@ -157,7 +157,7 @@ def load_model():
     except Exception as e:
         st.error(f"❌ Error al cargar el modelo: {str(e)}")
         st.info(
-            "📌 Asegúrate de que la carpeta 'mistral-7b-fac-finetuned' esté en la misma carpeta que este script."
+            "📌 Asegúrate de que la carpeta 'qwen-2.5-14b-fac-finetuned' esté en la misma carpeta que este script."
         )
         return None, None, None
 

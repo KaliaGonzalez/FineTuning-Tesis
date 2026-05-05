@@ -11,8 +11,8 @@ from trl import SFTTrainer, SFTConfig
 import os
 
 # Configuracion
-MODEL_NAME = "unsloth/mistral-7b-v0.3-bnb-4bit"  # O tu modelo base de preferencia (ej. Llama-3-8B-bnb-4bit)
-NEW_MODEL_NAME = "mistral-7b-fac-finetuned"
+MODEL_NAME = "Qwen/Qwen2.5-14B-Instruct"  # Modelo base Qwen
+NEW_MODEL_NAME = "qwen-2.5-14b-fac-finetuned"
 data_files = {
     "train": "FineTuningDatos/dataTrain.json",
     "validation": "FineTuningDatos/dataValidation.json",
