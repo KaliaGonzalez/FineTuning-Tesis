@@ -8,8 +8,11 @@ import os
 
 st.set_page_config(page_title="DELFOS FAC", page_icon="🛩️", layout="wide")
 st.title("🛩️ DELFOS - Sistema de Inteligencia Aérea")
-st.markdown("**Bienvenido, oficial.** Soy DELFOS, el Sistema de Inteligencia y Doctrina de la Fuerza Aérea Colombiana. A tu servicio. ✈️")
+st.markdown(
+    "**Bienvenido, oficial.** Soy DELFOS, el Sistema de Inteligencia y Doctrina de la Fuerza Aérea Colombiana. A tu servicio. ✈️"
+)
 st.divider()
+
 
 # --- CARGAR DATASET PARA BUSCAR FUENTES ---
 @st.cache_data
@@ -23,24 +26,29 @@ def load_training_data():
         st.warning(f"No se pudo cargar dataset: {e}")
         return []
 
+
 training_data = load_training_data()
+
 
 # --- FUNCIÓN PARA BUSCAR FUENTE DEL DATASET ---
 def find_fuente_in_training_data(instruction_prompt):
     """Busca la pregunta en el dataset y devuelve la fuente"""
     instruction_lower = instruction_prompt.lower().strip()
-    
+
     for entry in training_data:
         entry_inst = entry.get("instruction", "").lower().strip()
-        
+
         # Búsqueda exacta
         if entry_inst == instruction_lower:
             return entry.get("fuente", "Desconocida")
-        
+
         # Búsqueda parcial (primeras 10 palabras)
-        if entry_inst.startswith(instruction_lower[:30]) or instruction_lower[:30] in entry_inst:
+        if (
+            entry_inst.startswith(instruction_lower[:30])
+            or instruction_lower[:30] in entry_inst
+        ):
             return entry.get("fuente", "Desconocida")
-    
+
     return None  # No encontrada
 
 
@@ -96,17 +104,19 @@ def load_model():
                 f"4. Recarga esta página (F5)"
             )
             return None, None, None
-        
+
         # Cargar y MANTENER como PEFT (sin fusionar)
         try:
             model = PeftModel.from_pretrained(model, adapter_name)
-            st.info(f"✅ Adapter LoRA cargado (SIN fusionar para máxima compatibilidad)")
+            st.info(
+                f"✅ Adapter LoRA cargado (SIN fusionar para máxima compatibilidad)"
+            )
             st.info("📚 Modelo entrenado con datos FAC")
-            
+
             # NO fusionar - mantener como PEFT model para mejor compatibilidad
             total_params = sum(p.numel() for p in model.parameters())
             st.caption(f"📊 Parámetros: {total_params:,}")
-            
+
         except Exception as e:
             st.error(f"❌ Error al cargar adapter: {str(e)}")
             return None, None, None
@@ -169,7 +179,7 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
             # Formatear EXACTAMENTE como se entrenó
             # Durante training: "### Instruction:\n{instruction}\n\n### Response:\n{output}\n\n### Fuente:\n{fuente}"
-            # Para inferencia, comenzamos el patrón pero NO incluimos output/fuente 
+            # Para inferencia, comenzamos el patrón pero NO incluimos output/fuente
             # El modelo las generará
             formatted_prompt = f"### Instruction:\n{clean_prompt}\n\n### Response:\n"
 
@@ -202,11 +212,11 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
             # Decodificar la SALIDA COMPLETA
             full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-            
+
             # DEBUG: Mostrar la respuesta completa (para diagnosticar problemas)
             with st.expander("🔍 Ver respuesta sin procesar (DEBUG)"):
                 st.code(full_response, language="text")
-            
+
             # DIAGNÓSTICO: Si la respuesta parece basura, mostrar warning
             if len(full_response) < 50 or "###" not in full_response:
                 st.warning(
@@ -231,24 +241,35 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                 # Dividir por la marca de fuente
                 parts = response_only.split("### Fuente:")
                 response_only = parts[0].strip()
-                
+
                 if len(parts) > 1:
                     fuente_raw = parts[1].strip()
                     # Tomar solo hasta el primer salto de línea o caracteres especiales
                     fuente = fuente_raw.split("\n")[0].split("\r")[0].strip()
                     # Limpiar caracteres especiales pero mantener espacios
-                    fuente = fuente.replace("*", "").replace("_", "").replace("#", "").replace("**", "").strip()
+                    fuente = (
+                        fuente.replace("*", "")
+                        .replace("_", "")
+                        .replace("#", "")
+                        .replace("**", "")
+                        .strip()
+                    )
                     # Si quedó vacío o es un marcador, ignorar
                     if not fuente or len(fuente) < 2:
                         fuente = None
-            
+
             # Si no encontramos fuente con ese formato, intentar otros formatos
             if not fuente and "Fuente:" in response_only:
                 parts = response_only.split("Fuente:")
                 response_only = parts[0].strip()
                 if len(parts) > 1:
                     fuente = parts[1].strip().split("\n")[0].strip()
-                    fuente = fuente.replace("*", "").replace("_", "").replace("#", "").strip()
+                    fuente = (
+                        fuente.replace("*", "")
+                        .replace("_", "")
+                        .replace("#", "")
+                        .strip()
+                    )
                     if not fuente or len(fuente) < 2:
                         fuente = None
 
@@ -260,7 +281,7 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Validación: debe tener contenido
             if not response_only or len(response_only) < 15:
                 response_only = "No pude generar una respuesta válida. Intenta reformular la pregunta."
-            
+
             # ESTRATEGIA: Buscar la fuente en el dataset
             # Si la pregunta está en training data, usar la fuente de ahí
             fuente_dataset = find_fuente_in_training_data(clean_prompt)
@@ -273,7 +294,12 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                 if len(parts) > 1:
                     fuente_raw = parts[1].strip()
                     fuente = fuente_raw.split("\n")[0].strip()
-                    fuente = fuente.replace("*", "").replace("_", "").replace("#", "").strip()
+                    fuente = (
+                        fuente.replace("*", "")
+                        .replace("_", "")
+                        .replace("#", "")
+                        .strip()
+                    )
                     if not fuente or len(fuente) < 2:
                         fuente = None
 

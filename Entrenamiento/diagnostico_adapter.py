@@ -21,7 +21,7 @@ if os.path.exists(adapter_path):
     files = os.listdir(adapter_path)
     print(f"   📁 Archivos: {files}")
     for f in files:
-        size_mb = os.path.getsize(os.path.join(adapter_path, f)) / (1024*1024)
+        size_mb = os.path.getsize(os.path.join(adapter_path, f)) / (1024 * 1024)
         print(f"      - {f}: {size_mb:.1f} MB")
 else:
     print(f"   ❌ Carpeta '{adapter_path}' NO ENCONTRADA")
