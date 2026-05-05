@@ -262,13 +262,7 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             else:
                 response_only = response_only.strip()
 
-            # Detener en el próximo ### para no incluir múltiples ejemplos
-            if "###" in response_only[10:]:
-                next_section = response_only[10:].find("###")
-                if next_section != -1:
-                    response_only = response_only[: 10 + next_section].strip()
-
-            # Extraer FUENTE del modelo (si la generó) - ANTES de limpiar ### marks
+            # *** EXTRAER FUENTE PRIMERO (antes de truncar) ***
             if "### Fuente:" in response_only:
                 parts = response_only.split("### Fuente:")
                 response_only = parts[0].strip()
@@ -290,6 +284,12 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                         pass
                     else:
                         fuente = None
+
+            # Detener en el próximo ### para no incluir múltiples ejemplos (DESPUÉS de extraer fuente)
+            if "###" in response_only[10:]:
+                next_section = response_only[10:].find("###")
+                if next_section != -1:
+                    response_only = response_only[: 10 + next_section].strip()
 
             # Limpiar cualquier marca de instrucción que quedó
             response_only = response_only.replace("### Instruction:", "").strip()
