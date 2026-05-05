@@ -231,13 +231,9 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             generation_time = time.time() - start_time
 
             # Decodificar la SALIDA COMPLETA
-            full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-            # DEBUG: Mostrar la respuesta completa para diagnosticar
-            with st.expander("🔧 Debug - Respuesta bruta del modelo"):
-                st.code(full_response, language="text")
-
-            # LIMPIAR RESPUESTA: Extraer solo lo después de "### Response:"
+            full_response = tokenizer.decode(
+                outputs[0], skip_special_tokens=True
+            )  # LIMPIAR RESPUESTA: Extraer solo lo después de "### Response:"
             if "### Response:" in full_response:
                 response_only = full_response.split("### Response:")[-1].strip()
             else:
@@ -312,10 +308,6 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
             # Mostrar la respuesta generada con formato militar
             response_placeholder.markdown(final_response)
-
-            # DEBUG: Mostrar qué valor tiene fuente
-            with st.expander("🔧 Debug - Valor de fuente"):
-                st.write(f"fuente = {repr(fuente)}")
 
             # Mostrar la fuente SIEMPRE que exista
             if fuente and fuente.lower() not in [
