@@ -19,12 +19,17 @@ st.divider()
 def load_training_data():
     """Carga el dataset de training para buscar fuentes por similitud"""
     try:
-        with open("FineTuningDatos/dataTrain.json", "r", encoding="utf-8") as f:
+        # Intentar desde la carpeta Entrenamiento
+        dataset_path = "FineTuningDatos/dataTrain.json"
+        if not os.path.exists(dataset_path):
+            # Si no existe, intentar desde la raíz
+            dataset_path = "../FineTuningDatos/dataTrain.json"
+
+        with open(dataset_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         return data
     except Exception as e:
-        st.warning(f"No se pudo cargar dataset: {e}")
-        return []
+        return []  # Retornar lista vacía si hay error
 
 
 training_data = load_training_data()
@@ -310,7 +315,7 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
             # Mostrar la fuente si existe con icono militar
             if fuente and fuente.lower() not in ["", "none", "null", "n/a"]:
-                st.info(f"🎖️ **Clasificación de Fuente:** {fuente}", icon="�")
+                st.info(f"📋 **Fuente:** {fuente}")
 
             # Mostrar tiempo de procesamiento (debug)
             st.caption(f"⏱️ Tiempo de procesamiento: {generation_time:.2f} segundos")
