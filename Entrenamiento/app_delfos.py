@@ -219,21 +219,6 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Decodificar la SALIDA COMPLETA
             full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-            # DEBUG: Mostrar la respuesta completa (para diagnosticar problemas)
-            with st.expander("🔍 Ver respuesta sin procesar (DEBUG)"):
-                st.code(full_response, language="text")
-
-            # DIAGNÓSTICO: Si la respuesta parece basura, mostrar warning
-            if len(full_response) < 50 or "###" not in full_response:
-                st.warning(
-                    "⚠️ **ADVERTENCIA**: La respuesta parece incompleta o incorrecta.\n\n"
-                    "Esto indica que el LoRA adapter puede no estar bien entrenado.\n\n"
-                    "**Verifica en la otra computadora:**\n"
-                    "1. El entrenamiento completó correctamente\n"
-                    "2. Los archivos en `mistral-7b-fac-finetuned/` se guardaron\n"
-                    "3. Que sean > 1MB cada uno"
-                )
-
             # LIMPIAR RESPUESTA: Extraer solo lo después de "### Response:"
             if "### Response:" in full_response:
                 response_only = full_response.split("### Response:")[-1].strip()
@@ -317,12 +302,17 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Mostrar la respuesta generada con formato militar
             response_placeholder.markdown(final_response)
 
-            # Mostrar la fuente si existe con icono militar
-            if fuente and fuente.lower() not in ["", "none", "null", "n/a"]:
+            # Mostrar la fuente SIEMPRE que exista
+            if fuente and fuente.lower() not in [
+                "",
+                "none",
+                "null",
+                "n/a",
+                "desconocida",
+            ]:
                 st.info(f"📋 **Fuente:** {fuente}")
-
-            # Mostrar tiempo de procesamiento (debug)
-            st.caption(f"⏱️ Tiempo de procesamiento: {generation_time:.2f} segundos")
+            else:
+                st.info("📋 **Fuente:** Desconocida")
 
         except Exception as e:
             error_msg = f"❌ Error al generar la respuesta: {str(e)}"
