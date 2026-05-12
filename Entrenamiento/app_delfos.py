@@ -71,6 +71,34 @@ def find_fuente_in_training_data(instruction_prompt):
     return None  # No encontrada
 
 
+# --- FUNCIÓN PARA GUARDAR REGISTRO DE CONVERSACIONES ---
+def save_conversation_log(pregunta, respuesta, tiempo_respuesta, fuente):
+    """Guarda la pregunta, respuesta y tiempo en un archivo de texto"""
+    import datetime
+
+    # Crear carpeta de logs si no existe
+    logs_dir = "chat_logs"
+    if not os.path.exists(logs_dir):
+        os.makedirs(logs_dir)
+
+    # Nombre del archivo con fecha
+    timestamp = datetime.datetime.now().strftime("%Y%m%d")
+    log_file = os.path.join(logs_dir, f"conversaciones_{timestamp}.txt")
+
+    # Crear o abrir el archivo
+    with open(log_file, "a", encoding="utf-8") as f:
+        f.write("=" * 80 + "\n")
+        f.write(
+            f"FECHA Y HORA: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+        )
+        f.write("=" * 80 + "\n")
+        f.write(f"pregunta: {pregunta}\n")
+        f.write(f"respuesta: {respuesta}\n")
+        f.write(f"tiempo_respuesta: {tiempo_respuesta:.2f} segundos\n")
+        f.write(f"fuente: {fuente if fuente else 'Desconocida'}\n")
+        f.write("\n\n")
+
+
 # --- CARGAR EL MODELO (En caché para no recargar cada vez) ---
 @st.cache_resource
 def load_model():
@@ -363,3 +391,11 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
 
     # Guardar la respuesta del modelo en el historial
     st.session_state.messages.append({"role": "assistant", "content": final_response})
+
+    # Guardar registro en archivo de texto
+    save_conversation_log(
+        pregunta=clean_prompt,
+        respuesta=final_response,
+        tiempo_respuesta=generation_time,
+        fuente=fuente,
+    )
