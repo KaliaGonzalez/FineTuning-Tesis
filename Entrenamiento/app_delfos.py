@@ -175,6 +175,26 @@ if model is None or tokenizer is None:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# --- CONTROL DE LONGITUD DE RESPUESTA ---
+st.divider()
+col1, col2 = st.columns([3, 1])
+with col1:
+    response_length = st.select_slider(
+        "📏 Longitud de respuesta:",
+        options=["Corta", "Mediana", "Larga"],
+        value="Corta",
+        help="Las respuestas largas pueden tomar más tiempo",
+    )
+with col2:
+    if response_length == "Larga":
+        st.warning("⏱️ Puede demorar 30-45s", icon="⚠️")
+    elif response_length == "Mediana":
+        st.info("⏱️ ~10-15s", icon="ℹ️")
+    else:
+        st.success("⏱️ ~5-8s", icon="✅")
+
+st.divider()
+
 # Mostrar los mensajes anteriores
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -214,12 +234,23 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             # Generar respuesta
             start_time = time.time()
 
+            # Ajustar tokens según longitud elegida
+            if response_length == "Corta":
+                max_tokens = 120
+                min_tokens = 20
+            elif response_length == "Mediana":
+                max_tokens = 250
+                min_tokens = 50
+            else:  # Larga
+                max_tokens = 400
+                min_tokens = 100
+
             with torch.no_grad():
                 outputs = model.generate(
                     input_ids=inputs["input_ids"],
                     attention_mask=inputs.get("attention_mask"),
-                    max_new_tokens=120,  # Corto para evitar generar múltiples ejemplos
-                    min_new_tokens=20,
+                    max_new_tokens=max_tokens,
+                    min_new_tokens=min_tokens,
                     do_sample=False,
                     temperature=None,
                     top_p=None,
