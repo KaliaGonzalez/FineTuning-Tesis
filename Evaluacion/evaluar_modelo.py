@@ -310,7 +310,7 @@ def generar_respuesta(
     # Limpiar marcas residuales
     response_only = response_only.replace("### Fuente:", "").strip()
     response_only = response_only.replace("### Instruction:", "").strip()
-    
+
     # Si la respuesta está vacía o es muy corta, avisar
     if not response_only or len(response_only.strip()) < 3:
         response_only = "..."
