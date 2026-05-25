@@ -215,11 +215,11 @@ with col1:
     )
 with col2:
     if response_length == "Larga":
-        st.warning("⏱️ Puede demorar 30-45s", icon="⚠️")
+        st.warning("⏱️ Puede demorar 15-20s", icon="⚠️")
     elif response_length == "Mediana":
-        st.info("⏱️ ~10-15s", icon="ℹ️")
+        st.info("⏱️ ~5-8s", icon="ℹ️")
     else:
-        st.success("⏱️ ~5-8s", icon="✅")
+        st.success("⏱️ ~2-4s", icon="✅")
 
 st.divider()
 
@@ -263,15 +263,16 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
             start_time = time.time()
 
             # Ajustar tokens según longitud elegida
+            # IMPORTANTE: min_tokens bajo para permitir respuestas cortas naturales
             if response_length == "Corta":
-                max_tokens = 120
-                min_tokens = 20
+                max_tokens = 80
+                min_tokens = 5
             elif response_length == "Mediana":
-                max_tokens = 250
-                min_tokens = 50
+                max_tokens = 150
+                min_tokens = 10
             else:  # Larga
-                max_tokens = 400
-                min_tokens = 100
+                max_tokens = 300
+                min_tokens = 20
 
             with torch.no_grad():
                 outputs = model.generate(
@@ -280,11 +281,10 @@ if prompt := st.chat_input("🎯 Ingresa tu consulta táctica/doctrinaria aquí.
                     max_new_tokens=max_tokens,
                     min_new_tokens=min_tokens,
                     do_sample=False,
-                    temperature=None,
-                    top_p=None,
                     num_beams=1,
                     early_stopping=True,
                     eos_token_id=tokenizer.eos_token_id,
+                    pad_token_id=tokenizer.pad_token_id,
                 )
 
             generation_time = time.time() - start_time
