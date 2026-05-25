@@ -12,7 +12,7 @@ import numpy as np
 # ==================== BLEU ====================
 def calcular_bleu(referencia: str, hipotesis: str, n_gramas: int = 4) -> dict:
     """
-    Calcula BLEU score (0-100)
+    Calcula BLEU score (0-1)
     Mide n-grama precision entre referencia e hipótesis
     """
     ref_tokens = referencia.lower().split()
@@ -45,9 +45,13 @@ def calcular_bleu(referencia: str, hipotesis: str, n_gramas: int = 4) -> dict:
         if len(hyp_tokens) >= len(ref_tokens)
         else np.exp(1 - len(ref_tokens) / len(hyp_tokens))
     )
-    bleu = brevity_penalty * np.exp(
-        np.mean(np.log([s if s > 0 else 1e-16 for s in bleu_scores]))
-    )
+
+    # Evitar log(0) usando solo scores positivos
+    non_zero_scores = [s for s in bleu_scores if s > 0]
+    if non_zero_scores:
+        bleu = brevity_penalty * np.exp(np.mean(np.log(non_zero_scores)))
+    else:
+        bleu = 0.0
 
     return {
         "BLEU": round(bleu, 4),
