@@ -378,8 +378,10 @@ def evaluar_modelo():
 
                 for idx, item in enumerate(goldset, 1):
                     pregunta = item.get("pregunta") or item.get("instruction", "")
-                    respuesta_esperada = item.get("respuesta_esperada") or item.get(
-                        "output", ""
+                    respuesta_esperada = (
+                        item.get("respuesta")
+                        or item.get("respuesta_esperada")
+                        or item.get("output", "")
                     )
 
                     if not pregunta or not respuesta_esperada:
