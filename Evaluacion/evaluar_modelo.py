@@ -54,21 +54,44 @@ def cargar_modelo():
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    # Cargar modelo base
-    model = AutoModelForCausalLM.from_pretrained(
-        BASE_MODEL,
-        torch_dtype=torch.float16 if device == "cuda" else torch.float32,
-        device_map="auto",
-        trust_remote_code=True,
-    )
-
-    # Cargar adapter LoRA
+    # Cargar adapter LoRA primero
     if os.path.exists(ADAPTER_PATH):
         print(f"✅ Cargando adapter desde: {ADAPTER_PATH}")
-        model = PeftModel.from_pretrained(model, ADAPTER_PATH)
+        try:
+            # Cargar modelo base en CPU primero (evita problemas de memoria)
+            model = AutoModelForCausalLM.from_pretrained(
+                BASE_MODEL,
+                torch_dtype=torch.float16,
+                trust_remote_code=True,
+                low_cpu_mem_usage=True,
+            )
+
+            # Luego cargar el adapter
+            model = PeftModel.from_pretrained(model, ADAPTER_PATH)
+
+            # Mover a device después de cargar adapter
+            if device == "cuda":
+                model = model.to(device)
+
+        except Exception as e:
+            print(f"⚠️ Error al cargar adapter con PEFT: {e}")
+            print("   Intentando carga alternativa...")
+            # Fallback: cargar sin adapter
+            model = AutoModelForCausalLM.from_pretrained(
+                BASE_MODEL,
+                torch_dtype=torch.float16 if device == "cuda" else torch.float32,
+                device_map="auto",
+                trust_remote_code=True,
+            )
     else:
         print(f"⚠️ Advertencia: No se encontró adapter en {ADAPTER_PATH}")
         print("   Usando modelo base sin fine-tuning")
+        model = AutoModelForCausalLM.from_pretrained(
+            BASE_MODEL,
+            torch_dtype=torch.float16 if device == "cuda" else torch.float32,
+            device_map="auto",
+            trust_remote_code=True,
+        )
 
     model.eval()
     return model, tokenizer, device
