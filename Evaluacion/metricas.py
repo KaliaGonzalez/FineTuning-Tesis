@@ -50,11 +50,11 @@ def calcular_bleu(referencia: str, hipotesis: str, n_gramas: int = 4) -> dict:
     )
 
     return {
-        "BLEU": round(bleu * 100, 2),
-        "BLEU_1": round(bleu_scores[0] * 100, 2),
-        "BLEU_2": round(bleu_scores[1] * 100, 2) if len(bleu_scores) > 1 else 0,
-        "BLEU_3": round(bleu_scores[2] * 100, 2) if len(bleu_scores) > 2 else 0,
-        "BLEU_4": round(bleu_scores[3] * 100, 2) if len(bleu_scores) > 3 else 0,
+        "BLEU": round(bleu, 4),
+        "BLEU_1": round(bleu_scores[0], 4),
+        "BLEU_2": round(bleu_scores[1], 4) if len(bleu_scores) > 1 else 0.0,
+        "BLEU_3": round(bleu_scores[2], 4) if len(bleu_scores) > 2 else 0.0,
+        "BLEU_4": round(bleu_scores[3], 4) if len(bleu_scores) > 3 else 0.0,
     }
 
 
@@ -127,9 +127,9 @@ def calcular_rouge(referencia: str, hipotesis: str) -> dict:
     )
 
     return {
-        "ROUGE_1": round(rouge1_f * 100, 2),
-        "ROUGE_2": round(rouge2_f * 100, 2),
-        "ROUGE_L": round(rougeL_f * 100, 2),
+        "ROUGE_1": round(rouge1_f, 4),
+        "ROUGE_2": round(rouge2_f, 4),
+        "ROUGE_L": round(rougeL_f, 4),
     }
 
 
@@ -167,7 +167,7 @@ def calcular_meteor(referencia: str, hipotesis: str) -> dict:
         f_score = (precision * recall) / (0.9 * precision + 0.1 * recall)
         meteor = f_score
 
-    return {"METEOR": round(meteor * 100, 2)}
+    return {"METEOR": round(meteor, 4)}
 
 
 # ==================== BERT SCORE (Simplificado) ====================
@@ -186,7 +186,7 @@ def calcular_bertscore_simple(referencia: str, hipotesis: str) -> dict:
     jaccard = intersection / union if union > 0 else 0
 
     return {
-        "SemanticSim": round(jaccard * 100, 2),
+        "SemanticSim": round(jaccard, 4),
     }
 
 
