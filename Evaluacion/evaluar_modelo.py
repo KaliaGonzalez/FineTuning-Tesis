@@ -302,14 +302,18 @@ def generar_respuesta(
         response_only = full_response.strip()
 
     # Detener en próximo ### si existe
-    if "###" in response_only[10:]:
-        next_section = response_only[10:].find("###")
+    if "###" in response_only:
+        next_section = response_only.find("###")
         if next_section != -1:
-            response_only = response_only[: 10 + next_section].strip()
+            response_only = response_only[:next_section].strip()
 
     # Limpiar marcas residuales
     response_only = response_only.replace("### Fuente:", "").strip()
     response_only = response_only.replace("### Instruction:", "").strip()
+    
+    # Si la respuesta está vacía o es muy corta, avisar
+    if not response_only or len(response_only.strip()) < 3:
+        response_only = "..."
 
     return response_only
 
