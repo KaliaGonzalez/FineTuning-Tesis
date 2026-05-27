@@ -247,7 +247,7 @@ def generar_respuesta(
     pregunta: str,
     device: str,
     temperature: float = 0.0,
-    max_tokens: int = 150,
+    max_tokens: int = 300,
 ) -> str:
     """Genera respuesta del modelo para una pregunta con una temperatura específica"""
 
@@ -295,6 +295,9 @@ def generar_respuesta(
     # Decodificar
     full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
+    # DEBUG: Mostrar respuesta RAW
+    # print(f"\n[DEBUG] Respuesta RAW: {full_response[:200]}")
+
     # Limpiar respuesta
     if "### Response:" in full_response:
         response_only = full_response.split("### Response:")[-1].strip()
@@ -311,9 +314,20 @@ def generar_respuesta(
     response_only = response_only.replace("### Fuente:", "").strip()
     response_only = response_only.replace("### Instruction:", "").strip()
 
-    # Si la respuesta está vacía o es muy corta, avisar
-    if not response_only or len(response_only.strip()) < 3:
-        response_only = "..."
+    # Si la respuesta está vacía o es muy corta, usar respuesta RAW sin limpiar
+    if not response_only or len(response_only.strip()) < 5:
+        # Intenta extraer algo de la respuesta completa
+        if "### Response:" in full_response:
+            response_only = full_response.split("### Response:")[-1]
+            # Limpia pero mantén más contenido
+            response_only = (
+                response_only.replace("### Fuente:", "")
+                .replace("### Instruction:", "")
+                .strip()
+            )
+            response_only = response_only[:300] if response_only else "..."
+        else:
+            response_only = "..."
 
     return response_only
 
@@ -332,6 +346,15 @@ def evaluar_modelo():
 
     # Cargar modelo
     model, tokenizer, device = cargar_modelo()
+
+    # Verificar si el adapter fue cargado
+    if hasattr(model, "peft_config"):
+        print("✅ Adapter PEFT detectado - Modelo fine-tuned activo")
+    else:
+        print(
+            "⚠️  ADVERTENCIA: No se detectó adapter PEFT - Usando modelo base SIN fine-tuning"
+        )
+    print()
 
     # Encontrar todos los GoldSets
     goldsets_dict = encontrar_goldsets()
