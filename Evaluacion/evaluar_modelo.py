@@ -295,39 +295,26 @@ def generar_respuesta(
     # Decodificar
     full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    # DEBUG: Mostrar respuesta RAW
-    # print(f"\n[DEBUG] Respuesta RAW: {full_response[:200]}")
-
-    # Limpiar respuesta
+    # Limpiar respuesta - extraer todo después de "### Response:"
     if "### Response:" in full_response:
         response_only = full_response.split("### Response:")[-1].strip()
     else:
         response_only = full_response.strip()
 
-    # Detener en próximo ### si existe
+    # Detener en próximo ### si existe (evita incluir siguientes secciones)
     if "###" in response_only:
         next_section = response_only.find("###")
-        if next_section != -1:
+        if next_section > 0:
             response_only = response_only[:next_section].strip()
 
     # Limpiar marcas residuales
-    response_only = response_only.replace("### Fuente:", "").strip()
-    response_only = response_only.replace("### Instruction:", "").strip()
+    response_only = (
+        response_only.replace("### Fuente:", "").replace("### Instruction:", "").strip()
+    )
 
-    # Si la respuesta está vacía o es muy corta, usar respuesta RAW sin limpiar
-    if not response_only or len(response_only.strip()) < 5:
-        # Intenta extraer algo de la respuesta completa
-        if "### Response:" in full_response:
-            response_only = full_response.split("### Response:")[-1]
-            # Limpia pero mantén más contenido
-            response_only = (
-                response_only.replace("### Fuente:", "")
-                .replace("### Instruction:", "")
-                .strip()
-            )
-            response_only = response_only[:300] if response_only else "..."
-        else:
-            response_only = "..."
+    # Si está completamente vacío, devolver algo mínimo
+    if not response_only:
+        response_only = "Sin respuesta"
 
     return response_only
 
