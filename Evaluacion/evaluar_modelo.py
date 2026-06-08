@@ -134,7 +134,6 @@ def guardar_resultados_csv(
     resultados: List[Dict],
     metricas_promedio: Dict,
     temperatura: float,
-    num_iteracion: int = 1,
 ):
     """Guarda los resultados en un archivo CSV con identificación de temperatura e iteración"""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -142,14 +141,16 @@ def guardar_resultados_csv(
     # Formatear temperatura para el nombre del archivo (0.0 -> temp0, 0.2 -> temp0_2, etc)
     temp_str = str(temperatura).replace(".", "_")
 
+    # Guardar todas las iteraciones por pregunta en un solo CSV por documento+temperatura
     csv_filename = os.path.join(
         RESULTS_DIR,
-        f"resultados_{doc_name}_temp{temp_str}_iter{num_iteracion}_{timestamp}.csv",
+        f"resultados_{doc_name}_temp{temp_str}_{timestamp}.csv",
     )
 
     # Escribir CSV con resultados detallados
     with open(csv_filename, "w", newline="", encoding="utf-8") as csvfile:
         fieldnames = [
+            "Iteracion",
             "ID",
             "Pregunta",
             "Respuesta_Esperada",
@@ -171,6 +172,7 @@ def guardar_resultados_csv(
 
         for resultado in resultados:
             row = {
+                "Iteracion": resultado.get("iteracion", ""),
                 "ID": resultado["id"],
                 "Pregunta": resultado["pregunta"],
                 "Respuesta_Esperada": resultado["respuesta_esperada"],
@@ -188,14 +190,13 @@ def guardar_resultados_csv(
             }
             writer.writerow(row)
 
-    # Escribir CSV con promedios Y detalles
+    # Escribir CSV resumen (promedios) para el documento+temperatura
     summary_filename = os.path.join(
         RESULTS_DIR,
-        f"resumen_{doc_name}_temp{temp_str}_iter{num_iteracion}_{timestamp}.csv",
+        f"resumen_{doc_name}_temp{temp_str}_{timestamp}.csv",
     )
     with open(summary_filename, "w", newline="", encoding="utf-8") as csvfile:
         fieldnames = [
-            "Iteracion",
             "ID",
             "Pregunta",
             "Respuesta_Esperada",
@@ -215,9 +216,8 @@ def guardar_resultados_csv(
         writer.writeheader()
 
         # Escribir cada resultado con sus métricas
-        for idx, resultado in enumerate(resultados, 1):
+        for resultado in resultados:
             row = {
-                "Iteracion": idx,
                 "ID": resultado["id"],
                 "Pregunta": resultado["pregunta"],
                 "Respuesta_Esperada": resultado["respuesta_esperada"],
@@ -365,45 +365,41 @@ def evaluar_modelo():
         print(f"🌡️  EVALUANDO CON TEMPERATURA: {temperatura}")
         print("=" * 100 + "\n")
 
-        # ========== LOOP SECUNDARIO: ITERAR SOBRE ITERACIONES POR TEMPERATURA ==========
-        for num_iter in range(1, NUM_ITERACIONES + 1):
-            print(f"\n🔁 ITERACIÓN {num_iter}/{NUM_ITERACIONES}")
-            print("-" * 100 + "\n")
+        # Evaluar cada GoldSet (documento)
+        for doc_name, goldset_path in goldsets_dict.items():
+            print("\n" + "-" * 80)
+            print(f"📋 DOCUMENTO: {doc_name} | TEMPERATURA: {temperatura}")
+            print("-" * 80)
 
-            # Evaluar cada GoldSet
-            for doc_name, goldset_path in goldsets_dict.items():
-                print("\n" + "-" * 80)
-                print(
-                    f"📋 DOCUMENTO: {doc_name} | TEMPERATURA: {temperatura} | ITERACIÓN: {num_iter}"
+            # Cargar GoldSet
+            goldset = cargar_goldset(goldset_path)
+
+            if not goldset:
+                print(f"⚠️  No hay preguntas en {doc_name}\n")
+                continue
+
+            print(f"📊 Preguntas cargadas: {len(goldset)}\n")
+
+            # Acumular todos los resultados del documento (todas las iteraciones por pregunta)
+            resultados_doc = []
+
+            # Evaluar cada pregunta
+            for idx, item in enumerate(goldset, 1):
+                pregunta = item.get("pregunta") or item.get("instruction", "")
+                respuesta_esperada = (
+                    item.get("respuesta")
+                    or item.get("respuesta_esperada")
+                    or item.get("output", "")
                 )
-                print("-" * 80)
 
-                # Cargar GoldSet
-                goldset = cargar_goldset(goldset_path)
-
-                if not goldset:
-                    print(f"⚠️  No hay preguntas en {doc_name}\n")
+                if not pregunta or not respuesta_esperada:
+                    print(f"   ⚠️  Pregunta {idx} incompleta, saltando...")
                     continue
 
-                print(f"📊 Preguntas cargadas: {len(goldset)}\n")
-
-                # Evaluar cada pregunta
-                resultados = []
-
-                for idx, item in enumerate(goldset, 1):
-                    pregunta = item.get("pregunta") or item.get("instruction", "")
-                    respuesta_esperada = (
-                        item.get("respuesta")
-                        or item.get("respuesta_esperada")
-                        or item.get("output", "")
-                    )
-
-                    if not pregunta or not respuesta_esperada:
-                        print(f"   ⚠️  Pregunta {idx} incompleta, saltando...")
-                        continue
-
+                # Para cada pregunta, ejecutar NUM_ITERACIONES veces
+                for num_iter in range(1, NUM_ITERACIONES + 1):
                     print(
-                        f"   [{idx}/{len(goldset)}] {pregunta[:50]}...",
+                        f"   [{idx}/{len(goldset)}] Iteracion {num_iter}/{NUM_ITERACIONES} - {pregunta[:60]}...",
                         end="",
                         flush=True,
                     )
@@ -418,94 +414,89 @@ def evaluar_modelo():
                         respuesta_esperada, respuesta_modelo
                     )
 
-                    # Guardar resultado
+                    # Guardar resultado individual (incluye iteración)
                     resultado = {
                         "id": item.get("id", idx),
                         "pregunta": pregunta,
                         "respuesta_esperada": respuesta_esperada,
                         "respuesta_modelo": respuesta_modelo,
                         "metricas": metricas,
+                        "iteracion": num_iter,
                     }
-                    resultados.append(resultado)
+                    resultados_doc.append(resultado)
 
                     print(
-                        f" ✓ BLEU:{metricas['BLEU']:.0f} ROUGE:{metricas['ROUGE_1']:.0f} METEOR:{metricas['METEOR']:.0f}"
+                        f" ✓ BLEU:{metricas['BLEU']:.2f} ROUGE:{metricas['ROUGE_1']:.2f} METEOR:{metricas['METEOR']:.2f}"
                     )
 
-                if not resultados:
-                    print(f"⚠️  Sin resultados válidos para {doc_name}\n")
-                    continue
+            if not resultados_doc:
+                print(f"⚠️  Sin resultados válidos para {doc_name}\n")
+                continue
 
-                # Calcular promedios
-                metricas_promedio = {
-                    "BLEU": np.mean([r["metricas"]["BLEU"] for r in resultados]),
-                    "BLEU_1": np.mean([r["metricas"]["BLEU_1"] for r in resultados]),
-                    "BLEU_2": np.mean([r["metricas"]["BLEU_2"] for r in resultados]),
-                    "BLEU_3": np.mean([r["metricas"]["BLEU_3"] for r in resultados]),
-                    "BLEU_4": np.mean([r["metricas"]["BLEU_4"] for r in resultados]),
-                    "ROUGE_1": np.mean([r["metricas"]["ROUGE_1"] for r in resultados]),
-                    "ROUGE_2": np.mean([r["metricas"]["ROUGE_2"] for r in resultados]),
-                    "ROUGE_L": np.mean([r["metricas"]["ROUGE_L"] for r in resultados]),
-                    "METEOR": np.mean([r["metricas"]["METEOR"] for r in resultados]),
-                    "SemanticSim": np.mean(
-                        [r["metricas"]["SemanticSim"] for r in resultados]
-                    ),
+            # Calcular promedios sobre todas las iteraciones del documento
+            metricas_promedio = {
+                "BLEU": np.mean([r["metricas"]["BLEU"] for r in resultados_doc]),
+                "BLEU_1": np.mean([r["metricas"]["BLEU_1"] for r in resultados_doc]),
+                "BLEU_2": np.mean([r["metricas"]["BLEU_2"] for r in resultados_doc]),
+                "BLEU_3": np.mean([r["metricas"]["BLEU_3"] for r in resultados_doc]),
+                "BLEU_4": np.mean([r["metricas"]["BLEU_4"] for r in resultados_doc]),
+                "ROUGE_1": np.mean([r["metricas"]["ROUGE_1"] for r in resultados_doc]),
+                "ROUGE_2": np.mean([r["metricas"]["ROUGE_2"] for r in resultados_doc]),
+                "ROUGE_L": np.mean([r["metricas"]["ROUGE_L"] for r in resultados_doc]),
+                "METEOR": np.mean([r["metricas"]["METEOR"] for r in resultados_doc]),
+                "SemanticSim": np.mean(
+                    [r["metricas"]["SemanticSim"] for r in resultados_doc]
+                ),
+            }
+
+            # Mostrar resultados del documento
+            print(f"\n   📊 RESULTADOS DE {doc_name} (TEMP={temperatura}):")
+            print(f"      BLEU:          {metricas_promedio['BLEU']:.4f}")
+            print(f"      ROUGE-1:       {metricas_promedio['ROUGE_1']:.4f}")
+            print(f"      ROUGE-2:       {metricas_promedio['ROUGE_2']:.4f}")
+            print(f"      ROUGE-L:       {metricas_promedio['ROUGE_L']:.4f}")
+            print(f"      METEOR:        {metricas_promedio['METEOR']:.4f}")
+            print(f"      SemanticSim:   {metricas_promedio['SemanticSim']:.4f}")
+
+            # Guardar resultados en CSV (contendrá todas las iteraciones por pregunta)
+            print(f"\n   💾 Guardando resultados para {doc_name} (TEMP={temperatura})...")
+            guardar_resultados_csv(doc_name, resultados_doc, metricas_promedio, temperatura)
+
+            # Guardar reporte JSON
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            temp_str = str(temperatura).replace(".", "_")
+            json_file = os.path.join(
+                RESULTS_DIR,
+                f"evaluacion_{doc_name}_temp{temp_str}_{timestamp}.json",
+            )
+
+            reporte = {
+                "fecha": datetime.now().isoformat(),
+                "documento": doc_name,
+                "temperatura": temperatura,
+                "iteracion": "all",
+                "modelo": BASE_MODEL,
+                "adapter": ADAPTER_PATH,
+                "total_preguntas": len(resultados_doc),
+                "metricas_promedio": metricas_promedio,
+                "resultados_detallados": resultados_doc,
+            }
+
+            with open(json_file, "w", encoding="utf-8") as f:
+                json.dump(reporte, f, indent=2, ensure_ascii=False)
+
+            print(f"   ✅ JSON guardado: {json_file}")
+
+            todos_reportes_por_temp[temperatura][doc_name] = reporte
+            resumen_general_por_temp[temperatura].append(
+                {
+                    "Documento": doc_name,
+                    "Temperatura": temperatura,
+                    "Iteracion": "all",
+                    "Total_Preguntas": len(resultados_doc),
+                    **metricas_promedio,
                 }
-
-                # Mostrar resultados del documento
-                print(
-                    f"\n   📊 RESULTADOS DE {doc_name} (TEMP={temperatura}, ITER={num_iter}):"
-                )
-                print(f"      BLEU:          {metricas_promedio['BLEU']:.2f}")
-                print(f"      ROUGE-1:       {metricas_promedio['ROUGE_1']:.2f}")
-                print(f"      ROUGE-2:       {metricas_promedio['ROUGE_2']:.2f}")
-                print(f"      ROUGE-L:       {metricas_promedio['ROUGE_L']:.2f}")
-                print(f"      METEOR:        {metricas_promedio['METEOR']:.2f}")
-                print(f"      SemanticSim:   {metricas_promedio['SemanticSim']:.2f}")
-
-                # Guardar resultados en CSV
-                print(
-                    f"\n   💾 Guardando resultados para {doc_name} (TEMP={temperatura}, ITER={num_iter})..."
-                )
-                guardar_resultados_csv(
-                    doc_name, resultados, metricas_promedio, temperatura, num_iter
-                )
-
-                # Guardar reporte JSON
-                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                temp_str = str(temperatura).replace(".", "_")
-                json_file = os.path.join(
-                    RESULTS_DIR,
-                    f"evaluacion_{doc_name}_temp{temp_str}_iter{num_iter}_{timestamp}.json",
-                )
-
-                reporte = {
-                    "fecha": datetime.now().isoformat(),
-                    "documento": doc_name,
-                    "temperatura": temperatura,
-                    "iteracion": num_iter,
-                    "modelo": BASE_MODEL,
-                    "adapter": ADAPTER_PATH,
-                    "total_preguntas": len(resultados),
-                    "metricas_promedio": metricas_promedio,
-                    "resultados_detallados": resultados,
-                }
-
-                with open(json_file, "w", encoding="utf-8") as f:
-                    json.dump(reporte, f, indent=2, ensure_ascii=False)
-
-                print(f"   ✅ JSON guardado: {json_file}")
-
-                todos_reportes_por_temp[temperatura][doc_name] = reporte
-                resumen_general_por_temp[temperatura].append(
-                    {
-                        "Documento": doc_name,
-                        "Temperatura": temperatura,
-                        "Iteracion": num_iter,
-                        "Total_Preguntas": len(resultados),
-                        **metricas_promedio,
-                    }
-                )
+            )
 
     # ========== CREAR RESUMEN GENERAL POR TEMPERATURA ==========
     print("\n" + "=" * 100)
