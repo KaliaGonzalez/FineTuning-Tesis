@@ -1,47 +1,36 @@
 """
-Script de evaluación del modelo fine-tuned con métricas BLEU, ROUGE, METEOR, BERTScore
-Evalúa TODOS los GoldSets en la carpeta FineTuningDatos
-Genera CSV con resultados para cada documento
+evaluar_modelo.py — Módulo de carga y generación para el modelo FINE-TUNED (Qwen2.5 + LoRA)
+=============================================================================================
+Este módulo YA NO ejecuta una evaluación completa por sí mismo. Su única
+responsabilidad es cargar el modelo base + adapter de fine-tuning (LoRA) y
+generar respuestas dado un prompt. `processor.py` importa estas funciones
+para construir el pipeline completo:
+
+    orquestador.py  -->  processor.py (usa este módulo)  -->  metrics.py
+
+Si necesitas hacer una prueba rápida y manual del modelo, puedes correr este
+archivo directamente (ver bloque `if __name__ == "__main__":` al final).
 """
 
-import torch
-import json
 import os
-import sys
-import csv
-import glob
-from datetime import datetime
-from typing import List, Dict, Tuple
+import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
-import numpy as np
 
-# Importar funciones de métricas
-from metricas import calcular_todas_metricas
-
-# ==================== CONFIGURACIÓN ====================
+# ==================== CONFIGURACIÓN POR DEFECTO ====================
+# Estos valores se usan solo si processor.py no pasa otros explícitamente.
 BASE_MODEL = "Qwen/Qwen2.5-14B-Instruct"
 ADAPTER_PATH = "../Entrenamiento/qwen-2.5-14b-fac-finetuned"
-GOLDSETS_DIR = "../FineTuningDatos"
-RESULTS_DIR = "./resultados"
-
-# Temperaturas a evaluar
-TEMPERATURAS = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
-
-# Número de iteraciones por temperatura
-NUM_ITERACIONES = 10
-
-# Patrones de GoldSets a evaluar
-GOLDSET_PATTERNS = ["Goalset_FAC_*.json", "GoalSet_*.json", "GoldSet.json"]
-
-# ==================== FUNCIONES ====================
 
 
-def cargar_modelo():
-    """Carga el modelo base + adapter LoRA"""
+def cargar_modelo(base_model: str = BASE_MODEL, adapter_path: str = ADAPTER_PATH):
+    """
+    Carga el modelo base y el adapter LoRA (fine-tuning) junto con su tokenizador.
+
+    Retorna: (model, tokenizer, device)
+    """
     print("🔄 Cargando modelo base...")
 
-    # Detectar GPU
     if torch.cuda.is_available():
         print(f"🎮 GPU detectada: {torch.cuda.get_device_name(0)}")
         device = "cuda"
@@ -49,196 +38,53 @@ def cargar_modelo():
         print("⚠️ GPU no detectada, usando CPU")
         device = "cpu"
 
-    # Cargar tokenizador
-    tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    # Cargar adapter LoRA primero
-    if os.path.exists(ADAPTER_PATH):
-        print(f"✅ Cargando adapter desde: {ADAPTER_PATH}")
+    if adapter_path and os.path.exists(adapter_path):
+        print(f"✅ Cargando adapter (fine-tuning) desde: {adapter_path}")
         try:
-            # Cargar modelo base en CPU primero (evita problemas de memoria)
+            # Cargar modelo base primero (evita problemas de memoria)
             model = AutoModelForCausalLM.from_pretrained(
-                BASE_MODEL,
+                base_model,
                 torch_dtype=torch.float16,
                 trust_remote_code=True,
                 low_cpu_mem_usage=True,
             )
+            # Aplicar el adapter LoRA
+            model = PeftModel.from_pretrained(model, adapter_path)
 
-            # Luego cargar el adapter
-            model = PeftModel.from_pretrained(model, ADAPTER_PATH)
-
-            # Mover a device después de cargar adapter
             if device == "cuda":
                 model = model.to(device)
 
         except Exception as e:
             print(f"⚠️ Error al cargar adapter con PEFT: {e}")
-            print("   Intentando carga alternativa...")
-            # Fallback: cargar sin adapter
+            print("   Intentando carga alternativa (modelo base, SIN adapter)...")
             model = AutoModelForCausalLM.from_pretrained(
-                BASE_MODEL,
+                base_model,
                 torch_dtype=torch.float16 if device == "cuda" else torch.float32,
                 device_map="auto",
                 trust_remote_code=True,
             )
     else:
-        print(f"⚠️ Advertencia: No se encontró adapter en {ADAPTER_PATH}")
-        print("   Usando modelo base sin fine-tuning")
+        print(f"⚠️ Advertencia: No se encontró adapter en '{adapter_path}'")
+        print("   Usando modelo base SIN fine-tuning")
         model = AutoModelForCausalLM.from_pretrained(
-            BASE_MODEL,
+            base_model,
             torch_dtype=torch.float16 if device == "cuda" else torch.float32,
             device_map="auto",
             trust_remote_code=True,
         )
 
     model.eval()
+
+    if hasattr(model, "peft_config"):
+        print("✅ Adapter PEFT detectado - Modelo fine-tuned activo\n")
+    else:
+        print("⚠️ Modelo corriendo SIN adapter de fine-tuning\n")
+
     return model, tokenizer, device
-
-
-def encontrar_goldsets() -> Dict[str, str]:
-    """Busca todos los GoldSets en la carpeta FineTuningDatos"""
-    goldsets = {}
-
-    for pattern in GOLDSET_PATTERNS:
-        files = glob.glob(os.path.join(GOLDSETS_DIR, pattern))
-        for file_path in files:
-            # Extraer nombre del documento (sin extensión)
-            filename = os.path.basename(file_path)
-            doc_name = (
-                filename.replace("Goalset_FAC_", "")
-                .replace("GoalSet_", "")
-                .replace(".json", "")
-                .upper()
-            )
-            goldsets[doc_name] = file_path
-
-    return goldsets
-
-
-def cargar_goldset(filepath: str) -> List[Dict]:
-    """Carga un GoldSet específico"""
-    if not os.path.exists(filepath):
-        print(f"❌ Error: No se encontró {filepath}")
-        return []
-
-    with open(filepath, "r", encoding="utf-8") as f:
-        goldset = json.load(f)
-
-    return goldset
-
-
-def guardar_resultados_csv(
-    doc_name: str,
-    resultados: List[Dict],
-    metricas_promedio: Dict,
-    temperatura: float,
-):
-    """Guarda los resultados en un archivo CSV con identificación de temperatura e iteración"""
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
-    # Formatear temperatura para el nombre del archivo (0.0 -> temp0, 0.2 -> temp0_2, etc)
-    temp_str = str(temperatura).replace(".", "_")
-
-    # Guardar todas las iteraciones por pregunta en un solo CSV por documento+temperatura
-    csv_filename = os.path.join(
-        RESULTS_DIR,
-        f"resultados_{doc_name}_temp{temp_str}_{timestamp}.csv",
-    )
-
-    # Escribir CSV con resultados detallados
-    with open(csv_filename, "w", newline="", encoding="utf-8") as csvfile:
-        fieldnames = [
-            "Iteracion",
-            "ID",
-            "Pregunta",
-            "Respuesta_Esperada",
-            "Respuesta_Modelo",
-            "BLEU",
-            "BLEU_1",
-            "BLEU_2",
-            "BLEU_3",
-            "BLEU_4",
-            "ROUGE_1",
-            "ROUGE_2",
-            "ROUGE_L",
-            "METEOR",
-            "SemanticSim",
-        ]
-
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-
-        for resultado in resultados:
-            row = {
-                "Iteracion": resultado.get("iteracion", ""),
-                "ID": resultado["id"],
-                "Pregunta": resultado["pregunta"],
-                "Respuesta_Esperada": resultado["respuesta_esperada"],
-                "Respuesta_Modelo": resultado["respuesta_modelo"],
-                "BLEU": resultado["metricas"]["BLEU"],
-                "BLEU_1": resultado["metricas"]["BLEU_1"],
-                "BLEU_2": resultado["metricas"]["BLEU_2"],
-                "BLEU_3": resultado["metricas"]["BLEU_3"],
-                "BLEU_4": resultado["metricas"]["BLEU_4"],
-                "ROUGE_1": resultado["metricas"]["ROUGE_1"],
-                "ROUGE_2": resultado["metricas"]["ROUGE_2"],
-                "ROUGE_L": resultado["metricas"]["ROUGE_L"],
-                "METEOR": resultado["metricas"]["METEOR"],
-                "SemanticSim": resultado["metricas"]["SemanticSim"],
-            }
-            writer.writerow(row)
-
-    # Escribir CSV resumen (promedios) para el documento+temperatura
-    summary_filename = os.path.join(
-        RESULTS_DIR,
-        f"resumen_{doc_name}_temp{temp_str}_{timestamp}.csv",
-    )
-    with open(summary_filename, "w", newline="", encoding="utf-8") as csvfile:
-        fieldnames = [
-            "ID",
-            "Pregunta",
-            "Respuesta_Esperada",
-            "Respuesta_Modelo",
-            "BLEU",
-            "BLEU_1",
-            "BLEU_2",
-            "BLEU_3",
-            "BLEU_4",
-            "ROUGE_1",
-            "ROUGE_2",
-            "ROUGE_L",
-            "METEOR",
-            "SemanticSim",
-        ]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-
-        # Escribir cada resultado con sus métricas
-        for resultado in resultados:
-            row = {
-                "ID": resultado["id"],
-                "Pregunta": resultado["pregunta"],
-                "Respuesta_Esperada": resultado["respuesta_esperada"],
-                "Respuesta_Modelo": resultado["respuesta_modelo"],
-                "BLEU": resultado["metricas"]["BLEU"],
-                "BLEU_1": resultado["metricas"]["BLEU_1"],
-                "BLEU_2": resultado["metricas"]["BLEU_2"],
-                "BLEU_3": resultado["metricas"]["BLEU_3"],
-                "BLEU_4": resultado["metricas"]["BLEU_4"],
-                "ROUGE_1": resultado["metricas"]["ROUGE_1"],
-                "ROUGE_2": resultado["metricas"]["ROUGE_2"],
-                "ROUGE_L": resultado["metricas"]["ROUGE_L"],
-                "METEOR": resultado["metricas"]["METEOR"],
-                "SemanticSim": resultado["metricas"]["SemanticSim"],
-            }
-            writer.writerow(row)
-
-    print(f"   ✅ CSV guardado: {csv_filename}")
-    print(f"   ✅ Resumen guardado: {summary_filename}")
-
-    return csv_filename, summary_filename
 
 
 def generar_respuesta(
@@ -249,12 +95,12 @@ def generar_respuesta(
     temperature: float = 0.0,
     max_tokens: int = 300,
 ) -> str:
-    """Genera respuesta del modelo para una pregunta con una temperatura específica"""
-
-    # Formatear prompt exactamente como en training
+    """
+    Genera la respuesta del modelo fine-tuned para una pregunta, usando el
+    mismo formato de prompt utilizado durante el entrenamiento.
+    """
     formatted_prompt = f"### Instruction:\n{pregunta}\n\n### Response:\n"
 
-    # Tokenizar
     inputs = tokenizer(
         formatted_prompt,
         return_tensors="pt",
@@ -263,11 +109,9 @@ def generar_respuesta(
         add_special_tokens=True,
     ).to(device)
 
-    # Generar con temperatura
     with torch.no_grad():
-        # Si temperatura es 0, usar greedy (do_sample=False)
-        # Si temperatura > 0, usar sampling
         if temperature == 0.0:
+            # Temperatura 0 -> generación determinística (greedy)
             outputs = model.generate(
                 input_ids=inputs["input_ids"],
                 attention_mask=inputs.get("attention_mask"),
@@ -292,16 +136,15 @@ def generar_respuesta(
                 eos_token_id=tokenizer.eos_token_id,
             )
 
-    # Decodificar
     full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    # Limpiar respuesta - extraer todo después de "### Response:"
+    # Extraer solo lo que está después de "### Response:"
     if "### Response:" in full_response:
         response_only = full_response.split("### Response:")[-1].strip()
     else:
         response_only = full_response.strip()
 
-    # Detener en próximo ### si existe (evita incluir siguientes secciones)
+    # Cortar si aparece otra sección "###" (evita arrastrar texto de más)
     if "###" in response_only:
         next_section = response_only.find("###")
         if next_section > 0:
@@ -312,231 +155,16 @@ def generar_respuesta(
         response_only.replace("### Fuente:", "").replace("### Instruction:", "").strip()
     )
 
-    # Si está completamente vacío, devolver algo mínimo
     if not response_only:
         response_only = "Sin respuesta"
 
     return response_only
 
 
-def evaluar_modelo():
-    """Función principal de evaluación - Evalúa TODOS los GoldSets con MÚLTIPLES TEMPERATURAS E ITERACIONES"""
-
-    print("\n" + "=" * 100)
-    print("🚀 INICIANDO EVALUACIÓN MÚLTIPLE CON TEMPERATURAS E ITERACIONES")
-    print(f"   Temperaturas: {TEMPERATURAS}")
-    print(f"   Iteraciones por temperatura: {NUM_ITERACIONES}")
-    print("=" * 100 + "\n")
-
-    # Crear directorio de resultados
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-
-    # Cargar modelo
-    model, tokenizer, device = cargar_modelo()
-
-    # Verificar si el adapter fue cargado
-    if hasattr(model, "peft_config"):
-        print("✅ Adapter PEFT detectado - Modelo fine-tuned activo")
-    else:
-        print(
-            "⚠️  ADVERTENCIA: No se detectó adapter PEFT - Usando modelo base SIN fine-tuning"
-        )
-    print()
-
-    # Encontrar todos los GoldSets
-    goldsets_dict = encontrar_goldsets()
-
-    if not goldsets_dict:
-        print("❌ Error: No hay GoldSets para evaluar en", GOLDSETS_DIR)
-        return
-
-    print(f"📊 Se encontraron {len(goldsets_dict)} GoldSets:\n")
-    for doc_name, filepath in goldsets_dict.items():
-        print(f"   ✓ {doc_name}: {filepath}")
-    print()
-
-    # Diccionario para almacenar reportes
-    todos_reportes_por_temp = {temp: {} for temp in TEMPERATURAS}
-    resumen_general_por_temp = {temp: [] for temp in TEMPERATURAS}
-
-    # ========== LOOP PRINCIPAL: ITERAR SOBRE TEMPERATURAS ==========
-    for temperatura in TEMPERATURAS:
-        print("\n" + "=" * 100)
-        print(f"🌡️  EVALUANDO CON TEMPERATURA: {temperatura}")
-        print("=" * 100 + "\n")
-
-        # Evaluar cada GoldSet (documento)
-        for doc_name, goldset_path in goldsets_dict.items():
-            print("\n" + "-" * 80)
-            print(f"📋 DOCUMENTO: {doc_name} | TEMPERATURA: {temperatura}")
-            print("-" * 80)
-
-            # Cargar GoldSet
-            goldset = cargar_goldset(goldset_path)
-
-            if not goldset:
-                print(f"⚠️  No hay preguntas en {doc_name}\n")
-                continue
-
-            print(f"📊 Preguntas cargadas: {len(goldset)}\n")
-
-            # Acumular todos los resultados del documento (todas las iteraciones por pregunta)
-            resultados_doc = []
-
-            # Evaluar cada pregunta
-            for idx, item in enumerate(goldset, 1):
-                pregunta = item.get("pregunta") or item.get("instruction", "")
-                respuesta_esperada = (
-                    item.get("respuesta")
-                    or item.get("respuesta_esperada")
-                    or item.get("output", "")
-                )
-
-                if not pregunta or not respuesta_esperada:
-                    print(f"   ⚠️  Pregunta {idx} incompleta, saltando...")
-                    continue
-
-                # Para cada pregunta, ejecutar NUM_ITERACIONES veces
-                for num_iter in range(1, NUM_ITERACIONES + 1):
-                    print(
-                        f"   [{idx}/{len(goldset)}] Iteracion {num_iter}/{NUM_ITERACIONES} - {pregunta[:60]}...",
-                        end="",
-                        flush=True,
-                    )
-
-                    # Generar respuesta CON TEMPERATURA ESPECÍFICA
-                    respuesta_modelo = generar_respuesta(
-                        model, tokenizer, pregunta, device, temperature=temperatura
-                    )
-
-                    # Calcular métricas
-                    metricas = calcular_todas_metricas(
-                        respuesta_esperada, respuesta_modelo
-                    )
-
-                    # Guardar resultado individual (incluye iteración)
-                    resultado = {
-                        "id": item.get("id", idx),
-                        "pregunta": pregunta,
-                        "respuesta_esperada": respuesta_esperada,
-                        "respuesta_modelo": respuesta_modelo,
-                        "metricas": metricas,
-                        "iteracion": num_iter,
-                    }
-                    resultados_doc.append(resultado)
-
-                    print(
-                        f" ✓ BLEU:{metricas['BLEU']:.2f} ROUGE:{metricas['ROUGE_1']:.2f} METEOR:{metricas['METEOR']:.2f}"
-                    )
-
-            if not resultados_doc:
-                print(f"⚠️  Sin resultados válidos para {doc_name}\n")
-                continue
-
-            # Calcular promedios sobre todas las iteraciones del documento
-            metricas_promedio = {
-                "BLEU": np.mean([r["metricas"]["BLEU"] for r in resultados_doc]),
-                "BLEU_1": np.mean([r["metricas"]["BLEU_1"] for r in resultados_doc]),
-                "BLEU_2": np.mean([r["metricas"]["BLEU_2"] for r in resultados_doc]),
-                "BLEU_3": np.mean([r["metricas"]["BLEU_3"] for r in resultados_doc]),
-                "BLEU_4": np.mean([r["metricas"]["BLEU_4"] for r in resultados_doc]),
-                "ROUGE_1": np.mean([r["metricas"]["ROUGE_1"] for r in resultados_doc]),
-                "ROUGE_2": np.mean([r["metricas"]["ROUGE_2"] for r in resultados_doc]),
-                "ROUGE_L": np.mean([r["metricas"]["ROUGE_L"] for r in resultados_doc]),
-                "METEOR": np.mean([r["metricas"]["METEOR"] for r in resultados_doc]),
-                "SemanticSim": np.mean(
-                    [r["metricas"]["SemanticSim"] for r in resultados_doc]
-                ),
-            }
-
-            # Mostrar resultados del documento
-            print(f"\n   📊 RESULTADOS DE {doc_name} (TEMP={temperatura}):")
-            print(f"      BLEU:          {metricas_promedio['BLEU']:.4f}")
-            print(f"      ROUGE-1:       {metricas_promedio['ROUGE_1']:.4f}")
-            print(f"      ROUGE-2:       {metricas_promedio['ROUGE_2']:.4f}")
-            print(f"      ROUGE-L:       {metricas_promedio['ROUGE_L']:.4f}")
-            print(f"      METEOR:        {metricas_promedio['METEOR']:.4f}")
-            print(f"      SemanticSim:   {metricas_promedio['SemanticSim']:.4f}")
-
-            # Guardar resultados en CSV (contendrá todas las iteraciones por pregunta)
-            print(f"\n   💾 Guardando resultados para {doc_name} (TEMP={temperatura})...")
-            guardar_resultados_csv(doc_name, resultados_doc, metricas_promedio, temperatura)
-
-            # Guardar reporte JSON
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            temp_str = str(temperatura).replace(".", "_")
-            json_file = os.path.join(
-                RESULTS_DIR,
-                f"evaluacion_{doc_name}_temp{temp_str}_{timestamp}.json",
-            )
-
-            reporte = {
-                "fecha": datetime.now().isoformat(),
-                "documento": doc_name,
-                "temperatura": temperatura,
-                "iteracion": "all",
-                "modelo": BASE_MODEL,
-                "adapter": ADAPTER_PATH,
-                "total_preguntas": len(resultados_doc),
-                "metricas_promedio": metricas_promedio,
-                "resultados_detallados": resultados_doc,
-            }
-
-            with open(json_file, "w", encoding="utf-8") as f:
-                json.dump(reporte, f, indent=2, ensure_ascii=False)
-
-            print(f"   ✅ JSON guardado: {json_file}")
-
-            todos_reportes_por_temp[temperatura][doc_name] = reporte
-            resumen_general_por_temp[temperatura].append(
-                {
-                    "Documento": doc_name,
-                    "Temperatura": temperatura,
-                    "Iteracion": "all",
-                    "Total_Preguntas": len(resultados_doc),
-                    **metricas_promedio,
-                }
-            )
-
-    # ========== CREAR RESUMEN GENERAL POR TEMPERATURA ==========
-    print("\n" + "=" * 100)
-    print("📈 RESUMEN FINAL DE TODAS LAS TEMPERATURAS")
-    print("=" * 100 + "\n")
-
-    # Crear un CSV resumen para cada temperatura
-    for temperatura in TEMPERATURAS:
-        temp_str = str(temperatura).replace(".", "_")
-        resumen_csv = os.path.join(
-            RESULTS_DIR,
-            f"resumen_general_temp{temp_str}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-        )
-
-        with open(resumen_csv, "w", newline="", encoding="utf-8") as csvfile:
-            fieldnames = [
-                "Documento",
-                "Temperatura",
-                "Iteracion",
-                "Total_Preguntas",
-                "BLEU",
-                "BLEU_1",
-                "BLEU_2",
-                "BLEU_3",
-                "BLEU_4",
-                "ROUGE_1",
-                "ROUGE_2",
-                "ROUGE_L",
-                "METEOR",
-                "SemanticSim",
-            ]
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(resumen_general_por_temp[temperatura])
-
-        print(f"✅ Resumen para TEMPERATURA {temperatura} guardado en: {resumen_csv}")
-
-    print("✅ ¡EVALUACIÓN COMPLETADA!\n")
-    return todos_reportes_por_temp
-
-
 if __name__ == "__main__":
-    evaluar_modelo()
+    # Prueba rápida y manual: carga el modelo y genera una respuesta de ejemplo.
+    modelo, tok, dev = cargar_modelo()
+    pregunta_prueba = "¿Qué es la FAC?"
+    print(f"\n🧪 Pregunta de prueba: {pregunta_prueba}")
+    respuesta = generar_respuesta(modelo, tok, pregunta_prueba, dev, temperature=0.2)
+    print(f"🤖 Respuesta: {respuesta}\n")
